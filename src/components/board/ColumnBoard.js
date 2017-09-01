@@ -3,13 +3,19 @@ import Task from './Task'
 import PropTypes from 'prop-types';
 import {ItemTypes} from './Constants';
 import {DropTarget} from 'react-dnd';
+import CardActionCreators from '../../actions/CardActionCreators';
 
 const columnTarget = {
     drop(props) {
         console.log("drop");
     },
     hover(props, monitor) {
-        
+
+        const dragged = monitor.getItem();
+        if (dragged.idcolumn !== props.id) {
+            CardActionCreators.updateCardColumn(dragged.id, props.id, dragged.idcolumn);
+        }
+
     }
 };
 
@@ -27,7 +33,12 @@ class ColumnBoard extends Component {
 
         let tasksB = tasks.map((task) => {
 
-            return (<Task key={task.id} idcolumn={id} id={task.id} title={task.title} preview={task.preview}/>)
+            return (<Task
+                key={task.id}
+                idcolumn={id}
+                id={task.id}
+                title={task.title}
+                preview={task.preview}/>)
 
         });
 
@@ -80,8 +91,7 @@ class ColumnBoard extends Component {
                     <input
                         type="text"
                         className="inputAdicionarTarefa form-control hide"
-                        placeholder="Escreva a sua tarefa..."/>
-                        {column}
+                        placeholder="Escreva a sua tarefa..."/> {column}
                 </div>
             </div>
         );

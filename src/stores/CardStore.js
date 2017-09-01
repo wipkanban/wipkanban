@@ -37,11 +37,8 @@ class CardStore extends ReduceStore {
                 if (action.payload.cardId !== action.payload.afterId) {
 
                     let columnIndex = this.getColumnIndex(action.payload.idcolumn);
-
                     let cardIndex = this.getTaskIndex(action.payload.taskId, columnIndex);
-
                     let card = this.getState()[columnIndex].tasks[cardIndex];
-
                     let afterIndex = this.getTaskIndex(action.payload.afterId, columnIndex);
 
                     return update(this.getState(), {
@@ -58,6 +55,32 @@ class CardStore extends ReduceStore {
                     });
 
                 }
+
+            case constants.UPDATE_CARD_STATUS:
+
+                let columnIndex = this.getColumnIndex(action.payload.idcolumn);
+                let columnIndexDragged = this.getColumnIndex(action.payload.idcolumnDragged);
+                let cardIndex = this.getTaskIndex(action.payload.taskId, columnIndexDragged);
+                let card = this.getState()[columnIndexDragged].tasks[cardIndex];
+                let afterIndex = this.getTaskIndex(action.payload.afterId, columnIndex);
+                    
+                return update(this.getState(), {
+                    [columnIndexDragged]: {
+                        tasks: {
+                            $splice: [
+                                [
+                                    cardIndex, 1
+                                ]                                
+                            ]
+                        }
+                    },
+                    [columnIndex]: {
+                        tasks: {
+                            $push: [card]
+                        }
+                    }
+                });
+
             default:
                 return state;
         }

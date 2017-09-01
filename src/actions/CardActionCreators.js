@@ -11,7 +11,7 @@ let CardActionCreators = {
             failure: constants.FETCH_CARDS_ERROR
         });
     },
-    updateCardPosition: throttle((taskId, afterId,idcolumn) => {
+    updateCardPosition: throttle((taskId, afterId, idcolumn) => {
         AppDispatcher.dispatch({
             type: constants.UPDATE_CARD_POSITION,
             payload: {
@@ -20,7 +20,17 @@ let CardActionCreators = {
                 idcolumn
             }
         });
-    }, 500)
+    }, 500),
+    updateCardColumn: throttle((taskId, idcolumn,idcolumnDragged) => {
+        AppDispatcher.dispatch({
+            type: constants.UPDATE_CARD_STATUS,
+            payload: {
+                taskId,
+                idcolumn,
+                idcolumnDragged
+            }
+        });
+    })
 };
 
 export default CardActionCreators;

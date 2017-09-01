@@ -6,7 +6,7 @@ import CardActionCreators from '../../actions/CardActionCreators';
 
 const taskDragSource = {
     beginDrag(props) {
-        return {id: props.id};
+        return {id: props.id, idcolumn: props.idcolumn};
     },
     endDrag(props) {
         console.log("endDrag");
@@ -19,7 +19,7 @@ const taskDropSpec = {
         const draggedId = monitor
             .getItem()
             .id;
-            
+
         if (props.id !== draggedId) {
             CardActionCreators.updateCardPosition(draggedId, props.id, props.idcolumn);
         }
