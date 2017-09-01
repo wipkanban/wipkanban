@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "title": "A fazer",
+        "tasks": [
+            {
+                "id": 1,
+                "title": "Relatório - Análise detalhada do consultor"
+            },
+            {
+                "id": 2,
+                "title": "Detalhada do consultor"
+            },
+            {
+                "id": 3,
+                "preview": true,
+                "title": "Detalhada do consultor"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Fazendo",
+        "tasks": [
+            {
+                "id": 4,
+                "title": "Relatório 4 - Análise detalhada do consultor"
+            },
+            {
+                "id": 5,
+                "title": " 5 - Detalhada do consultor"
+            }
+        ]
+    }
+]
