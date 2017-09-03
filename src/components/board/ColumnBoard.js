@@ -6,8 +6,9 @@ import {DropTarget} from 'react-dnd';
 import CardActionCreators from '../../actions/CardActionCreators';
 
 const columnTarget = {
-    drop(props) {
-        console.log("drop");
+    drop(props, monitor) {
+        let item = monitor.getItem();
+        CardActionCreators.saveNewPosition(item.id, props.id);
     },
     hover(props, monitor) {
 
@@ -28,8 +29,46 @@ function collect(connect, monitor) {
 
 class ColumnBoard extends Component {
 
+    constructor() {
+        super(...arguments);
+
+        this.state = {
+            showInputNewTask: false,
+            showInputEditNameColumn: false
+        }
+    }
+
+    /**
+     * Show/hidden the input for to create the new task
+     * @param {Object} event
+     */
+    showInputNewtask(event) {
+
+        this.setState({
+            showInputNewTask: !this.state.showInputNewTask
+        })
+
+        setTimeout(() => {
+            this
+                .refs
+                .inputNewTask
+                .focus();
+        }, 1);
+
+    }
+
+    createTask(event) {
+        if (event.keyCode == 13) {
+            
+            CardActionCreators.createNewTask(event.target.value, this.props.id);
+
+            event.target.value = '';
+            this.setState({showInputNewTask:false})
+        }
+    }
+
     render() {
-        const {connectDropTarget, isOver, title, tasks, id} = this.props;
+        const {connectDropTarget, title, tasks, id} = this.props;
 
         let tasksB = tasks.map((task) => {
 
@@ -48,17 +87,22 @@ class ColumnBoard extends Component {
             </div>
         );
 
+        let classInputNameColumn = (this.state.showInputEditNameColumn
+            ? ''
+            : 'hide') + " form-control inputNomeColuna";
+
+        let classInputNewTask = (this.state.showInputNewTask
+            ? ''
+            : 'hide') + " inputAdicionarTarefa form-control";
+
         return (
             <div className="column-board">
                 <div className="task-board">
                     <h4>
-                        <input
-                            type="text"
-                            className="hide form-control inputNomeColuna"
-                            defaultValue="A fazer"/>
+                        <input type="text" className={classInputNameColumn} defaultValue="A fazer"/>
                         <span className="containerNomeColuna">
                             <span className="nomeColuna">
-                                <b>{title}r</b>
+                                <b>{title}</b>
                             </span>
                             <div className="btn-group pull-right">
                                 <button
@@ -84,13 +128,21 @@ class ColumnBoard extends Component {
                             </div>
                         </span>
                     </h4>
-                    <a href="#" className="btn btn-primary btn-block btn-xs adicionarTarefa">
+                    <button
+                        onClick={this
+                        .showInputNewtask
+                        .bind(this)}
+                        className="btn btn-primary btn-block btn-xs adicionarTarefa">
                         <span className="fa fa-chevron-down"></span>
                         Adicionar tarefa
-                    </a>
+                    </button>
                     <input
+                        ref="inputNewTask"
+                        onKeyUp={this
+                        .createTask
+                        .bind(this)}
                         type="text"
-                        className="inputAdicionarTarefa form-control hide"
+                        className={classInputNewTask}
                         placeholder="Escreva a sua tarefa..."/> {column}
                 </div>
             </div>

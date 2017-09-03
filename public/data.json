@@ -5,16 +5,18 @@
         "tasks": [
             {
                 "id": 1,
-                "title": "Relatório - Análise detalhada do consultor"
+                "title": "Relatório - Análise detalhada do consultor",
+                "preview":false
             },
             {
                 "id": 2,
-                "title": "Detalhada do consultor"
+                "title": "Detalhada do consultor",
+                "preview":false                
             },
             {
                 "id": 3,
-                "preview": true,
-                "title": "Detalhada do consultor"
+                "title": "Novo car de qualquer coisa",
+                "preview":false
             }
         ]
     },
@@ -24,11 +26,13 @@
         "tasks": [
             {
                 "id": 4,
-                "title": "Relatório 4 - Análise detalhada do consultor"
+                "title": "Relatório 4 - Análise detalhada do consultor",
+                "preview":false
             },
             {
                 "id": 5,
-                "title": " 5 - Detalhada do consultor"
+                "title": " 5 - Detalhada do consultor",
+                "preview":false
             }
         ]
     }

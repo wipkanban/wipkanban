@@ -14,7 +14,7 @@ export const throttle = (func, wait) => {
         }
         context = this;
         args = arguments;
-        argsChanged = JSON.stringify(args) != JSON.stringify(prevArgs);
+        argsChanged = JSON.stringify(args) !== JSON.stringify(prevArgs);
         prevArgs = {
             ...args
         };

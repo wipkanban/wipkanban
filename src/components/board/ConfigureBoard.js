@@ -12,10 +12,10 @@ class ConfigureBoard extends Component {
                 </button>
                 <ul className="dropdown-menu" role="menu">
                     <li>
-                        <a href="#" id="btnExcluirQuadro">
+                        <button  id="btnExcluirQuadro">
                             <span className="fa fa-trash-o"></span>
                             Excluir quadro
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>

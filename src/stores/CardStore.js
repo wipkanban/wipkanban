@@ -5,6 +5,7 @@ import update from 'react-addons-update';
 import 'babel-polyfill';
 
 class CardStore extends ReduceStore {
+
     getInitialState() {
         return [];
     }
@@ -12,20 +13,20 @@ class CardStore extends ReduceStore {
     getCard(id) {
         return this
             ._state
-            .find((card) => card.id == id);
+            .find((card) => card.id === id);
     }
     getTaskIndex(idtask, columnIndex) {
 
         return this
             ._state[columnIndex]
             .tasks
-            .findIndex((task) => task.id == idtask);
+            .findIndex((task) => task.id === idtask);
     }
 
     getColumnIndex(idcolumn) {
         return this
             ._state
-            .findIndex((column) => column.id == idcolumn);
+            .findIndex((column) => column.id === idcolumn);
     }
 
     reduce(state, action) {
@@ -62,21 +63,39 @@ class CardStore extends ReduceStore {
                 let columnIndexDragged = this.getColumnIndex(action.payload.idcolumnDragged);
                 let cardIndex = this.getTaskIndex(action.payload.taskId, columnIndexDragged);
                 let card = this.getState()[columnIndexDragged].tasks[cardIndex];
-                let afterIndex = this.getTaskIndex(action.payload.afterId, columnIndex);
-                    
+
                 return update(this.getState(), {
                     [columnIndexDragged]: {
                         tasks: {
                             $splice: [
-                                [
-                                    cardIndex, 1
-                                ]                                
+                                [cardIndex, 1]
                             ]
                         }
                     },
                     [columnIndex]: {
                         tasks: {
                             $push: [card]
+                        }
+                    }
+                });
+
+            case constants.SAVE_NEW_TASK_POSITION:
+                
+                return state;
+
+            case constants.ADD_NEW_TASK_TO_COLUMN:
+                
+                let newCard = {
+                    id:Date.now(),
+                    title: action.payload.taskText
+                };
+
+                columnIndex = this.getColumnIndex(action.payload.idcolumn);
+
+                return update(this.getState(), {
+                    [columnIndex]: {
+                        tasks: {
+                            $push: [newCard]
                         }
                     }
                 });

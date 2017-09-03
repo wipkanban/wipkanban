@@ -21,7 +21,7 @@ let CardActionCreators = {
             }
         });
     }, 500),
-    updateCardColumn: throttle((taskId, idcolumn,idcolumnDragged) => {
+    updateCardColumn: throttle((taskId, idcolumn, idcolumnDragged) => {
         AppDispatcher.dispatch({
             type: constants.UPDATE_CARD_STATUS,
             payload: {
@@ -30,7 +30,25 @@ let CardActionCreators = {
                 idcolumnDragged
             }
         });
-    })
+    }),
+    saveNewPosition: (taskId, idcolumn) => {
+        AppDispatcher.dispatch({
+            type: constants.SAVE_NEW_TASK_POSITION,
+            payload: {
+                taskId,
+                idcolumn
+            }
+        });
+    },
+    createNewTask: (taskText, idcolumn) =>{
+        AppDispatcher.dispatch({
+            type: constants.ADD_NEW_TASK_TO_COLUMN,
+            payload: {
+                taskText,
+                idcolumn
+            }
+        });
+    }
 };
 
 export default CardActionCreators;

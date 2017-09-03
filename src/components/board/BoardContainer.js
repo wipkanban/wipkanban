@@ -14,32 +14,8 @@ import 'whatwg-fetch';
 
 class BoardContainer extends Component {
 
-    constructor() {
-        super(...arguments);
-    }
-
     componentDidMount() {
         CardActionCreators.fetchCards();
-    }
-
-    updateCardPosition(cardId, afterId) {
-        // Only proceed if hovering over a different card
-        if (cardId !== afterId) {
-            // Find the index of the card
-            let cardIndex = this
-                .state
-                .cards
-                .findIndex((card) => card.id == cardId);
-            // Get the current card
-            let card = this.state.cards[cardIndex]
-            // Find the index of the card the user is hovering over
-            let afterIndex = this
-                .state
-                .cards
-                .findIndex((card) => card.id == afterId);
-            // Use splice to remove the card and reinsert it a the new index
-
-        }
     }
 
     render() {
@@ -76,11 +52,7 @@ class BoardContainer extends Component {
                                     </div>
                                 </div>
 
-                                <Board
-                                    columns={this.state.columns}
-                                    updateCardPosition={this
-                                    .updateCardPosition
-                                    .bind(this)}/>
+                                <Board columns={this.state.columns}/>
 
                                 <div id="gantt" className="hide"><br/>
                                     <div id="gantt_chart"></div>
