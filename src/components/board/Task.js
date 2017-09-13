@@ -42,59 +42,77 @@ let collectDrop = (connect, monitor) => {
     };
 }
 
-class Task extends Component {
-    render() {
+const Task = ({
+    membros,
+    title,
+    checklists,
+    connectDropTarget,
+    connectDragSource,
+    isDragging,
+    id,
+    preview
+}) => {
 
-        const {connectDropTarget, connectDragSource, isDragging, id, preview} = this.props;
+    let showChecklist = checklists !== ''
+        ? true
+        : false;
 
-        return connectDropTarget(connectDragSource(
-            <div className="panel panel-default" id={id}>
+    return connectDropTarget(connectDragSource(
+        <div className="panel panel-default" id={id}>
 
-                <div
-                    className="panel-body"
-                    style={{
-                    visibility: preview
-                        ? 'hidden'
-                        : 'normal'
-                }}>
-                    <div className="marcadores"></div>
-                    <p>{this.props.title}</p>
-                    <div id="containerInfo">
-                        <div className="label label-default " title="Esta tarefa possui um checklist">
-                            <span className="fa fa-check-square"></span>
-                            <span className="qtdChecklists">3/4</span>
-                        </div>
-                        &nbsp;
-                        <div
-                            className="label label-success"
-                            title="Esta tarefa possui um marcador de tempo">
-                            <span className="fa fa-clock-o"></span>
-                            tempo
-                        </div>
+            <div
+                className="panel-body"
+                style={{
+                visibility: preview
+                    ? 'hidden'
+                    : 'normal'
+            }}>
+                <div className="marcadores"></div>
+                <p>{title}</p>
+                <div id="containerInfo">
+                    <div
+                        style={{
+                        display: (showChecklist
+                            ? 'normal'
+                            : 'none')
+                    }}
+                        className="label label-default "
+                        title="Esta tarefa possui um checklist">
+                        <span className="fa fa-check-square"></span>
+                        <span className="qtdChecklists">
+                            {showChecklist
+                                ? checklists
+                                : 'N'}
+                        </span>
+                    </div>
+                    &nbsp;
+                    <div
+                        className="label label-success"
+                        title="Esta tarefa possui um marcador de tempo">
+                        <span className="fa fa-clock-o"></span>
+                        tempo
                     </div>
                 </div>
-                <div
-                    className="task-footer text-right membrosTarefa"
-                    style={{
-                    visibility: preview
-                        ? 'hidden'
-                        : 'normal'
-                }}>
-                    <img
-                        width="20"
-                        src="/images/734-foto-apresentacao_small.jpg"
-                        title="LEONARDO AMERICO KEISMAN"
-                        className="img-circle"/>
-                    <img
-                        width="20"
-                        src="/images/3363-foto-apresentacao_small.jpg"
-                        title="MAICON MORETTO DOS SANTOS"
-                        className="img-circle"/>
-                </div>
             </div>
-        ));
-    }
-}
+            <div
+                className="task-footer text-right membrosTarefa"
+                style={{
+                visibility: preview
+                    ? 'hidden'
+                    : 'normal'
+            }}>
+                {membros.map(membro => <img
+                    width="20"
+                    key={membro.image}
+                    src={membro.image}
+                    title={membro.nome}
+                    className="img-circle"/>)}
+
+            </div>
+        </div>
+    ));
+
+};
 
 Task.propTypes = {
     connectDragSource: PropTypes.func.isRequired,

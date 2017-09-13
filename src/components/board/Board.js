@@ -2,42 +2,29 @@ import React, {Component} from 'react'
 import ColumnBoard from './ColumnBoard'
 import {DragDropContext} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import {connect} from 'react-redux'
+import actionsType from '../../actions/actionsType'
+import * as actions from '../../actions/Task'
 
-class Board extends Component {
-    render() {
+const mapStateToProps = state => state.task;
 
-        let {columns} = this.props;
+const Board = ({columns, handleShowInputNewtask}) => {
 
-        columns = columns.map((column) => {
+    return (
+        <div id="board">
+            <div className="draggable-portlets" id="canvas-board">
+                <div className="column-sorted ui-sortable">
 
-            return (<ColumnBoard
-                updateCardPosition={this.props.updateCardPosition}
-                key={column.id}
+                    {columns.map(column => <ColumnBoard
+                        handleShowInputNewtask={handleShowInputNewtask}
+                        key={column.id}
+                        {...column}/>)}
 
-                id={column.id}
-
-                title={column.title}
-                tasks={column.tasks}/>)
-
-        });
-
-        let cardModal = this.props.children && React.cloneElement(this.props.children, {
-            cards: this.props.cards,
-            cardCallbacks: this.props.cardCallbacks
-        });
-
-        return (
-            <div id="board">
-                <div className="draggable-portlets" id="canvas-board">
-                    <div className="column-sorted ui-sortable">
-
-                        {columns}
-                        {cardModal}
-                    </div>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
+
 }
 
-export default DragDropContext(HTML5Backend)(Board);
+export default DragDropContext(HTML5Backend)(connect(mapStateToProps)(Board));
