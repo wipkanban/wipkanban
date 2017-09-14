@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {ItemTypes} from './Constants';
 import {DragSource, DropTarget} from 'react-dnd';
 import CardActionCreators from '../../actions/CardActionCreators';
+import {connect} from 'react-redux';
+import * as actions from '../../actions/Task'
 
 const taskDragSource = {
     beginDrag(props) {
@@ -19,7 +21,7 @@ const taskDropSpec = {
         const draggedId = monitor
             .getItem()
             .id;
-
+        console.log(draggedId);
         if (props.id !== draggedId) {
             CardActionCreators.updateCardPosition(draggedId, props.id, props.idcolumn);
         }
@@ -42,6 +44,16 @@ let collectDrop = (connect, monitor) => {
     };
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClickTask(id,idcolumn) {
+            
+            dispatch(actions.openModalTask(id,idcolumn));
+
+        }        
+    }
+};
+
 const Task = ({
     membros,
     title,
@@ -50,6 +62,8 @@ const Task = ({
     connectDragSource,
     isDragging,
     id,
+    onClickTask,
+    idcolumn,
     preview
 }) => {
 
@@ -58,7 +72,7 @@ const Task = ({
         : false;
 
     return connectDropTarget(connectDragSource(
-        <div className="panel panel-default" id={id}>
+        <div className="panel panel-default" id={id} onClick={() => onClickTask(id,idcolumn)}>
 
             <div
                 className="panel-body"
@@ -120,6 +134,6 @@ Task.propTypes = {
     connectDropTarget: PropTypes.func.isRequired
 };
 
-const dragHighOrderCard = DragSource(ItemTypes.TASK, taskDragSource, collectDrag)(Task);
+const dragHighOrderCard = DragSource(ItemTypes.TASK, taskDragSource, collectDrag)(connect(null, mapDispatchToProps)(Task));
 const dragDropHighOrderCard = DropTarget(ItemTypes.TASK, taskDropSpec, collectDrop)(dragHighOrderCard);
 export default dragDropHighOrderCard

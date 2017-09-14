@@ -2,6 +2,7 @@ import actionsType from '../actions/actionsType';
 import update from 'immutability-helper';
 
 const initialState = {
+    openModal: false,
     columns: [
         {
             "id": 1,
@@ -85,13 +86,27 @@ const initialState = {
             ]
         }
     ]
-    
+
+}
+
+function getTaskIndex(state, idtask, columnIndex) {
+
+    return state[columnIndex]
+        .tasks
+        .findIndex((task) => task.id === idtask);
+}
+
+function getColumnIndex(state, idcolumn) {
+    return state.findIndex((column) => column.id === idcolumn);
 }
 
 const task = (state = initialState, action) => {
+
+    let indexColumn;
+
     switch (action.type) {
-        case actionsType.SHOW_INPUT_NEW_TASK:
-            let indexColumn = state
+        case actionsType.TOGGLE_INPUT_NEW_TASK:
+            indexColumn = state
                 .columns
                 .findIndex((column) => column.id === action.id);
 
@@ -110,7 +125,72 @@ const task = (state = initialState, action) => {
             });
 
             return newState;
-            
+
+        case actionsType.CREATE_NEW_TASK:
+
+            indexColumn = state
+                .columns
+                .findIndex((column) => column.id === action.idcolumn);
+
+            let task = {
+                "id": Date.now(),
+                "title": action.text,
+                "preview": false,
+                "checklists": "",
+                "membros": []
+            };
+
+            return update(state, {
+
+                columns: {
+                    [indexColumn]: {
+                        tasks: {
+                            $push: [task]
+                        }
+                    }
+                }
+
+            });
+        case actionsType.OPEN_MODAL_TASK:
+
+            return {
+                ...state,
+                openModal: true
+            }
+
+        case actionsType.CLOSE_MODAL:
+
+            return {
+                ...state,
+                openModal: false
+            }
+
+        case actionsType.UPDATE_TASK_POSITION:
+
+            let columnIndex = getColumnIndex(state.columns, action.idcolumn);
+
+            let columnIndexDragged = getColumnIndex(state.columns, action.idcolumnDragged);
+
+            let cardIndex = getTaskIndex(state.columns, action.taskId, columnIndexDragged);
+
+            let card = state.columns[columnIndexDragged].tasks[cardIndex];
+
+            return update(state, {
+                columns: {
+                    [columnIndexDragged]: {
+                        tasks: {
+                            $splice: [
+                                [cardIndex, 1]
+                            ]
+                        }
+                    },
+                    [columnIndex]: {
+                        tasks: {
+                            $push: [card]
+                        }
+                    }
+                }
+            });
         default:
             return state;
 

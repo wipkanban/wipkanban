@@ -10,14 +10,13 @@ import * as actions from '../../actions/Task'
 
 const columnTarget = {
     drop(props, monitor) {
-        let item = monitor.getItem();
-        CardActionCreators.saveNewPosition(item.id, props.id);
+        
     },
     hover(props, monitor) {
 
         const dragged = monitor.getItem();
         if (dragged.idcolumn !== props.id) {
-            CardActionCreators.updateCardColumn(dragged.id, props.id, dragged.idcolumn);
+            props.updateTaskPosition(dragged.id, props.id, dragged.idcolumn);
         }
 
     }
@@ -32,11 +31,25 @@ function collect(connect, monitor) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleShowInputNewtask(id) {
-            dispatch(actions.showInputNewTask(id));
+        handleShowInputNewtask(id, input) {
+            dispatch(actions.toggleInputNewTask(id));
+            setTimeout(() => input.focus(), 100);
         },
-        createTask(event) {
-            console.log("createTask")
+        createTask(event, idcolumn) {
+            if (event.keyCode == 13) {
+
+                dispatch(actions.createNewTask(event.target.value, idcolumn))
+
+                event.target.value = '';
+
+                dispatch(actions.toggleInputNewTask(idcolumn));
+
+            }
+        },
+        updateTaskPosition(draggedId, id, draggedIdcolumn) {
+
+            dispatch(actions.updateTaskPosition(draggedId, id, draggedIdcolumn));
+
         }
     }
 };
@@ -46,11 +59,14 @@ const ColumnBoard = ({
     title,
     tasks,
     id,
+    updateTaskPosition,
     showInputNewTask,
     showInputEditNameColumn,
     handleShowInputNewtask,
     createTask
 }) => {
+
+    let input;
 
     let column = connectDropTarget(
         <div className="sorted containerTarefas ui-sortable">
@@ -100,13 +116,14 @@ const ColumnBoard = ({
                     </span>
                 </h4>
                 <button
-                    onClick={(event) => handleShowInputNewtask(id)}
+                    onClick={(event) => handleShowInputNewtask(id, input)}
                     className="btn btn-primary btn-block btn-xs adicionarTarefa">
                     <span className="fa fa-chevron-down"></span>
                     Adicionar tarefa
                 </button>
                 <input
-                    onKeyUp={(event) => createTask(event)}
+                    ref={node => input = node}
+                    onKeyUp={(event) => createTask(event, id)}
                     type="text"
                     className={classInputNewTask}
                     placeholder="Escreva a sua tarefa..."/> {column}
@@ -120,4 +137,4 @@ ColumnBoard.propTypes = {
     isOver: PropTypes.bool.isRequired
 };
 
-export default DropTarget(ItemTypes.TASK, columnTarget, collect)(connect(null,mapDispatchToProps)(ColumnBoard));
+export default connect(null, mapDispatchToProps)(DropTarget(ItemTypes.TASK, columnTarget, collect)(ColumnBoard));
