@@ -4,8 +4,11 @@ import App from './App';
 import {Provider} from 'react-redux';
 import BoardContainer from './components/board/BoardContainer';
 import configureStore from './configureStore'
+import {loadColumns} from './actions/boardActions';
 
 const store = configureStore();
+
+store.dispatch(loadColumns());
 
 const Root = () => (
     <Provider store={store}>

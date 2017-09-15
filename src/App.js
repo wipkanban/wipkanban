@@ -3,7 +3,9 @@ import BoardContainer from './components/board/BoardContainer';
 import ModalTask from './components/board/ModalTask';
 import {connect} from 'react-redux';
 
-const mapStateToProps = (state) => state.task;
+const mapStateToProps = (state) => {
+    return state.columns
+};
 const App = ({openModal}) => {
     
     return(

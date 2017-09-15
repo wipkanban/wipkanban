@@ -3,20 +3,18 @@ import Task from './Task'
 import PropTypes from 'prop-types';
 import {ItemTypes} from './Constants';
 import {DropTarget} from 'react-dnd';
-import CardActionCreators from '../../actions/CardActionCreators';
-import {connect} from 'react-redux'
-import actionsType from '../../actions/actionsType'
-import * as actions from '../../actions/Task'
+import {connect} from 'react-redux';
+import actionsType from '../../actions/actionsType';
+import * as actions from '../../actions/Task';
 
 const columnTarget = {
-    drop(props, monitor) {
-        
-    },
-    hover(props, monitor) {
+    drop(props, monitor) {},
+    hover(props, monitor, component) {
 
         const dragged = monitor.getItem();
+
         if (dragged.idcolumn !== props.id) {
-            props.updateTaskPosition(dragged.id, props.id, dragged.idcolumn);
+            props.updateTaskColumn(dragged.id, props.id, dragged.idcolumn);
         }
 
     }
@@ -46,9 +44,9 @@ const mapDispatchToProps = (dispatch) => {
 
             }
         },
-        updateTaskPosition(draggedId, id, draggedIdcolumn) {
+        updateTaskColumn(draggedId, id, draggedIdcolumn) {
 
-            dispatch(actions.updateTaskPosition(draggedId, id, draggedIdcolumn));
+            dispatch(actions.updateTaskColumn(draggedId, id, draggedIdcolumn));
 
         }
     }
@@ -59,7 +57,7 @@ const ColumnBoard = ({
     title,
     tasks,
     id,
-    updateTaskPosition,
+    updateTaskColumn,
     showInputNewTask,
     showInputEditNameColumn,
     handleShowInputNewtask,

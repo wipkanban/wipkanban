@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {ItemTypes} from './Constants';
 import {DragSource, DropTarget} from 'react-dnd';
-import CardActionCreators from '../../actions/CardActionCreators';
 import {connect} from 'react-redux';
-import * as actions from '../../actions/Task'
+import * as actions from '../../actions/Task';
 
 const taskDragSource = {
     beginDrag(props) {
@@ -21,9 +20,9 @@ const taskDropSpec = {
         const draggedId = monitor
             .getItem()
             .id;
-        console.log(draggedId);
+
         if (props.id !== draggedId) {
-            CardActionCreators.updateCardPosition(draggedId, props.id, props.idcolumn);
+            props.updateTaskPosition(draggedId, props.id, props.idcolumn);
         }
     },
     drop() {
@@ -46,15 +45,21 @@ let collectDrop = (connect, monitor) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onClickTask(id,idcolumn) {
-            
-            dispatch(actions.openModalTask(id,idcolumn));
+        onClickTask(id, idcolumn) {
 
-        }        
+            dispatch(actions.openModalTask(id, idcolumn));
+
+        },
+        updateTaskPosition(draggedId, id, idcolumn) {
+
+            dispatch(actions.updateTaskPosition(draggedId, id, idcolumn));
+
+        }
     }
 };
 
 const Task = ({
+    updateTaskPosition,
     membros,
     title,
     checklists,
@@ -72,7 +77,10 @@ const Task = ({
         : false;
 
     return connectDropTarget(connectDragSource(
-        <div className="panel panel-default" id={id} onClick={() => onClickTask(id,idcolumn)}>
+        <div
+            className="panel panel-default"
+            id={id}
+            onClick={() => onClickTask(id, idcolumn)}>
 
             <div
                 className="panel-body"
@@ -136,4 +144,4 @@ Task.propTypes = {
 
 const dragHighOrderCard = DragSource(ItemTypes.TASK, taskDragSource, collectDrag)(connect(null, mapDispatchToProps)(Task));
 const dragDropHighOrderCard = DropTarget(ItemTypes.TASK, taskDropSpec, collectDrop)(dragHighOrderCard);
-export default dragDropHighOrderCard
+export default connect(null, mapDispatchToProps)(dragDropHighOrderCard)

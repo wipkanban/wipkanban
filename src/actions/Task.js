@@ -16,6 +16,10 @@ export const closeModal = () => {
     return {type: actionsType.CLOSE_MODAL}
 };
 
-export const updateTaskPosition = (taskId, idcolumn, idcolumnDragged) => {
-    return {type: actionsType.UPDATE_TASK_POSITION, taskId, idcolumn, idcolumnDragged}
+export const updateTaskColumn = (taskId, idcolumn, idcolumnDragged) => {
+    return {type: actionsType.UPDATE_TASK_COLUMN, taskId, idcolumn, idcolumnDragged}
+};
+
+export const updateTaskPosition = (taskId,afterId,idcolumn) => {
+    return {type: actionsType.UPDATE_TASK_POSITION, taskId,afterId,idcolumn}
 };

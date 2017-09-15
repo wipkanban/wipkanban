@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import task from './task';
+import columns from './columnsReducer';
 
-const reducer = combineReducers({task});
+const reducer = combineReducers({columns});
 
 export default reducer;
