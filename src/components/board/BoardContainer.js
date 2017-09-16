@@ -21,8 +21,7 @@ const BoardContainer = () => {
                     <PermissionConfig/>
                     &nbsp;
                     <ConfigureBoard/>
-                    <br/><br/>
-
+                    
                 </div>
             </div>
             <div className="row">
