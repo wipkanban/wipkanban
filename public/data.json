@@ -6,20 +6,43 @@
             {
                 "id": 1,
                 "title": "Relatório - Análise detalhada do consultor",
-                "checklists": "0/4",
+                "checklists": [
+                    {
+                        "id": 1,
+                        "name": "Atividades para fazer",
+                        "items": [
+                            {
+                                "done": false,
+                                "id": 453,
+                                "name": "Organizar projetos em excução"
+                            }
+                        ]
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Enviei email para o Heitor",
+                        "date_created": "14/08/2017 17:45",
+                        "image": "361-foto-apresentacao_small.jpg",
+                        "id": 272,
+                        "taskid": 513,
+                        "userid": 361,
+                        "name": "ROBISSON CARDOSO DE OLIVEIRA"
+                    }
+                ],
                 "data_cadastro": "2017-08-14 09:16:18.989836",
                 "data_inicio_timer": null,
-                "data_termino": null,
-                "datafinalizacao": null,
-                "descricao": "",
+                "data_termino": "01/01/2017",
+                "datafinalizacao": true,
+                "descricao": "Descrição da tarefa",
                 "idcoluna": 84,
                 "idtarefa": 520,
                 "idusuario": 3363,
-                "marcadores": [
+                "markers": [
                     {
-                        "cor": "rgb(0, 89, 147)",
-                        "idmarcador": 233,
-                        "nome": "Melhoria"
+                        "color": "rgb(0, 89, 147)",
+                        "id": 233,
+                        "name": "Melhoria"
                     }
                 ],
                 "membros": [
@@ -36,28 +59,31 @@
                 ],
                 "nome": "MAICON MORETTO DOS SANTOS",
                 "posicao": 0,
-                "qtdComentarios": 0,
+                "qtdComentarios": 20,
                 "realizado_data": false,
                 "status": true,
                 "timer_concluido": false,
                 "timer_end": null,
-                "timer_start": null,
-                "timer_status": null,
-                "titulo": "filtro de  nome do colaborador e  status"
+                "timer_start": "00:00:00",
+                "timer_status": true
             },
             {
                 "id": 2,
                 "title": "Detalhada do consultor",
                 "preview": false,
-                "checklists":"",
-                "membros":[]
+                "checklists": [],
+                "membros": [],
+                "comments": [],
+                "markers": []
             },
             {
                 "id": 3,
                 "title": "Novo card de qualquer coisa",
                 "preview": false,
-                "checklists":"",
-                "membros":[]
+                "checklists": [],
+                "membros": [],
+                "comments": [],
+                "markers": []
             }
         ]
     },
@@ -69,15 +95,19 @@
                 "id": 4,
                 "title": "Relatório 4 - Análise detalhada do consultor",
                 "preview": false,
-                "checklists":"",
-                "membros":[]
+                "checklists": [],
+                "membros": [],
+                "comments": [],
+                "markers": []
             },
             {
                 "id": 5,
                 "title": " 5 - Detalhada do consultor",
                 "preview": false,
-                "checklists":"",
-                "membros":[]
+                "checklists": [],
+                "membros": [],
+                "comments": [],
+                "markers": []
             }
         ]
     }

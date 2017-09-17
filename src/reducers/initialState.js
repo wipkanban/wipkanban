@@ -1,4 +1,5 @@
 export default {
     columns:[],
-    openModal:false
+    openModal:false,
+    modalData:{}
 }

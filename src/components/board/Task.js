@@ -45,9 +45,9 @@ let collectDrop = (connect, monitor) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onClickTask(id, idcolumn) {
+        onClickTask(membros, title, checklists, id, idcolumn, timer_status, comments, description, markers) {
 
-            dispatch(actions.openModalTask(id, idcolumn));
+            dispatch(actions.openModalTask(membros, title, checklists, id, idcolumn, timer_status, comments, description, markers));
 
         },
         updateTaskPosition(draggedId, id, idcolumn) {
@@ -69,18 +69,18 @@ const Task = ({
     id,
     onClickTask,
     idcolumn,
-    preview
+    preview,
+    timer_status,
+    comments,
+    markers,
+    description
 }) => {
-
-    let showChecklist = checklists !== ''
-        ? true
-        : false;
 
     return connectDropTarget(connectDragSource(
         <div
             className="panel panel-default"
             id={id}
-            onClick={() => onClickTask(id, idcolumn)}>
+            onClick={() => onClickTask(membros, title, checklists, id, idcolumn, timer_status, comments, description, markers)}>
 
             <div
                 className="panel-body"
@@ -89,12 +89,24 @@ const Task = ({
                     ? 'hidden'
                     : 'normal'
             }}>
-                <div className="marcadores"></div>
+                <div className="marcadores">
+                    {markers.map(marker => (
+                        <div
+                            key={marker.id}
+                            className="label"
+                            title={marker.name}
+                            style={{
+                            backgroundColor: marker.color
+                        }}>
+                            &nbsp;&nbsp;&nbsp;
+                        </div>
+                    ))}
+                </div>
                 <p>{title}</p>
                 <div id="containerInfo">
                     <div
                         style={{
-                        display: (showChecklist
+                        display: (checklists.length > 0
                             ? 'normal'
                             : 'none')
                     }}
@@ -102,17 +114,31 @@ const Task = ({
                         title="Esta tarefa possui um checklist">
                         <span className="fa fa-check-square"></span>
                         <span className="qtdChecklists">
-                            {showChecklist
-                                ? checklists
-                                : 'N'}
+                            {checklists.length}
                         </span>
                     </div>
                     &nbsp;
                     <div
+                        style={{
+                        display: timer_status
+                            ? "normal"
+                            : "none"
+                    }}
                         className="label label-success"
                         title="Esta tarefa possui um marcador de tempo">
                         <span className="fa fa-clock-o"></span>
                         tempo
+                    </div>
+                    <div
+                        style={{
+                        display: comments.length
+                            ? 'normal'
+                            : 'none'
+                    }}
+                        className="label label-default"
+                        title="Esta tarefa possui comentarios">
+                        <span className="fa fa-commenting"></span>
+                        {comments.length}
                     </div>
                 </div>
             </div>

@@ -85,16 +85,20 @@ export default function columnsReducer(state = initialState, action) {
             });
         case actionsType.OPEN_MODAL_TASK:
 
+            let modalData = {...action};
+
             return {
                 ...state,
-                openModal: true
+                openModal: true,
+                modalData
             }
 
         case actionsType.CLOSE_MODAL:
 
             return {
                 ...state,
-                openModal: false
+                openModal: false,
+                modalData:null
             }
 
         case actionsType.UPDATE_TASK_COLUMN:

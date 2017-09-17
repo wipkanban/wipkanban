@@ -8,8 +8,19 @@ export const createNewTask = (text, idcolumn) => {
     return {type: actionsType.CREATE_NEW_TASK, text, idcolumn}
 };
 
-export const openModalTask = (idtask, idcolumn) => {
-    return {type: actionsType.OPEN_MODAL_TASK, idtask, idcolumn}
+export const openModalTask = (membros, title, checklists, id, idcolumn, timer_status, comments, description, markers) => {
+    return {
+        type: actionsType.OPEN_MODAL_TASK,
+        membros,
+        title,
+        checklists,
+        id,
+        idcolumn,
+        timer_status,
+        comments,
+        description,
+        markers
+    }
 };
 
 export const closeModal = () => {
@@ -20,6 +31,6 @@ export const updateTaskColumn = (taskId, idcolumn, idcolumnDragged) => {
     return {type: actionsType.UPDATE_TASK_COLUMN, taskId, idcolumn, idcolumnDragged}
 };
 
-export const updateTaskPosition = (taskId,afterId,idcolumn) => {
-    return {type: actionsType.UPDATE_TASK_POSITION, taskId,afterId,idcolumn}
+export const updateTaskPosition = (taskId, afterId, idcolumn) => {
+    return {type: actionsType.UPDATE_TASK_POSITION, taskId, afterId, idcolumn}
 };

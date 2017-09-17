@@ -13,8 +13,15 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const ModalTask = ({onCloseModal}) => {
+const mapStateToProps = state =>{
+    
+    return {
+        data:{...state.columns.modalData}
+    }
+}
 
+const ModalTask = ({data,onCloseModal}) => {
+    
     return (
         <div>
             <div className="modal-backdrop fade in"></div>
@@ -32,7 +39,7 @@ const ModalTask = ({onCloseModal}) => {
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span onClick={onCloseModal} role="close-button" aria-hidden="true">&times;</span>
                             </button>
-                            <h4 className="modal-title">Modal title</h4>
+                            <h4 className="modal-title">{data.title}</h4>
                         </div>
                         <div className="modal-body">
                             <p>One fine body&hellip;</p>
@@ -45,4 +52,4 @@ const ModalTask = ({onCloseModal}) => {
 
 }
 
-export default connect(null, mapDispatchToProps)(ModalTask);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalTask);
