@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import * as actions from '../../actions/Task'
+import findDomNode from 'react-dom';
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -22,8 +23,8 @@ const mapStateToProps = state => {
     }
 }
 
-const ModalTask = ({data, onCloseModal}) => {
-
+const Task = ({match,data, onCloseModal}) => {
+    document.body.classList.add('modal-open'); 
     return (
         <div>
             <div className="modal-backdrop fade in"></div>
@@ -347,4 +348,4 @@ const ModalTask = ({data, onCloseModal}) => {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalTask);
+export default connect(mapStateToProps, mapDispatchToProps)(Task);
