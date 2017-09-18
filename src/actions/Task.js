@@ -8,10 +8,10 @@ export const createNewTask = (text, idcolumn) => {
     return {type: actionsType.CREATE_NEW_TASK, text, idcolumn}
 };
 
-export const openModalTask = (membros, title, checklists, id, idcolumn, timer_status, comments, description, markers) => {
+export const openModalTask = (members, title, checklists, id, idcolumn, timer_status, comments, description, markers,createdby,columnName) => {
     return {
         type: actionsType.OPEN_MODAL_TASK,
-        membros,
+        members,
         title,
         checklists,
         id,
@@ -19,7 +19,9 @@ export const openModalTask = (membros, title, checklists, id, idcolumn, timer_st
         timer_status,
         comments,
         description,
-        markers
+        markers,
+        createdby,
+        columnName
     }
 };
 

@@ -68,7 +68,7 @@ const ColumnBoard = ({
 
     let column = connectDropTarget(
         <div className="sorted containerTarefas ui-sortable">
-            {tasks.map(task => <Task key={task.id} idcolumn={id} {...task}/>)}
+            {tasks.map(task => <Task key={task.id} columnName={title} idcolumn={id} {...task}/>)}
         </div>
     );
 

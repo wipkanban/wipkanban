@@ -45,9 +45,9 @@ let collectDrop = (connect, monitor) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onClickTask(membros, title, checklists, id, idcolumn, timer_status, comments, description, markers) {
+        onClickTask(members, title, checklists, id, idcolumn, timer_status, comments, description, markers, createdby,columnName) {
 
-            dispatch(actions.openModalTask(membros, title, checklists, id, idcolumn, timer_status, comments, description, markers));
+            dispatch(actions.openModalTask(members, title, checklists, id, idcolumn, timer_status, comments, description, markers, createdby,columnName));
 
         },
         updateTaskPosition(draggedId, id, idcolumn) {
@@ -60,7 +60,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const Task = ({
     updateTaskPosition,
-    membros,
+    members,
     title,
     checklists,
     connectDropTarget,
@@ -73,14 +73,16 @@ const Task = ({
     timer_status,
     comments,
     markers,
-    description
+    description,
+    createdby,
+    columnName
 }) => {
 
     return connectDropTarget(connectDragSource(
         <div
             className="panel panel-default"
             id={id}
-            onClick={() => onClickTask(membros, title, checklists, id, idcolumn, timer_status, comments, description, markers)}>
+            onClick={() => onClickTask(members, title, checklists, id, idcolumn, timer_status, comments, description, markers, createdby,columnName)}>
 
             <div
                 className="panel-body"
@@ -149,7 +151,7 @@ const Task = ({
                     ? 'hidden'
                     : 'normal'
             }}>
-                {membros.map(membro => <img
+                {members.map(membro => <img
                     width="20"
                     key={membro.image}
                     src={membro.image}

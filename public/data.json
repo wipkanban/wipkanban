@@ -23,11 +23,11 @@
                     {
                         "comment": "Enviei email para o Heitor",
                         "date_created": "14/08/2017 17:45",
-                        "image": "361-foto-apresentacao_small.jpg",
+                        "image": "/images/734-foto-apresentacao_small.jpg",
                         "id": 272,
                         "taskid": 513,
                         "userid": 361,
-                        "name": "ROBISSON CARDOSO DE OLIVEIRA"
+                        "name": "Leonardo AMerico Keysman"
                     }
                 ],
                 "data_cadastro": "2017-08-14 09:16:18.989836",
@@ -45,7 +45,7 @@
                         "name": "Melhoria"
                     }
                 ],
-                "membros": [
+                "members": [
                     {
                         "idusuario": 734,
                         "image": "/images/734-foto-apresentacao_small.jpg",
@@ -57,7 +57,7 @@
                         "nome": "MAICON MORETTO DOS SANTOS"
                     }
                 ],
-                "nome": "MAICON MORETTO DOS SANTOS",
+                "createdby": "MAICON MORETTO DOS SANTOS",
                 "posicao": 0,
                 "qtdComentarios": 20,
                 "realizado_data": false,
@@ -72,7 +72,7 @@
                 "title": "Detalhada do consultor",
                 "preview": false,
                 "checklists": [],
-                "membros": [],
+                "members": [],
                 "comments": [],
                 "markers": []
             },
@@ -81,7 +81,7 @@
                 "title": "Novo card de qualquer coisa",
                 "preview": false,
                 "checklists": [],
-                "membros": [],
+                "members": [],
                 "comments": [],
                 "markers": []
             }
@@ -96,7 +96,7 @@
                 "title": "Relatório 4 - Análise detalhada do consultor",
                 "preview": false,
                 "checklists": [],
-                "membros": [],
+                "members": [],
                 "comments": [],
                 "markers": []
             },
@@ -105,7 +105,7 @@
                 "title": " 5 - Detalhada do consultor",
                 "preview": false,
                 "checklists": [],
-                "membros": [],
+                "members": [],
                 "comments": [],
                 "markers": []
             }
