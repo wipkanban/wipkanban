@@ -14,7 +14,16 @@ const Board = ({columns}) => {
                 <div className="column-sorted ui-sortable">
 
                     {columns.map(column => <ColumnBoard key={column.id} {...column}/>)}
-
+                    <div className="add-column">
+                        <div className="pull-left form-group hide" id="divNovaColuna">
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="digite o nome da coluna"/>
+                        </div>
+                        &nbsp;&nbsp;
+                        <a id="addColuna" href="#">+Adicionar coluna</a>
+                    </div>
                 </div>
             </div>
         </div>
