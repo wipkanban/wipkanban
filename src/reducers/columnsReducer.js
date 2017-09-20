@@ -61,7 +61,7 @@ export default function columnsReducer(state = initialState, action) {
             return newState;
 
         case actionsType.CREATE_NEW_TASK:
-
+            
             indexColumn = state
                 .columns
                 .findIndex((column) => column.id === action.idcolumn);
@@ -70,8 +70,10 @@ export default function columnsReducer(state = initialState, action) {
                 "id": Date.now(),
                 "title": action.text,
                 "preview": false,
-                "checklists": "",
-                "membros": []
+                "checklists": [],
+                "markers": [],
+                "comments":[],
+                "members":[]
             };
 
             return update(state, {
