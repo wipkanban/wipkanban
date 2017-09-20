@@ -1,22 +1,30 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({template: './public/index.html'});
+
 module.exports = {
     entry: './src/index.js',
+    devtool: 'source-map',
     output: {
-        path: './public', 
+        path: path.join(__dirname, './public/'),
         filename: 'bundle.js'
     },
     devServer: {
         inline: true,
         contentBase: './public',
-        port: 3333
+        port: 3000
     },
     module: {
-        loaders: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015', 'react']
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015', 'react', 'stage-2']
+                }
             }
-        }]
-    }
+        ]
+    },
+    plugins: [HTMLWebpackPluginConfig]
 }

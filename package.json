@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-2": "^6.24.1",
     "express": "^4.15.4",
     "history": "^1.17.0",
     "immutability-helper": "^2.3.1",
@@ -20,10 +21,12 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar public/sass/ -o public/css/",
+    "watch-css": "npm run build-css && node-sass-chokidar public/sass/ -o public/css/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
+    "start-cooment": "npm-run-all -p webpack-dev-server",
+    "webpack-dev-server":"webpack-dev-server --inline --hot",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
@@ -33,6 +36,11 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
   }
