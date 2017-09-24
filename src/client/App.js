@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 const App = ({openModal}) => {
     
     if(!window.localStorage.getItem('user')){
-       return <Redirect to="login" />
+       return <Redirect to="/login" />
     }
 
     return(
