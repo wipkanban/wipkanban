@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({template: './public/index.html'});
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/client/index.js',
     devtool: 'source-map',
     output: {
         path: path.join(__dirname, './public/'),
