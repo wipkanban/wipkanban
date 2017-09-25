@@ -9,7 +9,6 @@ class PermissionConfig extends Component {
                     className="btn btn-danger dropdown-toggle btn-xs"
                     data-toggle="dropdown">
                     <span className="fa fa-lock"></span>
-                    Permissões
                     <span className="caret"></span>
                 </button>
                 <ul className="dropdown-menu" role="menu">

@@ -11,7 +11,6 @@ class NotificationConfig extends Component {
                     className="btn btn-success dropdown-toggle btn-xs"
                     data-toggle="dropdown">
                     <span className="fa fa-bell"></span>
-                    Notificações
                     <span className="caret"></span>
                 </button>
                 <ul className="dropdown-menu" role="menu">

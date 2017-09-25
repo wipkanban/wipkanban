@@ -1,28 +1,16 @@
 import React, {Component} from 'react'
 import TitleBoard from './TitleBoard'
-import NotificationConfig from './NotificationConfig'
-import PermissionConfig from './PermissionConfig'
-import ConfigureBoard from './ConfigureBoard'
 import DescriptionBoard from './DescriptionBoard'
 import Board from './Board'
 
-
 const BoardContainer = () => {
-    
+
     return (
         <div>
             <div className="row">
-                <div className="col-lg-12">
 
-                    <TitleBoard title="Projeto Inova"/>
+                <TitleBoard title="Projeto Inova"/>
 
-                    <NotificationConfig/>
-                    &nbsp;
-                    <PermissionConfig/>
-                    &nbsp;
-                    <ConfigureBoard/>
-                    
-                </div>
             </div>
             <div className="row">
                 <DescriptionBoard/>
