@@ -11,7 +11,9 @@ export function login(username, password) {
             .login(username, password)
             .then(user => {
 
-                window.localStorage.setItem('user', JSON.stringify(user));
+                window
+                    .localStorage
+                    .setItem('user', JSON.stringify(user));
 
                 dispatch(loginSuccess());
             })
@@ -21,6 +23,19 @@ export function login(username, password) {
     };
 }
 
+export function logout() {
+    return (dispatch) => {
+        window
+            .localStorage
+            .removeItem('user');
+        dispatch(logoutSuccess());
+    };
+}
+
 export function loginSuccess(user) {
     return {type: actionsType.LOGIN_SUCCESS};
+}
+
+export function logoutSuccess() {
+    return {type: actionsType.LOGOUT_SUCCESS};
 }

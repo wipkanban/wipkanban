@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import Logout from './Login/Logout'
 
 const Navbar = () => {
     return (
@@ -23,9 +24,7 @@ const Navbar = () => {
                 <div id="navbar" className="navbar-collapse collapse">
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <Link to="/logout">
-                                Logout
-                            </Link>
+                            <Logout/>
                         </li>
                     </ul>
                 </div>
