@@ -80,12 +80,12 @@ const Task = ({
 
     return connectDropTarget(connectDragSource(
         <div
-            className="panel panel-default"
+            className="card"
             id={id}
             onClick={() => onClickTask(members, title, checklists, id, idcolumn, timer_status, comments, description, markers, createdby,columnName)}>
 
             <div
-                className="panel-body"
+                className="card-body"
                 style={{
                 visibility: preview
                     ? 'hidden'
@@ -95,7 +95,7 @@ const Task = ({
                     {markers.map(marker => (
                         <div
                             key={marker.id}
-                            className="label"
+                            className="badge"
                             title={marker.name}
                             style={{
                             backgroundColor: marker.color
@@ -112,7 +112,7 @@ const Task = ({
                             ? 'normal'
                             : 'none')
                     }}
-                        className="label label-default "
+                        className="badge badge-default "
                         title="Esta tarefa possui um checklist">
                         <span className="fa fa-check-square"></span>
                         <span className="qtdChecklists">
@@ -126,7 +126,7 @@ const Task = ({
                             ? "normal"
                             : "none"
                     }}
-                        className="label label-success"
+                        className="badge badge-success"
                         title="Esta tarefa possui um marcador de tempo">
                         <span className="fa fa-clock-o"></span>
                         tempo
@@ -137,7 +137,7 @@ const Task = ({
                             ? 'normal'
                             : 'none'
                     }}
-                        className="label label-default"
+                        className="badge badge-default"
                         title="Esta tarefa possui comentarios">
                         <span className="fa fa-commenting"></span>
                         {comments.length}
@@ -156,7 +156,7 @@ const Task = ({
                     key={membro.image}
                     src={membro.image}
                     title={membro.nome}
-                    className="img-circle"/>)}
+                    className="rounded-circle"/>)}
 
             </div>
         </div>

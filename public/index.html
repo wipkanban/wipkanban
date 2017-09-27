@@ -22,8 +22,10 @@
     -->
     <title>WIPKanban</title>
     <link rel="stylesheet" href="/css/font-icons/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    
     <style type="text/css">
+        .hide {display: none}
         #tasks {
             position: relative;
             flex-grow: 1;
@@ -64,18 +66,18 @@
             white-space: normal;
         }
 
-        .sorted .panel {
+        .sorted .card {
             margin: 5px;
             cursor: pointer;
         }
 
-        .sorted .panel .panel-body {
+        .sorted .card .card-body {
             padding-bottom: 0px;
             max-height: 130px;
             overflow: hidden;
         }
 
-        .sorted .panel .panel-body p {
+        .sorted .card .card-body p {
             font-weight: 600;
             color: black;
         }
@@ -89,7 +91,7 @@
             cursor: pointer;
         }
 
-        .task-board .label {
+        .task-board .badge {
             padding: 2px;
             text-transform: uppercase;
             height: 25px;
@@ -213,18 +215,18 @@
             font-size: 4em;
         }
 
-        #containerMarcadores .label {
+        #containerMarcadores .badge {
             text-transform: uppercase;
             margin-right: 5px;
             cursor: pointer;
         }
 
-        #containerDataTarefa span .label {
+        #containerDataTarefa span .badge {
             position: relative;
             padding-left: 20px;
         }
 
-        #containerDataTarefa span .label input {
+        #containerDataTarefa span .badge input {
             position: absolute;
             left: 5px;
             top: 0px;

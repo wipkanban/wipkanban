@@ -86,36 +86,29 @@ const ColumnBoard = ({
                 <h4>
                     <input type="text" className={classInputNameColumn} defaultValue="A fazer"/>
                     <span className="containerNomeColuna">
-                        <span className="nomeColuna">
+                        <small>
                             <b>{title}</b>
-                        </span>
-                        <div className="btn-group pull-right">
+                        </small>
+                        <div className="btn-group float-right" role="group">
                             <button
+                                id="btnGroupDrop1"
                                 type="button"
-                                className="btn btn-default dropdown-toggle btn-xs"
-                                data-toggle="dropdown">
+                                className="btn btn-sm btn-secondary dropdown-toggle"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
                                 <span className="text-danger fa fa-ellipsis-h"></span>
                             </button>
-                            <ul className="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="#209" className="arquivarColuna">
-                                        <span className="fa fa-folder-open"></span>
-                                        Arquivar Coluna
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#209" className="removerColuna">
-                                        <span className="fa fa-trash-o"></span>
-                                        Excluir Coluna
-                                    </a>
-                                </li>
-                            </ul>
+                            <div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                <a className="dropdown-item" href="#">Dropdown link</a>
+                                <a className="dropdown-item" href="#">Dropdown link</a>
+                            </div>
                         </div>
                     </span>
                 </h4>
                 <button
                     onClick={(event) => handleShowInputNewtask(id, input)}
-                    className="btn btn-primary btn-block btn-xs adicionarTarefa">
+                    className="btn btn-dark btn-sm btn-block adicionarTarefa">
                     <span className="fa fa-chevron-down"></span>
                     Adicionar tarefa
                 </button>
