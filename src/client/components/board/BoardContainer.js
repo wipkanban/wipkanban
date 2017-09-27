@@ -7,27 +7,18 @@ const BoardContainer = () => {
 
     return (
         <div>
-            <div className="row">
 
-                <TitleBoard title="Projeto Inova"/>
+            <TitleBoard title="Projeto Inova"/>
 
-            </div>
-            <div className="row">
-                <DescriptionBoard/>
-            </div>
+            <DescriptionBoard/>
+
             <div className="row">
                 <div className="col-lg-12">
                     <div className="tab-content">
                         <div className="tab-pane" id="dashboard"></div>
 
-                        <div className="tab-pane active" id="tasks">
-                            <div className="text-right hide">
-                                <div className="btn-group">
-                                    <button id="btnMostrarQuadro" type="button" className="btn btn-blue active">Quadro</button>
-                                    <button id="btnMostrarGantt" type="button" className="btn btn-blue">Gantt</button>
-                                </div>
-                            </div>
-
+                        <div className="tab-pane active">
+                            <br/>
                             <Board/>
 
                             <div id="gantt" className="hide"><br/>

@@ -15,9 +15,14 @@ const App = ({openModal}) => {
     }
 
     return (
-        <div className="container-fluid">
-            <Navbar/><br/><br/>
-            <BoardContainer/> {openModal && <Task/>}
+        <div>
+            <Navbar/>
+            <div className="container-fluid">
+                <div>
+
+                    <BoardContainer/> {openModal && <Task/>}
+                </div>
+            </div>
         </div>
 
     )

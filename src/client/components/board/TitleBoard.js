@@ -7,8 +7,8 @@ class TitleBoard extends Component {
 
     render() {
         return (
-            <div>
-                <div className="col-lg-6">
+            <div className="row">
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <input type="hidden" id="idquadro" defaultValue={this.props.title}/>
                     <h1 id="nomeQuadro">{this.props.title}</h1>
                     <div className="form-group hide" id="campoNomeQuadro">
@@ -19,7 +19,7 @@ class TitleBoard extends Component {
                             name="nome"/>
                     </div>
                 </div>
-                <div className="col-lg-6 text-right">
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-right">
                     <NotificationConfig/>
                     <PermissionConfig/>
                     <ConfigureBoard/>

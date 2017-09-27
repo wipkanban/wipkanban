@@ -8,7 +8,7 @@ class NotificationConfig extends Component {
 
                 <button
                     type="button"
-                    className="btn btn-success dropdown-toggle btn-xs"
+                    className="btn btn-success dropdown-toggle btn-sm"
                     data-toggle="dropdown">
                     <span className="fa fa-bell"></span>
                     <span className="caret"></span>

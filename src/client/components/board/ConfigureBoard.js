@@ -6,7 +6,7 @@ class ConfigureBoard extends Component {
             <div className="btn-group">
                 <button
                     type="button"
-                    className="btn btn-default dropdown-toggle btn-xs"
+                    className="btn btn-default dropdown-toggle btn-sm"
                     data-toggle="dropdown">
                     <span className="fa fa-ellipsis-h"></span>
                 </button>

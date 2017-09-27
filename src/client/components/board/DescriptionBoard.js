@@ -4,17 +4,17 @@ class DescriptionBoard extends Component {
 
     render() {
         return (
-            <div>
-                <div className="col-lg-12">
+            <div className="row">
+                <div className="col">
                     <ul className="nav nav-tabs">
-                        <li className="active">
-                            <a href="#tasks" data-toggle="tab">Quadro</a>
+                        <li className="nav-item">
+                            <a className="nav-link active" href="#">Quadro</a>
                         </li>
-                        <li>
-                            <a href="#dashboard" data-toggle="tab" id="carregarDashboard">Dashboard</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Dahboard</a>
                         </li>
-                        <li>
-                            <a href="#team" data-toggle="tab">Time</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Team</a>
                         </li>
                     </ul>
                 </div>
