@@ -18,7 +18,7 @@ const Markers = ({markers}) => {
                     <button
                         id="btnCor"
                         type="button"
-                        className="btn btn-default dropdown-toggle"
+                        className="btn  dropdown-toggle"
                         data-toggle="dropdown">
                         Cor
                         <span className="caret"></span>
@@ -54,11 +54,11 @@ const Markers = ({markers}) => {
                                 className="btn btn-blue btn-block btnMarcador">importante</a>
                         </li>
                         <li>
-                            <a className="btn btn-default btn-block">+ cores</a>
+                            <a className="btn  btn-block">+ cores</a>
                         </li>
                     </ul>
                 </div>
-                <button id="btnAdicionarMarcador" className="btn btn-default">Adicionar
+                <button id="btnAdicionarMarcador" className="btn ">Adicionar
                     <span className="fa fa-tag"></span>
                 </button>
             </div>
@@ -66,7 +66,7 @@ const Markers = ({markers}) => {
                 {markers.map(marker => (
                     <div
                         key={marker.id}
-                        className="label"
+                        className="badge"
                         title="Clique uma vez para remover"
                         style={{
                         backgroundColor: marker.color

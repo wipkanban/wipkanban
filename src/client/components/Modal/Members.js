@@ -14,7 +14,7 @@ const Members = ({members}) => {
                 {members
                     .map(membro => (
                         <div key={membro.idusuario}>
-                            <img src={membro.image} title={membro.nome} width="30" className="img-circle"/><br/>
+                            <img src={membro.image} title={membro.nome} width="30" className="rounded-circle"/><br/>
                             <a title="Remover membro" className="text-danger" href="#">remover</a>
                         </div>
                     ))}

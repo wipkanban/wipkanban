@@ -5,10 +5,10 @@ import {Redirect} from 'react-router-dom'
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin(username, password) {
+        onLogin(username, password, event) {
 
             dispatch(actions.login(username, password));
-
+            event.preventDefault();
         }
     }
 };
@@ -30,32 +30,61 @@ const FormLogin = ({state, onLogin}) => {
     }
 
     return (
-        <div
-            className="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-            <div className="form-group">
-                <label>Email:</label>
-                <input
-                    className="form-control input-lg"
-                    type="text"
-                    ref={node => {
-                    username = node
-                }}/>
+        <div className="container">
+            <div
+                className="row justify-content-md-center justify-content-sm-center align-items-center">
+                <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                    <br/>
+                    <div className="card">
+                        <div className="card-header bg-primary">
+                            <h2 className="text-center text-white">WIPKanban</h2>
+                        </div>
+                        <div className="card-body">
+                            <form
+                                onSubmit={(event) => onLogin(username, password, event)}
+                                method="post"
+                                action="/api/v1/login">
+                                <div className="form-group">
+                                    <label>
+                                        <strong>Email:</strong>
+                                    </label>
+                                    <input
+                                        required="required"
+                                        placeholder="Type your email"
+                                        className="form-control form-control-lg"
+                                        type="email"
+                                        ref={node => {
+                                        username = node;
+                                    }}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>
+                                        <strong>Password:</strong>
+                                    </label>
+                                    <input
+                                        required="required"
+                                        placeholder="Type your password"
+                                        className="form-control form-control-lg"
+                                        type="password"
+                                        ref={node => {
+                                        password = node
+                                    }}/>
+                                    <a className="text-danger" href="#">Esqueci minha senha</a><br/>
+                                </div>
+                                <div className="form-group text-right">
+                                    <button className="btn btn-primary btn-lg">
+                                        Entrar
+                                        <i className="fa fa-check"></i>
+                                    </button>
+                                </div>
+                                <small>
+                                    <a className="text-dark" href="#"><strong>Não possui conta? Crie uma agora!</strong></a>
+                                </small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="form-group">
-                <label>Email:</label>
-                <input
-                    className="form-control input-lg"
-                    type="text"
-                    ref={node => {
-                    password = node
-                }}/>
-            </div>
-            <div className="form-group text-right">
-                <button
-                    onClick={() => onLogin(username, password)}
-                    className="btn btn-success btn-lg">Entrar</button>
-            </div>
-
         </div>
     )
 };

@@ -1,19 +1,19 @@
 import React from 'react';
 
-const Comment = ({id, comment, date_created, image,name}) => {
+const Comment = ({id, comment, date_created, image, name}) => {
     return (
         <div className="comentario">
-            <img src={image} title={name} className="pull-left img-circle" width="30"/>
+            <img src={image} title={name} className="pull-left rounded-circle" width="30"/>
             <a
                 title="Editar comentário"
                 href="#"
-                className="btnEditarComentario pull-right btn btn-default btn-xs">
+                className="btnEditarComentario float-right btn btn-sm">
                 <i className="fa fa-edit"></i>
             </a>
             <a
                 title="Excluir comentário"
                 href="#"
-                className="btnRemoverComentario pull-right btn btn-default btn-xs text-danger">
+                className="btnRemoverComentario float-right btn btn-sm text-danger">
                 <i className="fa fa-remove"></i>
             </a>
             <div>

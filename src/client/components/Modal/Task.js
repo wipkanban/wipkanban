@@ -34,10 +34,10 @@ const Task = ({data, onCloseModal}) => {
     
     return (
         <div>
-            <div className="modal-backdrop fade in"></div>
+            <div className="modal-backdrop fade show"></div>
             <div
                 onClick={onCloseModal}
-                className="modal fade in"
+                className="modal fade show"
                 id="modalTarefa"
                 role="dialog"
                 data-idtarefa="513"
@@ -45,10 +45,10 @@ const Task = ({data, onCloseModal}) => {
                 style={{
                 display: "block"
             }}>
-                <div className="modal-dialog">
+                <div className="modal-dialog modal-lg">
                     <div className="modal-content">
                         <div id="modal-is-dragover"></div>
-                        <div className="modal-header">
+                        <div className="modal-header text-right">
                             <button type="button" className="close" data-dismiss="modal" aria-hidden="true">
                                 <span onClick={onCloseModal} role="close-button" aria-hidden="true">&times;</span>
                             </button>

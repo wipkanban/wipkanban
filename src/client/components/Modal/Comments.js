@@ -15,13 +15,13 @@ const Comments = ({comments}) => {
                 </div><hr/>
                 <div className="clearfix"></div>
                 <div>
-                    <div className="pull-left">
+                    <div className="float-left">
                         <img
                             src="/guarida/server-ftp/programas/usuarios/funcionarios/361-foto-apresentacao_small.jpg"
-                            className="img-circle"
+                            className="rounded-circle"
                             width="25"/>
                     </div>
-                    <div className="pull-left col-lg-11 col-md-11 col-sm-11 col-xs-10">
+                    <div className="float-left col-lg-11 col-md-11 col-sm-11 col-xs-10">
                         <div
                             id="conteudoComentario"
                             placeholder="Escreva uma comentário"
