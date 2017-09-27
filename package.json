@@ -5,6 +5,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-preset-stage-2": "^6.24.1",
+    "bootstrap": "^4.0.0-beta",
     "express": "^4.15.4",
     "history": "^1.17.0",
     "immutability-helper": "^2.3.1",
@@ -22,10 +23,10 @@
   },
   "scripts": {
     "build-css": "node-sass-chokidar public/sass/ -o public/css/",
-    "watch-css": "npm run build-css && node-sass-chokidar public/sass/ -o public/css/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar public/assets/scss/ -o public/assets/css/ --recursive --output-style compressed --watch",
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p start-js",
-    "webpack-dev-server":"webpack-dev-server --inline --hot",
+    "start": "npm-run-all -p watch-css start-js",
+    "webpack-dev-server": "webpack-dev-server --inline --hot",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
