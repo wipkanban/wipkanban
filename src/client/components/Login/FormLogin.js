@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../actions/Login';
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -69,16 +69,18 @@ const FormLogin = ({state, onLogin}) => {
                                         ref={node => {
                                         password = node
                                     }}/>
-                                    <a className="text-danger" href="#">Esqueci minha senha</a><br/>
+                                    <a className="text-danger" href="#">I forgot my password</a><br/>
                                 </div>
                                 <div className="form-group text-right">
                                     <button className="btn btn-primary btn-lg">
-                                        Entrar
+                                        Login
                                         <i className="fa fa-check"></i>
                                     </button>
                                 </div>
                                 <small>
-                                    <a className="text-dark" href="#"><strong>Não possui conta? Crie uma agora!</strong></a>
+                                    <Link to="/create-account" className="text-dark">
+                                        <strong>No account yet? Create one now!</strong>
+                                    </Link>
                                 </small>
                             </form>
                         </div>
