@@ -33,11 +33,4 @@ describe('Create Account User', () => {
         expect(createAccount.find('button').length).toEqual(1);
     });
 
-    it('Should not submit, missed fields', () => {
-        createAccount
-            .find('button')
-            .simulate('click');
-        expect(testValues.onCreateAccount).toHaveBeenCalledTimes(0);
-    });
-
 });

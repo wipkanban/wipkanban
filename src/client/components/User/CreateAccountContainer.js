@@ -5,10 +5,10 @@ import CreateAccount from './CreateAccount';
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onCreateAccount(name, lastname, email, password, confirmPassword, event) {
+        createAccount(name, lastname, email, password, confirmPassword) {
 
             dispatch(actions.createAccount(name, lastname, email, password));
-            event.preventDefault();
+
         }
     }
 };
