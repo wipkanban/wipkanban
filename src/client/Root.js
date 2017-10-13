@@ -11,7 +11,7 @@ import CreateAccountContainer from './components/User/CreateAccountContainer';
 
 const store = configureStore();
 
-store.dispatch(loadColumns());
+//store.dispatch(loadColumns());
 
 const Root = () => (
     <Provider store={store}>
