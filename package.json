@@ -31,7 +31,7 @@
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "babel-node": "babel-node src/server/server.js --presets es2015,react,stage-2"
+    "babel-node": "nodemon --exec babel-node src/server/server.js --presets es2015,react,stage-2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
