@@ -19,7 +19,7 @@ api.post('/createAccount', (req, res, next) => {
             return next(err);
         }
         if (user) {
-            res
+            return res
                 .status(200)
                 .json({success: false, message: "User already exists"});
         }
@@ -29,12 +29,12 @@ api.post('/createAccount', (req, res, next) => {
         newUser
             .save(next)
             .then(user => {
-                res
+                return res
                 .status(200)
                 .json({success: true,message:"User account created with successfull!", user});
             })
             .catch(err => {
-                res
+                return res
                 .status(500)
                 .json({success: false, message: err});
             });
