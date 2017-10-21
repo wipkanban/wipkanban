@@ -7,20 +7,20 @@ import {Provider} from 'react-redux';
 import configureStore from '../client/configureStore'
 import App from '../client/App';
 import Login from '../client/components/Login/FormLogin';
-import createAccount from '../client/components/User/createAccount';
+import CreateAccountContainer from '../client/components/User/CreateAccountContainer';
 
 export default function render(req, res) {
 
     const store = configureStore(true);
     const context = {};
-
+    
     const html = renderToString(
         <Provider store={store}>
             <StaticRouter location={req.url} context={context}>
                 <Switch>
                     <Route exact path="/" component={App}/>
                     <Route path="/login" component={Login}/>
-                    <Route path="/create-account" component={createAccount}/>
+                    <Route path="/create-account" component={CreateAccountContainer}/>
                 </Switch>
             </StaticRouter>
         </Provider>
@@ -29,6 +29,6 @@ export default function render(req, res) {
     const status = 200;
     res
         .status(status)
-        .send(template(html, {}))
+        .send(template(html, store.getState()))
 
 }

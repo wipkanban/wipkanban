@@ -11,6 +11,7 @@ api.post('/createAccount', (req, res, next) => {
     let email = req.body.email;
     let password = req.body.password;
 
+    // verify if user already exists
     User.findOne({
         email: email
     }, (err, user) => {

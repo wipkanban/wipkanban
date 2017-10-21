@@ -18,6 +18,13 @@ class CreateAccount extends Component {
 
     render() {
 
+        let {
+            state: {
+                showPreloader,
+                success
+            }
+        } = this.props
+
         return (
             <div className="container-fluid no-padding">
                 <div
