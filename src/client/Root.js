@@ -8,6 +8,7 @@ import {loadColumns} from './actions/boardActions';
 import Task from './components/Modal/Task';
 import Login from './components/Login/FormLogin';
 import CreateAccountContainer from './components/User/CreateAccountContainer';
+import AccountCreated from './components/User/AccountCreated';
 
 const store = configureStore();
 
@@ -20,6 +21,7 @@ const Root = () => (
                 <Route exact path="/" component={App}/>
                 <Route path="/login" component={Login}/>
                 <Route path="/create-account" component={CreateAccountContainer}/>
+                <Route path="/account-created" component={AccountCreated}/>
             </Switch>
         </Router>
     </Provider>
