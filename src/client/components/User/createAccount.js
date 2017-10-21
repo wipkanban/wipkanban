@@ -31,7 +31,11 @@ class CreateAccount extends Component {
                 success,
                 message
             }
-        } = this.props
+        } = this.props;
+
+        if(success){
+            return <Redirect to="/account-created" />
+        }
 
         return (
             <div className="container-fluid no-padding">
