@@ -13,7 +13,7 @@ export default function render(req, res) {
 
     const store = configureStore(true);
     const context = {};
-    
+
     const html = renderToString(
         <Provider store={store}>
             <StaticRouter location={req.url} context={context}>
@@ -27,8 +27,8 @@ export default function render(req, res) {
     );
 
     const status = 200;
-    res
+    return res
         .status(status)
-        .send(template(html, store.getState()))
+        .end(template(html, store.getState()));
 
 }
