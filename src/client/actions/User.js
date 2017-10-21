@@ -9,8 +9,8 @@ export function createAccount(name, lastname, email, password) {
 
         return boardApi
             .createAccount(name, lastname, email, password)
-            .then(success => {
-                dispatch(accountCreated(success));
+            .then(({data}) => {
+                dispatch(accountCreated(data));
             })
             .catch(error => {
                 dispatch(accountCreatedError(error));
@@ -18,8 +18,8 @@ export function createAccount(name, lastname, email, password) {
     };
 }
 
-export function accountCreated() {
-    return {type: actionsType.CREATE_ACCOUNT_SUCCESS};
+export function accountCreated(response) {
+    return {type: actionsType.CREATE_ACCOUNT_SUCCESS,response};
 }
 
 export function accountCreatedError(error) {

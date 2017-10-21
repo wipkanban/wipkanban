@@ -31,7 +31,7 @@ api.post('/createAccount', (req, res, next) => {
             .then(user => {
                 res
                 .status(200)
-                .json({success: true, user});
+                .json({success: true,message:"User account created with successfull!", user});
             })
             .catch(err => {
                 res

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import Preloader from '../Prealoder';
 
 class CreateAccount extends Component {
 
@@ -11,7 +12,13 @@ class CreateAccount extends Component {
 
         const {createAccount} = this.props;
 
-        createAccount(this.refs.name.value, this.refs.lastname.value, this.refs.email.value, this.refs.password.value, this.refs.confirmPassword.value);
+        createAccount(
+            this.refs.name.value, 
+            this.refs.lastname.value, 
+            this.refs.email.value, 
+            this.refs.password.value, 
+            this.refs.confirmPassword.value
+        );
 
         e.preventDefault();
     }
@@ -21,12 +28,15 @@ class CreateAccount extends Component {
         let {
             state: {
                 showPreloader,
-                success
+                success,
+                message
             }
         } = this.props
 
         return (
             <div className="container-fluid no-padding">
+
+                {showPreloader && <Preloader/>}
                 <div
                     className="row justify-content-md-center justify-content-sm-center align-items-center">
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8">
@@ -91,6 +101,13 @@ class CreateAccount extends Component {
                                             ref="confirmPassword"/>
 
                                     </div>
+
+                                    {message !== null && <div
+                                        className={`alert alert-${success
+                                        ? 'success'
+                                        : 'danger'}`}>
+                                        <p>{message}</p>
+                                    </div>}
                                     <div className="form-group">
                                         <Link to="/" className="btn btn-lg float-left text-dark">
                                             <i className="fa fa-arrow-left"></i>
@@ -106,6 +123,7 @@ class CreateAccount extends Component {
                         </div>
                     </div>
                 </div>
+                
             </div>
         )
     }

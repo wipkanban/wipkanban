@@ -2,6 +2,7 @@ import actionsType from '../actions/actionsType';
 
 const initialState = {
     success: false,
+    message: null,
     showPreloader: false
 }
 
@@ -15,8 +16,13 @@ export default function userReducer(state = initialState, action) {
             };
 
         case actionsType.CREATE_ACCOUNT_SUCCESS:
+        case actionsType.CREATE_ACCOUNT_ERROR:
+            return {
+                ...state,
+                showPreloader: false,
+                ...action.response
+            };
 
-            return {success: true, showPreloader: false};
 
         case actionsType.LOGOUT_SUCCESS:
 

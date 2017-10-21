@@ -23,7 +23,7 @@ class boardApi {
         return axios
             .post('http://localhost:3000/api/v1/createAccount', {name, lastname, email, password})
             .then(function (response) {
-                console.log(response);
+                return response;
             })
             .catch(function (error) {
                 console.log(error);

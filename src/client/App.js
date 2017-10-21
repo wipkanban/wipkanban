@@ -19,7 +19,6 @@ const App = ({openModal}) => {
             <Navbar/>
             <div className="container-fluid">
                 <div>
-
                     <BoardContainer/> {openModal && <Task/>}
                 </div>
             </div>
