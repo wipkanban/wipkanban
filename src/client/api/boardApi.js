@@ -10,12 +10,15 @@ class boardApi {
         });
     }
 
-    static login(username, password) {
-        return fetch('http://localhost:3000/user.json').then(response => {
-            return response.json();
-        }).catch(error => {
-            return error;
-        });
+    static login(email, password) {
+        return axios
+            .post('http://localhost:3000/api/v1/login', {email, password})
+            .then(response => {
+                return response;
+            })
+            .catch(error => {
+                return error;
+            });
     }
 
     static createAccount(name, lastname, email, password) {

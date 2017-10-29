@@ -1,14 +1,14 @@
 import actionsType from './actionsType';
 import boardApi from '../api/boardApi';
 
-export function login(username, password) {
+export function login(email, password) {
 
     return (dispatch) => {
 
         dispatch({type: actionsType.LOADING_LOGIN});
 
         return boardApi
-            .login(username, password)
+            .login(email, password)
             .then(user => {
 
                 window
