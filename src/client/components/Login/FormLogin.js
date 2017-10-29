@@ -1,24 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import * as actions from '../../actions/Login';
 import {Redirect, Link} from 'react-router-dom'
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onLogin(username, password, event) {
-
-            dispatch(actions.login(username, password));
-            event.preventDefault();
-        }
-    }
-};
-
-const mapStateToProps = (state) => {
-    return {state: state.loginReducer}
-};
-
 const FormLogin = ({state, onLogin}) => {
-    let username;
+    let email;
     let password;
 
     return (
@@ -33,7 +17,7 @@ const FormLogin = ({state, onLogin}) => {
                         </div>
                         <div className="card-body">
                             <form
-                                onSubmit={(event) => onLogin(username, password, event)}
+                                onSubmit={(event) => onLogin(email.value, password.value, event)}
                                 method="post"
                                 action="/api/v1/login">
                                 <div className="form-group">
@@ -46,7 +30,7 @@ const FormLogin = ({state, onLogin}) => {
                                         className="form-control form-control-lg"
                                         type="email"
                                         ref={node => {
-                                        username = node;
+                                        email = node;
                                     }}/>
                                 </div>
                                 <div className="form-group">
@@ -83,4 +67,4 @@ const FormLogin = ({state, onLogin}) => {
     )
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormLogin);
+export default FormLogin;

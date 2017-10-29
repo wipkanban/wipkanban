@@ -6,7 +6,7 @@ import BoardContainer from './components/board/BoardContainer';
 import configureStore from './configureStore'
 import {loadColumns} from './actions/boardActions';
 import Task from './components/Modal/Task';
-import Login from './components/Login/FormLogin';
+import Login from './components/Login/FormLoginContainer';
 import CreateAccountContainer from './components/User/CreateAccountContainer';
 import AccountCreated from './components/User/AccountCreated';
 
