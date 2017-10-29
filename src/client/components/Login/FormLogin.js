@@ -21,14 +21,6 @@ const FormLogin = ({state, onLogin}) => {
     let username;
     let password;
 
-    let user = window
-        .localStorage
-        .getItem('user');
-
-    if (user !== null) {
-        return <Redirect to="/"/>
-    }
-
     return (
         <div className="container">
             <div
