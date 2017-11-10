@@ -12,9 +12,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const mapStateToProps = (state) => {
-    return {state: state.loginReducer}
-};
+const mapStateToProps = (state) => ({state: state.loginReducer});
 
 const FormLoginContainer = connect(mapStateToProps, mapDispatchToProps)(FormLogin);
 

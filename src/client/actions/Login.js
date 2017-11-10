@@ -9,13 +9,17 @@ export function login(email, password) {
 
         return boardApi
             .login(email, password)
-            .then(user => {
+            .then(response => {
+                
+                let {data:{success,message,token}} = response;
+                
+                if(success){
+                    window
+                        .localStorage
+                        .setItem('token', JSON.stringify(token));
+                }
 
-                window
-                    .localStorage
-                    .setItem('user', JSON.stringify(user));
-
-                dispatch(loginSuccess());
+                dispatch(loginSuccess(success,message));
             })
             .catch(error => {
                 throw(error);
@@ -32,8 +36,9 @@ export function logout() {
     };
 }
 
-export function loginSuccess(user) {
-    return {type: actionsType.LOGIN_SUCCESS};
+export function loginSuccess(success,message) {
+    
+    return {type: actionsType.LOGIN_SUCCESS,success:success,message:message};
 }
 
 export function logoutSuccess() {

@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 };
 const App = ({openModal}) => {
 
-    if ((typeof window !== 'undefined') && !window.localStorage.getItem('user')) {
+    if ((typeof window !== 'undefined') && !window.localStorage.getItem('token')) {
         return <Redirect to="/login"/>
     }
 

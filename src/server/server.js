@@ -5,14 +5,18 @@ import api from './apiRoutes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
+import {decode} from './controllers/Authentication'
 
 const app = Express();
 const port = 3000
-mongoose.connect("mongodb://192.168.0.14:27017/wipkanban");
+mongoose.connect("mongodb://192.168.1.2:27017/wipkanban");
 
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+//verify jwt
+app.use(decode)
+
 app.use('/api/v1', api);
 
 //Serve static files

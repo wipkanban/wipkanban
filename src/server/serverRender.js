@@ -1,4 +1,5 @@
 import React from 'react'
+import path from 'path'
 import {renderToString} from 'react-dom/server'
 import {Route, Switch} from 'react-router-dom'
 import {StaticRouter} from 'react-router'
@@ -6,12 +7,13 @@ import template from './template'
 import {Provider} from 'react-redux';
 import configureStore from '../client/configureStore'
 import App from '../client/App';
-import Login from '../client/components/Login/FormLogin';
+import FormLoginContainer from '../client/components/Login/FormLoginContainer';
 import CreateAccountContainer from '../client/components/User/CreateAccountContainer';
 
 export default function render(req, res) {
-
+    console.log(req);
     const store = configureStore(true);
+ 
     const context = {};
 
     const html = renderToString(
@@ -19,7 +21,7 @@ export default function render(req, res) {
             <StaticRouter location={req.url} context={context}>
                 <Switch>
                     <Route exact path="/" component={App}/>
-                    <Route path="/login" component={Login}/>
+                    <Route path="/login" component={FormLoginContainer}/>
                     <Route path="/create-account" component={CreateAccountContainer}/>
                 </Switch>
             </StaticRouter>

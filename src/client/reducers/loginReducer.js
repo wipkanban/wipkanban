@@ -1,17 +1,21 @@
 import actionsType from '../actions/actionsType';
 
 const initialState = {
-    success: false
+    success: false,
+    message: ''
 }
 
 export default function loginReducer(state = initialState, action) {
     switch (action.type) {
         case actionsType.LOADING_LOGIN:
 
-            return state;
+            return {
+                message: 'Loading...',
+                ...state
+            };
         case actionsType.LOGIN_SUCCESS:
-
-            return {success: true};
+            let {message,success} = action;
+            return {message,success};
 
         case actionsType.LOGOUT_SUCCESS:
 

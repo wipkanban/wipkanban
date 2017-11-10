@@ -1,9 +1,19 @@
 import React from 'react';
 import {Redirect, Link} from 'react-router-dom'
 
-const FormLogin = ({state, onLogin}) => {
+const FormLogin = ({
+    state: {
+        success,
+        message
+    },
+    onLogin
+}) => {
     let email;
     let password;
+
+    if ((typeof window !== 'undefined') && window.localStorage.getItem('token')) {
+        return <Redirect to="/"/>
+    }
 
     return (
         <div className="container">
@@ -15,6 +25,12 @@ const FormLogin = ({state, onLogin}) => {
                         <div className="card-header bg-primary">
                             <h2 className="text-center text-white">WIPKanban</h2>
                         </div>
+                        <p
+                            className={success
+                            ? 'alert-success'
+                            : 'alert-danger'}>
+                            {message}
+                        </p>
                         <div className="card-body">
                             <form
                                 onSubmit={(event) => onLogin(email.value, password.value, event)}
