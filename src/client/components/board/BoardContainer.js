@@ -7,11 +7,6 @@ const BoardContainer = () => {
 
     return (
         <div>
-
-            <TitleBoard title="Projeto Inova"/>
-
-            <DescriptionBoard/>
-
             <div className="row">
                 <div className="col-lg-12">
                     <div className="tab-content">

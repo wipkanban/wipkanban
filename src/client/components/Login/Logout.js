@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 const Logout = ({logout}) => {
     return (
-        <a className="text-danger" href="#" onClick={logout}>Logout ></a>
+        <a className="text-white" href="#" onClick={logout}>Logout ></a>
     )
 }
 

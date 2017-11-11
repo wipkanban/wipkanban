@@ -11,7 +11,7 @@ import FormLoginContainer from '../client/components/Login/FormLoginContainer';
 import CreateAccountContainer from '../client/components/User/CreateAccountContainer';
 
 export default function render(req, res) {
-    console.log(req);
+
     const store = configureStore(true);
  
     const context = {};

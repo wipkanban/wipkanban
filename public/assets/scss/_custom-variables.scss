@@ -1,0 +1,3 @@
+$murrey:    #990000 !default;
+ @include bg-variant('.bg-murrey', $murrey);
+ @include bg-variant('.bg-murrey-dark', darken($murrey,5%));

@@ -32,7 +32,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar public/assets/scss/ -o public/assets/css/ --recursive --output-style compressed --watch",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "server": "npm-run-all -p  webpack babel-node",
+    "server": "npm-run-all -p watch-css webpack babel-node",
     "webpack": "webpack --watch",
     "build": "npm run build-css && react-scripts build",
     "test:client": "react-scripts test --env=jsdom",
