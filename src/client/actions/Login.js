@@ -31,7 +31,7 @@ export function logout() {
     return (dispatch) => {
         window
             .localStorage
-            .removeItem('user');
+            .removeItem('token');
         dispatch(logoutSuccess());
     };
 }
