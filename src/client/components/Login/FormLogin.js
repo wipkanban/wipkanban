@@ -22,7 +22,7 @@ const FormLogin = ({
                 <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8">
                     <br/>
                     <div className="card">
-                        <div className="card-header bg-primary">
+                        <div className="card-header bg-murrey">
                             <h2 className="text-center text-white">WIPKanban</h2>
                         </div>
                         <p
@@ -64,7 +64,7 @@ const FormLogin = ({
                                     <a className="text-danger" href="#">I forgot my password</a><br/>
                                 </div>
                                 <div className="form-group text-right">
-                                    <button className="btn btn-primary btn-lg">
+                                    <button className="btn btn-murrey btn-lg">
                                         Login
                                         <i className="fa fa-check"></i>
                                     </button>

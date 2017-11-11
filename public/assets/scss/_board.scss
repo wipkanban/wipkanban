@@ -1,3 +1,18 @@
+//additional backgorunds
+@include bg-variant('.bg-murrey', $murrey);
+@include bg-variant('.bg-murrey-dark', darken($murrey,5%));
+
+//additional buttons
+.btn-murrey {
+    @include button-variant($murrey, $murrey);
+}
+
+.btn-outline-murrey {
+    @include button-outline-variant($murrey, #fff);
+}
+
+
+//specified board css
 .hide {
     display: none
 }
