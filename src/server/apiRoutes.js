@@ -6,5 +6,5 @@ const api = Express.Router()
 
 api.post('/createAccount', CreateAccount);
 api.post('/login', login);
-api.use(verify);
+//api.use(verify);
 export default api;

@@ -26,9 +26,9 @@ const CreateAccount = (req, res, next) => {
         newUser
             .save(next)
             .then(user => {
-                return res
+                res
                     .status(200)
-                    .json({success: true, message: "User account created with successfull!"});
+                    .json({success: true, message: "User account created with successfull!"}).end();
             })
             .catch(err => {
                 return res
