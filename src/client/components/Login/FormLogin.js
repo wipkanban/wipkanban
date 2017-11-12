@@ -10,7 +10,7 @@ const FormLogin = ({
 }) => {
     let email;
     let password;
-
+    
     if ((typeof window !== 'undefined') && window.localStorage.getItem('token')) {
         return <Redirect to="/"/>
     }

@@ -1,13 +1,13 @@
 import React from 'react'
-import {Provider} from 'react-redux';
 import CreateAccount from './CreateAccount';
 
 // setup file
 import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15';
-import {mount, shallow} from 'enzyme'
-configure({adapter: new Adapter()});
+import {shallow} from 'enzyme'
 import configureStore from 'redux-mock-store'
+
+configure({adapter: new Adapter()});
 
 describe('Create Account User', () => {
 
