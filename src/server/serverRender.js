@@ -8,9 +8,7 @@ export default function render(req, res) {
 
     const store = configureStore(true);
 
-    const context = {};
-
-    const html = renderToString(<UniversalProvider server={true} store={store}/>);
+    const html = renderToString(<UniversalProvider location={req.url} server={true} store={store}/>);
 
     const status = 200;
     return res

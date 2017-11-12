@@ -3,11 +3,11 @@ import {StaticRouter} from 'react-router';
 import {BrowserRouter as Router} from 'react-router-dom'
 import Routes from './Routes';
 
-const RouterFactory = ({server}) => {
+const RouterFactory = ({server, location}) => {
 
     if (server) {
         return (
-            <StaticRouter>
+            <StaticRouter location={location} context={{}}>
                 <Routes/>
             </StaticRouter>
         )
