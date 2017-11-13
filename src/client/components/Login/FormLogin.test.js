@@ -3,9 +3,8 @@ import FormLogin from './FormLogin';
 
 // setup file
 import {configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import {shallow} from 'enzyme'
-import configureStore from 'redux-mock-store'
 
 configure({adapter: new Adapter()});
 

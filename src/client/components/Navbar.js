@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom'
 import Logout from './Login/Logout'
 
 const Navbar = () => {
-    return (
-        <div>
+    return ([
             <nav className="navbar navbar-expand-lg navbar-dark bg-murrey-dark py-1">
                 <a className="navbar-brand" href="#">WIPKanban</a>
                 <button className="navbar-toggler navbar-toggler-right" type="button">
@@ -53,7 +52,7 @@ const Navbar = () => {
 
                     </div>
                 </div>
-            </nav>
+            </nav>,
             <nav className="navbar navbar-expand-lg navbar-dark bg-murrey py-0">
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
@@ -95,9 +94,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-        </div>
-
-    )
+    ])
 }
 
 export default Navbar;
