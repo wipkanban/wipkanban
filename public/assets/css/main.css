@@ -4227,6 +4227,12 @@ a.bg-murrey-dark:focus, a.bg-murrey-dark:hover {
     background-color: #990000;
     border-color: #990000; }
 
+.text-murrey {
+  color: #b30000 !important; }
+
+a.text-murrey:focus, a.text-murrey:hover {
+  color: maroon !important; }
+
 .hide {
   display: none; }
 

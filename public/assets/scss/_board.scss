@@ -11,6 +11,9 @@
     @include button-outline-variant($murrey, #fff);
 }
 
+//additional text-color
+@include text-emphasis-variant('.text-murrey', lighten($murrey, 5%));
+
 
 //specified board css
 .hide {
