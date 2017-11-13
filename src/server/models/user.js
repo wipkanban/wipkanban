@@ -7,18 +7,19 @@ const noop = function () {};
 const userSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     lastname: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     email: {
         type: String,
         required: true,
         unique: true
+    },
+    image: {
+        type: String
     },
     password: {
         type: String,
@@ -30,7 +31,7 @@ const userSchema = mongoose.Schema({
     }
 });
 
-userSchema.pre("save", function(done){
+userSchema.pre("save", function (done) {
 
     let user = this;
     if (!user.isModified("password")) {
