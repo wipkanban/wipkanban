@@ -29,12 +29,12 @@ export function login(req, res, next) {
             let payload = {
                 name: user.name,
                 lastname: user.lastname,
-                email: user.email
+                email: user.email,
+                image: user.image || '/images/user.jpg'
             };
             const token = jwt.sign(payload, secret, {expiresIn: '24h'});
 
-            setCsrf(req, res, () => res.cookie('auth-token', token, {httpOnly: true})
-            .json({token, success: true, message: "Login succesfull! Redirecting..."}))
+            setCsrf(req, res, () => res.cookie('auth-token', token, {httpOnly: true}).json({token, user: payload, success: true, message: "Login succesfull! Redirecting..."}))
 
         } else { //user not exists
             return res
@@ -46,7 +46,7 @@ export function login(req, res, next) {
 };
 
 export function decode(req, res, next) {
-    
+
     const token = typeof req.get('auth-token') !== undefined
         ? req.get('auth-token')
         : (typeof req.cookies['auth-token'] !== undefined

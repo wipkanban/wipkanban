@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import Logout from './Login/Logout'
+import UserNavbar from './UserNavbar';
+import BtnAddResources from './BtnAddResources'
+const Navbar = ({user}) => {
 
-const Navbar = (props) => {
-    
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-murrey-dark py-1">
             <a className="navbar-brand" href="#">WIPKanban</a>
@@ -40,23 +40,8 @@ const Navbar = (props) => {
                 </ul>
                 <div>
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <a href="#" className="nav-link text-white">
-                                <i className="fa fa-plus"></i>
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link no-padding">
-                                <img
-                                    style={{
-                                    marginTop: '2px'
-                                }}
-                                    width="30"
-                                    src="/images/734-foto-apresentacao_small.jpg"
-                                    title="Robisson Oliveira"
-                                    className="rounded-circle"/>
-                            </a>
-                        </li>
+                        <BtnAddResources/>
+                        {user && <UserNavbar user={user}/>}
                     </ul>
 
                 </div>

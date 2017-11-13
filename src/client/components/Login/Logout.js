@@ -1,11 +1,14 @@
 import React from 'react';
-import * as actions from '../../actions/Login';
+import {logout} from '../../actions/Login';
 import {connect} from 'react-redux'
 
 const Logout = ({logout}) => {
     return (
-        <a className="text-white nav-link" href="#" onClick={logout}>Logout ></a>
+        <a className="dropdown-item" href="#" onClick={logout}>
+            <i className="fa fa-power-off"></i>&nbsp;
+            Logout
+        </a>
     )
 }
 
-export default connect(undefined, {logout: actions.logout})(Logout);
+export default connect(undefined, {logout})(Logout);

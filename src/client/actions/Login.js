@@ -11,15 +11,18 @@ export function login(email, password) {
             .login(email, password)
             .then(response => {
                 
-                let {data:{success,message,token}} = response;
+                let {data:{success,message,token,user}} = response;
                 
                 if(success){
                     window
                         .localStorage
                         .setItem('token', JSON.stringify(token));
+                    window
+                        .localStorage
+                        .setItem('user', JSON.stringify(user));
                 }
 
-                dispatch(loginSuccess(success,message));
+                dispatch(loginSuccess(success,message,user));
             })
             .catch(error => {
                 throw(error);
@@ -32,13 +35,21 @@ export function logout() {
         window
             .localStorage
             .removeItem('token');
+        window
+            .localStorage
+            .removeItem('user');
         dispatch(logoutSuccess());
     };
 }
 
-export function loginSuccess(success,message) {
+export function loginSuccess(success,message,user) {
     
-    return {type: actionsType.LOGIN_SUCCESS,success:success,message:message};
+    return {
+        type: actionsType.LOGIN_SUCCESS,
+        success:success,
+        message:message,
+        user
+    };
 }
 
 export function logoutSuccess() {

@@ -2,7 +2,8 @@ import actionsType from '../actions/actionsType';
 
 const initialState = {
     success: false,
-    message: ''
+    message: '',
+    user: null
 }
 
 export default function loginReducer(state = initialState, action) {
@@ -14,8 +15,8 @@ export default function loginReducer(state = initialState, action) {
                 ...state
             };
         case actionsType.LOGIN_SUCCESS:
-            let {message,success} = action;
-            return {message,success};
+            let {message, success, user} = action;
+            return {message, success, user};
 
         case actionsType.LOGOUT_SUCCESS:
 

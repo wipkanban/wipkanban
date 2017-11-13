@@ -79,6 +79,7 @@ describe('User login', () => {
                 res.body.should.have.property('success').eql(true);
                 res.body.should.have.property('message').eql("Login succesfull! Redirecting...");
                 res.body.should.have.property('token').be.a('string');
+                res.body.should.have.property('user').be.a('object');
 
                 done();
             });
