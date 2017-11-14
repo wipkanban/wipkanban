@@ -15,7 +15,20 @@ const Home = () => {
                             My companies&nbsp;|&nbsp;
                             <Link to="/companys" className="text-murrey">View all</Link>
                         </h6>
-                        <h5>You do not have any registered companies yet.</h5><br/>
+
+                        <div
+                            className="col-lg-3 bg-success rounded"
+                            style={{
+                            height: '100px'
+                        }}>
+                            <a href="#" className="float-right text-white">
+                                <i className="fa fa-ellipsis-v"></i>
+                            </a>
+                            <h4 className="text-white">GuaridaImóveis</h4>
+                            <p>5 Projecs</p>
+                            <p>5 Projecs</p>
+                        </div>
+
                     </div>
                 </div>
                 <div className="row">
