@@ -38,7 +38,7 @@
     "test:client": "react-scripts test --env=jsdom",
     "test:server": "mocha src/server/tests --compilers js:babel-core/register",
     "eject": "react-scripts eject",
-    "babel-node": "nodemon --exec babel-node src/server/server.js --presets es2015,react,stage-2"
+    "babel-node": "nodemon --exec babel-node src/server/server.js --presets es2015,es2016,es2017,react,stage-2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
