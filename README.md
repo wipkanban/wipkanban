@@ -4,9 +4,9 @@
 ## Motivation
 I knew the Kanban method, I found its principles incredible and I did not find Kanban open source software that I liked to use. So I dared to create one.
 
-<h2 align="center">Install</h2>
+##Install
 
-Install source code and dependences:
+###Install source code and dependences:
 
 ```bash
 git clone https://github.com/robisson/wipkanban
