@@ -10,9 +10,9 @@ I knew the Kanban method, I found its principles incredible and I did not find K
 
 ```bash
 git clone https://github.com/robisson/wipkanban
-```
 
-```bash
+cd wipkanban
+
 npm install
 ```
 
