@@ -40,8 +40,7 @@ const Navbar = ({user}) => {
                 </ul>
                 <div>
                     <ul className="navbar-nav mr-auto">
-                        <BtnAddResources/>
-                        {user && <UserNavbar user={user}/>}
+                        <BtnAddResources/> {user && <UserNavbar user={user}/>}
                     </ul>
 
                 </div>

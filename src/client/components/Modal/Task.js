@@ -31,7 +31,7 @@ const mapStateToProps = state => {
 }
 
 const Task = ({data, onCloseModal}) => {
-    
+
     return (
         <div>
             <div className="modal-backdrop fade show"></div>
@@ -68,19 +68,19 @@ const Task = ({data, onCloseModal}) => {
                                 na coluna
                             </i>{data.columnName}
                             <br/><br/>
-                            <Menu />
+                            <Menu/>
                             <hr/>
-                            <Timer />
-                            
+                            <Timer/>
+
                             <div className="row" id="membrosEMarcadores">
-                                <Members members={data.members} />
-                                <Markers markers={data.markers} />
+                                <Members members={data.members}/>
+                                <Markers markers={data.markers}/>
                             </div>
-                            <ContainerChecklists />
+                            <ContainerChecklists/>
                             <br/>
-                            <Description />
-                            <AttachmentsContainer />
-                            <Comments comments={data.comments} />
+                            <Description/>
+                            <AttachmentsContainer/>
+                            <Comments comments={data.comments}/>
                         </div>
                     </div>
                 </div>

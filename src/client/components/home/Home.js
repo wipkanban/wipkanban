@@ -8,29 +8,18 @@ const Home = () => {
         <div>
             <NavbarContainer/>
             <SubNav/><br/>
+
             <div className="container-fluid">
                 <div className="row">
                     <div className="col">
                         <h6>
                             My companies&nbsp;|&nbsp;
                             <Link to="/companys" className="text-murrey">View all</Link>
-                        </h6>
-
-                        <div
-                            className="col-lg-3 bg-success rounded"
-                            style={{
-                            height: '100px'
-                        }}>
-                            <a href="#" className="float-right text-white">
-                                <i className="fa fa-ellipsis-v"></i>
-                            </a>
-                            <h4 className="text-white">GuaridaImóveis</h4>
-                            <p>5 Projecs</p>
-                            <p>5 Projecs</p>
-                        </div>
-
+                        </h6><br/>
+                        <h5>You do not have any registered companies yet.</h5><br/>
                     </div>
                 </div>
+
                 <div className="row">
                     <div className="col">
                         <h6>
