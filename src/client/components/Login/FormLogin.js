@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect, Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 const FormLogin = ({
     state: {
@@ -82,5 +83,10 @@ const FormLogin = ({
         </div>
     )
 };
+
+FormLogin.propTypes = {
+    state: PropTypes.object.isRequired,
+    onLogin: PropTypes.func.isRequired
+}
 
 export default FormLogin;

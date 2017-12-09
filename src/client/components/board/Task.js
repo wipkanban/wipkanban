@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {ItemTypes} from './Constants';
 import {DragSource, DropTarget} from 'react-dnd';
@@ -8,9 +8,6 @@ import * as actions from '../../actions/Task';
 const taskDragSource = {
     beginDrag(props) {
         return {id: props.id, idcolumn: props.idcolumn};
-    },
-    endDrag(props) {
-        console.log("endDrag");
     }
 };
 
@@ -24,9 +21,6 @@ const taskDropSpec = {
         if (props.id !== draggedId) {
             props.updateTaskPosition(draggedId, props.id, props.idcolumn);
         }
-    },
-    drop() {
-        console.log("DROSPEC- END DROP")
     }
 }
 
@@ -37,7 +31,7 @@ let collectDrag = (connect, monitor) => {
     };
 }
 
-let collectDrop = (connect, monitor) => {
+let collectDrop = (connect) => {
     return {
         connectDropTarget: connect.dropTarget()
     };
@@ -59,13 +53,11 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const Task = ({
-    updateTaskPosition,
     members,
     title,
     checklists,
     connectDropTarget,
     connectDragSource,
-    isDragging,
     id,
     onClickTask,
     idcolumn,

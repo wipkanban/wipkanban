@@ -7,6 +7,7 @@ const initialState = {
 }
 
 export default function loginReducer(state = initialState, action) {
+    
     switch (action.type) {
         case actionsType.LOADING_LOGIN:
 
@@ -15,9 +16,9 @@ export default function loginReducer(state = initialState, action) {
                 ...state
             };
         case actionsType.LOGIN_SUCCESS:
-            let {message, success, user} = action;
+            var {message, success, user} = action;
             return {message, success, user};
-
+            
         case actionsType.LOGOUT_SUCCESS:
 
             return {success: false};

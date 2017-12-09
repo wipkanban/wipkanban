@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './Comment'
+import PropTypes from 'prop-types';
 
 const Comments = ({comments}) => {
 
@@ -11,7 +12,7 @@ const Comments = ({comments}) => {
                     <b>Comentários</b>
                 </p>
                 <div id="containerComentarios">
-                    {comments.map(comment => <Comment key={comment.id} {...comment} />)}
+                    {comments.map(comment => <Comment key={comment.id} {...comment}/>)}
                 </div><hr/>
                 <div className="clearfix"></div>
                 <div>
@@ -33,8 +34,8 @@ const Comments = ({comments}) => {
                         }}></div>
                         <div className="alert-warning">
                             <p>
-                                <b>Você pode marcar qualquer membro do quadro digitando "@" e o nome do membro.
-                                    O membro marcado recebe um email do comentário.</b>
+                                <b>Você pode marcar qualquer membro do quadro digitando {"@"}
+                                    e o nome do membro. O membro marcado recebe um email do comentário.</b>
                             </p>
 
                         </div>
@@ -51,5 +52,9 @@ const Comments = ({comments}) => {
         </div>
     );
 };
+
+Comments.propTypes = {
+    comments: PropTypes.array.isRequired
+}
 
 export default Comments;

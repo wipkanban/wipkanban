@@ -1,6 +1,4 @@
-import React, {Component} from 'react'
-import TitleBoard from './TitleBoard'
-import DescriptionBoard from './DescriptionBoard'
+import React from 'react'
 import Board from './Board'
 
 const BoardContainer = () => {

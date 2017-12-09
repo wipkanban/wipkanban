@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import Preloader from '../Prealoder';
+import PropTypes from 'prop-types';
 
 class CreateAccount extends Component {
 
@@ -13,11 +14,11 @@ class CreateAccount extends Component {
         const {createAccount} = this.props;
 
         createAccount(
-            this.refs.name.value, 
-            this.refs.lastname.value, 
-            this.refs.email.value, 
-            this.refs.password.value, 
-            this.refs.confirmPassword.value
+            this.name.value, 
+            this.lastname.value, 
+            this.email.value, 
+            this.password.value, 
+            this.confirmPassword.value
         );
 
         e.preventDefault();
@@ -62,7 +63,9 @@ class CreateAccount extends Component {
                                             placeholder="Type your name"
                                             className="form-control form-control-lg"
                                             type="text"
-                                            ref="name"/>
+                                            ref={(el) => {
+                                                this.name = el;
+                                            }}/>
                                     </div>
                                     <div className="form-group">
                                         <label>
@@ -72,7 +75,9 @@ class CreateAccount extends Component {
                                             placeholder="Type your last name"
                                             className="form-control form-control-lg"
                                             type="text"
-                                            ref="lastname"/>
+                                            ref={(el) => {
+                                                this.lastname = el;
+                                            }}/>
                                     </div>
                                     <div className="form-group">
                                         <label>
@@ -82,7 +87,9 @@ class CreateAccount extends Component {
                                             placeholder="Type your email"
                                             className="form-control form-control-lg"
                                             type="email"
-                                            ref="email"/>
+                                            ref={(el) => {
+                                                this.email = el;
+                                            }}/>
                                     </div>
                                     <div className="form-group">
                                         <label>
@@ -92,7 +99,9 @@ class CreateAccount extends Component {
                                             placeholder="Type your password"
                                             className="form-control form-control-lg"
                                             type="password"
-                                            ref="password"/>
+                                            ref={(el) => {
+                                                this.password = el;
+                                            }}/>
                                     </div>
                                     <div className="form-group">
                                         <label>
@@ -102,7 +111,9 @@ class CreateAccount extends Component {
                                             placeholder="Confirm your password"
                                             className="form-control form-control-lg"
                                             type="password"
-                                            ref="confirmPassword"/>
+                                            ref={(el) => {
+                                                this.confirmPassword = el;
+                                            }}/>
 
                                     </div>
 
@@ -131,6 +142,11 @@ class CreateAccount extends Component {
             </div>
         )
     }
+}
+
+CreateAccount.propTypes = {
+    state:PropTypes.object.isRequired,
+    createAccount:PropTypes.func.isRequired
 }
 
 export default CreateAccount;

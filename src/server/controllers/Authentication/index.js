@@ -1,5 +1,4 @@
 import User from '../../models/user';
-import passport from 'passport';
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt-nodejs'
 import {setCsrf} from './csrf';
@@ -43,7 +42,7 @@ export function login(req, res, next) {
         }
 
     });
-};
+}
 
 export function decode(req, res, next) {
 

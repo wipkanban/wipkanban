@@ -1,5 +1,4 @@
 import User from '../models/user';
-import passport from 'passport';
 
 const CreateAccount = (req, res, next) => {
 
@@ -25,7 +24,7 @@ const CreateAccount = (req, res, next) => {
 
         newUser
             .save(next)
-            .then(user => {
+            .then(() => {
                 res
                     .status(200)
                     .json({success: true, message: "User account created with successfull!"}).end();

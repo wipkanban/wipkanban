@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import * as actions from '../../actions/Task'
+import * as actions from '../../actions/Task';
 import Timer from './Timer'
 import Markers from './Markers'
 import Members from './Members'
@@ -9,6 +9,7 @@ import Description from './Description'
 import AttachmentsContainer from './AttachmentsContainer'
 import Comments from './Comments'
 import Menu from './Menu'
+import PropTypes from 'prop-types';
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -88,6 +89,12 @@ const Task = ({data, onCloseModal}) => {
         </div>
     )
 
+}
+
+Task.propTypes = {
+    openModalTask: PropTypes.func.isRequired,
+    data: PropTypes.object.isRequired,
+    onCloseModal: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Task);

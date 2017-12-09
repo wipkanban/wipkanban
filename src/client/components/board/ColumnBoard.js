@@ -1,15 +1,13 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Task from './Task'
 import PropTypes from 'prop-types';
 import {ItemTypes} from './Constants';
 import {DropTarget} from 'react-dnd';
 import {connect} from 'react-redux';
-import actionsType from '../../actions/actionsType';
 import * as actions from '../../actions/Task';
 
 const columnTarget = {
-    drop(props, monitor) {},
-    hover(props, monitor, component) {
+    hover(props, monitor) {
 
         const dragged = monitor.getItem();
 
@@ -57,7 +55,6 @@ const ColumnBoard = ({
     title,
     tasks,
     id,
-    updateTaskColumn,
     showInputNewTask,
     showInputEditNameColumn,
     handleShowInputNewtask,
@@ -92,7 +89,7 @@ const ColumnBoard = ({
                     </span>
                 </h4>
                 <button
-                    onClick={(event) => handleShowInputNewtask(id, input)}
+                    onClick={() => handleShowInputNewtask(id, input)}
                     className="btn btn-dark btn-sm btn-block adicionarTarefa">
                     <span className="fa fa-chevron-down"></span>
                     Adicionar tarefa
@@ -110,7 +107,15 @@ const ColumnBoard = ({
 }
 
 ColumnBoard.propTypes = {
-    isOver: PropTypes.bool.isRequired
+    isOver: PropTypes.bool.isRequired,
+    connectDropTarget: PropTypes.func.isRequired,
+    title: PropTypes.string,
+    tasks: PropTypes.array,
+    id: PropTypes.number,
+    showInputNewTask: PropTypes.bool,
+    showInputEditNameColumn: PropTypes.bool,
+    handleShowInputNewtask: PropTypes.bool,
+    createTask: PropTypes.func
 };
 
 export default connect(null, mapDispatchToProps)(DropTarget(ItemTypes.TASK, columnTarget, collect)(ColumnBoard));

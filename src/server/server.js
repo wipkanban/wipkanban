@@ -1,4 +1,3 @@
-import path from 'path';
 import Express from 'express';
 import render from './ServerRender';
 import api from './apiRoutes';
@@ -9,7 +8,7 @@ import {decode} from './controllers/Authentication'
 
 const app = Express();
 const port = 3000
-mongoose.connect("mongodb://10.10.10.238:27017/wipkanban");
+mongoose.connect("mongodb://192.168.56.101:27017/wipkanban");
 
 app.use(morgan("dev"));
 app.use(bodyParser.json());
@@ -27,6 +26,5 @@ app.use('/data.json', Express.static(__dirname + '/../../public/data.json'));
 app.use(render)
 
 app.listen(port);
-console.log("SERVER LISTEN");
 
 export default app;

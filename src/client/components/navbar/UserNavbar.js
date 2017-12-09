@@ -1,6 +1,7 @@
 import React from 'react';
 import Logout from '../Login/Logout'
 import ButtonDropDownContainer from './ButtonDropDownContainer';
+import PropTypes from 'prop-types';
 
 const UserNavbar = ({user, toggleDropDown, dropdownClass}) => {
 
@@ -30,5 +31,11 @@ const UserNavbar = ({user, toggleDropDown, dropdownClass}) => {
         </li>
     )
 }
+
+UserNavbar.propTypes = {
+    user: PropTypes.object.isRequired,
+    toggleDropDown: PropTypes.func.isRequired,
+    dropdownClass: PropTypes.string.isRequired
+};
 
 export default ButtonDropDownContainer(UserNavbar);

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import RouterFactory from './routes/RouterFactory'
-import configureStore from './configureStore'
+import RouterFactory from './routes/RouterFactory';
+import PropTypes from 'prop-types';
 
 const UniversalProvider = ({
     server = false,
@@ -14,6 +14,12 @@ const UniversalProvider = ({
             <RouterFactory location={location} server={server}/>
         </Provider>
     )
+};
+
+UniversalProvider.propTypes = {
+    server: PropTypes.bool,
+    location: PropTypes.string,
+    store: PropTypes.object.isRequired
 };
 
 export default UniversalProvider;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Markers = ({markers}) => {
     return (
@@ -78,6 +79,10 @@ const Markers = ({markers}) => {
             </div>
         </div>
     )
+}
+
+Markers.propTypes = {
+    markers: PropTypes.array.isRequired
 }
 
 export default Markers;

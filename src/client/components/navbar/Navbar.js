@@ -1,7 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
 import UserNavbar from './UserNavbar';
-import BtnAddResources from './BtnAddResources'
+import BtnAddResources from './BtnAddResources';
+import PropTypes from 'prop-types';
+
 const Navbar = ({user}) => {
 
     return (
@@ -49,5 +50,9 @@ const Navbar = ({user}) => {
 
     )
 }
+
+Navbar.propTypes = {
+    user: PropTypes.object.isRequired
+};
 
 export default Navbar;

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import NotificationConfig from './NotificationConfig'
 import PermissionConfig from './PermissionConfig'
 import ConfigureBoard from './ConfigureBoard'
+import PropTypes from 'prop-types';
 
 class TitleBoard extends Component {
 
@@ -29,5 +30,9 @@ class TitleBoard extends Component {
     }
 
 }
+
+TitleBoard.propTypes = {
+    title: PropTypes.string.isRequired
+};
 
 export default TitleBoard;

@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
+import React from 'react'
 import ColumnBoard from './ColumnBoard'
 import {DragDropContext} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types';
 
 const mapStateToProps = state => state.columns;
 
@@ -30,5 +31,9 @@ const Board = ({columns}) => {
     );
 
 }
+
+Board.propTypes = {
+    columns: PropTypes.array
+};
 
 export default DragDropContext(HTML5Backend)(connect(mapStateToProps)(Board));

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Comment = ({id, comment, date_created, image, name}) => {
+const Comment = ({comment, date_created, image, name}) => {
     return (
         <div className="comentario">
             <img src={image} title={name} className="pull-left rounded-circle" width="30"/>
@@ -25,6 +26,13 @@ const Comment = ({id, comment, date_created, image, name}) => {
             <div className="text-comentario">{comment}</div>
         </div>
     )
+}
+
+Comment.propTypes = {
+    comment: PropTypes.string.isRequired,
+    date_created: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
 }
 
 export default Comment;

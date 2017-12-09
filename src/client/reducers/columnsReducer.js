@@ -20,13 +20,11 @@ export default function columnsReducer(state = initialState, action) {
     switch (action.type) {
         case actionsType.LOADING_COLUMNS:
 
-            console.log("MOSTRANDO PRELOADER");
-
             return state;
 
         case actionsType.LOAD_COLUMNS_SUCCESS:
 
-            let columns = action
+            var columns = action
                 .columns
                 .map(column => {
                     return {
@@ -46,9 +44,9 @@ export default function columnsReducer(state = initialState, action) {
                 .columns
                 .findIndex((column) => column.id === action.id);
 
-            let showInputNewTask = !state.columns[indexColumn].showInputNewTask;
+            var showInputNewTask = !state.columns[indexColumn].showInputNewTask;
 
-            let newState = update(state, {
+            var newState = update(state, {
                 columns: {
                     [indexColumn]: {
                         showInputNewTask: {
@@ -66,7 +64,7 @@ export default function columnsReducer(state = initialState, action) {
                 .columns
                 .findIndex((column) => column.id === action.idcolumn);
 
-            let task = {
+            var task = {
                 "id": Date.now(),
                 "title": action.text,
                 "preview": false,
@@ -87,7 +85,7 @@ export default function columnsReducer(state = initialState, action) {
             });
         case actionsType.OPEN_MODAL_TASK:
 
-            let modalData = {...action};
+            var modalData = {...action};
 
             return {
                 ...state,
@@ -105,17 +103,17 @@ export default function columnsReducer(state = initialState, action) {
 
         case actionsType.UPDATE_TASK_COLUMN:
 
-            let columnIndex = getColumnIndex(state.columns, action.idcolumn);
+            var columnIndex = getColumnIndex(state.columns, action.idcolumn);
 
-            let columnIndexDragged = getColumnIndex(state.columns, action.idcolumnDragged);
+            var columnIndexDragged = getColumnIndex(state.columns, action.idcolumnDragged);
 
-            let cardIndex = getTaskIndex(state.columns, action.taskId, columnIndexDragged);
+            var cardIndex = getTaskIndex(state.columns, action.taskId, columnIndexDragged);
 
             if (cardIndex == -1) {
                 return state;
             }
 
-            let card = state.columns[columnIndexDragged].tasks[cardIndex];
+            var card = state.columns[columnIndexDragged].tasks[cardIndex];
 
             return update(state, {
                 columns: {
