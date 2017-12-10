@@ -1,1 +1,1 @@
-export default 'SUPERDUPERSECRET'
+export default "SUPERDUPERSECRET";

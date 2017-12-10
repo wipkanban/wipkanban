@@ -1,5 +1,5 @@
 export default {
-    columns:[],
-    openModal:false,
-    modalData:{}
-}
+  columns: [],
+  openModal: false,
+  modalData: {}
+};

@@ -1,21 +1,21 @@
-import {connect} from 'react-redux';
-import * as actions from '../../actions/User';
-import CreateAccount from './CreateAccount';
+import { connect } from "react-redux";
+import * as actions from "../../actions/User";
+import CreateAccount from "./CreateAccount";
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        createAccount(name, lastname, email, password) {
-
-            dispatch(actions.createAccount(name, lastname, email, password));
-
-        }
+const mapDispatchToProps = dispatch => {
+  return {
+    createAccount(name, lastname, email, password) {
+      dispatch(actions.createAccount(name, lastname, email, password));
     }
+  };
 };
 
-const mapStateToProps = (state) => {
-    return {state: state.userReducer}
+const mapStateToProps = state => {
+  return { state: state.userReducer };
 };
 
-const CreateAccountContainer = connect(mapStateToProps, mapDispatchToProps)(CreateAccount);
+const CreateAccountContainer = connect(mapStateToProps, mapDispatchToProps)(
+  CreateAccount
+);
 
 export default CreateAccountContainer;

@@ -1,9 +1,9 @@
-import Express from 'express';
-import CreateAccount from './controllers/CreateAccount'
-import {login} from './controllers/Authentication'
-const api = Express.Router()
+import Express from "express";
+import CreateAccount from "./controllers/CreateAccount";
+import { login } from "./controllers/Authentication";
+const api = Express.Router();
 
-api.post('/createAccount', CreateAccount);
-api.post('/login', login);
+api.post("/createAccount", CreateAccount);
+api.post("/login", login);
 //api.use(verify);
 export default api;
