@@ -7,6 +7,7 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-beta.2",
+    "cookie-parser": "^1.4.3",
     "csrf": "^3.0.6",
     "express": "^4.16.2",
     "history": "^4.7.2",
@@ -40,7 +41,7 @@
     "lint": "esw webpack.config.* src --color",
     "lint:watch": "npm run lint -- --watch",
     "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json -m server",
-    "prettier":"prettier --write src/**/*.js"
+    "prettier": "prettier --write src/**/*.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

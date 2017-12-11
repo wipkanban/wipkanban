@@ -28,7 +28,8 @@ export function login(req, res, next) {
           name: user.name,
           lastname: user.lastname,
           email: user.email,
-          image: user.image || "/images/user.jpg"
+          image: user.image || "/images/user.jpg",
+          firstAccess: user.firstAccess
         };
         const token = jwt.sign(payload, secret, { expiresIn: "24h" });
 
@@ -52,9 +53,9 @@ export function login(req, res, next) {
 
 export function decode(req, res, next) {
   const token =
-    typeof req.get("auth-token") !== undefined
+    typeof req.get("auth-token") !== "undefined"
       ? req.get("auth-token")
-      : typeof req.cookies["auth-token"] !== undefined
+      : typeof req.cookies["auth-token"] !== "undefined"
         ? req.cookies["auth-token"]
         : undefined;
 
