@@ -3,12 +3,12 @@ import { Route, Switch } from "react-router-dom";
 import FormLoginContainer from "../components/Login/FormLoginContainer";
 import CreateAccountContainer from "../components/User/CreateAccountContainer";
 import AccountCreated from "../components/User/AccountCreated";
-import Home from "../components/home/Home";
+import HomeContainer from "../components/home/HomeContainer";
 import requireAuth from "../components/requireAuth";
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/" component={requireAuth(Home)} />
+    <Route exact path="/" component={requireAuth(HomeContainer)} />
     <Route path="/login" component={FormLoginContainer} />
     <Route path="/create-account" component={CreateAccountContainer} />
     <Route path="/account-created" component={AccountCreated} />

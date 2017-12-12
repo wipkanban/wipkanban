@@ -4,43 +4,44 @@ import PropTypes from "prop-types";
 class Modal extends React.Component {
   constructor(props) {
     super(props);
+  }
 
-    this.state = {
-      open: true,
-      class: "show"
-    };
+  onCloseModal() {
+    let { oncloseModal } = this.props;
+
+    oncloseModal();
   }
 
   render() {
+    let { allowClose } = this.props;
+
+    let btnClose = allowClose ? (
+      <button type="button" className="close">
+        <span onClick={this.onCloseModal.bind(this)} className="text-white">
+          &times;
+        </span>
+      </button>
+    ) : (
+      ""
+    );
+
     return (
       <div>
         <div className="modal-backdrop fade show" />
         <div
+          onClick={allowClose ? this.onCloseModal.bind(this) : () => {}}
           className="modal fade show"
-          id="modalTarefa"
-          role="dialog"
-          data-idtarefa="513"
-          aria-hidden="false"
           style={{
             display: "block"
           }}
         >
-          <div className="modal-dialog modal-lg">
+          <div className="modal-dialog">
             <div className="modal-content">
               <div id="modal-is-dragover" />
-              <div className="modal-header text-right">
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-hidden="true"
-                >
-                  <span role="close-button" aria-hidden="true">
-                    &times;
-                  </span>
-                </button>
+              <div className="modal-header bg-murrey ">
+                <span className="text-white">{this.props.title}</span>
+                {btnClose}
               </div>
-
               <div className="modal-body">{this.props.children}</div>
             </div>
           </div>
@@ -51,7 +52,10 @@ class Modal extends React.Component {
 }
 
 Modal.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
+  title: PropTypes.string,
+  oncloseModal: PropTypes.func.isRequired,
+  allowClose: PropTypes.bool
 };
 
 export default Modal;

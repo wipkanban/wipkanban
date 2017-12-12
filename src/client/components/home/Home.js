@@ -2,10 +2,14 @@ import React from "react";
 import NavbarContainer from "../navbar/NavbarContainer";
 import { Link } from "react-router-dom";
 import SubNav from "./SubNav";
+import PropTypes from "prop-types";
+import ModalFirstAccess from './ModalFirstAccess';
 
-const Home = () => {
+const Home = ({ user }) => {
+
   return (
     <div>
+      {user.firstAccess && <ModalFirstAccess title="Complete your profile" />}
       <NavbarContainer />
       <SubNav />
       <br />
@@ -64,6 +68,10 @@ const Home = () => {
       </div>
     </div>
   );
+};
+
+Home.propTypes = {
+  user: PropTypes.object.isRequired
 };
 
 export default Home;
