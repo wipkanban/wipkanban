@@ -41,7 +41,8 @@
     "lint": "esw webpack.config.* src --color",
     "lint:watch": "npm run lint -- --watch",
     "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json -m server",
-    "prettier": "prettier --write src/**/*.js"
+    "prettier": "prettier --write src/**/*.js",
+    "compile": "babel src --out-dir .compiled --source-maps --watch"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
