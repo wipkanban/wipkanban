@@ -1,26 +1,36 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-{
-    "type": "node",
-    "request": "launch",
-    "name": "Launch via NPM",
-    "runtimeExecutable": "npm",
-    "runtimeArgs": [
-        "run-script",
-        "debug"
-    ],
-    "port": 9229
-},
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceRoot}"
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Server",
+      "cwd":"${workspaceRoot}",
+      "program": "${workspaceRoot}/src/server/server.js",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/babel-node",
+      "args": [
+        "--presets es2015,es2016,es2017,react,stage-2"
+      ],
+
+      "sourceMaps": true,
+      "trace": true,
+
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceRoot}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Compound",
+      "configurations": ["Launch Chrome against localhost", "Launch Server"]
+    }
+  ]
 }
