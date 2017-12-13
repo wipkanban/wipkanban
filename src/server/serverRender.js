@@ -7,7 +7,7 @@ import { loginSuccess } from "../client/actions/Login";
 export default function render(req, res) {
   const store = configureStore(true);
 
-  if (req.currentUser !== null) {
+  if (req.currentUser !== undefined) {
     store.dispatch(loginSuccess(true, null, req.currentUser));
   }
 

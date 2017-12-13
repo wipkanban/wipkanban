@@ -45,6 +45,7 @@
     "compile": "babel src --out-dir .compiled --source-maps --watch"
   },
   "devDependencies": {
+    "apidoc": "^0.17.6",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",

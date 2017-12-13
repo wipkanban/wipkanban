@@ -24,7 +24,7 @@ class boardApi {
 
   static createAccount(name, lastname, email, password) {
     return axios
-      .post("http://localhost:3000/api/v1/createAccount", {
+      .post("http://localhost:3000/api/v1/user/create", {
         name,
         lastname,
         email,
