@@ -9,7 +9,7 @@ import cookieParser from 'cookie-parser';
 
 const app = Express();
 const port = 3000;
-mongoose.connect("mongodb://10.10.10.100:27017/wipkanban");
+mongoose.connect("mongodb://192.168.56.101:27017/wipkanban");
 
 app.use(morgan("dev"));
 app.use(bodyParser.json());

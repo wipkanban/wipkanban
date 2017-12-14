@@ -12,8 +12,6 @@ class CreateAccount extends Component {
     const { createAccount } = this.props;
 
     createAccount(
-      this.name.value,
-      this.lastname.value,
       this.email.value,
       this.password.value,
       this.confirmPassword.value
@@ -41,32 +39,6 @@ class CreateAccount extends Component {
               </div>
               <div className="card-body">
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                  <div className="form-group">
-                    <label>
-                      <strong>Name:</strong>
-                    </label>
-                    <input
-                      placeholder="Type your name"
-                      className="form-control form-control-lg"
-                      type="text"
-                      ref={el => {
-                        this.name = el;
-                      }}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>
-                      <strong>Last Name:</strong>
-                    </label>
-                    <input
-                      placeholder="Type your last name"
-                      className="form-control form-control-lg"
-                      type="text"
-                      ref={el => {
-                        this.lastname = el;
-                      }}
-                    />
-                  </div>
                   <div className="form-group">
                     <label>
                       <strong>Email:</strong>

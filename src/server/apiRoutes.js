@@ -13,8 +13,6 @@ const api = Express.Router();
  *  Define blocks with params that will be used in several functions, so you dont have to rewrite them.
  *
  * @apiParam {String} name Name of the user.
- * @apiParam {String} lastname Lastname of the user.
- * @apiParam {String} email Email of the user.
  * @apiParam {String} password Password unique ID.
  * @apiParam {String} token Your token applicatoin generate byt the system.
  *
@@ -26,8 +24,7 @@ const api = Express.Router();
  * @apiSuccess {Boolean} success True or false to the request.
  * @apiSuccess {String} message  Message success or fail.
  *
- * @apiError NoAccessRight Only authenticated Admins can access the data.
- * @apiError UserNotFound   The <code>id</code> of the User was not found.
+ * @apiError User already exists When user with same email is send.
  *
  * @apiErrorExample Response (example):
  *     HTTP/1.1 401 Not Authenticated

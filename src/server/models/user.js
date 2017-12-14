@@ -6,12 +6,10 @@ const noop = function() {};
 
 const userSchema = mongoose.Schema({
   name: {
-    type: String,
-    required: true
+    type: String
   },
   lastname: {
-    type: String,
-    required: true
+    type: String
   },
   email: {
     type: String,

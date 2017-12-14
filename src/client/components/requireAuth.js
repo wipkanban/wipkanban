@@ -4,19 +4,20 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 export default function(ComposedComponent) {
-  const mapStateToProps = state => ({
-    authenticated: state.loginReducer.success
-  });
+  const mapStateToProps = ({ userReducer: { success } }) => {
 
-  class Authentication extends React.Component {
-    render() {
-      if (this.props.authenticated) {
-        return <ComposedComponent {...this.props} />;
-      }
+    return {
+      authenticated: success
+    };
+  };
 
-      return <FormLoginContainer />;
+  const Authentication = props => {
+    if (props.authenticated) {
+      return <ComposedComponent {...props} />;
     }
-  }
+
+    return <FormLoginContainer />;
+  };
 
   Authentication.propTypes = {
     authenticated: PropTypes.bool.isRequired

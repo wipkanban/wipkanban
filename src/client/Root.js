@@ -8,7 +8,7 @@ let stateLocalStorage = window.localStorage.getItem("state");
 
 if (stateLocalStorage) {
   let state = JSON.parse(stateLocalStorage);
-  let user = state.loginReducer.user;
+  let user = state.userReducer.user;
 
   if (user !== null) {
     store.dispatch(loginSuccess(true, null, user));

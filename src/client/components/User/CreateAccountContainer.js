@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
-import * as actions from "../../actions/User";
+import { createAccount } from "../../actions/User";
 import CreateAccount from "./CreateAccount";
 
 const mapDispatchToProps = dispatch => {
   return {
-    createAccount(name, lastname, email, password) {
-      dispatch(actions.createAccount(name, lastname, email, password));
+    createAccount(email, password) {
+      dispatch(createAccount(email, password));
     }
   };
 };

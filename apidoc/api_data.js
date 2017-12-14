@@ -25,20 +25,6 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "lastname",
-            "description": "<p>Lastname of the user.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "email",
-            "description": "<p>Email of the user.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
             "field": "password",
             "description": "<p>Password unique ID.</p>"
           },
@@ -90,14 +76,8 @@ define({ "api": [
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "NoAccessRight",
-            "description": "<p>Only authenticated Admins can access the data.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "UserNotFound",
-            "description": "<p>The <code>id</code> of the User was not found.</p>"
+            "field": "User",
+            "description": "<p>already exists When user with same email is send.</p>"
           }
         ]
       },

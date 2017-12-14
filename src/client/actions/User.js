@@ -1,12 +1,12 @@
 import actionsType from "./actionsType";
 import boardApi from "../api/boardApi";
 
-export function createAccount(name, lastname, email, password) {
+export function createAccount(email, password) {
   return dispatch => {
     dispatch({ type: actionsType.CREATE_ACCOUNT_SEND });
 
     return boardApi
-      .createAccount(name, lastname, email, password)
+      .createAccount(email, password)
       .then(({ data }) => {
         dispatch(accountCreated(data));
       })

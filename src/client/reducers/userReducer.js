@@ -3,7 +3,8 @@ import actionsType from "../actions/actionsType";
 const initialState = {
   success: false,
   message: null,
-  showPreloader: false
+  showPreloader: false,
+  user: {}
 };
 
 export default function userReducer(state = initialState, action) {
@@ -22,8 +23,17 @@ export default function userReducer(state = initialState, action) {
         ...action.response
       };
 
+    case actionsType.LOADING_LOGIN:
+      return {
+        message: "Loading...",
+        ...state
+      };
+    case actionsType.LOGIN_SUCCESS:
+      var { message, success, user } = action;
+      return { message, success, user };
+
     case actionsType.LOGOUT_SUCCESS:
-      return { success: false, showPreloader: false };
+      return { success: false };
 
     default:
       return state;
