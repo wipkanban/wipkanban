@@ -1,7 +1,6 @@
 import User from "../models/user";
 
 const CreateAccount = (req, res, next) => {
-
   let email = req.body.email;
   let password = req.body.password;
 
@@ -20,7 +19,7 @@ const CreateAccount = (req, res, next) => {
           .json({ success: false, message: "User already exists" });
       }
 
-      let newUser = new User({email, password });
+      let newUser = new User({ email, password });
 
       newUser
         .save(next)

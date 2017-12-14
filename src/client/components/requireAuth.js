@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 export default function(ComposedComponent) {
   const mapStateToProps = ({ userReducer: { success } }) => {
-
     return {
       authenticated: success
     };

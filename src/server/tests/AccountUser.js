@@ -9,8 +9,6 @@ describe("User Account", () => {
 
   beforeEach(() => {
     fields = {
-      name: "teste",
-      lastname: "teste",
       email: "teste@teste.com",
       password: "mypassword"
     };
@@ -19,7 +17,7 @@ describe("User Account", () => {
   it("/POST it should to create a account user", done => {
     chai
       .request(server)
-      .post("/api/v1/createAccount")
+      .post("/api/v1/user/create")
       .send(fields)
       .end((err, res) => {
         res.should.have.status(200);
@@ -36,7 +34,7 @@ describe("User Account", () => {
   it("/POST testing user that already exists, do not create", done => {
     chai
       .request(server)
-      .post("/api/v1/createAccount")
+      .post("/api/v1/user/create")
       .send(fields)
       .end((err, res) => {
         res.should.have.status(200);

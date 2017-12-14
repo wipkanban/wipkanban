@@ -24,7 +24,7 @@ describe("Create Account User", () => {
   });
 
   it("should have 5 inputs", () => {
-    expect(createAccount.find("input").length).toEqual(5);
+    expect(createAccount.find("input").length).toEqual(3);
   });
 
   it("should have 1 button for submit", () => {

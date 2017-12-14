@@ -16,5 +16,3 @@ const actionsType = {
 };
 
 export default actionsType;
-
-

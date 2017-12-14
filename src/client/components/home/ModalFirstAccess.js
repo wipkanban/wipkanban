@@ -52,7 +52,7 @@ const ModalFirstAccess = ({ title }) => {
         <div className="row">
           <div className="col-12">
             <p>
-              <a  className="text-murrey" href="#">
+              <a className="text-murrey" href="#">
                 <small>Change password</small>
               </a>
               <hr />

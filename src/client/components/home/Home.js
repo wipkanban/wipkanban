@@ -6,8 +6,7 @@ import PropTypes from "prop-types";
 import ModalFirstAccess from "./ModalFirstAccess";
 
 const Home = ({ user }) => {
-  let firstAccess =
-    typeof user !== "undefined" ? user.firstAccess : false;
+  let firstAccess = typeof user !== "undefined" ? user.firstAccess : false;
 
   return (
     <div>
