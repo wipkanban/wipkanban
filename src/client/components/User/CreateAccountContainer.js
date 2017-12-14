@@ -4,7 +4,7 @@ import CreateAccount from "./CreateAccount";
 
 const mapDispatchToProps = dispatch => {
   return {
-    createAccount(email, password) {
+    onCreateAccount(email, password) {
       dispatch(createAccount(email, password));
     }
   };

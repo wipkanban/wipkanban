@@ -6,18 +6,30 @@ import PropTypes from "prop-types";
 class CreateAccount extends Component {
   constructor() {
     super();
+
+    this.state = {
+      message: null,
+      success: false
+    };
   }
 
   handleSubmit(e) {
-    const { createAccount } = this.props;
-
-    createAccount(
-      this.email.value,
-      this.password.value,
-      this.confirmPassword.value
-    );
-
     e.preventDefault();
+
+    const { onCreateAccount } = this.props;
+    let password = this.password.value;
+    let confirmPassword = this.confirmPassword.value;
+
+    if (confirmPassword !== password) {
+      this.setState({
+        message: "Password and confirm passord fields does not match",
+        success: false
+      });
+
+      return false;
+    }
+
+    onCreateAccount(this.email.value, password);
   }
 
   render() {
@@ -47,6 +59,7 @@ class CreateAccount extends Component {
                       placeholder="Type your email"
                       className="form-control form-control-lg"
                       type="email"
+                      required="required"
                       ref={el => {
                         this.email = el;
                       }}
@@ -60,6 +73,7 @@ class CreateAccount extends Component {
                       placeholder="Type your password"
                       className="form-control form-control-lg"
                       type="password"
+                      required="required"
                       ref={el => {
                         this.password = el;
                       }}
@@ -79,13 +93,13 @@ class CreateAccount extends Component {
                     />
                   </div>
 
-                  {message !== null && (
+                  {(message !== null || this.state.message !== null) && (
                     <div
                       className={`alert alert-${
-                        success ? "success" : "danger"
+                        success || this.state.success ? "success" : "danger"
                       }`}
                     >
-                      <p>{message}</p>
+                      <p>{message || this.state.message}</p>
                     </div>
                   )}
                   <div className="form-group">
@@ -110,7 +124,7 @@ class CreateAccount extends Component {
 
 CreateAccount.propTypes = {
   state: PropTypes.object.isRequired,
-  createAccount: PropTypes.func.isRequired
+  onCreateAccount: PropTypes.func.isRequired
 };
 
 export default CreateAccount;

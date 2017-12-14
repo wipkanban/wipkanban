@@ -1,8 +1,7 @@
 import User from "../models/user";
 
 const CreateAccount = (req, res, next) => {
-  let email = req.body.email;
-  let password = req.body.password;
+  let { email, password } = req.body;
 
   // verify if user already exists
   User.findOne(
