@@ -1,4 +1,4 @@
-import User from "../models/user";
+import User from "../../models/user";
 
 const CreateAccount = (req, res, next) => {
   let { email, password } = req.body;
