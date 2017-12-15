@@ -3,9 +3,10 @@ import chaiHttp from "chai-http";
 import server from "../server";
 
 chai.use(chaiHttp);
+var expect = chai.expect;
 //Our parent block
 describe("User Account", () => {
-  let fields;
+  let fields, dataAuthenticated;
 
   beforeEach(() => {
     fields = {
@@ -17,16 +18,17 @@ describe("User Account", () => {
   it("/POST it should to create a account user", done => {
     chai
       .request(server)
-      .post("/api/v1/user/create")
+      .post("/api/v1/user")
       .send(fields)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a("object");
-        res.body.should.have.property("success").eql(true);
-        res.body.should.have
-          .property("message")
-          .eql("User account created with successfull!");
-
+        expect(res).to.have.status(200);
+        expect(res.body).to.be.a("object");
+        expect(res.body)
+          .to.have.property("success")
+          .equal(true);
+        expect(res.body)
+          .to.have.property("message")
+          .equal("User account created with successfull!");
         done();
       });
   });
@@ -34,27 +36,20 @@ describe("User Account", () => {
   it("/POST testing user that already exists, do not create", done => {
     chai
       .request(server)
-      .post("/api/v1/user/create")
+      .post("/api/v1/user")
       .send(fields)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a("object");
-        res.body.should.have.property("success").eql(false);
-        res.body.should.have.property("message").eql("User already exists");
+        expect(res).to.have.status(200);
+        expect(res.body).to.be.a("object");
+        expect(res.body)
+          .to.have.property("success")
+          .equal(false);
+        expect(res.body)
+          .to.have.property("message")
+          .equal("User already exists");
 
         done();
       });
-  });
-});
-
-describe("User login", () => {
-  let fields;
-
-  beforeEach(() => {
-    fields = {
-      email: "teste@teste.com",
-      password: "mypassword"
-    };
   });
 
   it("/POST it should to login user and return token user", done => {
@@ -63,14 +58,53 @@ describe("User login", () => {
       .post("/api/v1/login")
       .send(fields)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a("object");
-        res.body.should.have.property("success").eql(true);
-        res.body.should.have
-          .property("message")
-          .eql("Login succesfull! Redirecting...");
-        res.body.should.have.property("token").be.a("string");
-        res.body.should.have.property("user").be.a("object");
+        dataAuthenticated = res.body;
+
+        expect(res).to.have.status(200);
+
+        expect(dataAuthenticated).to.be.a("object");
+
+        expect(dataAuthenticated)
+          .to.have.property("success")
+          .equal(true);
+
+        expect(dataAuthenticated)
+          .to.have.property("message")
+          .equal("Login succesfull! Redirecting...");
+
+        expect(dataAuthenticated)
+          .to.have.property("token")
+          .be.a("string");
+
+        expect(dataAuthenticated)
+          .to.have.property("user")
+          .be.a("object");
+
+        done();
+      });
+  });
+
+  it("/POST it should to delete account user", done => {
+
+    chai
+      .request(server)
+      .delete("/api/v1/user")
+      .send({
+        email: fields.email,
+        token: dataAuthenticated.token
+      })
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+
+        expect(res.body).to.be.a("object");
+
+        expect(res.body)
+          .to.have.property("success")
+          .equal(true);
+
+        expect(res.body)
+          .to.have.property("message")
+          .equal("User account removed with successfull!");
 
         done();
       });
