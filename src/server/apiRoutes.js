@@ -1,11 +1,12 @@
 import Express from "express";
-import CreateAccount from "./controllers/CreateAccount";
-import { login } from "./controllers/Authentication";
+import CreateAccount from "./controllers/user/CreateAccount";
+import DeleteAccount from "./controllers/user/DeleteAccount";
+import { login, verify } from "./controllers/Authentication";
 
 const api = Express.Router();
 
 /**
- * @api {post} /api/v1/user/create Creating account user
+ * @api {post} /api/v1/user Creating account user
  * @apiName wipKanbanApi
  * @apiGroup User
  * @apiPermission public
@@ -15,10 +16,10 @@ const api = Express.Router();
  * @apiParam {String} email Email of the user.
  * @apiParam {String} password Password unique ID.
  *
- * @apiSampleRequest https://wipkanban.com/api/v1/user/create
+ * @apiSampleRequest https://wipkanban.com/api/v1/user
  *
  * @apiExample Example usage:
- * curl -i http://<IPSERVER>/api/v1/user/create
+ * curl -i http://<IPSERVER>/api/v1/user
  *
  * @apiSuccess {Boolean} success True or false to the request.
  * @apiSuccess {String} message  Message success or fail.
@@ -33,7 +34,7 @@ const api = Express.Router();
  *     }
  *
  */
-api.post("/user/create", CreateAccount);
+api.post("/user", CreateAccount);
 
 /**
  * @api {post} /api/v1/login Login
@@ -67,5 +68,9 @@ api.post("/user/create", CreateAccount);
  *
  */
 api.post("/login", login);
+
+//api.use(verify);
+
+api.delete("/user", DeleteAccount);
 
 export default api;
