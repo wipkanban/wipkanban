@@ -15,6 +15,10 @@ describe("User Account", () => {
     };
   });
 
+  after(function () {
+    process.exit(0);
+});
+
   it("/POST it should to create a account user", done => {
     chai
       .request(server)
@@ -90,7 +94,7 @@ describe("User Account", () => {
       .delete("/api/v1/user")
       .send({
         email: fields.email,
-        token: dataAuthenticated.token
+        "auth-token": dataAuthenticated.token
       })
       .end((err, res) => {
         expect(res).to.have.status(200);

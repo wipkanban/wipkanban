@@ -1,7 +1,7 @@
 import User from "../../models/user";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt-nodejs";
-import { setCsrf } from "./csrf";
+import { setCsrf } from "../../middlewares/csrf";
 
 export function login(req, res, next) {
   const { email, password } = req.body;

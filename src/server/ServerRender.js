@@ -4,6 +4,7 @@ import template from "./template";
 import configureStore from "../client/configureStore";
 import UniversalProvider from "../client/UniversalProvider";
 import { loginSuccess } from "../client/actions/Login";
+
 export default function render(req, res) {
   const store = configureStore(true);
 

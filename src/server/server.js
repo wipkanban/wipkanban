@@ -1,10 +1,10 @@
 import "./configEnv";
 import Express from "express";
 import render from "./ServerRender";
-import api from "./apiRoutes";
+import router from "./routes";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-import decode from "./controllers/Authentication/decode";
+import decode from "./middlewares/decode";
 import cookieParser from "cookie-parser";
 import "./dbConnection";
 
@@ -18,7 +18,7 @@ app.use(cookieParser());
 //verify jwt
 app.use(decode);
 
-app.use("/api/v1", api);
+app.use("/api/v1", router);
 
 //Serve static files
 app.use("/dist", Express.static(__dirname + "/../../public/dist"));
