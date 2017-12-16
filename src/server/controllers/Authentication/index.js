@@ -24,6 +24,7 @@ export function login(req, res, next) {
 
         //authentication is valid
         let payload = {
+          _id: user._id,
           name: user.name,
           lastname: user.lastname,
           email: user.email,
@@ -35,7 +36,7 @@ export function login(req, res, next) {
         });
 
         setCsrf(req, res, () =>
-          res.cookie("auth-token", token, { httpOnly: true }).json({
+          res.cookie("token", token, { httpOnly: true }).json({
             token,
             user: payload,
             success: true,
