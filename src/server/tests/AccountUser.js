@@ -15,10 +15,6 @@ describe("User Account", () => {
     };
   });
 
-  after(function () {
-    process.exit(0);
-});
-
   it("/POST it should to create a account user", done => {
     chai
       .request(server)
