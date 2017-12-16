@@ -36,5 +36,5 @@ class boardApi {
       });
   }
 }
-console.log(boardApi.URL_API);
+
 export default boardApi;
