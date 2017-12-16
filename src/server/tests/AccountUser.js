@@ -89,8 +89,8 @@ describe("User Account", () => {
       .request(server)
       .delete("/api/v1/user")
       .send({
-        email: fields.email,
-        "auth-token": dataAuthenticated.token
+        _id: fields._id,
+        "token": dataAuthenticated.token
       })
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -103,7 +103,7 @@ describe("User Account", () => {
 
         expect(res.body)
           .to.have.property("message")
-          .equal("User account removed with successfull!");
+          .equal("User account deleted with successfull!");
 
         done();
       });

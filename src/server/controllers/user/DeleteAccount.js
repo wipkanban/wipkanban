@@ -1,16 +1,16 @@
 import User from "../../models/user";
 
 const DeleteAccount = (req, res) => {
-  let { email } = req.body;
+  let { _id } = req.body;
 
-  User.remove({ email: email }, function(err) {
+  User.remove({ _id: _id }, function(err) {
     if (err) return new Error(err);
 
     res
       .status(200)
       .json({
         success: true,
-        message: "User account removed with successfull!"
+        message: "User account deleted with successfull!"
       })
       .end();
   }).catch(err => {
