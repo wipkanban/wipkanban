@@ -23,3 +23,6 @@ yarn-error.log*
 
 #webpack bundle analyzer
 stats.json
+
+#env variables
+.env

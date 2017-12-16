@@ -1,10 +1,11 @@
 import Express from "express";
 import CreateAccount from "./controllers/user/CreateAccount";
 import DeleteAccount from "./controllers/user/DeleteAccount";
-import { login, verify } from "./controllers/Authentication";
+import { login } from "./controllers/Authentication";
+import verify from './controllers/Authentication/verify'
 
 const api = Express.Router();
-
+api.use(verify);
 /**
  * @api {post} /api/v1/user Creating account user
  * @apiName wipKanbanApi
@@ -35,6 +36,8 @@ const api = Express.Router();
  *
  */
 api.post("/user", CreateAccount);
+
+api.delete("/user", DeleteAccount);
 
 /**
  * @api {post} /api/v1/login Login
@@ -68,9 +71,5 @@ api.post("/user", CreateAccount);
  *
  */
 api.post("/login", login);
-
-//api.use(verify);
-
-api.delete("/user", DeleteAccount);
 
 export default api;

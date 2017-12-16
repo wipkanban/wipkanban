@@ -2,7 +2,6 @@ import User from "../../models/user";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt-nodejs";
 import { setCsrf } from "./csrf";
-import secret from "./secret";
 
 export function login(req, res, next) {
   const { email, password } = req.body;
@@ -31,7 +30,9 @@ export function login(req, res, next) {
           image: user.image || "/images/user.jpg",
           firstAccess: user.firstAccess
         };
-        const token = jwt.sign(payload, secret, { expiresIn: "24h" });
+        const token = jwt.sign(payload, process.env.SECRET, {
+          expiresIn: "24h"
+        });
 
         setCsrf(req, res, () =>
           res.cookie("auth-token", token, { httpOnly: true }).json({
@@ -49,39 +50,4 @@ export function login(req, res, next) {
       }
     }
   );
-}
-
-export function decode(req, res, next) {
-  const token =
-    typeof req.get("auth-token") !== "undefined"
-      ? req.get("auth-token")
-      : typeof req.cookies["auth-token"] !== "undefined"
-        ? req.cookies["auth-token"]
-        : undefined;
-
-  if (token) {
-    jwt.verify(token, secret, (err, decoded) => {
-      if (err) {
-        req.authFailed = true;
-      } else {
-        req.currentUser = decoded;
-      }
-      next();
-    });
-  } else {
-    req.noTokenProvided = true;
-    next();
-  }
-}
-
-export function verify(req, res, next) {
-  if (req.authFailed) {
-    return res.status(403).json({ message: 'Failed to authenticate token' })
-  }
-
-  if (req.noTokenProvided) {
-    return res.status(403).json({ message: 'No token provided' }).end();
-  }
-
-  next()
 }

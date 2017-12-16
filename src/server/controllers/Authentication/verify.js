@@ -4,7 +4,7 @@ export default function verify(req, res, next) {
   }
 
   if (req.noTokenProvided) {
-    return res.status(403).json({ message: "No token provided" });
+    return res.status(403).json({ message: "No token provided r" });
   }
 
   next();

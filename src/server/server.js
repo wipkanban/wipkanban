@@ -1,17 +1,16 @@
+import "./configEnv";
 import Express from "express";
 import render from "./ServerRender";
 import api from "./apiRoutes";
-import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-import { decode } from "./controllers/Authentication";
+import decode from "./controllers/Authentication/decode";
 import cookieParser from "cookie-parser";
+import "./dbConnection";
 
 const app = Express();
-const port = 3000;
-mongoose.connect("mongodb://192.168.56.101:27017/wipkanban");
 
-app.use(morgan("dev"));
+app.use(morgan(process.env.LOG_LEVEL));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -29,6 +28,6 @@ app.use("/data.json", Express.static(__dirname + "/../../public/data.json"));
 app.use("/apidoc", Express.static(__dirname + "/../../apidoc"));
 app.use(render);
 
-app.listen(port);
+app.listen(process.env.PORT);
 
 export default app;

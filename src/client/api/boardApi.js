@@ -2,7 +2,7 @@ import axios from "axios";
 
 class boardApi {
   static getAllCats() {
-    return fetch("http://localhost:3000/data.json")
+    return fetch("/data.json")
       .then(response => {
         return response.json();
       })
@@ -13,7 +13,7 @@ class boardApi {
 
   static login(email, password) {
     return axios
-      .post("http://localhost:3000/api/v1/login", { email, password })
+      .post("/api/v1/login", { email, password })
       .then(response => {
         return response;
       })
@@ -24,7 +24,7 @@ class boardApi {
 
   static createAccount(email, password) {
     return axios
-      .post("http://localhost:3000/api/v1/user/create", {
+      .post("/api/v1/user", {
         email,
         password
       })
@@ -36,5 +36,5 @@ class boardApi {
       });
   }
 }
-
+console.log(boardApi.URL_API);
 export default boardApi;
