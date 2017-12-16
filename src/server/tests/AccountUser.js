@@ -85,7 +85,6 @@ describe("User Account", () => {
   });
 
   it("/POST it should to delete account user", done => {
-
     chai
       .request(server)
       .delete("/api/v1/user")

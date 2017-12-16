@@ -2,7 +2,7 @@ import Express from "express";
 import CreateAccount from "./controllers/user/CreateAccount";
 import DeleteAccount from "./controllers/user/DeleteAccount";
 import { login } from "./controllers/Authentication";
-import verify from './controllers/Authentication/verify'
+import verify from "./controllers/Authentication/verify";
 
 const api = Express.Router();
 api.use(verify);
