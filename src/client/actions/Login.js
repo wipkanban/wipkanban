@@ -26,6 +26,7 @@ export function logout() {
   return dispatch => {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("user");
+    window.localStorage.removeItem("state");
 
     dispatch(logoutSuccess());
   };
@@ -43,5 +44,3 @@ export function loginSuccess(success, message, user) {
 export function logoutSuccess() {
   return { type: actionsType.LOGOUT_SUCCESS };
 }
-
-
