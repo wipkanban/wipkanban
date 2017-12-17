@@ -14,8 +14,8 @@ const router = Express.Router();
 
 /**
  * @api {post} /api/v1/user Creating account user
- * @apiVersion 1.0.0
  * @apiName wipKanbanApi
+ * @apiVersion 0.1.0
  * @apiGroup User
  * @apiPermission public
  *
@@ -46,39 +46,30 @@ router.post("/user", cors(corsOptions), CreateAccount);
 
 /**
  * @api {delete} /api/v1/user Delete account user
- * @apiVersion 1.0.0
  * @apiName wipKanbanApi
+ * @apiVersion 0.1.0
  * @apiGroup User
  * @apiPermission public
  *
- * @apiDescription Delete a account user
+ * @apiDescription Delete account user and send email confirmation
  *
- * @apiParam {String} email email of the user.
- * @apiParam {String} token token generate by system.
+ * @apiParam {Integer} _id id of the user on database.
+ * @apiParam {String} token Token generate by application.
  *
  * @apiSampleRequest https://wipkanban.com/api/v1/user
  *
  * @apiExample Example usage:
- * curl -i https://<IPSERVER>/api/v1/user
+ * curl -i http://<IPSERVER>/api/v1/user
  *
- * @apiSuccess {Boolean} success True to the request.
+ * @apiSuccess {Boolean} success Return true value.
  * @apiSuccess {String} message  Message success.
- *
- * @apiError UnableToRemove When a error ocurrer to remove user account.
- *
- * @apiErrorExample Response (example):
- *     HTTP/1.1 401 Not Authenticated
- *     {
- *       "successr": "false"
- *       "message": "Unable to remove user account"
- *     }
  *
  */
 router.delete("/user", requireAuth, DeleteAccount);
 
 /**
  * @api {post} /api/v1/login Login
- * @apiVersion 1.0.0
+ * @apiVersion 0.1.0
  * @apiName wipKanbanApi
  * @apiGroup Authentication
  * @apiPermission public
