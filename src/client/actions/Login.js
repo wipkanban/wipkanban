@@ -5,8 +5,7 @@ export function login(email, password) {
   return dispatch => {
     dispatch({ type: actionsType.LOADING_LOGIN });
 
-    return BoardApi
-      .login(email, password)
+    return BoardApi.login(email, password)
       .then(response => {
         let { data: { success, message, token, user } } = response;
 
@@ -27,6 +26,8 @@ export function logout() {
   return dispatch => {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("user");
+    window.localStorage.removeItem("state");
+
     dispatch(logoutSuccess());
   };
 }
