@@ -1,4 +1,5 @@
-## WipKanban
+## WipKanban 
+[![Build Status](https://travis-ci.org/wipkanban/wipkanban.svg?branch=travisci)](https://travis-ci.org/wipkanban/wipkanban)
 >A tool based on the kanban method to manage the work of a person, team or company.
 
 ## Motivation
