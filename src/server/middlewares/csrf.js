@@ -4,12 +4,12 @@ const tokens = new Tokens();
 const csrfSecret = tokens.secretSync();
 
 export function setCsrf(req, res, next) {
-  res.cookie("XSRF-TOKEN", tokens.create(csrfSecret));
+  res.cookie("token", tokens.create(csrfSecret));
   next();
 }
 
 export function checkCsrf(req, res, next) {
-  const token = req.get("X-XSRF-TOKEN");
+  const token = req.get("token");
 
   if (!tokens.verify(csrfSecret, token)) {
     return res.status(403).json({ code: "invalid_csrf_token" });
