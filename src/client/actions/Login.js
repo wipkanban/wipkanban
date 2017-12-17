@@ -1,11 +1,11 @@
 import actionsType from "./actionsType";
-import boardApi from "../api/boardApi";
+import BoardApi from "../api/BoardApi";
 
 export function login(email, password) {
   return dispatch => {
     dispatch({ type: actionsType.LOADING_LOGIN });
 
-    return boardApi
+    return BoardApi
       .login(email, password)
       .then(response => {
         let { data: { success, message, token, user } } = response;

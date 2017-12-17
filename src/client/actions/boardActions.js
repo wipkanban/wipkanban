@@ -1,4 +1,4 @@
-import boardApi from "../api/boardApi";
+import BoardApi from "../api/BoardApi";
 import actionsType from "./actionsType";
 
 /**
@@ -8,7 +8,7 @@ export function loadColumns() {
   return dispatch => {
     dispatch({ type: actionsType.LOADING_COLUMNS });
 
-    return boardApi
+    return BoardApi
       .getAllCats()
       .then(columns => {
         dispatch(loadColumnsSuccess(columns));

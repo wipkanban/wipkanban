@@ -89,7 +89,7 @@ describe("User Account", () => {
       .request(server)
       .delete("/api/v1/user")
       .send({
-        _id: fields._id,
+        email: fields.email,
         "token": dataAuthenticated.token
       })
       .end((err, res) => {

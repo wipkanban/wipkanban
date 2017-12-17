@@ -1,9 +1,9 @@
 import User from "../../models/user";
 
 const DeleteAccount = (req, res) => {
-  let { _id } = req.body;
+  let { email } = req.body;
 
-  User.remove({ _id: _id }, function(err) {
+  User.remove({ email: email }, function(err) {
     if (err) return new Error(err);
 
     res
@@ -13,10 +13,10 @@ const DeleteAccount = (req, res) => {
         message: "User account deleted with successfull!"
       })
       .end();
-  }).catch(err => {
+  }).catch(() => {
     return res
       .status(500)
-      .json({ success: false, message: err })
+      .json({ success: false, message: "Unable to remove user account" })
       .end();
   });
 };
