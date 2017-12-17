@@ -75,7 +75,7 @@ const ModalFirstAccess = ({ title }) => {
         </div>
         <div className="row">
           <div className="col text-right">
-            <button className="btn">To later </button>
+            <button className="btn">{"I'll do it later"}</button>
             {"  "}
             <button className="btn btn-murrey">
               Update <i className="fa fa-check" />
