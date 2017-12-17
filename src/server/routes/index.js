@@ -11,7 +11,6 @@ let corsOptions = {
 };
 
 const router = Express.Router();
-
 /**
  * @api {post} /api/v1/user Creating account user
  * @apiName wipKanbanApi
@@ -100,5 +99,15 @@ router.delete("/user", requireAuth, DeleteAccount);
  *
  */
 router.post("/login", cors(corsOptions), login);
+
+/**
+ * 404 routes
+ */
+router.use((req, res) => {
+  return res
+    .status(404)
+    .json({ message: "API endpoint not found" })
+    .end();
+});
 
 export default router;
