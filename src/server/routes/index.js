@@ -100,14 +100,4 @@ router.delete("/user", requireAuth, DeleteAccount);
  */
 router.post("/login", cors(corsOptions), login);
 
-/**
- * 404 routes
- */
-router.use((req, res) => {
-  return res
-    .status(404)
-    .json({ message: "API endpoint not found" })
-    .end();
-});
-
 export default router;
