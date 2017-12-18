@@ -13,4 +13,4 @@ script:
   - 'npm run test:client'
   - 'npm run test:server'
 after_success:
-  - npm run coverage
+  - npm run test:coverage
