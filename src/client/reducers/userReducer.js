@@ -25,15 +25,16 @@ export default function userReducer(state = initialState, action) {
 
     case actionsType.LOADING_LOGIN:
       return {
-        message: "Loading...",
-        ...state
+        ...state,
+        message: "Loading..."
       };
     case actionsType.LOGIN_SUCCESS:
       var { message, success, user } = action;
-      return { message, success, user };
+
+      return { ...state, message, success, user };
 
     case actionsType.LOGOUT_SUCCESS:
-      return { success: false };
+      return { ...state, success: false };
 
     default:
       return state;
