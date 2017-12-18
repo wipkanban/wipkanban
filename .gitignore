@@ -9,6 +9,7 @@
 # production
 /build
 public/dist
+public/assets/css/main.css
 
 npm-debug.log*
 yarn-debug.log*
