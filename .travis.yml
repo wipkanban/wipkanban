@@ -10,7 +10,6 @@ before_script:
 script:
   - npm run prettier
   - npm run lint
-  - 'npm run test:client'
-  - 'npm run test:server'
+  - npm test
 after_success:
-  - npm run test:coverage
+  - 'npm run test:coverage'

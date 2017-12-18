@@ -1,5 +1,5 @@
 import React from "react";
-import FormLogin from "./FormLogin";
+import FormLogin from "../FormLogin";
 
 // setup file
 import { configure } from "enzyme";
