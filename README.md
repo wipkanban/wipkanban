@@ -50,7 +50,7 @@ The main purpose of this repository is to continue to evolve WipKanban, making i
 WipKanban has adopted a Code of Conduct that we expect project participants to adhere to. Please read the full text so that you can understand what actions will and will not be tolerated.
 
 Contributing Guide
-Read our contributing guide to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
+Read our contributing guide to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to WipKanban.
 
 ## Contributor License Agreement [![CLA assistant](https://cla-assistant.io/readme/badge/wipkanban/wipkanban)](https://cla-assistant.io/wipkanban/wipkanban)
 Please review and sign our CLA at https://cla-assistant.io/wipkanban/wipkanban
