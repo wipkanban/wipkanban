@@ -1,7 +1,7 @@
 # WipKanban
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/wipkanban/wipkanban/blob/master/LICENSE) 
 [![Build Status](https://travis-ci.org/wipkanban/wipkanban.svg?branch=travisci)](https://travis-ci.org/wipkanban/wipkanban)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/864308d92eb24370a65f62bf21af0767)](https://www.codacy.com/app/Robisson-OliveiraOrganization/wipkanban?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wipkanban/wipkanban&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3fabcb66f2ee4c0f907ee76b48199da3)](https://www.codacy.com/app/WipKanban/wipkanban?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wipkanban/wipkanban&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/builds/14712079/badge)](https://coveralls.io/builds/14712079)
 >A tool based on the kanban method to manage the work of a person, team or company.
 
