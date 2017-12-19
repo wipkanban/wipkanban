@@ -11,7 +11,14 @@
 ## Motivation
 Be the best tool for lean management based on kanban. And one more thing, be Open Source!
 
-## How to use
+## Get started
+WipKanban is a [Progressive Web App](https://developers.google.com/pwa) realtime application written 100% in Javascript with the following stack:
+
+ - Reactjs
+ - Redux
+ - Mongodb
+ - Expressjs
+ - Socket.io
 
 ### Download source code:
 
