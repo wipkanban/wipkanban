@@ -43,7 +43,7 @@ npm run test:client
 npm run test:server
 ```
 
-## How to Contribute
+## [How to Contribute](https://github.com/wipkanban/wipkanban/blob/master/CONTRIBUTING.md)
 The main purpose of this repository is to continue to evolve WipKanban, making it the best possible experience in using Kanban. Development of WipKanban happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements.
 
 ## [Code of Conduct](https://github.com/wipkanban/wipkanban/blob/master/CODE_OF_CONDUCT.md)
