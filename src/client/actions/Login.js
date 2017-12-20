@@ -10,23 +10,23 @@ export function login(email, password) {
         let { data: { success, message, token, user } } = response;
 
         if (success) {
-          window.localStorage.setItem("token", JSON.stringify(token));
-          window.localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("token", JSON.stringify(token));
+          localStorage.setItem("user", JSON.stringify(user));
         }
 
         dispatch(loginSuccess(success, message, user));
       })
       .catch(error => {
-        throw error;
+        dispatch(loginError(false, error, {}));
       });
   };
 }
 
 export function logout() {
   return dispatch => {
-    window.localStorage.removeItem("token");
-    window.localStorage.removeItem("user");
-    window.localStorage.removeItem("state");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("state");
 
     dispatch(logoutSuccess());
   };
@@ -35,6 +35,15 @@ export function logout() {
 export function loginSuccess(success, message, user) {
   return {
     type: actionsType.LOGIN_SUCCESS,
+    success: success,
+    message: message,
+    user
+  };
+}
+
+export function loginError(success, message, user) {
+  return {
+    type: actionsType.LOGIN_ERROR,
     success: success,
     message: message,
     user
