@@ -55,12 +55,12 @@ We will is monitoring for pull requests. We will review your pull request and ei
 **Before submitting a pull request,** please make sure the following is done:
 
 1. Fork [the repository](https://github.com/wipkanban/wipkanban) and create your branch from `master`.
-2. Run `npm install` in the repository root.
+2. Run `yarn install` in the repository root.
 3. Rename `.env-template` to `.env` and complete it. It is necessary to the backend tests.
 4. If you've fixed a bug or added code that should be tested, add tests!
-5. Ensure the test suite passes (`npm test`).
-6. Format your code with [prettier](https://github.com/prettier/prettier) (`npm run prettier`).
-7. Make sure your code lints (`npm run lint`).
+5. Ensure the test suite passes (`yarn test`).
+6. Format your code with [prettier](https://github.com/prettier/prettier) (`yarn run prettier`).
+7. Make sure your code lints (`yarn run lint`).
 8. If you haven't already, agrree the CLA.
 
 ### Contributor License Agreement (CLA)
@@ -77,28 +77,28 @@ In order to accept your pull request, we need you to submit a CLA. You only need
 
 ### Development Workflow
 
-After cloning React, run `npm install` to fetch its dependencies.
+After cloning React, run `yarn install` to fetch its dependencies.
 Then, you can run several commands:
 
-* `npm run lint` checks the code style.
-* `npm test` runs the complete test suite backend api and frontend.
-* `npm run prettier` to format your code.
-* `npm run analyze` to generate [webpack bundle analyze](https://github.com/webpack-contrib/webpack-bundle-analyzer).
-* `npm run apidoc` to generate api documentation. To access go to `apidoc/index.html`.
-* `npm run check` to verify if your dependences are updated.
-* `npm build` creates a `build` folder with all the code to production.
+* `yarn run lint` checks the code style.
+* `yarn test` runs the complete test suite backend api and frontend.
+* `yarn run prettier` to format your code.
+* `yarn run analyze` to generate [webpack bundle analyze](https://github.com/webpack-contrib/webpack-bundle-analyzer).
+* `yarn run apidoc` to generate api documentation. To access go to `apidoc/index.html`.
+* `yarn run check` to verify if your dependences are updated.
+* `yarn build` creates a `build` folder with all the code to production.
 
-We recommend running `npm test` to make sure you don't introduce any regressions as you work on your change..
+We recommend running `yarn test` to make sure you don't introduce any regressions as you work on your change..
 
 We still require that your pull request contains unit tests for any new functionality. This way we can ensure that we don't break your code in the future.
 
 ### Style Guide
 
 We use an automatic code formatter called [Prettier](https://prettier.io/).
-Run `npm run prettier` after making any changes to the code.
+Run `yarn run prettier` after making any changes to the code.
 
 Then, our linter will catch most issues that may exist in your code.
-You can check the status of your code styling by simply running `npm run lint`.
+You can check the status of your code styling by simply running `yarn run lint`.
 
 However, there are still some styles that the linter cannot pick up. If you are unsure about something, looking at [Airbnb's Style Guide](https://github.com/airbnb/javascript) will guide you in the right direction.
 
