@@ -22,13 +22,13 @@ git clone https://github.com/wipkanban/wipkanban
 ```bash
 cd wipkanban
 
-npm install
+yarn install
 ```
 
 ### Run application
 ```bash
 
-npm run server
+yarn run server
 
 ```
 To access enter the address htts://<YOUR_IP_ADDRESS>:3000 in the browser
@@ -38,10 +38,10 @@ The tests are divided between client and server
 
 ```bash
 #client tests
-npm run test:client
+yarn run test:client
 
 #server
-npm run test:server
+yarn run test:server
 ```
 
 ## [How to Contribute](https://github.com/wipkanban/wipkanban/blob/master/CONTRIBUTING.md)
