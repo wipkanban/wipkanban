@@ -6,10 +6,10 @@ services:
   - mongodb
 before_script:
   - sleep 15
-  - npm install
+  - yarn
 script:
-  - npm run prettier
-  - npm run lint
-  - npm test
+  - yarn run prettier
+  - yarn run lint
+  - yarn test
 after_success:
-  - 'npm run test:coverage'
+  - 'yarn run test:coverage'
