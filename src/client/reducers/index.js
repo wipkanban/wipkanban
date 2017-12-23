@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
-import columns from "./columnsReducer";
 import userReducer from "./userReducer";
 
-const reducer = combineReducers({ columns, userReducer });
+const reducer = combineReducers({ userReducer });
 
 export default reducer;
