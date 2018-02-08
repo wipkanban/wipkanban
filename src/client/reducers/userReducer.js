@@ -16,7 +16,6 @@ export default function userReducer(state = initialState, action) {
       };
 
     case actionsType.CREATE_ACCOUNT_SUCCESS:
-    case actionsType.CREATE_ACCOUNT_ERROR:
       return {
         ...state,
         showPreloader: false,

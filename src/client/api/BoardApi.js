@@ -1,16 +1,6 @@
 import axios from "axios";
 
 class boardApi {
-  static getAllCats() {
-    return fetch("/data.json")
-      .then(response => {
-        return response.json();
-      })
-      .catch(error => {
-        return error;
-      });
-  }
-
   static login(email, password) {
     return axios
       .post("/api/v1/login", { email, password })
