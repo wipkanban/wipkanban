@@ -20,20 +20,22 @@ const CreateAccount = (req, res, next) => {
 
       let newUser = new User({ email, password });
 
-      newUser
-        .save(next)
-        .then(() => {
+      newUser.save(function(err) {
+        if (err) {
           res
-            .status(200)
-            .json({
-              success: true,
-              message: "User account created with successfull!"
-            })
+            .status(500)
+            .json({ success: false, message: err })
             .end();
-        })
-        .catch(err => {
-          return res.status(500).json({ success: false, message: err });
-        });
+        }
+
+        res
+          .status(200)
+          .json({
+            success: true,
+            message: "User account created with successfull!"
+          })
+          .end();
+      });
     }
   );
 };
