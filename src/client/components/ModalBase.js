@@ -7,9 +7,9 @@ class Modal extends React.Component {
   }
 
   onCloseModal() {
-    let { oncloseModal } = this.props;
+    let { onCloseModal } = this.props;
 
-    oncloseModal();
+    onCloseModal();
   }
 
   render() {
@@ -54,7 +54,7 @@ class Modal extends React.Component {
 Modal.propTypes = {
   children: PropTypes.object,
   title: PropTypes.string,
-  oncloseModal: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
   allowClose: PropTypes.bool
 };
 

@@ -35,7 +35,13 @@ export default function userReducer(state = initialState, action) {
       return { ...state, message, success, user };
 
     case actionsType.LOGOUT_SUCCESS:
-      return { ...state, success: false };
+      return { ...initialState };
+
+    case actionsType.SET_FIRST_ACCESS:
+      return {
+        ...state,
+        user: { ...state.user, firstAccess: action.firstAccess }
+      };
 
     default:
       return state;

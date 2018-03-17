@@ -3,14 +3,13 @@ import NavbarContainer from "../navbar/NavbarContainer";
 import { Link } from "react-router-dom";
 import SubNav from "./SubNav";
 import PropTypes from "prop-types";
-import ModalFirstAccess from "../User/ModalFirstAccess";
+import ModalFirstAccessContainer from "../User/ModalFirstAccessContainer";
 
-const Home = ({ user }) => {
-  let firstAccess = typeof user !== "undefined" ? user.firstAccess : false;
+const Home = ({ user:{firstAccess} }) => {
 
   return (
     <div>
-      {firstAccess && <ModalFirstAccess title="Complete your profile" />}
+      {firstAccess && <ModalFirstAccessContainer />}
       <NavbarContainer />
       <SubNav />
       <br />

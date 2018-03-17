@@ -2,9 +2,13 @@ import React from "react";
 import ModalBase from "../ModalBase";
 import PropTypes from "prop-types";
 
-const ModalFirstAccess = ({ title }) => {
+const ModalFirstAccess = ({ user, onCloseModal }) => {
   return (
-    <ModalBase title={title} allowClose={false}>
+    <ModalBase
+      onCloseModal={onCloseModal}
+      title="Complete your profile"
+      allowClose={false}
+    >
       <div>
         <div className="row">
           <div className="col">
@@ -39,7 +43,11 @@ const ModalFirstAccess = ({ title }) => {
           <div className="col">
             <div className="form-group">
               <label>email</label>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                defaultValue={user.email}
+              />
             </div>
           </div>
           <div className="col">
@@ -75,7 +83,9 @@ const ModalFirstAccess = ({ title }) => {
         </div>
         <div className="row">
           <div className="col text-right">
-            <button className="btn">{"I'll do it later"}</button>
+            <button onClick={onCloseModal} className="btn">
+              {"I'll do it later"}
+            </button>
             {"  "}
             <button className="btn btn-murrey">
               Update <i className="fa fa-check" />
@@ -88,7 +98,9 @@ const ModalFirstAccess = ({ title }) => {
 };
 
 ModalFirstAccess.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  onCloseModal: PropTypes.func,
+  user: PropTypes.object
 };
 
 export default ModalFirstAccess;

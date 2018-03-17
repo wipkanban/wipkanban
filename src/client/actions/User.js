@@ -5,8 +5,7 @@ export function createAccount(email, password) {
   return dispatch => {
     dispatch({ type: actionsType.CREATE_ACCOUNT_SEND });
 
-    return BoardApi
-      .createAccount(email, password)
+    return BoardApi.createAccount(email, password)
       .then(({ data }) => {
         dispatch(accountCreated(data));
       })
@@ -22,4 +21,10 @@ export function accountCreated(response) {
 
 export function accountCreatedError(error) {
   return { type: actionsType.CREATE_ACCOUNT_ERROR, error };
+}
+
+export function setFirstAccess(firstAccess) {
+  return dispatch => {
+    dispatch({ type: actionsType.SET_FIRST_ACCESS, firstAccess: firstAccess });
+  };
 }
