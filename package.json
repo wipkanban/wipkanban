@@ -35,7 +35,6 @@
     "webpack": "webpack --watch",
     "build": "npm run build-css && react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom --coverage",
-    "test:server-only": "nyc --reporter=html --reporter=text --timeout=3000 mocha src/server/tests --compilers js:babel-core/register --exit",
     "test:coverage": "cat ./coverage/lcov.info | coveralls",
     "babel-node-js": "nodemon --exec babel-node src/server/server.js --presets es2015,es2016,es2017,react,stage-2",
     "lint": "esw webpack.config.* src --color",
