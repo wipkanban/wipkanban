@@ -23,8 +23,13 @@ export function accountCreatedError(error) {
   return { type: actionsType.CREATE_ACCOUNT_ERROR, error };
 }
 
-export function setFirstAccess(firstAccess) {
+export function setFirstAccess(userId, firstAccess) {
   return dispatch => {
-    dispatch({ type: actionsType.SET_FIRST_ACCESS, firstAccess: firstAccess });
+    return BoardApi.setFirstAccess(userId, firstAccess).then(() => {
+      dispatch({
+        type: actionsType.SET_FIRST_ACCESS,
+        firstAccess: firstAccess
+      });
+    });
   };
 }

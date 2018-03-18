@@ -7,13 +7,13 @@ let mapDispachToProps = dispatch => {
     onUpdateProfile() {
       dispatch({});
     },
-    onCloseModal() {
-      dispatch(setFirstAccess(false));
+    onCloseModal(userId) {
+      dispatch(setFirstAccess(userId, false));
     }
   };
 };
 
-const mapStateToProps = ({userReducer:{user}}) => ({ user: user });
+const mapStateToProps = ({ userReducer: { user } }) => ({ user: user });
 
 let ModalFirstAccessContainer = connect(mapStateToProps, mapDispachToProps)(
   ModalFirstAccess

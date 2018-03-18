@@ -35,6 +35,20 @@ class boardApi {
         return error;
       });
   }
+
+  static setFirstAccess(userId, firstAccess) {
+    return axios
+      .put("/api/v1/user/setFirstAccess", {
+        userId,
+        firstAccess
+      })
+      .then(function(response) {
+        return response;
+      })
+      .catch(function(error) {
+        return error;
+      });
+  }
 }
 
 export default boardApi;

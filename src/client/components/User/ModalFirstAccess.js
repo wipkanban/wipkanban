@@ -83,7 +83,12 @@ const ModalFirstAccess = ({ user, onCloseModal }) => {
         </div>
         <div className="row">
           <div className="col text-right">
-            <button onClick={onCloseModal} className="btn">
+            <button
+              onClick={() => {
+                onCloseModal(user._id);
+              }}
+              className="btn"
+            >
               {"I'll do it later"}
             </button>
             {"  "}
