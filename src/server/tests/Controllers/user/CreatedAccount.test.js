@@ -4,6 +4,8 @@ import server from "../../../server";
 
 chai.use(chaiHttp);
 
+const request = chai.request.agent(server);
+
 //Our parent block
 describe("User Account", () => {
   let fields, dataAuthenticated;
@@ -15,9 +17,11 @@ describe("User Account", () => {
     };
   });
 
-  it("/POST it should to create a account user", done => {
-    chai
-      .request(server)
+  afterEach(() => request.app.close());
+
+  test("/POST it should to create a account user", done => {
+
+    request
       .post("/api/v1/user")
       .send(fields)
       .end((err, res) => {
@@ -32,9 +36,8 @@ describe("User Account", () => {
       });
   });
 
-  it("/POST testing user that already exists, do not create", done => {
-    chai
-      .request(server)
+  test("/POST testing user that already exists, do not create", done => {
+    request
       .post("/api/v1/user")
       .send(fields)
       .end((err, res) => {
@@ -46,9 +49,8 @@ describe("User Account", () => {
       });
   });
 
-  it("/POST it should to login user and return token user", done => {
-    chai
-      .request(server)
+  test("/POST it should to login user and return token user", done => {
+    request
       .post("/api/v1/login")
       .send(fields)
       .end((err, res) => {
@@ -67,9 +69,8 @@ describe("User Account", () => {
       });
   });
 
-  it("/POST it should to delete account user", done => {
-    chai
-      .request(server)
+  test("/POST it should to delete account user", done => {
+    request
       .delete("/api/v1/user")
       .send({
         email: fields.email,
