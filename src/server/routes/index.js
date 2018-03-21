@@ -89,7 +89,7 @@ router.delete("/user", requireAuth, DeleteAccount);
  * @apiSuccess {String} message  Message success.
  *
  */
-router.put("/user/setFirstAccess", requireAuth, SetFirstAccess);
+router.post("/user/setFirstAccess", requireAuth, SetFirstAccess);
 
 /**
  * @api {post} /api/v1/login Login

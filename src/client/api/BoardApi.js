@@ -38,7 +38,7 @@ class boardApi {
 
   static setFirstAccess(userId, firstAccess) {
     return axios
-      .put("/api/v1/user/setFirstAccess", {
+      .post("/api/v1/user/setFirstAccess", {
         userId,
         firstAccess
       })
