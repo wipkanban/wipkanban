@@ -1,10 +1,10 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import server from "../../../server";
+import app from "../../../app";
 
 chai.use(chaiHttp);
 
-const request = chai.request.agent(server);
+const request = chai.request.agent(app);
 
 //Our parent block
 describe("User Account", () => {
