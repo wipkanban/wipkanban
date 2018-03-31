@@ -28,7 +28,8 @@ export function login(req, res, next) {
           name: user.name,
           lastname: user.lastname,
           email: user.email,
-          image: user.image || "/images/user.jpg",
+          phone: user.phone,
+          image: user.image || "/images/user.png",
           firstAccess: user.firstAccess
         };
         const token = jwt.sign(payload, process.env.SECRET, {

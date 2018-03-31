@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import ModalFirstAccess from "./ModalFirstAccess";
-import { setFirstAccess } from "../../actions/User";
+import { setFirstAccess, updateAccountUser } from "../../actions/User";
 
 let mapDispachToProps = dispatch => {
   return {
-    onUpdateProfile() {
-      dispatch({});
+    onUpdateProfile(user) {
+      dispatch(updateAccountUser(user));
     },
     onCloseModal(userId) {
       dispatch(setFirstAccess(userId, false));

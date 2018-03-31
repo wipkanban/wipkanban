@@ -42,6 +42,17 @@ export default function userReducer(state = initialState, action) {
         ...state,
         user: { ...state.user, firstAccess: action.firstAccess }
       };
+    case actionsType.UPDATE_ACCOUNT_USER:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          lastname: action.user.lastname,
+          email: action.user.email,
+          phone: action.user.phone,
+          firstAccess: action.user.firstAccess
+        }
+      };
 
     default:
       return state;

@@ -2,8 +2,10 @@ import Express from "express";
 import CreateAccount from "../controllers/user/CreateAccount";
 import DeleteAccount from "../controllers/user/DeleteAccount";
 import SetFirstAccess from "../controllers/user/SetFirstAccess";
+import UpdateUserAccount from "../controllers/user/UpdateUserAccount";
 import { login } from "../controllers/Authentication";
 import { requireAuth } from "../middlewares/requireAuth";
+import upload from "../middlewares/upload";
 import cors from "cors";
 
 let corsOptions = {
@@ -90,6 +92,35 @@ router.delete("/user", requireAuth, DeleteAccount);
  *
  */
 router.post("/user/setFirstAccess", requireAuth, SetFirstAccess);
+
+/**
+ * @api {put} /api/v1/user/[iduser] Update the account user
+ * @apiName wipKanbanApi
+ * @apiVersion 0.1.0
+ * @apiGroup User
+ * @apiPermission public
+ *
+ * @apiDescription Update the account user
+ *
+ * @apiParam {Integer} _id id of the user on database.
+ * @apiParam {bool} firstAccess true or false.
+ * @apiParam {String} token Token generate by application.
+ *
+ * @apiSampleRequest https://wipkanban.com/api/v1/user/setFirstAccess
+ *
+ * @apiExample Example usage:
+ * curl -i http://<IPSERVER>/api/v1/user/setFirstAccess
+ *
+ * @apiSuccess {Boolean} success Return true value.
+ * @apiSuccess {String} message  Message success.
+ *
+ */
+router.put(
+  "/user/:userid",
+  requireAuth,
+  upload.single("image"),
+  UpdateUserAccount
+);
 
 /**
  * @api {post} /api/v1/login Login

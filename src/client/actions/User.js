@@ -33,3 +33,14 @@ export function setFirstAccess(userId, firstAccess) {
     });
   };
 }
+
+export function updateAccountUser(user) {
+  return dispatch => {
+    return BoardApi.updateAccountUser(user).then(() => {
+      dispatch({
+        type: actionsType.UPDATE_ACCOUNT_USER,
+        user
+      });
+    });
+  };
+}

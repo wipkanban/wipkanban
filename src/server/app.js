@@ -12,7 +12,7 @@ const app = Express();
 
 app.use(morgan(process.env.LOG_LEVEL));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //verify jwt
