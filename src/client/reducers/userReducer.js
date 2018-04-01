@@ -47,6 +47,7 @@ export default function userReducer(state = initialState, action) {
         ...state,
         user: {
           ...state.user,
+          name: action.user.name,
           lastname: action.user.lastname,
           email: action.user.email,
           phone: action.user.phone,

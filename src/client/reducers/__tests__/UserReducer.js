@@ -78,4 +78,49 @@ describe("USer reducer", () => {
 
     expect(state).toEqual(newState);
   });
+
+  it("testing action SET_FIRST_ACCESS", () => {
+    let action = {
+      type: actionTypes.SET_FIRST_ACCESS,
+      firstAccess: false
+    };
+
+    let state = userReducer(initialState, action);
+
+    let newState = {
+      ...state,
+      user: { ...state.user, firstAccess: false }
+    };
+
+    expect(state).toEqual(newState);
+  });
+
+  it("testing action UPDATE_ACCOUNT_USER", () => {
+    let user = {
+      lastname: "name example",
+      email: "email example",
+      phone: "1111-1111",
+      firstAccess: false
+    };
+
+    let action = {
+      type: actionTypes.UPDATE_ACCOUNT_USER,
+      user
+    };
+
+    let state = userReducer(initialState, action);
+
+    let newState = {
+      ...state,
+      user: {
+        ...state.user,
+        lastname: action.user.lastname,
+        email: action.user.email,
+        phone: action.user.phone,
+        firstAccess: action.user.firstAccess
+      }
+    };
+
+    expect(state).toEqual(newState);
+  });
 });
