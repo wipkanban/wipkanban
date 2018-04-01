@@ -57,9 +57,7 @@ class boardApi {
 
     let config = {
       onUploadProgress: function(progressEvent) {
-        let percentCompleted = Math.round(
-          progressEvent.loaded * 100 / progressEvent.total
-        );
+        return Math.round(progressEvent.loaded * 100 / progressEvent.total);
       },
       headers: {
         "Content-Type": "multipart/form-data"
