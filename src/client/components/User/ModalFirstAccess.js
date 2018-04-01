@@ -67,7 +67,7 @@ const ModalFirstAccess = ({ user, onCloseModal, onUpdateProfile }) => {
                 <img src={user.image} alt="" className="img-thumbnail" />
               </p>
               <p>
-                <input type="file" ref={el => (imageInput = el)} />
+                <input className="form-control" type="file" ref={el => (imageInput = el)} />
               </p>
             </div>
           </div>
