@@ -24,6 +24,7 @@ app.use("/api/v1", router);
 app.use("/dist", Express.static(__dirname + "/../../public/dist"));
 app.use("/assets", Express.static(__dirname + "/../../public/assets"));
 app.use("/images", Express.static(__dirname + "/../../public/images"));
+app.use("/uploads", Express.static(__dirname + "/../../public/uploads"));
 app.use("/data.json", Express.static(__dirname + "/../../public/data.json"));
 app.use("/apidoc", Express.static(__dirname + "/../../apidoc"));
 app.use(render);
