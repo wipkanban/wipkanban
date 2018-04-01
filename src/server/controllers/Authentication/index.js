@@ -2,6 +2,7 @@ import User from "../../models/user";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt-nodejs";
 import { setCsrf } from "../../middlewares/csrf";
+import path from "path";
 
 export function login(req, res, next) {
   const { email, password } = req.body;
@@ -29,7 +30,10 @@ export function login(req, res, next) {
           lastname: user.lastname,
           email: user.email,
           phone: user.phone,
-          image: user.image || "/images/user.png",
+          image:
+            typeof user.image == "object"
+              ? path.join(process.env.UPLOAD_PATH, user.image.newFilename)
+              : "/images/user.png",
           firstAccess: user.firstAccess
         };
         const token = jwt.sign(payload, process.env.SECRET, {
