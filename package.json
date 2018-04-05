@@ -38,7 +38,7 @@
     "build": "npm run build-css && react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom --coverage",
     "test:coverage": "cat ./coverage/lcov.info | coveralls",
-    "babel-node-js": "nodemon --exec babel-node src/server/server.js --presets es2015,es2016,es2017,react,stage-2",
+    "babel-node-js": "nodemon --exec babel-node src/server/server.js",
     "lint": "esw webpack.config.* src --color",
     "lint:watch": "npm run lint -- --watch",
     "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json -m server",
