@@ -1,12 +1,19 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
 
-class Modal extends React.Component {
-  constructor(props) {
+type Props = {
+  children: Object,
+  title: string,
+  onCloseModal: Function,
+  allowClose: boolean
+};
+
+class Modal extends React.Component<Props> {
+  constructor(props: Props) {
     super(props);
   }
 
-  onCloseModal() {
+  onCloseModal(): void {
     let { onCloseModal } = this.props;
 
     onCloseModal();
@@ -50,12 +57,5 @@ class Modal extends React.Component {
     );
   }
 }
-
-Modal.propTypes = {
-  children: PropTypes.object,
-  title: PropTypes.string,
-  onCloseModal: PropTypes.func.isRequired,
-  allowClose: PropTypes.bool
-};
 
 export default Modal;
