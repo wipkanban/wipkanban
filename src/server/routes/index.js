@@ -1,9 +1,11 @@
 import Express from "express";
-import CreateAccount from "../controllers/user/CreateAccount";
-import DeleteAccount from "../controllers/user/DeleteAccount";
-import SetFirstAccess from "../controllers/user/SetFirstAccess";
-import UpdateUserAccount from "../controllers/user/UpdateUserAccount";
-import { login } from "../controllers/Authentication";
+import User from "../models/user";
+import CreateAccountFactory from "../controllers/user/CreateAccount";
+import DeleteAccountFactory from "../controllers/user/DeleteAccount";
+import SetFirstAccessFactory from "../controllers/user/SetFirstAccess";
+import UpdateUserAccountFactory from "../controllers/user/UpdateUserAccount";
+import setCsrf from "../middlewares/csrf";
+import LoginFactory from "../controllers/Authentication";
 import { requireAuth } from "../middlewares/requireAuth";
 import upload from "../middlewares/upload";
 import cors from "cors";
@@ -12,6 +14,12 @@ let corsOptions = {
   origin: process.env.URL_APPLICATION,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
+
+const CreateAccount = CreateAccountFactory(User);
+const DeleteAccount = DeleteAccountFactory(User);
+const SetFirstAccess = SetFirstAccessFactory(User);
+const UpdateUserAccount = UpdateUserAccountFactory(User);
+const Login = LoginFactory(User, setCsrf);
 
 const router = Express.Router();
 /**
@@ -154,6 +162,6 @@ router.put(
  *     }
  *
  */
-router.post("/login", cors(corsOptions), login);
+router.post("/login", cors(corsOptions), Login);
 
 export default router;

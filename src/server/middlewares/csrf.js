@@ -3,7 +3,7 @@ import Tokens from "csrf";
 const tokens = new Tokens();
 const csrfSecret = tokens.secretSync();
 
-export function setCsrf(req, res, next) {
+export default function setCsrf(req, res, next) {
   res.cookie("token", tokens.create(csrfSecret));
   next();
 }
