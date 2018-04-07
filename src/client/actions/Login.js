@@ -24,11 +24,12 @@ export function login(email, password) {
 
 export function logout() {
   return dispatch => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("state");
-
-    dispatch(logoutSuccess());
+    return BoardApi.logout().then(() => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      localStorage.removeItem("state");
+      dispatch(logoutSuccess());
+    });
   };
 }
 

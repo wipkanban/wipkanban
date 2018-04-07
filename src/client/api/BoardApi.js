@@ -22,6 +22,17 @@ class boardApi {
       });
   }
 
+  static logout() {
+    return axios
+      .post("/api/v1/logout")
+      .then(response => {
+        return response;
+      })
+      .catch(error => {
+        return error;
+      });
+  }
+
   static createAccount(email, password) {
     return axios
       .post("/api/v1/user", {

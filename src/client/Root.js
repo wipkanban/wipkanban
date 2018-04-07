@@ -10,7 +10,7 @@ if (stateLocalStorage) {
   let state = JSON.parse(stateLocalStorage);
   let user = state.userReducer.user;
 
-  if (user !== undefined) {
+  if (user !== undefined && Object.keys(user).length) {
     store.dispatch(loginSuccess(true, null, user));
   }
 }

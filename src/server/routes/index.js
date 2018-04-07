@@ -163,5 +163,14 @@ router.put(
  *
  */
 router.post("/login", cors(corsOptions), Login);
+router.post("/logout", (req, res) => {
+  res.clearCookie("token");
+  res
+    .json({
+      success: true,
+      message: "Logout succesfull!"
+    })
+    .end();
+});
 
 export default router;
