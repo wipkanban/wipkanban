@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    mode:"development",
     entry: './src/client/index.js',
     devtool: 'source-map',
     output: {
@@ -8,7 +9,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js?$/,
                 exclude: /node_modules/,
