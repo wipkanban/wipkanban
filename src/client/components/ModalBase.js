@@ -1,8 +1,8 @@
 // @flow
-import React from "react";
+import * as React from "react";
 
 type Props = {
-  children: Object,
+  children: React.Node,
   title: string,
   onCloseModal: Function,
   allowClose: boolean
@@ -19,10 +19,10 @@ class Modal extends React.Component<Props> {
     onCloseModal();
   }
 
-  render() {
+  render(): React.Node {
     let { allowClose } = this.props;
 
-    let btnClose = allowClose ? (
+    let btnClose: React.Node = allowClose ? (
       <button type="button" className="close">
         <span onClick={this.onCloseModal.bind(this)} className="text-white">
           &times;

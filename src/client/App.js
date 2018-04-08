@@ -1,26 +1,27 @@
-import React from "react";
+// @flow
+import * as React from "react";
 import BoardContainer from "./components/board/BoardContainer";
 import Task from "./components/Modal/Task";
 import { connect } from "react-redux";
-import Navbar from "./components/Navbar";
-import PropTypes from "prop-types";
 
-const mapStateToProps = state => {
+const mapStateToProps: (state: Object) => Array<{}> = state => {
   return state.columns;
 };
-const App = ({ openModal }) => {
+
+type Props = {
+  openModal: boolean
+};
+
+const App: (props: Props) => React.Element<"div"> = ({
+  openModal
+}: Props): React.Element<"div"> => {
   return (
     <div>
-      <Navbar />
       <div className="container-fluid">
         <BoardContainer /> {openModal && <Task />}
       </div>
     </div>
   );
-};
-
-App.propTypes = {
-  openModal: PropTypes.bool
 };
 
 export default connect(mapStateToProps)(App);

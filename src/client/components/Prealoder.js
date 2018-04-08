@@ -1,5 +1,8 @@
-import React from "react";
+// @flow
+import * as React from "react";
 
-const Preloader = () => <div className="modal-backdrop fade show" />;
+const Preloader = (): React.Element<"div"> => (
+  <div className="modal-backdrop fade show" />
+);
 
 export default Preloader;
