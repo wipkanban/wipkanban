@@ -163,6 +163,37 @@ router.put(
  *
  */
 router.post("/login", cors(corsOptions), Login);
+
+/**
+ * @api {post} /api/v1/logout Logout
+ * @apiVersion 0.1.0
+ * @apiName wipKanbanApi
+ * @apiGroup Authentication
+ * @apiPermission public
+ *
+ * @apiDescription Logout a user of the application
+ *
+ * @apiParam {String} token Token of the user.
+ *
+ * @apiSampleRequest https://wipkanban.com/api/v1/user/login
+ *
+ * @apiExample Example usage:
+ * curl -i https://<IPSERVER>/api/v1/login
+ *
+ * @apiSuccess {Boolean} success True to the request.
+ * @apiSuccess {String} message  Message success.
+ *
+ * @apiError Usernotfound When email user is not found.
+ * @apiError Passwordinvalid When email exist, but the password does not matching.
+ *
+ * @apiErrorExample Response (example):
+ *     HTTP/1.1 401 Not Authenticated
+ *     {
+ *       "successr": "false"
+ *       "message": "User already exist"
+ *     }
+ *
+ */
 router.post("/logout", (req, res) => {
   res.clearCookie("token");
   res
