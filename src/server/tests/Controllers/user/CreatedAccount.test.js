@@ -20,11 +20,11 @@ describe("User Account", () => {
   afterEach(() => request.app.close());
 
   test("/POST it should to create a account user", done => {
-
     request
       .post("/api/v1/user")
       .send(fields)
       .end((err, res) => {
+
         expect(res.statusCode).toEqual(200);
 
         expect(res.body.success).toEqual(true);

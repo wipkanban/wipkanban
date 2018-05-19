@@ -94,8 +94,18 @@ describe("Board API", () => {
   });
 
   it("Shoud logout a user and clean token and user in the localstorage", () => {
-    store.dispatch(logout());
-    expect(localStorage.getItem("token")).toEqual(null);
-    expect(localStorage.getItem("user")).toEqual(null);
+    let response = {
+      success: true,
+      message: "Logout succesfull!"
+    };
+
+    mock.onPut(`/api/v1/logout`).reply(200, response);
+
+    store.dispatch(logout()).then(() => {
+      //let expectedUserState = store.getState().userReducer.user;
+
+      expect(localStorage.getItem("token")).toEqual(null);
+      expect(localStorage.getItem("user")).toEqual(null);
+    });
   });
 });

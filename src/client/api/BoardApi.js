@@ -1,4 +1,5 @@
-import axios from "axios";
+// @flow
+import axios, { type AxiosStatic } from "axios";
 
 class boardApi {
   static getAllCats() {
@@ -11,7 +12,7 @@ class boardApi {
       });
   }
 
-  static login(email, password) {
+  static login(email: string, password: string): AxiosStatic {
     return axios
       .post("/api/v1/login", { email, password })
       .then(response => {
@@ -22,7 +23,7 @@ class boardApi {
       });
   }
 
-  static logout() {
+  static logout(): AxiosStatic {
     return axios
       .post("/api/v1/logout")
       .then(response => {
@@ -33,7 +34,7 @@ class boardApi {
       });
   }
 
-  static createAccount(email, password) {
+  static createAccount(email: string, password: string): AxiosStatic {
     return axios
       .post("/api/v1/user", {
         email,
@@ -47,7 +48,7 @@ class boardApi {
       });
   }
 
-  static setFirstAccess(userId, firstAccess) {
+  static setFirstAccess(userId: number, firstAccess: boolean): AxiosStatic {
     return axios
       .post("/api/v1/user/setFirstAccess", {
         userId,
@@ -61,7 +62,7 @@ class boardApi {
       });
   }
 
-  static updateAccountUser(user) {
+  static updateAccountUser(user: Object): AxiosStatic {
     let data = new FormData();
     data.append("user", JSON.stringify(user));
     data.append("image", user.image);

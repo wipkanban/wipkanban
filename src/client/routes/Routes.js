@@ -10,6 +10,7 @@ import requireAuth from "../components/requireAuth";
 const Routes: () => React.Node = (): React.Node => (
   <Switch>
     <Route exact path="/" component={requireAuth(HomeContainer)} />
+    <Route path="/myaccount" component={FormLoginContainer} />
     <Route path="/login" component={FormLoginContainer} />
     <Route path="/create-account" component={CreateAccountContainer} />
     <Route path="/account-created" component={AccountCreated} />
