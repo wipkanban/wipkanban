@@ -11,11 +11,11 @@ export default (html, state) => `
   <link rel="shortcut icon" href="/favicon.ico">
 
   <title>WIPKanban</title>
-  <link rel="stylesheet" href="/assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<body>
+<body style="margin: 0">
   <div id="root">${html}</div>
   <script>
   window.__PRELOADED_STATE__ = ${JSON.stringify(state)}
