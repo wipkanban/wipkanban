@@ -47,7 +47,12 @@ function Column(props : Props) {
       </ColumnContainer>
     );
   } else if (hColumns.length) {
-    children = 'hCOlumns';
+    children = hColumns.map(column => (<ColumnBoard
+      key={column.id}
+      vColumns={column.vColumns}
+      hColumns={column.hColumns}
+      title={column.title}
+      cards={column.cards}/>));
   } else {
     children = cards.map(card => (<Card key={card.id} title={card.title}/>));
   }
@@ -74,25 +79,30 @@ function getWidthColumn(columns, defaultWidth = 270) {
 
 function ColumnFactory(props : Props) {
 
-  const {vColumns} = props;
+  const {vColumns, hColumns} = props;
 
-  /*if(vColumns.length){
-    let widthTeste = getWidthColumn(vColumns).reduce((acum, current) => current + acum);
-    widthTeste +=vColumns.length;
-    console.log(`Largura da coluna ${props.title}`,widthTeste);
-  }*/
-
-  let vWidth = (vColumns.length
-    ? getWidthColumn(vColumns).reduce((acum, current) => current + acum)+ vColumns.length
-    : 270);
+  let vWidth = null;
+  if (vColumns.length) {
+    vWidth = getWidthColumn(vColumns).reduce((acum, current) => current + acum) + vColumns.length;
+  } else if (hColumns.length) {
+    vWidth = Math
+      .max
+      .apply(null, getWidthColumn(hColumns));
+  } else {
+    vWidth = 270;
+  }
 
   const styles : Object = {
     parentColumn: {
-      height: '100%'
+      height: (hColumns.length
+        ? 450
+        : '100%')
     },
     column: {
       width: vWidth,
-      height: '100%',
+      height: (hColumns.length
+        ? 450
+        : '100%'),
       borderStyle: 'solid',
       borderWidth: 1,
       borderColor: '#e0e0e0'
