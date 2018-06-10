@@ -25,7 +25,8 @@ const styles = {
   },
   appBarSecondary: {
     backgroundColor: indigo[400],
-    marginBottom: 5
+    marginBottom: 5,
+    marginTop:62
   },
   toolbarSecondary: {
     minHeight: 40
@@ -39,7 +40,7 @@ type Props = {
 function SubNavbar(props:Props) {
   const {classes} = props;
   return (
-      <AppBar position="static" className={classes.appBarSecondary}>
+      <AppBar position="fixed" className={classes.appBarSecondary}>
         <Toolbar className={classes.toolbarSecondary}>
           <div className={classes.flex}>
             <Button color="inherit">

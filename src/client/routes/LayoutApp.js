@@ -14,8 +14,9 @@ const styles : Object = {
     flexGrow: 1
   },
   gridContainer: {
-    padding: 2,
-    overflowX:'scroll'
+    overflowX:'scroll',
+    marginTop:112,
+    height:735
   }
 };
 
@@ -33,16 +34,31 @@ function LayoutApp(props : Props) {
       hColumns:[],
       vColumns:[
         {
-          id:3,
+          id:2,
           title:"Não priorizado",
           hColumns:[],
           vColumns:[],
           cards: [
             {
-              id: 1,
+              id: 31,
               title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
                 "o quadro kanban"
-            }
+            },
+            {
+              id: 32,
+              title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
+                "o quadro kanban"
+            },
+            {
+              id: 33,
+              title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
+                "o quadro kanban"
+            },
+            {
+              id: 3,
+              title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
+                "o quadro kanban"
+            },
           ]
         },
         {
@@ -56,20 +72,20 @@ function LayoutApp(props : Props) {
       cards:[]
     },
     {
-      id:2,
+      id:5,
       title: "Fazendo",
       hColumns:[],
       vColumns:[],
       cards: [
         {
-          id: 1,
+          id: 6,
           title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
             "o quadro kanban"
         },
       ]
     },
     {
-      id:2,
+      id:7,
       title: "Em teste",
       hColumns:[],
       vColumns:[],
@@ -82,13 +98,13 @@ function LayoutApp(props : Props) {
       ]
     },
     {
-      id:2,
+      id:8,
       title: "Concluído",
       hColumns:[],
       vColumns:[],
       cards: [
         {
-          id: 1,
+          id: 9,
           title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
             "o quadro kanban"
         },
@@ -101,33 +117,33 @@ function LayoutApp(props : Props) {
       vColumns:[],
       cards: [
         {
-          id: 1,
+          id: 10,
           title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
             "o quadro kanban"
         },
       ]
     },
     {
-      id:2,
+      id:11,
       title: "Concluído",
       hColumns:[],
       vColumns:[],
       cards: [
         {
-          id: 1,
+          id: 12,
           title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
             "o quadro kanban"
         },
       ]
     },
     {
-      id:2,
+      id:13,
       title: "Concluído",
       hColumns:[],
       vColumns:[],
       cards: [
         {
-          id: 1,
+          id: 14,
           title: "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card d" +
             "o quadro kanban"
         },

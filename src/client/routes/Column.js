@@ -88,11 +88,11 @@ function ColumnFactory(props : Props) {
 
   const styles : Object = {
     parentColumn: {
-      paddingBottom: 5
+      height: '100%'
     },
     column: {
       width: vWidth,
-      height: 1000,
+      height: '100%',
       borderStyle: 'solid',
       borderWidth: 1,
       borderColor: '#e0e0e0'
