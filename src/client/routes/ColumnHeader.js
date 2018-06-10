@@ -1,41 +1,61 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from "react";
 import {withStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import brown from '@material-ui/core/colors/brown';
-import LongMenu from './LongMenu';
+import MenuHeaderColumn from './MenuHeaderColumn';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 const styles = () => ({
   root: {
     width: '100%',
-    height: 40,
+    height: 35,
     backgroundColor: brown[300]
   },
-  listItem:{
-    paddingTop:0,
-    paddingBottom:0
+  list: {
+    paddingTop:5
   },
-  listItemText:{
-    color:'#ffffff',
+  listItem: {
+    padding:0
+  },
+  listItemText: {
+    margin:0,
+    padding:0
+  },
+  listItemIconLeft: {
+    marginRight:5,
+    padding:0,
+    color:'white',
+    cursor:'pointer'
   }
 });
 
-function SwitchListSecondary(props) {
+type Props = {
+  title:string,
+  classes: Object
+};
 
-  const {classes} = props;
+function ColumnHeader(props:Props) {
+
+  const {title,classes} = props;
 
   return (
     <div className={classes.root}>
-      <List>
+      <List className={classes.list}>
         <ListItem className={classes.listItem}>
-          <ListItemText className={classes.listItemText}
-          primary={<Typography component="p" style={{ color: '#FFFFFF' }}>A fazer</Typography>}/>
+          <ListItemIcon className={classes.listItemIconLeft}>
+            <RemoveIcon/>
+          </ListItemIcon>
+          <ListItemText
+            className={classes.listItemText}
+            primary={< Typography component = "p" style = {{ color: '#FFFFFF' }} > {title} </Typography>}/>
           <ListItemSecondaryAction>
-            <LongMenu/>
+            <MenuHeaderColumn/>
           </ListItemSecondaryAction>
         </ListItem>
       </List>
@@ -44,8 +64,4 @@ function SwitchListSecondary(props) {
 
 }
 
-SwitchListSecondary.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(SwitchListSecondary);
+export default withStyles(styles)(ColumnHeader);

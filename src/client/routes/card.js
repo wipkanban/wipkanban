@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import {withStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Avatar from '@material-ui/core/Avatar';
@@ -14,18 +13,21 @@ import MessageIcon from '@material-ui/icons/Message';
 import CheckBox from '@material-ui/icons/CheckBox';
 import Attachment from '@material-ui/icons/Attachment';
 
-const styles = {
+const styles:Object = {
   card: {
-    margin: 5
+    margin: 5,
+    cursor:'pointer',
+    width:258
   },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
   avatar: {
-    width: 30,
-    height: 30,
-    float:'right'
+    width: 25,
+    height: 25,
+    float:'right',
+    marginRight:2
   },
   avatarDateRange: {
     width: 25,
@@ -45,8 +47,13 @@ const styles = {
   }
 };
 
-function SimpleMediaCard(props) {
-  const {classes} = props;
+type Props = {
+  classes: Object,
+  title:string
+}
+
+function CardBoard(props:Props) {
+  const {classes,title} = props;
   return (
     <div className={classes.card}>
       <Card>
@@ -57,8 +64,7 @@ function SimpleMediaCard(props) {
         <CardContent className={classes.CardContent}>
           <Chip className={classes.chip}/>
           <Typography component="p">
-            Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card
-            do quadro kanban
+            {title}
           </Typography>
           <Chip
             avatar={< Avatar className = {
@@ -84,23 +90,14 @@ function SimpleMediaCard(props) {
           } > <Attachment/> </Avatar>}
             label="5"
             className={classes.chipDateRange}/>
-
-        </CardContent>
-        <CardActions>
-
-          <Avatar
+            <Avatar
             className={classes.avatar}
             aria-label="Robisson Oliveira"
             src="/uploads/7b435896-aeca-4660-aaa3-b734e3e9200a.jpg"/>
-
-        </CardActions>
+        </CardContent>
       </Card>
     </div>
   );
 }
 
-SimpleMediaCard.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(SimpleMediaCard);
+export default withStyles(styles)(CardBoard);

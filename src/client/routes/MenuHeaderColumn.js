@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import * as React from "react";
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -6,31 +7,39 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const ITEM_HEIGHT = 48;
 
-class LongMenu extends React.Component {
-  state = {
-    anchorEl: null,
+type State = {
+  anchorEl?: Object
+}
+
+class MenuHeaderColumn extends React.Component<State> {
+  state : State = {
+    anchorEl: null
   };
 
-  handleClick = event => {
-    this.setState({ anchorEl: event.currentTarget });
+  handleClick = (event) => {
+    this.setState({anchorEl: event.currentTarget});
   };
 
   handleClose = () => {
-    this.setState({ anchorEl: null });
+    this.setState({anchorEl: null});
   };
 
   render() {
-    const { anchorEl } = this.state;
+    const {anchorEl} = this.state;
 
     return (
       <div>
         <IconButton
+          style={{
+          color: '#ffffff'
+        }}
           aria-label="More"
-          aria-owns={anchorEl ? 'long-menu' : null}
+          aria-owns={anchorEl
+          ? 'long-menu'
+          : null}
           aria-haspopup="true"
-          onClick={this.handleClick}
-        >
-          <MoreVertIcon />
+          onClick={this.handleClick}>
+          <MoreVertIcon/>
         </IconButton>
         <Menu
           id="long-menu"
@@ -38,12 +47,11 @@ class LongMenu extends React.Component {
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
           PaperProps={{
-            style: {
-              maxHeight: ITEM_HEIGHT * 4.5,
-              width: 200,
-            },
-          }}
-        >
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5,
+            width: 200
+          }
+        }}>
           <MenuItem onClick={this.handleClose}>Profile</MenuItem>
           <MenuItem onClick={this.handleClose}>My account</MenuItem>
           <MenuItem onClick={this.handleClose}>Logout</MenuItem>
@@ -53,4 +61,4 @@ class LongMenu extends React.Component {
   }
 }
 
-export default LongMenu;
+export default MenuHeaderColumn;
