@@ -1,17 +1,32 @@
 // @flow
 import * as React from "react";
+import {withStyles} from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import CallSplitIcon from '@material-ui/icons/CallSplit';
+import ListItemText from '@material-ui/core/ListItemText';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const ITEM_HEIGHT = 48;
+
+const styles:Object = {
+  menuItem:{
+    paddingTop:2,
+    paddingBottom:2,
+  }
+}
 
 type State = {
   anchorEl?: Object
 }
 
-class MenuHeaderColumn extends React.Component<State> {
+type Props = {
+  classes:Object
+}
+
+class MenuHeaderColumn extends React.Component<Props,State> {
   state : State = {
     anchorEl: null
   };
@@ -26,6 +41,7 @@ class MenuHeaderColumn extends React.Component<State> {
 
   render() {
     const {anchorEl} = this.state;
+    const {classes} = this.props;
 
     return (
       <div>
@@ -52,13 +68,22 @@ class MenuHeaderColumn extends React.Component<State> {
             width: 200
           }
         }}>
-          <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-          <MenuItem onClick={this.handleClose}>My account</MenuItem>
-          <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+          <MenuItem onClick={this.handleClose} className={classes.menuItem}>
+            <ListItemIcon>
+              <CallSplitIcon />
+            </ListItemIcon>
+            <ListItemText inset primary="Vertical Split" />
+          </MenuItem>
+          <MenuItem onClick={this.handleClose} className={classes.menuItem}>
+            <ListItemIcon>
+              <CallSplitIcon />
+            </ListItemIcon>
+            <ListItemText inset primary="Horizontal Split" />
+          </MenuItem>
         </Menu>
       </div>
     );
   }
 }
 
-export default MenuHeaderColumn;
+export default withStyles(styles)(MenuHeaderColumn);

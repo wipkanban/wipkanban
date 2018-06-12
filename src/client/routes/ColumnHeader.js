@@ -14,11 +14,11 @@ import RemoveIcon from '@material-ui/icons/Remove';
 const styles = () => ({
   root: {
     width: '100%',
-    height: 35,
+    height: 25,
     backgroundColor: brown[300]
   },
   list: {
-    paddingTop:5
+    paddingTop:1
   },
   listItem: {
     padding:0

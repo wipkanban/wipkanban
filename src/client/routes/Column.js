@@ -3,9 +3,11 @@ import * as React from "react";
 import {withStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import IconButton from '@material-ui/core/IconButton';
 import Card from './card';
 import ColumnHeader from "./ColumnHeader";
 import ColumnBoard from "./Column";
+import AddIcon from '@material-ui/icons/AddCircle';
 
 type Props = {
   classes: Object,
@@ -61,6 +63,16 @@ function Column(props : Props) {
     <Grid item className={classes.column}>
       <Paper className={classes.parentColumn} elevation={0}>
         <ColumnHeader title={title}/> {children}
+        {!hColumns.length && !vColumns.length
+          ? (
+            <center>
+              <IconButton color="default" aria-label="Add card">
+                <AddIcon/>
+              </IconButton>
+            </center>
+          )
+          : ''}
+
       </Paper>
     </Grid>
   );

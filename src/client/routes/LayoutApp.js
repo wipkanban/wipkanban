@@ -4,7 +4,6 @@ import {withStyles} from '@material-ui/core/styles';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Navbar from './Navbar'
-import SubNavbar from './SubNavbar'
 import Column from './Column'
 
 const theme = createMuiTheme();
@@ -14,9 +13,9 @@ const styles : Object = {
     flexGrow: 1
   },
   gridContainer: {
-    overflowX:'scroll',
-    marginTop:112,
-    height:560
+    overflowX:'auto',
+    marginTop:68,
+    height:700
   }
 };
 
@@ -141,7 +140,6 @@ function LayoutApp(props : Props) {
   return (
     <MuiThemeProvider theme={theme}>
       <Navbar/>
-      <SubNavbar/>
       <Grid
         container
         justify="flex-start"
