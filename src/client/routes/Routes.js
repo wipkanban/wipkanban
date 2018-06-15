@@ -7,13 +7,15 @@ import AccountCreated from "../components/User/AccountCreated";
 import HomeContainer from "../components/home/HomeContainer";
 import requireAuth from "../components/requireAuth";
 import LayoutApp from './LayoutApp';
+import Login from './Login';
 
 
 const Routes : () => React.Node = () : React.Node => (
   <Switch>
     <Route exact path="/" component={requireAuth(HomeContainer)}/>
     <Route path="/myaccount" component={FormLoginContainer}/>
-    <Route path="/new" component={LayoutApp}/>
+    <Route path="/board" component={LayoutApp}/>
+    <Route path="/login-new" component={Login}/>
     <Route path="/login" component={FormLoginContainer}/>
     <Route path="/create-account" component={CreateAccountContainer}/>
     <Route path="/account-created" component={AccountCreated}/>
