@@ -58,7 +58,7 @@ function Navbar(props : Props) {
           <MenuIcon/>
         </IconButton>
         <Typography variant="title" color="inherit">
-          WipKanban
+          WIPLean
         </Typography>
         <div className={classes.navLeft}>
           <Button color="inherit" size="small">
