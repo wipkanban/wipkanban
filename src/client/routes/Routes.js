@@ -8,6 +8,7 @@ import HomeContainer from "../components/home/HomeContainer";
 import requireAuth from "../components/requireAuth";
 import LayoutApp from './LayoutApp';
 import Login from './Login';
+import Signup from './Signup';
 
 
 const Routes : () => React.Node = () : React.Node => (
@@ -16,6 +17,7 @@ const Routes : () => React.Node = () : React.Node => (
     <Route path="/myaccount" component={FormLoginContainer}/>
     <Route path="/board" component={LayoutApp}/>
     <Route path="/login-new" component={Login}/>
+    <Route path="/signup" component={Signup}/>
     <Route path="/login" component={FormLoginContainer}/>
     <Route path="/create-account" component={CreateAccountContainer}/>
     <Route path="/account-created" component={AccountCreated}/>

@@ -50,7 +50,7 @@ type Props = {
   classes: Object
 };
 
-const InteractiveGrid = ({classes} : Props) => {
+const Signup = ({classes} : Props) => {
 
   return (
     <MuiThemeProvider theme={theme}>
@@ -111,6 +111,9 @@ const InteractiveGrid = ({classes} : Props) => {
                   <Typography variant="display1" color="primary" gutterBottom align="center">
                     <b>WIPLean</b>
                   </Typography>
+                  <Typography component="p" gutterBottom>
+                      Create your account and starts to improvement your results.
+                  </Typography>
                   <div
                     style={{
                     width: '100%',
@@ -137,6 +140,17 @@ const InteractiveGrid = ({classes} : Props) => {
                         </InputAdornment>
                       )
                     }}/>
+                    <TextField
+                      type="password"
+                      className={classes.text}
+                      label="Conform password"
+                      InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <LockIcon/>
+                        </InputAdornment>
+                      )
+                    }}/>
                     <div style={{
                       textAlign: 'right'
                     }}><br/>
@@ -145,38 +159,16 @@ const InteractiveGrid = ({classes} : Props) => {
                         variant="raised"
                         color="primary"
                         className={classes.button}>
-                        Sign in
+                        Sign Up
                         <Check/>
                       </Button><br/>
                       <Typography component="p" color="primary" gutterBottom align="right">
-                        Do not have an account yet ?{' '}
+                        Already have an account ?{' '}
                         <a href="#" className={classes.link}>
-                          <b>Sign up!</b>
+                          <b>Sign in!</b>
                         </a>
                       </Typography>
                     </div>
-                  </div>
-                  <br/>
-                  <div>
-                    Sign in with:<br/>
-                    <IconButton className={classes.button}>
-                      <i
-                        className="fa fa-facebook-square fa-2x"
-                        style={{
-                        color: '#4267b2'
-                      }}></i>
-                    </IconButton>
-                    <IconButton className={classes.button}>
-                      <i
-                        style={{
-                        color: '#db4437'
-                      }}
-                        className="fa fa-google-plus fa-2x"></i>
-                    </IconButton>
-                    <IconButton className={classes.button}>
-                      <i className="fa fa-github-square fa-2x"></i>
-                    </IconButton>
-
                   </div>
                 </div>
               </Paper>
@@ -190,4 +182,4 @@ const InteractiveGrid = ({classes} : Props) => {
   );
 }
 
-export default withStyles(styles)(InteractiveGrid);
+export default withStyles(styles)(Signup);
