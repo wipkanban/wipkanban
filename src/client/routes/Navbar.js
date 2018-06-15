@@ -61,8 +61,21 @@ function Navbar(props : Props) {
           WIPLean
         </Typography>
         <div className={classes.navLeft}>
-          <Button color="inherit" size="small">
+          <Button
+            color="inherit"
+            size="small"
+            style={{
+            position: 'relative',
+            paddingTop: 15
+          }}>
             <DeveloperBoardIcon/>
+            <small
+              style={{
+              position: 'absolute',
+              top: 0,
+              left: 12,
+              fontSize: 8
+            }}>{'Guarida/Tecnologia da informação'}</small>
             Minhas atividades
             <ArrowDropDownIcon/>
           </Button>
