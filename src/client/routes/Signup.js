@@ -10,7 +10,6 @@ import LockIcon from '@material-ui/icons/Lock';
 import EmailIcon from '@material-ui/icons/Email';
 import Check from '@material-ui/icons/Check';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 
 const styles = theme => ({
   root: {

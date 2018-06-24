@@ -11,7 +11,6 @@ import Login from './Login';
 import Signup from './Signup';
 import Home from './Home';
 
-
 const Routes : () => React.Node = () : React.Node => (
   <Switch>
     <Route exact path="/" component={requireAuth(HomeContainer)}/>
