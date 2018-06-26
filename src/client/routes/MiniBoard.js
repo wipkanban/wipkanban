@@ -1,58 +1,94 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+//@flow
+import * as React from 'react';
 import {withStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
 
 const styles = () => ({
-  actions: {
+  card: {
+    display: 'flex'
+  },
+  content: {
     display: 'flex',
-    flexDirection:'row-reverse'
+    flexWrap: 'wrap',
+    padding: 0
+  },
+  child: {
+    flex: '1 0 30%',
+    margin: '2px',
+    height: '85px'
+  },
+  cardHeader: {
+    padding: 5
   }
 });
 
-class RecipeReviewCard extends React.Component {
-  state = {
-    expanded: false
-  };
-
-  handleExpandClick = () => {
-    this.setState({
-      expanded: !this.state.expanded
-    });
-  };
-
-  render() {
-    const {classes} = this.props;
-
-    return (
-      <div>
-        <Card>
-          <CardHeader title="Minhas atividades" subheader="Created by you at today 12:00pm"/>
-          <CardContent>
-
-          </CardContent>
-          <CardActions className={classes.actions}>
-            <IconButton aria-label="Share">
-              <ArrowForwardIcon/>
-            </IconButton>
-            <Typography component="p">
-              Go to board
-            </Typography>
-          </CardActions>
-        </Card>
-      </div>
-    );
-  }
+type Props = {
+  classes: Object
 }
 
-RecipeReviewCard.propTypes = {
-  classes: PropTypes.object.isRequired
-};
+function MediaControlCard(props : Props) {
+  const {classes} = props;
 
-export default withStyles(styles)(RecipeReviewCard);
+  return (
+    <Card>
+      <div className={classes.cardHeader}>
+        <Typography variant="title">
+          Minhas Atividades
+        </Typography>
+        <Typography variant="Subheading">
+          createdb by you at today 12:00pm
+        </Typography>
+      </div>
+      <CardContent className={classes.content}>
+        <div className={classes.child}>
+          <Typography variant="body2" color="primary" align="center">
+            Lead Time
+          </Typography>
+          <Typography variant="display1" align="center">
+            10
+          </Typography>
+          <Typography variant="body1" align="center">
+            by week
+          </Typography>
+        </div>
+        <div className={classes.child}>
+          <Typography variant="body2" color="primary" align="center">
+            Cycle Time
+          </Typography>
+          <Typography variant="display1" align="center">
+            10
+          </Typography>
+          <Typography variant="body1" align="center">
+            by week
+          </Typography>
+        </div>
+        <div className={classes.child}>
+          <Typography variant="body2" color="primary" align="center">
+            Throghput
+          </Typography>
+          <Typography variant="display1" align="center">
+            10
+          </Typography>
+          <Typography variant="body1" align="center">
+            by week
+          </Typography>
+        </div>
+      </CardContent>
+      <CardActions
+        style={{
+        display: 'block',
+        textAlign: 'right'
+      }}>
+        <Button size="small" color="primary">
+          Go to Board
+        </Button>
+      </CardActions>
+    </Card>
+  );
+}
+
+export default withStyles(styles, {withTheme: true})(MediaControlCard);

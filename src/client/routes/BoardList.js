@@ -14,7 +14,7 @@ const BoardList = () => {
           My boards
         </Typography>
       </div>
-      <Grid container justify="flex-start" wrap="nowrap" spacing={0}>
+      <Grid container justify="flex-start" wrap="wrap" spacing={0}>
         <Grid item lg={6}>
           <MiniBoard/>
         </Grid>
