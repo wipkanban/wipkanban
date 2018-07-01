@@ -19,7 +19,7 @@ TabContainer.propTypes = {
 };
 
 
-class DisabledTabs extends React.Component {
+class TabsHome extends React.Component {
   state = {
     value: 0
   };
@@ -51,4 +51,4 @@ class DisabledTabs extends React.Component {
   }
 }
 
-export default DisabledTabs;
+export default TabsHome;
