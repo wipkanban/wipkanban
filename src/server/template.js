@@ -1,4 +1,4 @@
-export default (html, state) => `
+export default (html, state,css) => `
 <!doctype html>
 <html lang="en">
 
@@ -19,9 +19,10 @@ export default (html, state) => `
 <body style="margin: 0">
   <div id="root">${html}</div>
   <script>
-  window.__PRELOADED_STATE__ = ${JSON.stringify(state)}
-</script>
+    window.__PRELOADED_STATE__ = ${JSON.stringify(state)}
+  </script>
 <script src="/dist/bundle.js"></script>
+<style id="jss-server-side">${css}</style>
 </body>
 
 </html>
