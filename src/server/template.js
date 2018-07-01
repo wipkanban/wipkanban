@@ -1,4 +1,4 @@
-export default (html, state,css) => `
+export default (html, state, css) => `
 <!doctype html>
 <html lang="en">
 
