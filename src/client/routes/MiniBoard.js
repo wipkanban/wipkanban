@@ -39,7 +39,7 @@ function MediaControlCard(props : Props) {
         <Typography variant="title">
           Minhas Atividades
         </Typography>
-        <Typography variant="Subheading">
+        <Typography variant="subheading">
           createdb by you at today 12:00pm
         </Typography>
       </div>
