@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
 import Grid from '@material-ui/core/Grid';
-import BoardList from './BoardList';
-import TeamList from './TeamList';
+import BoardList from '../Board/BoardList';
+import TeamList from '../Team/TeamList';
 
 const KanbanHome = () => {
   return (

@@ -4,7 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import KanbanHome from './KanbanHome';
+import KanbanHome from '../KanbanHome';
 
 function TabContainer(props) {
   return (

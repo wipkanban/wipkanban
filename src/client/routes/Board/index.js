@@ -3,8 +3,8 @@ import * as React from "react";
 import {withStyles} from '@material-ui/core/styles';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Navbar from './Navbar'
-import Column from './Column'
+import Navbar from '../Navbar'
+import Column from '../Board/Column'
 
 const theme = createMuiTheme();
 
