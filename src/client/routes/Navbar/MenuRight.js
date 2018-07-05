@@ -1,6 +1,5 @@
 //@flow
 import * as React from "react";
-import SearchIcon from '@material-ui/icons/Search';
 import Avatar from '@material-ui/core/Avatar';
 import DashboardIcon from '@material-ui/icons/InsertChart';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -14,6 +13,7 @@ import AddIcon from '@material-ui/icons/AddCircle';
 import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from '@material-ui/core/IconButton';
+import Search from './Search';
 
 const styles = {
   navRight: {
@@ -74,11 +74,7 @@ const MenuRight = ({ classes }: Props) => {
           <ZoomOutMapIcon />
         </IconButton>
       </Tooltip>
-      <Tooltip title="Search cards">
-        <IconButton color="inherit" aria-label="Search cards">
-          <SearchIcon />
-        </IconButton>
-      </Tooltip>
+      <Search />
       <Tooltip title="My account settings">
         <IconButton color="inherit" aria-label="My account settings">
           <Avatar
