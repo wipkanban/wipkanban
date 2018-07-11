@@ -1,19 +1,27 @@
 // @flow
 import * as React from "react";
-import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
-import NavbarHome from '../NavbarHome'
-import TabsHome from './TabsHome';
-import GridContainer from '../GridContainer';
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import Navbar from "../Navbar";
+import Search from '../Navbar/Search';
+import UserAccountSettings from '../Navbar/Buttons/UserAccountSettings';
+import TabsHome from "./TabsHome";
+import GridContainer from "../GridContainer";
+import MenuRight from "../Navbar/MenuRight";
 
 const theme = createMuiTheme();
 
 function Home() {
-
   return (
     <MuiThemeProvider theme={theme}>
-      <NavbarHome/>
+      <Navbar>
+        <div></div>
+        <MenuRight>
+          <Search />
+          <UserAccountSettings />
+        </MenuRight>
+      </Navbar>
       <GridContainer>
-        <TabsHome/>
+        <TabsHome />
       </GridContainer>
     </MuiThemeProvider>
   );
