@@ -15,6 +15,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import Check from "@material-ui/icons/Check";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
+import { Redirect, Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -193,9 +194,9 @@ const InteractiveGrid = ({
                         align="right"
                       >
                         Do not have an account yet ?{" "}
-                        <a href="#" className={classes.link}>
+                        <Link to="/create-account" className={classes.link}>
                           <b>Sign up!</b>
-                        </a>
+                        </Link>
                       </Typography>
                     </div>
                   </div>
