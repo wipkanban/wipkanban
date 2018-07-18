@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = state => {
-  return { state: state.userReducer };
+  return { success: state.userReducer.success };
 };
 
 const SignupContainer = connect(mapStateToProps, mapDispatchToProps)(
