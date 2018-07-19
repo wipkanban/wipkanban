@@ -4,9 +4,8 @@ import FormLogin from "./index";
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLogin(email, password, event) {
+    onLogin(email, password) {
       dispatch(login(email, password));
-      event.preventDefault();
     }
   };
 };

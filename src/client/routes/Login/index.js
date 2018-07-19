@@ -54,23 +54,19 @@ const theme = createMuiTheme({});
 type Props = {
   classes: Object,
   state: Object,
-  onLogin: (email: string, password: string, event:Object) => {}
+  onLogin: Function
 };
 
-const InteractiveGrid = ({
-  state: { success, message },
-  onLogin,
-  classes
-}: Props) => {
-  let email;
-  let password;
+const Login = ({ onLogin, classes }: Props) => {
+
+  let email: HTMLInputElement, password: HTMLInputElement;
 
   if (typeof window !== "undefined" && window.localStorage.getItem("token")) {
     return <Redirect to="/" />;
   }
 
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
       <Grid container className={classes.root}>
         <Grid item xs={12} className={classes.demo}>
           <Grid
@@ -146,6 +142,7 @@ const InteractiveGrid = ({
                     }}
                   >
                     <TextField
+                      inputRef={el => (email = el)}
                       className={classes.text}
                       label="Type your email"
                       InputProps={{
@@ -157,6 +154,7 @@ const InteractiveGrid = ({
                       }}
                     />
                     <TextField
+                      inputRef={el => (password = el)}
                       type="password"
                       className={classes.text}
                       label="Password"
@@ -175,9 +173,7 @@ const InteractiveGrid = ({
                     >
                       <br />
                       <Button
-                        onClick={event =>
-                          onLogin(email.value, password.value, event)
-                        }
+                        onClick={() => onLogin(email.value, password.value)}
                         size="large"
                         variant="raised"
                         color="primary"
@@ -233,4 +229,4 @@ const InteractiveGrid = ({
   );
 };
 
-export default withStyles(styles)(InteractiveGrid);
+export default withStyles(styles)(Login);
