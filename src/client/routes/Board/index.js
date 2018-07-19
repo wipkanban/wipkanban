@@ -41,7 +41,7 @@ function LayoutApp(props: Props) {
   const { classes } = props;
 
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
       <Navbar>
         <MenuLeft />
         <MenuRight>

@@ -12,7 +12,7 @@ const theme = createMuiTheme();
 
 function Home() {
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
       <Navbar>
         <div></div>
         <MenuRight>

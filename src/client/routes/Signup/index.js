@@ -90,7 +90,7 @@ class Signup extends React.Component<Props, State> {
     }
 
     return (
-      <MuiThemeProvider theme={theme}>
+      <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
         <Grid container className={classes.root}>
           <Grid item xs={12} className={classes.demo}>
             <Grid
