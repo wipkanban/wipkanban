@@ -6,7 +6,13 @@ import UniversalProvider from "../client/UniversalProvider";
 import { loginSuccess } from "../client/actions/Login";
 import { SheetsRegistry } from "react-jss/lib/jss";
 import JssProvider from "react-jss/lib/JssProvider";
-import { createGenerateClassName } from "@material-ui/core/styles";
+import {
+  MuiThemeProvider,
+  createMuiTheme,
+  createGenerateClassName
+} from "@material-ui/core/styles";
+
+const theme = createMuiTheme({});
 
 export default function render(req, res) {
   const store = configureStore(true);
@@ -23,7 +29,9 @@ export default function render(req, res) {
       registry={sheetsRegistry}
       generateClassName={generateClassName}
     >
-      <UniversalProvider location={req.url} server={true} store={store} />
+      <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
+        <UniversalProvider location={req.url} server={true} store={store} />
+      </MuiThemeProvider>
     </JssProvider>
   );
   const css = sheetsRegistry.toString();

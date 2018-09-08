@@ -35,11 +35,9 @@
     "uuid": "3.3.2"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar public/assets/scss/ -o public/assets/css/",
-    "watch-css": "npm run build-css && node-sass-chokidar public/assets/scss/ -o public/assets/css/ --recursive --output-style compressed --watch",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "server": "npm-run-all -p watch-css lint:watch webpack babel-node-js",
+    "server": "npm-run-all -p lint:watch webpack babel-node-js",
     "webpack": "webpack --watch",
     "flow": "flow check",
     "build": "npm run build-css && react-scripts build",

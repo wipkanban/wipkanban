@@ -1,10 +1,6 @@
 // @flow
 import * as React from "react";
-import {
-  withStyles,
-  MuiThemeProvider,
-  createMuiTheme
-} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
@@ -49,8 +45,6 @@ const styles = theme => ({
   }
 });
 
-const theme = createMuiTheme({});
-
 type Props = {
   classes: Object,
   state: Object,
@@ -58,7 +52,6 @@ type Props = {
 };
 
 const Login = ({ onLogin, classes }: Props) => {
-
   let email: HTMLInputElement, password: HTMLInputElement;
 
   if (typeof window !== "undefined" && window.localStorage.getItem("token")) {
@@ -66,166 +59,156 @@ const Login = ({ onLogin, classes }: Props) => {
   }
 
   return (
-    <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
-      <Grid container className={classes.root}>
-        <Grid item xs={12} className={classes.demo}>
-          <Grid
-            container
-            spacing={0}
-            className={classes.demo}
-            direction="row"
-            justify="flex-start"
-          >
-            <Grid item xs={12} sm={12} md={7} lg={8} xl={8}>
-              <Paper
-                elevation={0}
-                className={[classes.paper, classes.backgroundGreen].join(" ")}
-                style={{
-                  paddingTop: 10,
-                  paddingBottom: 10
-                }}
-              >
-                <div>
-                  <center>
-                    <img
-                      style={{ opacity: 0.9 }}
-                      src="/images/wiplean.jpg"
-                      width="80%"
-                    />
-                  </center>
-                  <br />
-                  <Typography
-                    style={{
-                      color: "white"
+    <Grid container className={classes.root}>
+      <Grid item xs={12} className={classes.demo}>
+        <Grid
+          container
+          spacing={0}
+          className={classes.demo}
+          direction="row"
+          justify="flex-start"
+        >
+          <Grid item xs={12} sm={12} md={7} lg={8} xl={8}>
+            <Paper
+              elevation={0}
+              className={[classes.paper, classes.backgroundGreen].join(" ")}
+              style={{
+                paddingTop: 10,
+                paddingBottom: 10
+              }}
+            >
+              <div>
+                <br />
+                <Typography
+                  style={{
+                    color: "white"
+                  }}
+                  variant="display1"
+                  gutterBottom
+                >
+                  Welcome to the best open source plataform for lean management
+                </Typography>
+                <Typography
+                  style={{
+                    color: "white"
+                  }}
+                  variant="headline"
+                  gutterBottom
+                >
+                  Align strategy and execution with <b>OKRs</b> and{" "}
+                  <b>Kanban</b> for you, your team and your company.
+                </Typography>
+              </div>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={12} md={5} lg={4} xl={4}>
+            <Paper
+              elevation={0}
+              className={classes.paper}
+              style={{
+                paddingTop: 10,
+                paddingBottom: 10
+              }}
+            >
+              <div style={{ width: "80%", margin: "0 auto" }}>
+                <Typography
+                  variant="display1"
+                  color="primary"
+                  gutterBottom
+                  align="center"
+                >
+                  <b>WIPLean</b>
+                </Typography>
+                <div
+                  style={{
+                    width: "100%",
+                    textAlign: "center"
+                  }}
+                >
+                  <TextField
+                    inputRef={el => (email = el)}
+                    className={classes.text}
+                    label="Type your email"
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <EmailIcon />
+                        </InputAdornment>
+                      )
                     }}
-                    variant="display1"
-                    gutterBottom
-                  >
-                    Welcome to the best open source plataform for lean
-                    management
-                  </Typography>
-                  <Typography
-                    style={{
-                      color: "white"
+                  />
+                  <TextField
+                    inputRef={el => (password = el)}
+                    type="password"
+                    className={classes.text}
+                    label="Password"
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <LockIcon />
+                        </InputAdornment>
+                      )
                     }}
-                    variant="headline"
-                    gutterBottom
-                  >
-                    Align strategy and execution with <b>OKRs</b> and{" "}
-                    <b>Kanban</b> for you, your team and your company.
-                  </Typography>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={12} md={5} lg={4} xl={4}>
-              <Paper
-                elevation={0}
-                className={classes.paper}
-                style={{
-                  paddingTop: 10,
-                  paddingBottom: 10
-                }}
-              >
-                <div style={{ width: "80%", margin: "0 auto" }}>
-                  <Typography
-                    variant="display1"
-                    color="primary"
-                    gutterBottom
-                    align="center"
-                  >
-                    <b>WIPLean</b>
-                  </Typography>
+                  />
                   <div
                     style={{
-                      width: "100%",
-                      textAlign: "center"
+                      textAlign: "right"
                     }}
                   >
-                    <TextField
-                      inputRef={el => (email = el)}
-                      className={classes.text}
-                      label="Type your email"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <EmailIcon />
-                          </InputAdornment>
-                        )
-                      }}
-                    />
-                    <TextField
-                      inputRef={el => (password = el)}
-                      type="password"
-                      className={classes.text}
-                      label="Password"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <LockIcon />
-                          </InputAdornment>
-                        )
-                      }}
-                    />
-                    <div
-                      style={{
-                        textAlign: "right"
-                      }}
+                    <br />
+                    <Button
+                      onClick={() => onLogin(email.value, password.value)}
+                      size="large"
+                      variant="raised"
+                      color="primary"
+                      className={classes.button}
                     >
-                      <br />
-                      <Button
-                        onClick={() => onLogin(email.value, password.value)}
-                        size="large"
-                        variant="raised"
-                        color="primary"
-                        className={classes.button}
-                      >
-                        Sign in
-                        <Check />
-                      </Button>
-                      <br />
-                      <Typography
-                        component="p"
-                        color="primary"
-                        gutterBottom
-                        align="right"
-                      >
-                        Do not have an account yet ?{" "}
-                        <Link to="/create-account" className={classes.link}>
-                          <b>Sign up!</b>
-                        </Link>
-                      </Typography>
-                    </div>
-                  </div>
-                  <br />
-                  <div>
-                    Sign in with:<br />
-                    <IconButton className={classes.button}>
-                      <i
-                        className="fa fa-facebook-square fa-2x"
-                        style={{
-                          color: "#4267b2"
-                        }}
-                      />
-                    </IconButton>
-                    <IconButton className={classes.button}>
-                      <i
-                        style={{
-                          color: "#db4437"
-                        }}
-                        className="fa fa-google-plus fa-2x"
-                      />
-                    </IconButton>
-                    <IconButton className={classes.button}>
-                      <i className="fa fa-github-square fa-2x" />
-                    </IconButton>
+                      Sign in
+                      <Check />
+                    </Button>
+                    <br />
+                    <Typography
+                      component="p"
+                      color="primary"
+                      gutterBottom
+                      align="right"
+                    >
+                      Do not have an account yet ?{" "}
+                      <Link to="/create-account" className={classes.link}>
+                        <b>Sign up!</b>
+                      </Link>
+                    </Typography>
                   </div>
                 </div>
-              </Paper>
-            </Grid>
+                <br />
+                <div>
+                  Sign in with:<br />
+                  <IconButton className={classes.button}>
+                    <i
+                      className="fa fa-facebook-square fa-2x"
+                      style={{
+                        color: "#4267b2"
+                      }}
+                    />
+                  </IconButton>
+                  <IconButton className={classes.button}>
+                    <i
+                      style={{
+                        color: "#db4437"
+                      }}
+                      className="fa fa-google-plus fa-2x"
+                    />
+                  </IconButton>
+                  <IconButton className={classes.button}>
+                    <i className="fa fa-github-square fa-2x" />
+                  </IconButton>
+                </div>
+              </div>
+            </Paper>
           </Grid>
         </Grid>
       </Grid>
-    </MuiThemeProvider>
+    </Grid>
   );
 };
 

@@ -5,6 +5,10 @@ import { loginSuccess } from "./actions/Login";
 import UniversalProvider from "./UniversalProvider";
 import { type Store } from "redux";
 
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({});
+
 const store: Store = configureStore();
 let stateLocalStorage: string = window.localStorage.getItem("state");
 
@@ -21,8 +25,21 @@ store.subscribe(() => {
   window.localStorage.setItem("state", JSON.stringify(store.getState()));
 });
 
-const Root: Function = (): React.Element<typeof UniversalProvider> => (
-  <UniversalProvider store={store} />
-);
+type Props = {};
 
-export default Root;
+export default class Root extends React.Component<Props> {
+  componentDidMount() {
+    const jssStyles = document.getElementById("jss-server-side");
+    if (jssStyles && jssStyles.parentNode) {
+      jssStyles.parentNode.removeChild(jssStyles);
+    }
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider theme={theme}>
+        <UniversalProvider store={store} />
+      </MuiThemeProvider>
+    );
+  }
+}

@@ -1,26 +1,23 @@
 // @flow
 import * as React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Navbar from "../Navbar/index";
 import Column from "../Board/Column";
 import MenuLeft from "../Navbar/MenuLeft";
 import MenuRight from "../Navbar/MenuRight";
 import columns from "./fakeData";
-import UserAccountSettings from '../Navbar/Buttons/UserAccountSettings';
-import AddCardButton from '../Navbar/Buttons/AddCardButton';
-import DashboardIconButton from '../Navbar/Buttons/DashboardIconButton';
-import TransferWithinAStationIconButton from '../Navbar/Buttons/TransferWithinAStationIconButton';
-import CalendarIconButton from '../Navbar/Buttons/CalendarIconButton';
-import FilterListIconButton from '../Navbar/Buttons/FilterListIconButton';
-import GroupAddIconButton from '../Navbar/Buttons/GroupAddIconButton';
-import HistoryIconButton from '../Navbar/Buttons/HistoryIconButton';
-import SettingsIconButton from '../Navbar/Buttons/SettingsIconButton';
-import ZoomOutMapIconButton from '../Navbar/Buttons/ZoomOutMapIconButton';
-import Search from '../Navbar/Search';
-
-const theme = createMuiTheme();
+import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
+import AddCardButton from "../Navbar/Buttons/AddCardButton";
+import DashboardIconButton from "../Navbar/Buttons/DashboardIconButton";
+import TransferWithinAStationIconButton from "../Navbar/Buttons/TransferWithinAStationIconButton";
+import CalendarIconButton from "../Navbar/Buttons/CalendarIconButton";
+import FilterListIconButton from "../Navbar/Buttons/FilterListIconButton";
+import GroupAddIconButton from "../Navbar/Buttons/GroupAddIconButton";
+import HistoryIconButton from "../Navbar/Buttons/HistoryIconButton";
+import SettingsIconButton from "../Navbar/Buttons/SettingsIconButton";
+import ZoomOutMapIconButton from "../Navbar/Buttons/ZoomOutMapIconButton";
+import Search from "../Navbar/Search";
 
 const styles: Object = {
   root: {
@@ -41,7 +38,7 @@ function LayoutApp(props: Props) {
   const { classes } = props;
 
   return (
-    <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
+    <div>
       <Navbar>
         <MenuLeft />
         <MenuRight>
@@ -75,7 +72,7 @@ function LayoutApp(props: Props) {
           />
         ))}
       </Grid>
-    </MuiThemeProvider>
+    </div>
   );
 }
 
