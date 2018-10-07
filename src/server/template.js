@@ -11,8 +11,10 @@ export default (html, state, css) => `
   <link rel="shortcut icon" href="/favicon.ico">
 
   <title>WIPKanban</title>
+  <!--
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  -->
   <link rel="stylesheet" href="/assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 

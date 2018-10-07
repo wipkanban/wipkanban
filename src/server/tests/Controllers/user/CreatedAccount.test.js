@@ -17,7 +17,7 @@ describe("User Account", () => {
     };
   });
 
-  afterEach(() => request.app.close());
+  //afterEach(() => request.app.close());
 
   test("/POST it should to create a account user", done => {
     request

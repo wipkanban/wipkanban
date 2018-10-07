@@ -1,5 +1,5 @@
 import React from "react";
-import FormLoginContainer from "../routes/Login/LoginContainer";
+import FormLoginContainer from "./Login/LoginContainer";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 

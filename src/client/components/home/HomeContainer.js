@@ -1,4 +1,4 @@
-import Home from "./Home";
+import Home from "./index";
 import { connect } from "react-redux";
 
 const mapStateToProps = ({ userReducer: { user } }) => ({ user });
