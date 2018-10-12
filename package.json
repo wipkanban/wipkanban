@@ -37,7 +37,7 @@
     "webpack": "webpack --watch",
     "flow": "flow check",
     "build": "npm run build-css && react-scripts build",
-    "test": "cross-env CI=true jest --env=jsdom --coverage",
+    "test": "jest --ci --verbose --forceExit --detectOpenHandles --coverage",
     "test:dev": "react-scripts test --env=jsdom",
     "test:coverage": "cat ./coverage/lcov.info | coveralls",
     "babel-node-js": "nodemon --exec babel-node src/server/server.js",
