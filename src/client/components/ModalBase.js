@@ -1,21 +1,28 @@
-import React from "react";
-import PropTypes from "prop-types";
+// @flow
+import * as React from "react";
 
-class Modal extends React.Component {
-  constructor(props) {
+type Props = {
+  children: React.Node,
+  title: string,
+  onCloseModal: Function,
+  allowClose: boolean
+};
+
+class Modal extends React.Component<Props> {
+  constructor(props: Props) {
     super(props);
   }
 
-  onCloseModal() {
-    let { oncloseModal } = this.props;
+  onCloseModal(): void {
+    let { onCloseModal } = this.props;
 
-    oncloseModal();
+    onCloseModal();
   }
 
-  render() {
+  render(): React.Node {
     let { allowClose } = this.props;
 
-    let btnClose = allowClose ? (
+    let btnClose: React.Node = allowClose ? (
       <button type="button" className="close">
         <span onClick={this.onCloseModal.bind(this)} className="text-white">
           &times;
@@ -50,12 +57,5 @@ class Modal extends React.Component {
     );
   }
 }
-
-Modal.propTypes = {
-  children: PropTypes.object,
-  title: PropTypes.string,
-  oncloseModal: PropTypes.func.isRequired,
-  allowClose: PropTypes.bool
-};
 
 export default Modal;
