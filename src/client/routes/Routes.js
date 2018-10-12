@@ -3,7 +3,7 @@ import * as React from "react";
 import {Route, Switch} from "react-router-dom";
 import LoginContainer from "../components/Login/LoginContainer";
 import SignupContainer from "../components/Signup/SignupContainer";
-import AccountCreated from "../components/User/AccountCreated";
+import AccountCreated from "../components/Signup/AccountCreated";
 import HomeContainer from "../components/Home/index";
 import requireAuth from "../components/requireAuth";
 import Board from '../components/Board/index';
