@@ -1,10 +1,19 @@
-import React from "react";
+// @flow
+import * as React from "react";
 import { StaticRouter } from "react-router";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
-import PropTypes from "prop-types";
 
-const RouterFactory = ({ server, location }) => {
+type Props = {
+  server: boolean,
+  location: string
+};
+
+type Router =
+  React.Element<typeof StaticRouter>
+  | React.Element<typeof BrowserRouter>;
+
+const RouterFactory = ({ server, location }: Props): Router => {
   if (server) {
     return (
       <StaticRouter location={location} context={{}}>
@@ -14,15 +23,10 @@ const RouterFactory = ({ server, location }) => {
   }
 
   return (
-    <Router>
+    <BrowserRouter>
       <Routes />
-    </Router>
+    </BrowserRouter>
   );
-};
-
-RouterFactory.propTypes = {
-  server: PropTypes.bool,
-  location: PropTypes.string
 };
 
 export default RouterFactory;

@@ -1,4 +1,4 @@
-export default (html, state) => `
+export default (html, state, css) => `
 <!doctype html>
 <html lang="en">
 
@@ -11,16 +11,20 @@ export default (html, state) => `
   <link rel="shortcut icon" href="/favicon.ico">
 
   <title>WIPKanban</title>
+  <!--
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  -->
   <link rel="stylesheet" href="/assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
-<body>
+<body style="margin: 0">
+  <style id="jss-server-side">${css}</style>
   <div id="root">${html}</div>
   <script>
-  window.__PRELOADED_STATE__ = ${JSON.stringify(state)}
-</script>
-<script src="/dist/bundle.js"></script>
+    window.__PRELOADED_STATE__ = ${JSON.stringify(state)}
+  </script>
+  <script src="/dist/bundle.js"></script>
 </body>
 
 </html>

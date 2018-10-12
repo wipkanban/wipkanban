@@ -1,16 +1,22 @@
-import React from "react";
+// @flow
+import * as React from "react";
 import configureStore from "./configureStore";
 import { loginSuccess } from "./actions/Login";
 import UniversalProvider from "./UniversalProvider";
+import { type Store } from "redux";
 
-const store = configureStore();
-let stateLocalStorage = window.localStorage.getItem("state");
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({});
+
+const store: Store = configureStore();
+let stateLocalStorage: string = window.localStorage.getItem("state");
 
 if (stateLocalStorage) {
-  let state = JSON.parse(stateLocalStorage);
-  let user = state.userReducer.user;
+  let state: Object = JSON.parse(stateLocalStorage);
+  let user: Object = state.userReducer.user;
 
-  if (user !== undefined) {
+  if (user !== undefined && Object.keys(user).length) {
     store.dispatch(loginSuccess(true, null, user));
   }
 }
@@ -19,6 +25,21 @@ store.subscribe(() => {
   window.localStorage.setItem("state", JSON.stringify(store.getState()));
 });
 
-const Root = () => <UniversalProvider store={store} />;
+type Props = {};
 
-export default Root;
+export default class Root extends React.Component<Props> {
+  componentDidMount() {
+    const jssStyles = document.getElementById("jss-server-side");
+    if (jssStyles && jssStyles.parentNode) {
+      jssStyles.parentNode.removeChild(jssStyles);
+    }
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider theme={theme}>
+        <UniversalProvider store={store} />
+      </MuiThemeProvider>
+    );
+  }
+}

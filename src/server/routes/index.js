@@ -1,14 +1,25 @@
 import Express from "express";
-import CreateAccount from "../controllers/user/CreateAccount";
-import DeleteAccount from "../controllers/user/DeleteAccount";
-import { login } from "../controllers/Authentication";
+import User from "../models/user";
+import CreateAccountFactory from "../controllers/user/CreateAccount";
+import DeleteAccountFactory from "../controllers/user/DeleteAccount";
+import SetFirstAccessFactory from "../controllers/user/SetFirstAccess";
+import UpdateUserAccountFactory from "../controllers/user/UpdateUserAccount";
+import setCsrf from "../middlewares/csrf";
+import LoginFactory from "../controllers/Authentication";
 import { requireAuth } from "../middlewares/requireAuth";
+import upload from "../middlewares/upload";
 import cors from "cors";
 
 let corsOptions = {
   origin: process.env.URL_APPLICATION,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
+
+const CreateAccount = CreateAccountFactory(User);
+const DeleteAccount = DeleteAccountFactory(User);
+const SetFirstAccess = SetFirstAccessFactory(User);
+const UpdateUserAccount = UpdateUserAccountFactory(User);
+const Login = LoginFactory(User, setCsrf);
 
 const router = Express.Router();
 /**
@@ -67,6 +78,59 @@ router.post("/user", cors(corsOptions), CreateAccount);
 router.delete("/user", requireAuth, DeleteAccount);
 
 /**
+ * @api {delete} /api/v1/user/setFirstAccess Update if is the first access of the user
+ * @apiName wipKanbanApi
+ * @apiVersion 0.1.0
+ * @apiGroup User
+ * @apiPermission public
+ *
+ * @apiDescription Delete account user and send email confirmation
+ *
+ * @apiParam {Integer} _id id of the user on database.
+ * @apiParam {bool} firstAccess true or false.
+ * @apiParam {String} token Token generate by application.
+ *
+ * @apiSampleRequest https://wipkanban.com/api/v1/user/setFirstAccess
+ *
+ * @apiExample Example usage:
+ * curl -i http://<IPSERVER>/api/v1/user/setFirstAccess
+ *
+ * @apiSuccess {Boolean} success Return true value.
+ * @apiSuccess {String} message  Message success.
+ *
+ */
+router.post("/user/setFirstAccess", requireAuth, SetFirstAccess);
+
+/**
+ * @api {put} /api/v1/user/[iduser] Update the account user
+ * @apiName wipKanbanApi
+ * @apiVersion 0.1.0
+ * @apiGroup User
+ * @apiPermission public
+ *
+ * @apiDescription Update the account user
+ *
+ * @apiParam {Integer} _id id of the user on database.
+ * @apiParam {bool} firstAccess true or false.
+ * @apiParam {String} token Token generate by application.
+ *
+ * @apiSampleRequest https://wipkanban.com/api/v1/user/setFirstAccess
+ *
+ * @apiExample Example usage:
+ * curl -i http://<IPSERVER>/api/v1/user/setFirstAccess
+ *
+ * @apiSuccess {Boolean} success Return true value.
+ * @apiSuccess {String} message  Message success.
+ *
+ */
+router.put(
+  "/user/:userid",
+  requireAuth,
+  upload.single("image"),
+  UpdateUserAccount
+);
+
+/**
  * @api {post} /api/v1/login Login
  * @apiVersion 0.1.0
  * @apiName wipKanbanApi
@@ -98,6 +162,46 @@ router.delete("/user", requireAuth, DeleteAccount);
  *     }
  *
  */
-router.post("/login", cors(corsOptions), login);
+router.post("/login", cors(corsOptions), Login);
+
+/**
+ * @api {post} /api/v1/logout Logout
+ * @apiVersion 0.1.0
+ * @apiName wipKanbanApi
+ * @apiGroup Authentication
+ * @apiPermission public
+ *
+ * @apiDescription Logout a user of the application
+ *
+ * @apiParam {String} token Token of the user.
+ *
+ * @apiSampleRequest https://wipkanban.com/api/v1/user/login
+ *
+ * @apiExample Example usage:
+ * curl -i https://<IPSERVER>/api/v1/login
+ *
+ * @apiSuccess {Boolean} success True to the request.
+ * @apiSuccess {String} message  Message success.
+ *
+ * @apiError Usernotfound When email user is not found.
+ * @apiError Passwordinvalid When email exist, but the password does not matching.
+ *
+ * @apiErrorExample Response (example):
+ *     HTTP/1.1 401 Not Authenticated
+ *     {
+ *       "successr": "false"
+ *       "message": "User already exist"
+ *     }
+ *
+ */
+router.post("/logout", (req, res) => {
+  res.clearCookie("token");
+  res
+    .json({
+      success: true,
+      message: "Logout succesfull!"
+    })
+    .end();
+});
 
 export default router;
