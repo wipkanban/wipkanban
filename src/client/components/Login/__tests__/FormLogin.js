@@ -1,10 +1,12 @@
 import React from "react";
-import FormLogin from "../FormLogin";
+import FormLogin from "../index";
+import { createShallow, createMount } from "@material-ui/core/test-utils";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 // setup file
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import { shallow } from "enzyme";
 
 configure({ adapter: new Adapter() });
 
@@ -28,8 +30,6 @@ var localStorageMock = (function() {
 Object.defineProperty(window, "localStorage", { value: localStorageMock });
 
 describe("Login User", () => {
-  let formLogin;
-
   const testValues = {
     state: {
       success: false,
@@ -38,15 +38,15 @@ describe("Login User", () => {
     onLogin: jest.fn()
   };
 
+  let shallow;
+
   beforeEach(() => {
-    formLogin = shallow(<FormLogin {...testValues} />);
+    shallow = createShallow({ dive:true });
   });
 
-  it("should have 2 inputs", () => {
-    expect(formLogin.find("input").length).toEqual(2);
-  });
-
-  it("should have 1 button for submit", () => {
-    expect(formLogin.find("button").length).toEqual(1);
+  it("should have 2 inputs and a Button", () => {
+    let wrapper = shallow(<FormLogin {...testValues} />);
+    expect(wrapper.find(TextField).length).toEqual(2);
+    expect(wrapper.find(Button).length).toEqual(1);
   });
 });
