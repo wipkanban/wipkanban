@@ -3,6 +3,8 @@ import FormLogin from "../index";
 import { createShallow } from "@material-ui/core/test-utils";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import IconButton from "@material-ui/core/IconButton";
+import { Redirect } from "react-router-dom";
 
 // setup file
 import { configure } from "enzyme";
@@ -41,12 +43,31 @@ describe("Login User", () => {
   let shallow;
 
   beforeEach(() => {
-    shallow = createShallow({ dive:true });
+    shallow = createShallow({ dive: true });
   });
 
-  it("should have 2 inputs and a Button", () => {
+  it("should render 2 inputs and a Button", () => {
     let wrapper = shallow(<FormLogin {...testValues} />);
     expect(wrapper.find(TextField).length).toEqual(2);
     expect(wrapper.find(Button).length).toEqual(1);
+  });
+
+  it("should render 2 inputs and a Button", () => {
+    let wrapper = shallow(<FormLogin {...testValues} />);
+    expect(wrapper.find(IconButton).length).toEqual(3);
+  });
+
+  it("should call function onLogin on click button Login", () => {
+    let wrapper = shallow(<FormLogin {...testValues} />);
+
+    wrapper.find(Button).simulate("click");
+    expect(testValues.onLogin.mock.calls.length).toEqual(1);
+  });
+
+  it("should return a redirect component, bacause jwt is defined", () => {
+    localStorage.setItem("token", "ass987298qsh8sa");
+    let wrapper = shallow(<FormLogin {...testValues} />);
+
+    expect(wrapper.type()).toEqual(Redirect);
   });
 });
