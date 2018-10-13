@@ -6,7 +6,6 @@ import Navbar from "../Navbar/index";
 import Column from "../Board/Column";
 import MenuLeft from "../Navbar/MenuLeft";
 import MenuRight from "../Navbar/MenuRight";
-import columns from "./fakeData";
 import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
 import AddCardButton from "../Navbar/Buttons/AddCardButton";
 import DashboardIconButton from "../Navbar/Buttons/DashboardIconButton";
@@ -18,6 +17,7 @@ import HistoryIconButton from "../Navbar/Buttons/HistoryIconButton";
 import SettingsIconButton from "../Navbar/Buttons/SettingsIconButton";
 import ZoomOutMapIconButton from "../Navbar/Buttons/ZoomOutMapIconButton";
 import Search from "../Navbar/Search";
+
 
 const styles: Object = {
   root: {
@@ -31,11 +31,12 @@ const styles: Object = {
 };
 
 type Props = {
-  classes: Object
+  classes: Object,
+  columns: Object
 };
 
 function LayoutApp(props: Props) {
-  const { classes } = props;
+  const { classes, columns } = props;
 
   return (
     <div>

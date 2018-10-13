@@ -6,14 +6,14 @@ import SignupContainer from "../components/Signup/SignupContainer";
 import AccountCreated from "../components/Signup/AccountCreated";
 import HomeContainer from "../components/Home";
 import requireAuth from "../components/requireAuth";
-import Board from '../components/Board/index';
+import BoardContainer from '../components/Board/BoardContainer';
 import Signup from '../components/Signup';
 import Home from '../components/Home';
 
 const Routes : () => React.Node = () : React.Node => (
   <Switch>
     <Route exact path="/" component={requireAuth(HomeContainer)}/>
-    <Route path="/board" component={requireAuth(Board)}/>
+    <Route path="/board" component={requireAuth(BoardContainer)}/>
     <Route path="/signup" component={Signup}/>
     <Route path="/Home" component={Home}/>
     <Route path="/login" component={LoginContainer}/>
