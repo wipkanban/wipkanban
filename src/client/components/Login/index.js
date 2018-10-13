@@ -157,7 +157,7 @@ const Login = ({ onLogin, classes }: Props) => {
                   >
                     <br />
                     <Button
-                      onClick={() => onLogin(email.value, password.value)}
+                      onClick={() => onLogin(email, password)}
                       size="large"
                       variant="raised"
                       color="primary"

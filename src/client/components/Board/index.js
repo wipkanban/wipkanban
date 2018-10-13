@@ -76,6 +76,6 @@ function LayoutApp(props: Props) {
   );
 }
 
-const teste = withStyles(styles)(LayoutApp);
+const Board = withStyles(styles)(LayoutApp);
 
-export default teste;
+export default Board;
