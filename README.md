@@ -2,7 +2,7 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://github.com/wipkanban/wipkanban/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/wipkanban/wipkanban.svg?branch=travisci)](https://travis-ci.org/wipkanban/wipkanban)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3fabcb66f2ee4c0f907ee76b48199da3)](https://www.codacy.com/app/WipKanban/wipkanban?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wipkanban/wipkanban&amp;utm_campaign=Badge_Grade)
-[![Coverage Status](https://coveralls.io/repos/github/wipkanban/wipkanban/badge.svg)](https://coveralls.io/github/wipkanban/wipkanban)
+[![Coverage Status](https://coveralls.io/repos/github/wipkanban/wipkanban/badge.svg?branch=master)](https://coveralls.io/github/wipkanban/wipkanban?branch=master)
 [![dependencies Status](https://david-dm.org/wipkanban/wipkanban/status.svg)](https://david-dm.org/wipkanban/wipkanban)
 [![Maintainability](https://api.codeclimate.com/v1/badges/eedd7e6c383189520346/maintainability)](https://codeclimate.com/github/wipkanban/wipkanban/maintainability)
 >A open source kanban tool for Lean Management.
@@ -37,11 +37,11 @@ To access enter the address htts://<YOUR_IP_ADDRESS>:3000 in the browser
 The tests are divided between client and server
 
 ```bash
-#client tests
-yarn run test:client
+#run all tests
+yarn run test
 
-#server
-yarn run test:server
+#run tests while developtment
+yarn run test:dev
 ```
 
 ## [How to Contribute](https://github.com/wipkanban/wipkanban/blob/master/CONTRIBUTING.md)
