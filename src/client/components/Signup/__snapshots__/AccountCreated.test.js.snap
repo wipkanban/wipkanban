@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AccountCreated /> Component should render component correctly 1`] = `
+<div
+  className="text-center"
+>
+  <h1>
+    Your account has been successfully created.
+    <br />
+     Click the link below to login
+  </h1>
+  <p>
+    <Link
+      className="btn btn-success"
+      replace={false}
+      to="/login"
+    >
+      Login
+    </Link>
+  </p>
+</div>
+`;

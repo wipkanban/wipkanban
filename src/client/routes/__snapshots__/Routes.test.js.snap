@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Routes /> Component should render an component correctly 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    path="/board"
+  />
+  <Route
+    component={[Function]}
+    path="/signup"
+  />
+  <Route
+    component={[Function]}
+    path="/Home"
+  />
+  <Route
+    component={[Function]}
+    path="/login"
+  />
+  <Route
+    component={[Function]}
+    path="/create-account"
+  />
+  <Route
+    component={[Function]}
+    path="/account-created"
+  />
+</Switch>
+`;

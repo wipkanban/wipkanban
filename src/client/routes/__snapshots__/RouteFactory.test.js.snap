@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RouterFactory /> Component should render a BrowserRouter component when server param is not defined 1`] = `
+<BrowserRouter>
+  <Routes />
+</BrowserRouter>
+`;
+
+exports[`<RouterFactory /> Component should render a StaticRouter component when server param is defined 1`] = `
+<StaticRouter
+  basename=""
+  context={Object {}}
+  location={Object {}}
+>
+  <Routes />
+</StaticRouter>
+`;
