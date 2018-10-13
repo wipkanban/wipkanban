@@ -1,9 +1,9 @@
 import React from "react";
-import KanbanHome from "../index";
+import KanbanHome from "./index";
 import { createShallow } from "@material-ui/core/test-utils";
 import Grid from "@material-ui/core/Grid";
-import BoardList from "../../Board/BoardList";
-import TeamList from "../../Team/TeamList";
+import BoardList from "../Board/BoardList";
+import TeamList from "../Team/TeamList";
 
 // setup file
 import { configure } from "enzyme";

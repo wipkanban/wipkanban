@@ -1,11 +1,11 @@
 import React from "react";
-import Home from "../index";
-import Navbar from "../../Navbar";
+import Home from "./index";
+import Navbar from "../Navbar";
 import { createShallow } from "@material-ui/core/test-utils";
-import TabsHome from "../TabsHome";
-import MenuRight from "../../Navbar/MenuRight";
-import Search from "../../Navbar/Search";
-import UserAccountSettings from "../../Navbar/Buttons/UserAccountSettings";
+import TabsHome from "./TabsHome";
+import MenuRight from "../Navbar/MenuRight";
+import Search from "../Navbar/Search";
+import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
 
 // setup file
 import { configure } from "enzyme";

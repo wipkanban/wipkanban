@@ -1,5 +1,5 @@
 import React from "react";
-import Signup from "../index";
+import Signup from "./index";
 import { createShallow } from "@material-ui/core/test-utils";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";

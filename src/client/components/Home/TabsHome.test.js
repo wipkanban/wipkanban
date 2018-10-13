@@ -1,10 +1,10 @@
 import React from "react";
 import { createShallow } from "@material-ui/core/test-utils";
-import TabsHome from "../TabsHome";
+import TabsHome from "./TabsHome";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import KanbanHome from "../../KanbanHome";
+import KanbanHome from "../KanbanHome";
 
 // setup file
 import { configure } from "enzyme";

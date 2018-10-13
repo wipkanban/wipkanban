@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../index";
+import Navbar from "./index";
 import { createShallow } from "@material-ui/core/test-utils";
 import AppBar from '@material-ui/core/AppBar';
 

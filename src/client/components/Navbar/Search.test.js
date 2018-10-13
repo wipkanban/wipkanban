@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "../Search";
+import Search from "./Search";
 import { createShallow } from "@material-ui/core/test-utils";
 import Tooltip from "@material-ui/core/Tooltip";
 

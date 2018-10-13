@@ -1,5 +1,5 @@
 import React from "react";
-import MenuLeft from "../MenuLeft";
+import MenuLeft from "./MenuLeft";
 import { createShallow } from "@material-ui/core/test-utils";
 import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
 import Button from "@material-ui/core/Button";

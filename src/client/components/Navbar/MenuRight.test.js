@@ -1,5 +1,5 @@
 import React from "react";
-import MenuRight from "../MenuRight";
+import MenuRight from "./MenuRight";
 import { createShallow } from "@material-ui/core/test-utils";
 
 // setup file
