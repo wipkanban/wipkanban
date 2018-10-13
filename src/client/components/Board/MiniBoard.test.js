@@ -2,7 +2,6 @@ import React from "react";
 import MiniBoard from "./MiniBoard";
 import { createShallow } from "@material-ui/core/test-utils";
 import toJson from "enzyme-to-json";
-import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 

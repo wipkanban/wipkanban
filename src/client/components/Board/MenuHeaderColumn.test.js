@@ -2,7 +2,6 @@ import React from "react";
 import MenuHeaderColumn from "./MenuHeaderColumn";
 import { createShallow } from "@material-ui/core/test-utils";
 import toJson from "enzyme-to-json";
-import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
