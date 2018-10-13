@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MiniBoard /> Component should render correctly 1`] = `
+<WithStyles(Card)>
+  <div
+    className="MediaControlCard-cardHeader-4"
+  >
+    <WithStyles(Typography)
+      variant="title"
+    >
+      Minhas Atividades
+    </WithStyles(Typography)>
+    <WithStyles(Typography)
+      variant="subheading"
+    >
+      createdb by you at today 12:00pm
+    </WithStyles(Typography)>
+  </div>
+  <WithStyles(CardContent)
+    className="MediaControlCard-content-2"
+  >
+    <div
+      className="MediaControlCard-child-3"
+    >
+      <WithStyles(Typography)
+        align="center"
+        color="primary"
+        variant="body2"
+      >
+        Lead Time
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        align="center"
+        variant="display1"
+      >
+        10
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        align="center"
+        variant="body1"
+      >
+        by week
+      </WithStyles(Typography)>
+    </div>
+    <div
+      className="MediaControlCard-child-3"
+    >
+      <WithStyles(Typography)
+        align="center"
+        color="primary"
+        variant="body2"
+      >
+        Cycle Time
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        align="center"
+        variant="display1"
+      >
+        10
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        align="center"
+        variant="body1"
+      >
+        by week
+      </WithStyles(Typography)>
+    </div>
+    <div
+      className="MediaControlCard-child-3"
+    >
+      <WithStyles(Typography)
+        align="center"
+        color="primary"
+        variant="body2"
+      >
+        Throghput
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        align="center"
+        variant="display1"
+      >
+        10
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        align="center"
+        variant="body1"
+      >
+        by week
+      </WithStyles(Typography)>
+    </div>
+  </WithStyles(CardContent)>
+  <WithStyles(CardActions)
+    style={
+      Object {
+        "display": "block",
+        "textAlign": "right",
+      }
+    }
+  >
+    <Link
+      color="primary"
+      replace={false}
+      size="small"
+      to="/board"
+    >
+      Go to Board
+    </Link>
+  </WithStyles(CardActions)>
+</WithStyles(Card)>
+`;

@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
-import Card from "./card";
+import Card from "./Card";
 import ColumnHeader from "./ColumnHeader";
 import ColumnBoard from "./Column";
 import AddIcon from "@material-ui/icons/AddCircle";
@@ -13,12 +13,12 @@ type Props = {
   classes: Object,
   title: string,
   cards?: Array<Card>,
-  vColumns?: Array<Column>,
-  hColumns?: Array<Column>
+  vColumns?: Array<typeof Column>,
+  hColumns?: Array<typeof Column>
 };
 
 type PropsContainer = {
-  children: React.Element<Column>
+  children: React.Element<typeof Column>
 };
 
 function ColumnContainer(props: PropsContainer) {
