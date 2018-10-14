@@ -11,6 +11,9 @@ import EmailIcon from "@material-ui/icons/Email";
 import Check from "@material-ui/icons/Check";
 import Button from "@material-ui/core/Button";
 import { Link, Redirect } from "react-router-dom";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import classNames from "classnames";
+import green from "@material-ui/core/colors/green";
 
 const styles = theme => ({
   root: {
@@ -18,7 +21,7 @@ const styles = theme => ({
   },
   paper: {
     padding: theme.spacing.unit * 2,
-    height: 748,
+    height: "100vh",
     display: "flex",
     alignItems: "center"
   },
@@ -27,9 +30,6 @@ const styles = theme => ({
   },
   text: {
     width: "100%"
-  },
-  button: {
-    margin: theme.spacing.unit
   },
   link: {
     textDecoration: "none",
@@ -41,43 +41,89 @@ const styles = theme => ({
   learnMore: {
     color: "white",
     borderColor: "white"
+  },
+  errorClass: {
+    color: theme.palette.error.main
+  },
+  wrapper: {
+    margin: theme.spacing.unit,
+    position: "relative"
+  },
+  buttonProgress: {
+    color: green[500],
+    position: "absolute",
+    top: "50%",
+    right: 133.69 / 2 - 33 / 2,
+    marginTop: -12,
+    marginLeft: -12
+  },
+  buttonSuccess: {
+    backgroundColor: green[500],
+    "&:hover": {
+      backgroundColor: green[700]
+    }
   }
 });
 
 type Props = {
   classes: Object,
   onCreateAccount: Function,
-  success: boolean
+  success: boolean,
+  showPreloader: boolean,
+  message: string | null
 };
 
 type State = {
   email: "string" | null,
-  password: "string" | null,
-  confirmPassword: "string" | null
+  password: "string",
+  confirmPassword: "string",
+  confirmPasswordError: boolean,
+  requiredFields: boolean
 };
 
 class Signup extends React.Component<Props, State> {
   _onCreateAccount: Function;
+
+  state: State;
 
   constructor(props) {
     super(props);
 
     this.state = {
       email: null,
-      password: null,
-      confirmPassword: null
+      password: "",
+      confirmPassword: "",
+      confirmPasswordError: false,
+      requiredFields: false
     };
 
     this._onCreateAccount = this._onCreateAccount.bind(this);
   }
 
   _onCreateAccount() {
+    let { password, confirmPassword } = this.state;
+
+    if (password.length == 0 || confirmPassword.length == 0) {
+      this.setState({ requiredFields: true });
+
+      return;
+    } else if (password != confirmPassword) {
+      this.setState({ confirmPasswordError: true });
+
+      return;
+    }
+
+    this.setState({ confirmPasswordError: false, requiredFields: false });
     let { onCreateAccount } = this.props;
+
     onCreateAccount(this.state.email, this.state.password);
   }
 
   render() {
-    let { success, classes } = this.props;
+    let { success, classes, message, showPreloader } = this.props;
+    const buttonClassname = classNames({
+      [classes.buttonSuccess]: success
+    });
 
     if (success) {
       return <Redirect to="/account-created" />;
@@ -154,6 +200,8 @@ class Signup extends React.Component<Props, State> {
                     }}
                   >
                     <TextField
+                      disabled={showPreloader}
+                      error={this.state.requiredFields}
                       onChange={e => {
                         this.setState({ email: e.target.value });
                       }}
@@ -168,6 +216,11 @@ class Signup extends React.Component<Props, State> {
                       }}
                     />
                     <TextField
+                      disabled={showPreloader}
+                      error={
+                        this.state.confirmPasswordError ||
+                        this.state.requiredFields
+                      }
                       onChange={e => {
                         this.setState({ password: e.target.value });
                       }}
@@ -183,12 +236,22 @@ class Signup extends React.Component<Props, State> {
                       }}
                     />
                     <TextField
+                      disabled={showPreloader}
+                      error={
+                        this.state.confirmPasswordError ||
+                        this.state.requiredFields
+                      }
+                      helperText={
+                        this.state.confirmPasswordError
+                          ? "The password and confirm password fiedls are differents"
+                          : ""
+                      }
                       onChange={e => {
                         this.setState({ confirmPassword: e.target.value });
                       }}
                       type="password"
                       className={classes.text}
-                      label="Conform password"
+                      label="Confirm password"
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
@@ -197,22 +260,42 @@ class Signup extends React.Component<Props, State> {
                         )
                       }}
                     />
+                    {message && (
+                      <Typography
+                        className={classes.errorClass}
+                        variant="h6"
+                        gutterBottom
+                      >
+                        {message}
+                      </Typography>
+                    )}
                     <div
                       style={{
                         textAlign: "right"
                       }}
                     >
                       <br />
-                      <Button
-                        onClick={this._onCreateAccount}
-                        size="large"
-                        variant="raised"
-                        color="primary"
-                        className={classes.button}
-                      >
-                        Sign Up
-                        <Check />
-                      </Button>
+                      <div className={classes.wrapper}>
+                        <Button
+                          onClick={this._onCreateAccount}
+                          size="large"
+                          variant="raised"
+                          color="primary"
+                          className={buttonClassname}
+                          disabled={showPreloader}
+                        >
+                          Sign Up
+                          <Check />
+                        </Button>
+                        {showPreloader && (
+                          <CircularProgress
+                            size={24}
+                            className={classes.buttonProgress}
+                          />
+                        )}
+                        <br />
+                      </div>
+
                       <br />
                       <Typography
                         component="p"

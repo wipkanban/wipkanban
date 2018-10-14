@@ -12,7 +12,8 @@ export default function userReducer(state = initialState, action) {
     case actionsType.CREATE_ACCOUNT_SEND:
       return {
         ...state,
-        showPreloader: true
+        showPreloader: true,
+        message: null
       };
 
     case actionsType.CREATE_ACCOUNT_SUCCESS:
