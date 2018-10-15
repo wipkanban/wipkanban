@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Redirect } from "react-router-dom";
 import toJson from "enzyme-to-json";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 // setup file
 import { configure } from "enzyme";
@@ -37,16 +38,75 @@ describe("<Signup /> User", () => {
     expect(wrapper.find(Button).length).toEqual(1);
   });
 
-  it("should call functino when click on button", () => {
+  it("should not call function when click on button and fields are empty", () => {
+    wrapper.find(Button).simulate("click");
+    expect(testValues.onCreateAccount.mock.calls.length).toEqual(0);
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it("should not call function when fields password and confirmPassword are different", () => {
+    let expectedState = {
+      confirmPassword: "mypassword2",
+      email: "email@example.com",
+      password: "mypassword",
+      confirmPasswordError: true,
+      requiredFields: false
+    };
+
+    let email = wrapper.find(TextField).at(0);
+    email.simulate("change", { target: { value: "email@example.com" } });
+
+    //password field
+    wrapper
+      .find(TextField)
+      .at(1)
+      .simulate("change", { target: { value: "mypassword" } });
+    //confirm password field
+    wrapper
+      .find(TextField)
+      .at(2)
+      .simulate("change", { target: { value: "mypassword2" } });
+    wrapper.find(Button).simulate("click");
+    expect(testValues.onCreateAccount.mock.calls.length).toEqual(0);
+    expect(wrapper.state()).toMatchObject(expectedState);
+    expect(
+      wrapper
+        .find(TextField)
+        .at(2)
+        .props()
+    ).toHaveProperty("error", true);
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it("should call function when click on button and fields are filled", () => {
+    //email field
+    wrapper
+      .find(TextField)
+      .at(0)
+      .simulate("change", { target: { value: "email@example.com" } });
+    //password field
+    wrapper
+      .find(TextField)
+      .at(1)
+      .simulate("change", { target: { value: "mypassword" } });
+    //confirm password field
+    wrapper
+      .find(TextField)
+      .at(2)
+      .simulate("change", { target: { value: "mypassword" } });
+
     wrapper.find(Button).simulate("click");
     expect(testValues.onCreateAccount.mock.calls.length).toEqual(1);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should to change state qhen type in TextField", () => {
     let expectedState = {
-      confirmPassword: null,
+      confirmPassword: "",
       email: "email@example.com",
-      password: 'mypassword'
+      password: "mypassword",
+      confirmPasswordError: false,
+      requiredFields: false
     };
 
     //email field
