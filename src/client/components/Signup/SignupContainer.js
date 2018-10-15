@@ -11,7 +11,11 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = state => {
-  return { success: state.userReducer.success };
+  return {
+    success: state.userReducer.success,
+    message: state.userReducer.message,
+    showPreloader: state.userReducer.showPreloader
+  };
 };
 
 const SignupContainer = connect(mapStateToProps, mapDispatchToProps)(
