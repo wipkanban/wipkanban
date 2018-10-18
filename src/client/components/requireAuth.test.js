@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 import requireAuth from "./requireAuth";
 import FormLoginContainer from "./Login/LoginContainer";
 import toJson from "enzyme-to-json";
