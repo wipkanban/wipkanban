@@ -14,7 +14,8 @@ export default User => {
         if (user) {
           return res
             .status(200)
-            .json({ success: false, message: "User already exists" });
+            .json({ success: false, message: "User already exists" })
+            .end();
         }
 
         let newUser = new User({ email, password });
