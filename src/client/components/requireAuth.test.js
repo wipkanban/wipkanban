@@ -16,18 +16,17 @@ describe("<requireAuth /> Component", () => {
   let wrapper;
   let store;
   let shallow;
-  let AuthenticatedComponent;
   let ComponentClass;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
     store = configureStore();
-    AuthenticatedComponent = () => <div>Hello</div>;
-    ComponentClass = requireAuth(<AuthenticatedComponent />);
   });
 
   it("should render the exactly component passed when user is authenticated", () => {
     store.dispatch(loginSuccess(true, null, {}));
+    let AuthenticatedComponent = () => (<div>Hello</div>);
+    ComponentClass = requireAuth(<AuthenticatedComponent />);
 
     wrapper = shallow(<ComponentClass store={store} />);
     expect(wrapper.type()).toEqual(<AuthenticatedComponent />);
@@ -35,6 +34,8 @@ describe("<requireAuth /> Component", () => {
   });
 
   it("should render the Login component when user is not authenticated", () => {
+    let AuthenticatedComponent = () => (<div>Hello</div>);
+    ComponentClass = requireAuth(<AuthenticatedComponent />);
     wrapper = shallow(<ComponentClass store={store} />);
     expect(wrapper.find(FormLoginContainer).name()).toEqual(
       "Connect(WithStyles(Login))"
