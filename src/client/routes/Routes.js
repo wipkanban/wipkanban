@@ -13,7 +13,7 @@ import Home from '../components/Home';
 const Routes : () => React.Node = () : React.Node => (
   <Switch>
     <Route exact path="/" component={requireAuth(HomeContainer)}/>
-    <Route path="/board" component={requireAuth(BoardContainer)}/>
+    <Route path="/board/:id" component={requireAuth(BoardContainer)}/>
     <Route path="/signup" component={Signup}/>
     <Route path="/Home" component={Home}/>
     <Route path="/login" component={LoginContainer}/>

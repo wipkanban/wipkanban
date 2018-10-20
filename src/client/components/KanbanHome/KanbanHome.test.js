@@ -2,8 +2,9 @@ import React from "react";
 import KanbanHome from "./index";
 import { createShallow } from "@material-ui/core/test-utils";
 import Grid from "@material-ui/core/Grid";
-import BoardList from "../Board/BoardList";
+import BoardList from "../Board/BoardListContainer";
 import TeamList from "../Team/TeamList";
+import toJson from "enzyme-to-json";
 
 // setup file
 import { configure } from "enzyme";
@@ -23,5 +24,6 @@ describe("KanbanHome component", () => {
     expect(wrapper.type()).toEqual(Grid);
     expect(wrapper.find(BoardList).type()).toEqual(BoardList);
     expect(wrapper.find(TeamList).type()).toEqual(TeamList);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

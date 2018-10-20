@@ -27,18 +27,34 @@ const styles = () => ({
 });
 
 type Props = {
-  classes: Object
+  classes: Object,
+  _id: number,
+  name: string,
+  createdBy: string,
+  createdAt: string,
+  leadTime: number,
+  cycleTime: number,
+  throuput: number
 };
 
 function MediaControlCard(props: Props) {
-  const { classes } = props;
+  const {
+    classes,
+    _id,
+    name,
+    createdBy,
+    createdAt,
+    leadTime,
+    cycleTime,
+    throuput
+  } = props;
 
   return (
     <Card>
       <div className={classes.cardHeader}>
-        <Typography variant="title">Minhas Atividades</Typography>
+        <Typography variant="title">{name}</Typography>
         <Typography variant="subheading">
-          createdb by you at today 12:00pm
+          createdb by {createdBy} at {createdAt}
         </Typography>
       </div>
       <CardContent className={classes.content}>
@@ -47,7 +63,7 @@ function MediaControlCard(props: Props) {
             Lead Time
           </Typography>
           <Typography variant="display1" align="center">
-            10
+            {leadTime}
           </Typography>
           <Typography variant="body1" align="center">
             by week
@@ -58,7 +74,7 @@ function MediaControlCard(props: Props) {
             Cycle Time
           </Typography>
           <Typography variant="display1" align="center">
-            10
+            {cycleTime}
           </Typography>
           <Typography variant="body1" align="center">
             by week
@@ -69,7 +85,7 @@ function MediaControlCard(props: Props) {
             Throghput
           </Typography>
           <Typography variant="display1" align="center">
-            10
+            {throuput}
           </Typography>
           <Typography variant="body1" align="center">
             by week
@@ -82,7 +98,7 @@ function MediaControlCard(props: Props) {
           textAlign: "right"
         }}
       >
-        <Link to="/board" size="small" color="primary">
+        <Link to={`/board/${_id}`} size="small" color="primary">
           Go to Board
         </Link>
       </CardActions>
@@ -90,4 +106,4 @@ function MediaControlCard(props: Props) {
   );
 }
 
-export default withStyles(styles, { withTheme: true })(MediaControlCard);
+export default withStyles(styles)(MediaControlCard);

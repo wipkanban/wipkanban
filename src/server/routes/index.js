@@ -2,7 +2,6 @@ import Express from "express";
 import User from "../models/user";
 import CreateAccountFactory from "../controllers/user/CreateAccount";
 import DeleteAccountFactory from "../controllers/user/DeleteAccount";
-import SetFirstAccessFactory from "../controllers/user/SetFirstAccess";
 import UpdateUserAccountFactory from "../controllers/user/UpdateUserAccount";
 import setCsrf from "../middlewares/csrf";
 import LoginFactory from "../controllers/Authentication";
@@ -17,7 +16,6 @@ let corsOptions = {
 
 const CreateAccount = CreateAccountFactory(User);
 const DeleteAccount = DeleteAccountFactory(User);
-const SetFirstAccess = SetFirstAccessFactory(User);
 const UpdateUserAccount = UpdateUserAccountFactory(User);
 const Login = LoginFactory(User, setCsrf);
 
@@ -76,30 +74,6 @@ router.post("/user", cors(corsOptions), CreateAccount);
  *
  */
 router.delete("/user", requireAuth, DeleteAccount);
-
-/**
- * @api {delete} /api/v1/user/setFirstAccess Update if is the first access of the user
- * @apiName wipKanbanApi
- * @apiVersion 0.1.0
- * @apiGroup User
- * @apiPermission public
- *
- * @apiDescription Delete account user and send email confirmation
- *
- * @apiParam {Integer} _id id of the user on database.
- * @apiParam {bool} firstAccess true or false.
- * @apiParam {String} token Token generate by application.
- *
- * @apiSampleRequest https://wipkanban.com/api/v1/user/setFirstAccess
- *
- * @apiExample Example usage:
- * curl -i http://<IPSERVER>/api/v1/user/setFirstAccess
- *
- * @apiSuccess {Boolean} success Return true value.
- * @apiSuccess {String} message  Message success.
- *
- */
-router.post("/user/setFirstAccess", requireAuth, SetFirstAccess);
 
 /**
  * @api {put} /api/v1/user/[iduser] Update the account user

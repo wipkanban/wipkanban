@@ -9,7 +9,7 @@ exports[`<Routes /> Component should render an component correctly 1`] = `
   />
   <Route
     component={[Function]}
-    path="/board"
+    path="/board/:id"
   />
   <Route
     component={[Function]}
