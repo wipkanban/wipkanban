@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KanbanHome component should render 1 containing 1 TeamList and BoardListComponent 1`] = `
+<WithStyles(Grid)
+  container={true}
+  justify="flex-start"
+  spacing={0}
+  wrap="nowrap"
+>
+  <WithStyles(Grid)
+    item={true}
+    lg={6}
+  >
+    <Connect(BoardList) />
+  </WithStyles(Grid)>
+  <WithStyles(Grid)
+    item={true}
+    lg={6}
+  >
+    <TeamList />
+  </WithStyles(Grid)>
+</WithStyles(Grid)>
+`;

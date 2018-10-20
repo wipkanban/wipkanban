@@ -7,13 +7,12 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
   >
     <WithStyles(Typography)
       variant="title"
-    >
-      Minhas Atividades
-    </WithStyles(Typography)>
+    />
     <WithStyles(Typography)
       variant="subheading"
     >
-      createdb by you at today 12:00pm
+      createdb by 
+       at 
     </WithStyles(Typography)>
   </div>
   <WithStyles(CardContent)
@@ -32,9 +31,7 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
       <WithStyles(Typography)
         align="center"
         variant="display1"
-      >
-        10
-      </WithStyles(Typography)>
+      />
       <WithStyles(Typography)
         align="center"
         variant="body1"
@@ -55,9 +52,7 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
       <WithStyles(Typography)
         align="center"
         variant="display1"
-      >
-        10
-      </WithStyles(Typography)>
+      />
       <WithStyles(Typography)
         align="center"
         variant="body1"
@@ -78,9 +73,7 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
       <WithStyles(Typography)
         align="center"
         variant="display1"
-      >
-        10
-      </WithStyles(Typography)>
+      />
       <WithStyles(Typography)
         align="center"
         variant="body1"
@@ -101,7 +94,7 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
       color="primary"
       replace={false}
       size="small"
-      to="/board"
+      to="/board/undefined"
     >
       Go to Board
     </Link>
