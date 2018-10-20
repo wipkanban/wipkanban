@@ -1,3 +1,5 @@
+import {BAD_REQUEST, CREATED, INTERNAL_SERVER_ERROR} from "../../utils/HttpStatusCode";
+
 export default User => {
   return (req, res, next) => {
     let { email, password } = req.body;
@@ -13,7 +15,7 @@ export default User => {
         }
         if (user) {
           return res
-            .status(200)
+            .status(BAD_REQUEST)
             .json({ success: false, message: "User already exists" })
             .end();
         }
@@ -23,13 +25,13 @@ export default User => {
         newUser.save(function(err) {
           if (err) {
             res
-              .status(500)
+              .status(INTERNAL_SERVER_ERROR)
               .json({ success: false, message: err })
               .end();
           }
 
           res
-            .status(200)
+            .status(CREATED)
             .json({
               success: true,
               message: "User account created with successfull!"
