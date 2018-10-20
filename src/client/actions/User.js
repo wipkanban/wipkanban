@@ -1,6 +1,6 @@
 // @flow
 import actionsType from "./actionsType";
-import BoardApi from "../api/BoardApi";
+import BoardApi from "../api/UserApi";
 import { type Dispatch } from "redux";
 
 export function createAccount(email: string, password: string): Function {
@@ -23,17 +23,6 @@ export function accountCreated(response: Object): Object {
 
 export function accountCreatedError(error: Object): Object {
   return { type: actionsType.CREATE_ACCOUNT_ERROR, error };
-}
-
-export function setFirstAccess(userId: number, firstAccess: boolean): Function {
-  return (dispatch: Dispatch) => {
-    return BoardApi.setFirstAccess(userId, firstAccess).then(() => {
-      dispatch({
-        type: actionsType.SET_FIRST_ACCESS,
-        firstAccess: firstAccess
-      });
-    });
-  };
 }
 
 export function updateAccountUser(user: Object): Function {
