@@ -915,7 +915,7 @@ exports[`<Signup /> User should return a redirect component, bacause success pro
 />
 `;
 
-exports[`<Signup /> User should to change state qhen type in TextField 1`] = `
+exports[`<Signup /> User should to change state when type in TextField 1`] = `
 <WithStyles(Grid)
   className="Signup-root-1"
   container={true}

@@ -12,6 +12,9 @@ import Check from "@material-ui/icons/Check";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import { Redirect, Link } from "react-router-dom";
+import classNames from "classnames";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import green from "@material-ui/core/colors/green";
 
 const styles = theme => ({
   root: {
@@ -19,7 +22,7 @@ const styles = theme => ({
   },
   paper: {
     padding: theme.spacing.unit * 2,
-    height:  '100vh',
+    height: "100vh",
     display: "flex",
     alignItems: "center"
   },
@@ -28,9 +31,6 @@ const styles = theme => ({
   },
   text: {
     width: "100%"
-  },
-  button: {
-    margin: theme.spacing.unit
   },
   link: {
     textDecoration: "none",
@@ -42,17 +42,44 @@ const styles = theme => ({
   learnMore: {
     color: "white",
     borderColor: "white"
+  },
+  wrapper: {
+    margin: theme.spacing.unit,
+    position: "relative"
+  },
+  buttonProgress: {
+    color: green[500],
+    position: "absolute",
+    top: "50%",
+    right: 133.69 / 2 - 33 / 2,
+    marginTop: -12,
+    marginLeft: -12
+  },
+  buttonSuccess: {
+    backgroundColor: green[500],
+    "&:hover": {
+      backgroundColor: green[700]
+    }
   }
 });
 
 type Props = {
   classes: Object,
   state: Object,
-  onLogin: Function
+  onLogin: Function,
+  success: boolean,
+  showPreloader: boolean
 };
 
-const Login = ({ onLogin, classes }: Props) => {
+const Login = ({
+  onLogin,
+  classes,
+  state: { showPreloader, success }
+}: Props) => {
   let email: HTMLInputElement, password: HTMLInputElement;
+  const buttonClassname = classNames({
+    [classes.buttonSuccess]: success
+  });
 
   if (typeof window !== "undefined" && window.localStorage.getItem("token")) {
     return <Redirect to="/" />;
@@ -126,6 +153,7 @@ const Login = ({ onLogin, classes }: Props) => {
                   }}
                 >
                   <TextField
+                    disabled={showPreloader}
                     inputRef={el => (email = el)}
                     className={classes.text}
                     label="Type your email"
@@ -138,6 +166,7 @@ const Login = ({ onLogin, classes }: Props) => {
                     }}
                   />
                   <TextField
+                    disabled={showPreloader}
                     inputRef={el => (password = el)}
                     type="password"
                     className={classes.text}
@@ -156,16 +185,26 @@ const Login = ({ onLogin, classes }: Props) => {
                     }}
                   >
                     <br />
-                    <Button
-                      onClick={() => onLogin(email, password)}
-                      size="large"
-                      variant="raised"
-                      color="primary"
-                      className={classes.button}
-                    >
-                      Sign in
-                      <Check />
-                    </Button>
+                    <div className={classes.wrapper}>
+                      <Button
+                        onClick={() => onLogin(email, password)}
+                        size="large"
+                        variant="raised"
+                        color="primary"
+                        className={buttonClassname}
+                        disabled={showPreloader}
+                      >
+                        Sign In
+                        <Check />
+                      </Button>
+                      {showPreloader && (
+                        <CircularProgress
+                          size={24}
+                          className={classes.buttonProgress}
+                        />
+                      )}
+                      <br />
+                    </div>
                     <br />
                     <Typography
                       component="p"
@@ -182,7 +221,8 @@ const Login = ({ onLogin, classes }: Props) => {
                 </div>
                 <br />
                 <div>
-                  Sign in with:<br />
+                  Sign in with:
+                  <br />
                   <IconButton className={classes.button}>
                     <i
                       className="fa fa-facebook-square fa-2x"
