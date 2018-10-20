@@ -27,7 +27,7 @@ yarn
 ```
 
 ### Setting up the .env file:
-Rename .env-template file with your data
+Rename .env-template file to .env and fill with your data
 
 ### Run application
 ```bash
