@@ -99,7 +99,7 @@ describe("<Signup /> User", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should to change state qhen type in TextField", () => {
+  it("should to change state when type in TextField", () => {
     let expectedState = {
       confirmPassword: "",
       email: "email@example.com",

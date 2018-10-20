@@ -26,13 +26,13 @@ export default function userReducer(state = initialState, action) {
     case actionsType.LOADING_LOGIN:
       return {
         ...state,
-        message: "Loading..."
+        showPreloader: true
       };
     case actionsType.LOGIN_SUCCESS:
     case actionsType.LOGIN_ERROR:
       var { message, success, user } = action;
 
-      return { ...state, message, success, user };
+      return { ...state,showPreloader: false, message, success, user };
 
     case actionsType.LOGOUT_SUCCESS:
       return { ...initialState };

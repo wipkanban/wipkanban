@@ -43,7 +43,7 @@ describe("USer reducer", () => {
     let action = {
       type: actionTypes.LOADING_LOGIN
     };
-    let newState = { ...initialState, message: "Loading..." };
+    let newState = { ...initialState, showPreloader: true };
     let state = userReducer(initialState, action);
 
     expect(state).toEqual(newState);
