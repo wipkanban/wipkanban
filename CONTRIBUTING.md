@@ -77,15 +77,15 @@ In order to accept your pull request, we need you to submit a CLA. You only need
 
 ### Development Workflow
 
-After cloning React, run `yarn install` to fetch its dependencies.
+After cloning Wipkanban, run `yarn install` to fetch its dependencies.
 Then, you can run several commands:
 
-* `yarn run lint` checks the code style.
+* `yarn lint` checks the code style.
 * `yarn test` runs the complete test suite backend api and frontend.
 * `yarn run prettier` to format your code.
 * `yarn run analyze` to generate [webpack bundle analyze](https://github.com/webpack-contrib/webpack-bundle-analyzer).
 * `yarn run apidoc` to generate api documentation. To access go to `apidoc/index.html`.
-* `yarn run check` to verify if your dependences are updated.
+* `yarn outdated` to verify if your dependences are updated.
 * `yarn build` creates a `build` folder with all the code to production.
 
 We recommend running `yarn test` to make sure you don't introduce any regressions as you work on your change..
