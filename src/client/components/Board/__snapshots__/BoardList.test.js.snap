@@ -10,6 +10,16 @@ exports[`BoardList Component should render 1 Typogragh and 2 Grid 1`] = `
     >
       <pure(DeveloperBoardIcon) />
        My boards
+      <WithStyles(Tooltip)
+        title="Add team"
+      >
+        <WithStyles(IconButton)
+          aria-label="Add board"
+          color="default"
+        >
+          <pure(AddCircleIcon) />
+        </WithStyles(IconButton)>
+      </WithStyles(Tooltip)>
     </WithStyles(Typography)>
   </div>
   <WithStyles(Grid)
@@ -153,6 +163,16 @@ exports[`BoardList Component should render a div 1`] = `
     >
       <pure(DeveloperBoardIcon) />
        My boards
+      <WithStyles(Tooltip)
+        title="Add team"
+      >
+        <WithStyles(IconButton)
+          aria-label="Add board"
+          color="default"
+        >
+          <pure(AddCircleIcon) />
+        </WithStyles(IconButton)>
+      </WithStyles(Tooltip)>
     </WithStyles(Typography)>
   </div>
   <WithStyles(Grid)

@@ -1,11 +1,11 @@
 import { login, logout } from "../../actions/Login";
-import { setFirstAccess, updateAccountUser } from "../../actions/User";
+import { updateAccountUser } from "../../actions/User";
 import configureStore from "../../configureStore";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import "jest-localstorage-mock";
 
-describe("Board API", () => {
+describe("User API", () => {
   let store = configureStore();
   let mock;
 
@@ -53,23 +53,6 @@ describe("Board API", () => {
     });
   });
 
-  it("Shoud to set first access of the user to false", () => {
-    let response = {
-      success: true
-    };
-    mock.onPost("/api/v1/user/setFirstAccess").reply(200, response);
-
-    store.dispatch(setFirstAccess("randomID", false)).then(() => {
-      let userFirstAcess = store.getState().userReducer.user.firstAccess;
-      let userFirstAccessLocalStorage = JSON.parse(
-        localStorage.getItem("state")
-      ).userReducer.user.firstAccess;
-
-      expect(userFirstAcess).toEqual(false);
-      expect(userFirstAccessLocalStorage).toEqual(false);
-    });
-  });
-
   it("Shoud to update user account", () => {
     let response = {
       success: true
@@ -102,8 +85,6 @@ describe("Board API", () => {
     mock.onPut(`/api/v1/logout`).reply(200, response);
 
     store.dispatch(logout()).then(() => {
-      //let expectedUserState = store.getState().userReducer.user;
-
       expect(localStorage.getItem("token")).toEqual(null);
       expect(localStorage.getItem("user")).toEqual(null);
     });
