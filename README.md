@@ -11,6 +11,7 @@
 Be the best tool for lean management based on kanban. And one more thing, be Open Source!
 
 ## How to use
+WipKanban is bult with Reactjs, Express and MongoDb as database
 
 ### Download source code:
 
@@ -22,27 +23,22 @@ git clone https://github.com/wipkanban/wipkanban
 ```bash
 cd wipkanban
 
-yarn install
+yarn
 ```
+
+### Setting up the .env file:
+Rename .env-template file with your data
 
 ### Run application
 ```bash
 
-yarn run server
+yarn server
 
 ```
 To access enter the address htts://<YOUR_IP_ADDRESS>:3000 in the browser
 
 ### Run tests
 The tests are divided between client and server
-
-```bash
-#run all tests
-yarn run test
-
-#run tests while developtment
-yarn run test:dev
-```
 
 ## [How to Contribute](https://github.com/wipkanban/wipkanban/blob/master/CONTRIBUTING.md)
 The main purpose of this repository is to continue to evolve WipKanban, making it the best possible experience in using Kanban. Development of WipKanban happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements.
