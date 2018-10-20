@@ -1,6 +1,7 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
 import app from "../../../app";
+import {BAD_REQUEST,CREATED} from "../../../utils/HttpStatusCode"
 
 chai.use(chaiHttp);
 
@@ -25,7 +26,7 @@ describe("User Account", () => {
       .send(fields)
       .end((err, res) => {
 
-        expect(res.statusCode).toEqual(200);
+        expect(res.statusCode).toEqual(CREATED);
 
         expect(res.body.success).toEqual(true);
         expect(res.body.message).toEqual(
@@ -41,7 +42,7 @@ describe("User Account", () => {
       .post("/api/v1/user")
       .send(fields)
       .end((err, res) => {
-        expect(res.statusCode).toEqual(200);
+        expect(res.statusCode).toEqual(BAD_REQUEST);
         expect(res.body.success).toEqual(false);
         expect(res.body.message).toEqual("User already exists");
 
