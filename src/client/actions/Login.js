@@ -1,6 +1,6 @@
 // @flow
 import actionsType from "./actionsType";
-import BoardApi from "../api/BoardApi";
+import BoardApi from "../api/UserApi";
 import { type Dispatch } from "redux";
 
 export function login(email: string, password: string): Function {

@@ -1,17 +1,7 @@
 // @flow
 import axios, { type AxiosStatic } from "axios";
 
-class boardApi {
-  static getAllCats() {
-    return fetch("/data.json")
-      .then(response => {
-        return response.json();
-      })
-      .catch(error => {
-        return error;
-      });
-  }
-
+class UserApi {
   static login(email: string, password: string): AxiosStatic {
     return axios
       .post("/api/v1/login", { email, password })
@@ -48,20 +38,6 @@ class boardApi {
       });
   }
 
-  static setFirstAccess(userId: number, firstAccess: boolean): AxiosStatic {
-    return axios
-      .post("/api/v1/user/setFirstAccess", {
-        userId,
-        firstAccess
-      })
-      .then(function(response) {
-        return response;
-      })
-      .catch(function(error) {
-        return error;
-      });
-  }
-
   static updateAccountUser(user: Object): AxiosStatic {
     let data = new FormData();
     data.append("user", JSON.stringify(user));
@@ -69,7 +45,7 @@ class boardApi {
 
     let config = {
       onUploadProgress: function(progressEvent) {
-        return Math.round(progressEvent.loaded * 100 / progressEvent.total);
+        return Math.round((progressEvent.loaded * 100) / progressEvent.total);
       },
       headers: {
         "Content-Type": "multipart/form-data"
@@ -87,4 +63,4 @@ class boardApi {
   }
 }
 
-export default boardApi;
+export default UserApi;
