@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginContainer from "../components/Login/LoginContainer";
 import SignupContainer from "../components/Signup/SignupContainer";
 import AccountCreated from "../components/Signup/AccountCreated";
-import HomeContainer from "../components/Home";
+import HomeContainer from "../components/Home/HomeContainer";
 import requireAuth from "../components/requireAuth";
 import BoardContainer from "../components/Board/BoardContainer";
 import Signup from "../components/Signup";
