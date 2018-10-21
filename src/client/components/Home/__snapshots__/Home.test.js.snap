@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component should render 1 div containing Navbar 1`] = `
+<div>
+  <WithStyles(Navbar)>
+    <div />
+    <WithStyles(MenuRight)>
+      <Search />
+      <WithStyles(Connect(UserAccountSettings)) />
+    </WithStyles(MenuRight)>
+  </WithStyles(Navbar)>
+  <WithStyles(GridContainer)>
+    <TabsHome />
+  </WithStyles(GridContainer)>
+</div>
+`;
+
+exports[`Home component should render a RightMenu with two icons component 1`] = `
+<div>
+  <WithStyles(Navbar)>
+    <div />
+    <WithStyles(MenuRight)>
+      <Search />
+      <WithStyles(Connect(UserAccountSettings)) />
+    </WithStyles(MenuRight)>
+  </WithStyles(Navbar)>
+  <WithStyles(GridContainer)>
+    <TabsHome />
+  </WithStyles(GridContainer)>
+</div>
+`;
+
+exports[`Home component should render a TabHome component 1`] = `
+<div>
+  <WithStyles(Navbar)>
+    <div />
+    <WithStyles(MenuRight)>
+      <Search />
+      <WithStyles(Connect(UserAccountSettings)) />
+    </WithStyles(MenuRight)>
+  </WithStyles(Navbar)>
+  <WithStyles(GridContainer)>
+    <TabsHome />
+  </WithStyles(GridContainer)>
+</div>
+`;

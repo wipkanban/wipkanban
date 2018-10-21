@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuRight Component should render a Tooltip 1`] = `
+<div
+  className="MenuRight-navRight-1"
+/>
+`;
+
+exports[`MenuRight Component should render its children 1`] = `
+<div
+  className="MenuRight-navRight-1"
+>
+  <div>
+    Hello
+  </div>
+</div>
+`;
