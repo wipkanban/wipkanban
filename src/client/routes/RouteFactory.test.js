@@ -4,12 +4,7 @@ import { createShallow } from "@material-ui/core/test-utils";
 import { StaticRouter } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import toJson from "enzyme-to-json";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../setupTest";
 
 describe("<RouterFactory /> Component", () => {
   let shallow;

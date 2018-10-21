@@ -6,29 +6,31 @@ import TabsHome from "./TabsHome";
 import MenuRight from "../Navbar/MenuRight";
 import Search from "../Navbar/Search";
 import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import toJson from "enzyme-to-json";
+import "../../setupTest"
 
 describe("Home component", () => {
   let shallow;
+  let user;
 
   beforeEach(() => {
     shallow = createShallow();
+    user = {
+      firstAccess: false
+    };
   });
 
   it("should render 1 div containing Navbar", () => {
-    let wrapper = shallow(<Home />);
+    let wrapper = shallow(<Home user={user} />);
     expect(wrapper.type()).toEqual("div");
     expect(wrapper.find(Navbar).length).toEqual(1);
     expect(wrapper.find(Navbar).length).toEqual(1);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should render a RightMenu with two icons component", () => {
-    let wrapper = shallow(<Home />);
+    let wrapper = shallow(<Home user={user} />);
+
     expect(wrapper.find(MenuRight).type()).toEqual(MenuRight);
     expect(
       wrapper
@@ -42,10 +44,14 @@ describe("Home component", () => {
         .childAt(1)
         .type()
     ).toEqual(UserAccountSettings);
+
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should render a TabHome component", () => {
-    let wrapper = shallow(<Home />);
+    let wrapper = shallow(<Home user={user} />);
+
     expect(wrapper.find(TabsHome).type()).toEqual(TabsHome);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
