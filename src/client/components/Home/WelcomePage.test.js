@@ -10,14 +10,27 @@ import Grid from "@material-ui/core/Grid";
 
 describe("<WelcomePage /> component", () => {
   let shallow;
+  let user = {
+    firstName: "firstName",
+    lastName: "firstName",
+    email: "example@test.com"
+  };
+  let onLogout = jest.fn();
+  let onUpdateAccountUser = jest.fn();
+  let wrapper;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
+    wrapper = shallow(
+      <WelcomePage
+        onUpdateAccountUser={onUpdateAccountUser}
+        onLogout={onLogout}
+        user={user}
+      />
+    );
   });
 
   it("should render component correctly", () => {
-    let wrapper = shallow(<WelcomePage />);
-
     expect(wrapper.type()).toEqual(React.Fragment);
     expect(wrapper.find(Typography).length).toEqual(2);
     expect(wrapper.find(Grid).length).toEqual(9);
@@ -27,9 +40,6 @@ describe("<WelcomePage /> component", () => {
   });
 
   it("should to call function logout when clicked at Button", () => {
-    let onLogout = jest.fn();
-    let wrapper = shallow(<WelcomePage onLogout={onLogout} />);
-
     wrapper
       .find(Button)
       .at(0)

@@ -45,10 +45,17 @@ const styles: Object = theme => ({
 
 type Props = {
   classes: Object,
-  onLogout: Function
+  onLogout: Function,
+  onUpdateAccountUser: Function,
+  user: Object
 };
 
-const WelcomePage = ({ classes,onLogout }: Props) => {
+const WelcomePage = ({
+  classes,
+  onLogout,
+  onUpdateAccountUser,
+  user
+}: Props) => {
   return (
     <React.Fragment>
       <CssBaseline />
@@ -71,9 +78,8 @@ const WelcomePage = ({ classes,onLogout }: Props) => {
             <Grid container spacing={24}>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  onChange={({ target }) => (user.firstName = target.value)}
                   required
-                  id="firstName"
-                  name="firstName"
                   label="First name"
                   fullWidth
                   autoComplete="fname"
@@ -81,9 +87,8 @@ const WelcomePage = ({ classes,onLogout }: Props) => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  onChange={({ target }) => (user.lastName = target.value)}
                   required
-                  id="lastName"
-                  name="lastName"
                   label="Last name"
                   fullWidth
                   autoComplete="lname"
@@ -91,10 +96,10 @@ const WelcomePage = ({ classes,onLogout }: Props) => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  onChange={({ target }) => (user.email = target.value)}
+                  defaultValue={user.email}
                   required
-                  id="city"
-                  name="city"
-                  label="City"
+                  label="Email"
                   fullWidth
                   autoComplete="billing address-level2"
                 />
@@ -142,6 +147,7 @@ const WelcomePage = ({ classes,onLogout }: Props) => {
               <Grid item className={classes.buttons}>
                 <Button onClick={onLogout}>Logout</Button>
                 <Button
+                  onClick={() => onUpdateAccountUser(user)}
                   variant="contained"
                   color="primary"
                   className={classes.button}
