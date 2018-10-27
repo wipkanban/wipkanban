@@ -1,18 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home component should render 1 div containing Navbar 1`] = `
+exports[`<Home /> component should render 1 div containing Navbar 1`] = `
 <div>
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <WithStyles(UserAccountSettings)
-        user={
-          Object {
-            "firstAccess": false,
-          }
-        }
-      />
+      <Connect(WithStyles(UserAccountSettings)) />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -21,19 +15,13 @@ exports[`Home component should render 1 div containing Navbar 1`] = `
 </div>
 `;
 
-exports[`Home component should render a RightMenu with two icons component 1`] = `
+exports[`<Home /> component should render a RightMenu with two icons component 1`] = `
 <div>
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <WithStyles(UserAccountSettings)
-        user={
-          Object {
-            "firstAccess": false,
-          }
-        }
-      />
+      <Connect(WithStyles(UserAccountSettings)) />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -42,19 +30,13 @@ exports[`Home component should render a RightMenu with two icons component 1`] =
 </div>
 `;
 
-exports[`Home component should render a TabHome component 1`] = `
+exports[`<Home /> component should render a TabHome component 1`] = `
 <div>
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <WithStyles(UserAccountSettings)
-        user={
-          Object {
-            "firstAccess": false,
-          }
-        }
-      />
+      <Connect(WithStyles(UserAccountSettings)) />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -63,4 +45,4 @@ exports[`Home component should render a TabHome component 1`] = `
 </div>
 `;
 
-exports[`Home component should render a WelcomePage component when user firstAccess is true 1`] = `<Connect(WithStyles(WelcomePage)) />`;
+exports[`<Home /> component should render a WelcomePage component when user firstAccess is true 1`] = `<Connect(WithStyles(WelcomePage)) />`;

@@ -42,7 +42,7 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
                   "color": "white",
                 }
               }
-              variant="display1"
+              variant="h4"
             >
               Welcome to the best open source plataform for lean management
             </WithStyles(Typography)>
@@ -53,7 +53,7 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
                   "color": "white",
                 }
               }
-              variant="headline"
+              variant="h5"
             >
               Align strategy and execution with 
               <b>
@@ -99,7 +99,7 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
               align="center"
               color="primary"
               gutterBottom={true}
-              variant="display1"
+              variant="h4"
             >
               <b>
                 WIPLean
@@ -164,7 +164,7 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
                     color="primary"
                     onClick={[Function]}
                     size="large"
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign In
                     <pure(CheckIcon) />
@@ -174,9 +174,8 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
                 <br />
                 <WithStyles(Typography)
                   align="right"
-                  color="primary"
-                  component="p"
                   gutterBottom={true}
+                  variant="body1"
                 >
                   Do not have an account yet ?
                    
@@ -194,7 +193,12 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
             </div>
             <br />
             <div>
-              Sign in with:
+              <WithStyles(Typography)
+                gutterBottom={true}
+                variant="body1"
+              >
+                Sign in with:
+              </WithStyles(Typography)>
               <br />
               <WithStyles(IconButton)>
                 <i
@@ -272,7 +276,7 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                   "color": "white",
                 }
               }
-              variant="display1"
+              variant="h4"
             >
               Welcome to the best open source plataform for lean management
             </WithStyles(Typography)>
@@ -283,7 +287,7 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                   "color": "white",
                 }
               }
-              variant="headline"
+              variant="h5"
             >
               Align strategy and execution with 
               <b>
@@ -329,7 +333,7 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
               align="center"
               color="primary"
               gutterBottom={true}
-              variant="display1"
+              variant="h4"
             >
               <b>
                 WIPLean
@@ -394,7 +398,7 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                     color="primary"
                     onClick={[Function]}
                     size="large"
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign In
                     <pure(CheckIcon) />
@@ -404,9 +408,8 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                 <br />
                 <WithStyles(Typography)
                   align="right"
-                  color="primary"
-                  component="p"
                   gutterBottom={true}
+                  variant="body1"
                 >
                   Do not have an account yet ?
                    
@@ -424,7 +427,12 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
             </div>
             <br />
             <div>
-              Sign in with:
+              <WithStyles(Typography)
+                gutterBottom={true}
+                variant="body1"
+              >
+                Sign in with:
+              </WithStyles(Typography)>
               <br />
               <WithStyles(IconButton)>
                 <i
@@ -502,7 +510,7 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                   "color": "white",
                 }
               }
-              variant="display1"
+              variant="h4"
             >
               Welcome to the best open source plataform for lean management
             </WithStyles(Typography)>
@@ -513,7 +521,7 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                   "color": "white",
                 }
               }
-              variant="headline"
+              variant="h5"
             >
               Align strategy and execution with 
               <b>
@@ -559,7 +567,7 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
               align="center"
               color="primary"
               gutterBottom={true}
-              variant="display1"
+              variant="h4"
             >
               <b>
                 WIPLean
@@ -624,7 +632,7 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                     color="primary"
                     onClick={[Function]}
                     size="large"
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign In
                     <pure(CheckIcon) />
@@ -634,9 +642,8 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                 <br />
                 <WithStyles(Typography)
                   align="right"
-                  color="primary"
-                  component="p"
                   gutterBottom={true}
+                  variant="body1"
                 >
                   Do not have an account yet ?
                    
@@ -654,7 +661,12 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
             </div>
             <br />
             <div>
-              Sign in with:
+              <WithStyles(Typography)
+                gutterBottom={true}
+                variant="body1"
+              >
+                Sign in with:
+              </WithStyles(Typography)>
               <br />
               <WithStyles(IconButton)>
                 <i

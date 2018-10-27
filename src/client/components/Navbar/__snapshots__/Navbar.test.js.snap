@@ -14,7 +14,7 @@ exports[`Navbar Component should render a AppBar Component 1`] = `
     </WithStyles(IconButton)>
     <WithStyles(Typography)
       color="inherit"
-      variant="title"
+      variant="h6"
     >
       WIPLean
     </WithStyles(Typography)>
@@ -36,7 +36,7 @@ exports[`Navbar Component should render its children 1`] = `
     </WithStyles(IconButton)>
     <WithStyles(Typography)
       color="inherit"
-      variant="title"
+      variant="h6"
     >
       WIPLean
     </WithStyles(Typography)>

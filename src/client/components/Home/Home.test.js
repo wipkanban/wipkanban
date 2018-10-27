@@ -5,11 +5,11 @@ import { createShallow } from "@material-ui/core/test-utils";
 import TabsHome from "./TabsHome";
 import MenuRight from "../Navbar/MenuRight";
 import Search from "../Navbar/Search";
-import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
+import UserAccountSettings from "../Navbar/Buttons/UserAccountSettingsContainer";
 import toJson from "enzyme-to-json";
 import "../../setupTest";
 
-describe("Home component", () => {
+describe("<Home /> component", () => {
   let shallow;
   let user;
 
