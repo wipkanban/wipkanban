@@ -20,7 +20,7 @@ const BoardList = ({ boards }: Props) => {
   return (
     <div>
       <div>
-        <Typography color="secondary" variant="title" gutterBottom>
+        <Typography color="secondary" variant="h6" gutterBottom>
           <DeveloperBoardIcon /> My boards
           <Tooltip title="Add team">
             <IconButton color="default" aria-label="Add board">

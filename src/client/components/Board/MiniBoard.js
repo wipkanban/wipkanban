@@ -52,17 +52,17 @@ function MediaControlCard(props: Props) {
   return (
     <Card>
       <div className={classes.cardHeader}>
-        <Typography variant="title">{name}</Typography>
-        <Typography variant="subheading">
+        <Typography variant="h6">{name}</Typography>
+        <Typography variant="subtitle1">
           createdb by {createdBy} at {createdAt}
         </Typography>
       </div>
       <CardContent className={classes.content}>
         <div className={classes.child}>
-          <Typography variant="body2" color="primary" align="center">
+          <Typography variant="body1" color="primary" align="center">
             Lead Time
           </Typography>
-          <Typography variant="display1" align="center">
+          <Typography variant="h4" align="center">
             {leadTime}
           </Typography>
           <Typography variant="body1" align="center">
@@ -70,24 +70,24 @@ function MediaControlCard(props: Props) {
           </Typography>
         </div>
         <div className={classes.child}>
-          <Typography variant="body2" color="primary" align="center">
+          <Typography variant="body1" color="primary" align="center">
             Cycle Time
           </Typography>
-          <Typography variant="display1" align="center">
+          <Typography variant="h4" align="center">
             {cycleTime}
           </Typography>
-          <Typography variant="body1" align="center">
+          <Typography variant="body2" align="center">
             by week
           </Typography>
         </div>
         <div className={classes.child}>
-          <Typography variant="body2" color="primary" align="center">
+          <Typography variant="body1" color="primary" align="center">
             Throghput
           </Typography>
-          <Typography variant="display1" align="center">
+          <Typography variant="h4" align="center">
             {throuput}
           </Typography>
-          <Typography variant="body1" align="center">
+          <Typography variant="body2" align="center">
             by week
           </Typography>
         </div>
