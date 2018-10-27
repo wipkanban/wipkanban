@@ -7,8 +7,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import CallSplitIcon from "@material-ui/icons/CallSplit";
 import ListItemText from "@material-ui/core/ListItemText";
-import { logout } from "../../../actions/Login";
-import { connect } from "react-redux";
 
 const ITEM_HEIGHT = 48;
 
@@ -25,7 +23,8 @@ type State = {
 
 type Props = {
   classes: Object,
-  logout:Function
+  onLogout: Function,
+  user: Object
 };
 
 class UserAccountSettings extends React.Component<Props, State> {
@@ -43,7 +42,8 @@ class UserAccountSettings extends React.Component<Props, State> {
 
   render() {
     const { anchorEl } = this.state;
-    const { classes,logout } = this.props;
+    const { classes, onLogout, user } = this.props;
+
     return (
       <span>
         <IconButton
@@ -52,8 +52,8 @@ class UserAccountSettings extends React.Component<Props, State> {
           aria-label="My account settings"
         >
           <Avatar
-            aria-label="Robisson Oliveira"
-            src="/uploads/7b435896-aeca-4660-aaa3-b734e3e9200a.jpg"
+            aria-label={`${user.name} ${user.lastname}`}
+            src={user.image}
           />
         </IconButton>
         <Menu
@@ -78,7 +78,7 @@ class UserAccountSettings extends React.Component<Props, State> {
             <ListItemIcon>
               <CallSplitIcon />
             </ListItemIcon>
-            <ListItemText inset primary="Sair" onClick={logout} />
+            <ListItemText inset primary="Sair" onClick={() => onLogout()} />
           </MenuItem>
         </Menu>
       </span>
@@ -86,6 +86,4 @@ class UserAccountSettings extends React.Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(
-  connect(undefined, { logout })(UserAccountSettings)
-);
+export default withStyles(styles)(UserAccountSettings);

@@ -2,7 +2,7 @@
 import React from "react";
 import Navbar from "../Navbar";
 import Search from "../Navbar/Search";
-import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
+import UserAccountSettings from "../Navbar/Buttons/UserAccountSettingsContainer";
 import TabsHome from "./TabsHome";
 import GridContainer from "../GridContainer";
 import MenuRight from "../Navbar/MenuRight";
@@ -23,7 +23,7 @@ function Home({ user }: Props) {
         <div />
         <MenuRight>
           <Search />
-          <UserAccountSettings user={user} />
+          <UserAccountSettings user={user}/>
         </MenuRight>
       </Navbar>
       <GridContainer>

@@ -6,7 +6,13 @@ exports[`Home component should render 1 div containing Navbar 1`] = `
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <WithStyles(Connect(UserAccountSettings)) />
+      <WithStyles(UserAccountSettings)
+        user={
+          Object {
+            "firstAccess": false,
+          }
+        }
+      />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -21,7 +27,13 @@ exports[`Home component should render a RightMenu with two icons component 1`] =
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <WithStyles(Connect(UserAccountSettings)) />
+      <WithStyles(UserAccountSettings)
+        user={
+          Object {
+            "firstAccess": false,
+          }
+        }
+      />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -36,7 +48,13 @@ exports[`Home component should render a TabHome component 1`] = `
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <WithStyles(Connect(UserAccountSettings)) />
+      <WithStyles(UserAccountSettings)
+        user={
+          Object {
+            "firstAccess": false,
+          }
+        }
+      />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>

@@ -110,7 +110,7 @@ const Login = ({
                   style={{
                     color: "white"
                   }}
-                  variant="display1"
+                  variant="h4"
                   gutterBottom
                 >
                   Welcome to the best open source plataform for lean management
@@ -119,7 +119,7 @@ const Login = ({
                   style={{
                     color: "white"
                   }}
-                  variant="headline"
+                  variant="h5"
                   gutterBottom
                 >
                   Align strategy and execution with <b>OKRs</b> and{" "}
@@ -139,7 +139,7 @@ const Login = ({
             >
               <div style={{ width: "80%", margin: "0 auto" }}>
                 <Typography
-                  variant="display1"
+                  variant="h4"
                   color="primary"
                   gutterBottom
                   align="center"
@@ -189,7 +189,7 @@ const Login = ({
                       <Button
                         onClick={() => onLogin(email, password)}
                         size="large"
-                        variant="raised"
+                        variant="contained"
                         color="primary"
                         className={buttonClassname}
                         disabled={showPreloader}
@@ -206,12 +206,7 @@ const Login = ({
                       <br />
                     </div>
                     <br />
-                    <Typography
-                      component="p"
-                      color="primary"
-                      gutterBottom
-                      align="right"
-                    >
+                    <Typography variant="body1" gutterBottom align="right">
                       Do not have an account yet ?{" "}
                       <Link to="/create-account" className={classes.link}>
                         <b>Sign up!</b>
@@ -221,7 +216,9 @@ const Login = ({
                 </div>
                 <br />
                 <div>
-                  Sign in with:
+                  <Typography variant="body1" gutterBottom>
+                    Sign in with:
+                  </Typography>
                   <br />
                   <IconButton className={classes.button}>
                     <i

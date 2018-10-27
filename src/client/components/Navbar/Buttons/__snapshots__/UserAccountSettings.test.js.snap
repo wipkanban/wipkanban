@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserAccountSettings /> Component should render correctly 1`] = `
+<UserAccountSettings
+  classes={
+    Object {
+      "menuItem": "Connect-UserAccountSettings--menuItem-1",
+    }
+  }
+  logout={[Function]}
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+  user={
+    Object {
+      "lastname": "lastname",
+      "name": "name",
+    }
+  }
+/>
+`;
