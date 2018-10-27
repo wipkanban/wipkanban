@@ -23,7 +23,7 @@ function Home({ user }: Props) {
         <div />
         <MenuRight>
           <Search />
-          <UserAccountSettings user={user}/>
+          <UserAccountSettings />
         </MenuRight>
       </Navbar>
       <GridContainer>
