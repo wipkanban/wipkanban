@@ -32,7 +32,7 @@ export default function userReducer(state = initialState, action) {
     case actionsType.LOGIN_ERROR:
       var { message, success, user } = action;
 
-      return { ...state,showPreloader: false, message, success, user };
+      return { ...state, showPreloader: false, message, success, user };
 
     case actionsType.LOGOUT_SUCCESS:
       return { ...initialState };

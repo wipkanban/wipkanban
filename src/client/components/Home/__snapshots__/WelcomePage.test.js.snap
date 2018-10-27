@@ -32,110 +32,65 @@ exports[`<WelcomePage /> component should render component correctly 1`] = `
         >
           <WithStyles(Grid)
             item={true}
-            sm={6}
-            xs={12}
+            lg={6}
           >
-            <TextField
-              autoComplete="fname"
-              fullWidth={true}
-              label="First name"
-              onChange={[Function]}
-              required={true}
-              select={false}
-              variant="standard"
-            />
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="fname"
+                fullWidth={true}
+                label="First name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="lname"
+                fullWidth={true}
+                label="Last name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="billing address-level2"
+                defaultValue="example@test.com"
+                fullWidth={true}
+                label="Email"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
           </WithStyles(Grid)>
           <WithStyles(Grid)
             item={true}
-            sm={6}
-            xs={12}
+            lg={6}
           >
-            <TextField
-              autoComplete="lname"
-              fullWidth={true}
-              label="Last name"
-              onChange={[Function]}
-              required={true}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            sm={6}
-            xs={12}
-          >
-            <TextField
-              autoComplete="billing address-level2"
-              defaultValue="example@test.com"
-              fullWidth={true}
-              label="Email"
-              onChange={[Function]}
-              required={true}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            sm={6}
-            xs={12}
-          >
-            <TextField
-              fullWidth={true}
-              id="state"
-              label="State/Province/Region"
-              name="state"
-              required={false}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            sm={6}
-            xs={12}
-          >
-            <TextField
-              autoComplete="billing postal-code"
-              fullWidth={true}
-              id="zip"
-              label="Zip / Postal code"
-              name="zip"
-              required={true}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            sm={6}
-            xs={12}
-          >
-            <TextField
-              autoComplete="billing country"
-              fullWidth={true}
-              id="country"
-              label="Country"
-              name="country"
-              required={true}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            xs={12}
-          >
-            <WithStyles(FormControlLabel)
-              control={
-                <WithStyles(Checkbox)
-                  color="secondary"
-                  name="saveAddress"
-                  value="yes"
-                />
+            <div
+              style={
+                Object {
+                  "backgroundColor": "red",
+                  "height": 250,
+                  "width": "100%",
+                }
               }
-              label="Use this address for payment details"
+            />
+            <input
+              onChange={[Function]}
+              type="file"
             />
           </WithStyles(Grid)>
           <WithStyles(Grid)
@@ -195,110 +150,65 @@ exports[`<WelcomePage /> component should to call function logout when clicked a
         >
           <WithStyles(Grid)
             item={true}
-            sm={6}
-            xs={12}
+            lg={6}
           >
-            <TextField
-              autoComplete="fname"
-              fullWidth={true}
-              label="First name"
-              onChange={[Function]}
-              required={true}
-              select={false}
-              variant="standard"
-            />
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="fname"
+                fullWidth={true}
+                label="First name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="lname"
+                fullWidth={true}
+                label="Last name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="billing address-level2"
+                defaultValue="example@test.com"
+                fullWidth={true}
+                label="Email"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
           </WithStyles(Grid)>
           <WithStyles(Grid)
             item={true}
-            sm={6}
-            xs={12}
+            lg={6}
           >
-            <TextField
-              autoComplete="lname"
-              fullWidth={true}
-              label="Last name"
-              onChange={[Function]}
-              required={true}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            sm={6}
-            xs={12}
-          >
-            <TextField
-              autoComplete="billing address-level2"
-              defaultValue="example@test.com"
-              fullWidth={true}
-              label="Email"
-              onChange={[Function]}
-              required={true}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            sm={6}
-            xs={12}
-          >
-            <TextField
-              fullWidth={true}
-              id="state"
-              label="State/Province/Region"
-              name="state"
-              required={false}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            sm={6}
-            xs={12}
-          >
-            <TextField
-              autoComplete="billing postal-code"
-              fullWidth={true}
-              id="zip"
-              label="Zip / Postal code"
-              name="zip"
-              required={true}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            sm={6}
-            xs={12}
-          >
-            <TextField
-              autoComplete="billing country"
-              fullWidth={true}
-              id="country"
-              label="Country"
-              name="country"
-              required={true}
-              select={false}
-              variant="standard"
-            />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            xs={12}
-          >
-            <WithStyles(FormControlLabel)
-              control={
-                <WithStyles(Checkbox)
-                  color="secondary"
-                  name="saveAddress"
-                  value="yes"
-                />
+            <div
+              style={
+                Object {
+                  "backgroundColor": "red",
+                  "height": 250,
+                  "width": "100%",
+                }
               }
-              label="Use this address for payment details"
+            />
+            <input
+              onChange={[Function]}
+              type="file"
             />
           </WithStyles(Grid)>
           <WithStyles(Grid)

@@ -3,8 +3,6 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
@@ -56,6 +54,8 @@ const WelcomePage = ({
   onUpdateAccountUser,
   user
 }: Props) => {
+  user.firstAccess = false;
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -76,72 +76,49 @@ const WelcomePage = ({
               Before you start using WipLean, please complete your data below.
             </Typography>
             <Grid container spacing={24}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  onChange={({ target }) => (user.firstName = target.value)}
-                  required
-                  label="First name"
-                  fullWidth
-                  autoComplete="fname"
-                />
+              <Grid item lg={6}>
+                <Grid item>
+                  <TextField
+                    onChange={({ target }) => (user.name = target.value)}
+                    defaultValue={user.name}
+                    required
+                    label="First name"
+                    fullWidth
+                    autoComplete="fname"
+                  />
+                </Grid>
+                <Grid item>
+                  <TextField
+                    onChange={({ target }) => (user.lastname = target.value)}
+                    defaultValue={user.lastname}
+                    required
+                    label="Last name"
+                    fullWidth
+                    autoComplete="lname"
+                  />
+                </Grid>
+                <Grid item>
+                  <TextField
+                    onChange={({ target }) => (user.email = target.value)}
+                    defaultValue={user.email}
+                    required
+                    label="Email"
+                    fullWidth
+                    autoComplete="billing address-level2"
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  onChange={({ target }) => (user.lastName = target.value)}
-                  required
-                  label="Last name"
-                  fullWidth
-                  autoComplete="lname"
+              <Grid item lg={6}>
+                <div
+                  style={{
+                    backgroundColor: "red",
+                    width: "100%",
+                    height: 250
+                  }}
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  onChange={({ target }) => (user.email = target.value)}
-                  defaultValue={user.email}
-                  required
-                  label="Email"
-                  fullWidth
-                  autoComplete="billing address-level2"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  id="state"
-                  name="state"
-                  label="State/Province/Region"
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  id="zip"
-                  name="zip"
-                  label="Zip / Postal code"
-                  fullWidth
-                  autoComplete="billing postal-code"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  id="country"
-                  name="country"
-                  label="Country"
-                  fullWidth
-                  autoComplete="billing country"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      color="secondary"
-                      name="saveAddress"
-                      value="yes"
-                    />
-                  }
-                  label="Use this address for payment details"
+                <input
+                  type="file"
+                  onChange={({ target }) => (user.image = target.files[0])}
                 />
               </Grid>
               <Grid item className={classes.buttons}>

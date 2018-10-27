@@ -13,7 +13,8 @@ describe("<WelcomePage /> component", () => {
   let user = {
     firstName: "firstName",
     lastName: "firstName",
-    email: "example@test.com"
+    email: "example@test.com",
+    firstAccess:true
   };
   let onLogout = jest.fn();
   let onUpdateAccountUser = jest.fn();
@@ -33,8 +34,8 @@ describe("<WelcomePage /> component", () => {
   it("should render component correctly", () => {
     expect(wrapper.type()).toEqual(React.Fragment);
     expect(wrapper.find(Typography).length).toEqual(2);
-    expect(wrapper.find(Grid).length).toEqual(9);
-    expect(wrapper.find(TextField).length).toEqual(6);
+    expect(wrapper.find(Grid).length).toEqual(7);
+    expect(wrapper.find(TextField).length).toEqual(3);
     expect(wrapper.find(Button).length).toEqual(2);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
@@ -44,7 +45,14 @@ describe("<WelcomePage /> component", () => {
       .find(Button)
       .at(0)
       .simulate("click");
+
+      wrapper
+      .find(Button)
+      .at(1)
+      .simulate("click");
+
     expect(onLogout.mock.calls.length).toEqual(1);
+    expect(onUpdateAccountUser.mock.calls.length).toEqual(1);
 
     expect(toJson(wrapper)).toMatchSnapshot();
   });

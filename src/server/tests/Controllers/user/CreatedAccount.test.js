@@ -1,7 +1,7 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
 import app from "../../../app";
-import {BAD_REQUEST,CREATED} from "../../../utils/HttpStatusCode"
+import { BAD_REQUEST, CREATED } from "../../../utils/HttpStatusCode";
 
 chai.use(chaiHttp);
 
@@ -25,7 +25,6 @@ describe("User Account", () => {
       .post("/api/v1/user")
       .send(fields)
       .end((err, res) => {
-
         expect(res.statusCode).toEqual(CREATED);
 
         expect(res.body.success).toEqual(true);
@@ -66,6 +65,29 @@ describe("User Account", () => {
 
         expect(dataAuthenticated).toHaveProperty("user");
 
+        done();
+      });
+  });
+
+  test("/POST it should to update user and return token user", done => {
+    let updateFields = {
+      image: "/images/user.png",
+      token: dataAuthenticated.token,
+      user: JSON.stringify({
+        name: "Name",
+        lastname: "lastname",
+        email: "teste@teste.com",
+        phone: 999999,
+        firstAccess: false
+      })
+    };
+    request
+      .put(`/api/v1/user/${dataAuthenticated.user._id}`)
+      .type("form")
+      .send(updateFields)
+      .end((err, res) => {
+        expect(res.statusCode).toEqual(200);
+        expect(res.body.success).toEqual(true);
         done();
       });
   });

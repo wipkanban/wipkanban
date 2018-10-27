@@ -11,8 +11,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(logout());
     },
     onUpdateAccountUser(user) {
-      console.log(user);
-      //dispatch(updateAccountUser(user));
+      dispatch(updateAccountUser(user));
     }
   };
 };

@@ -7,7 +7,7 @@ import MenuRight from "../Navbar/MenuRight";
 import Search from "../Navbar/Search";
 import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
 import toJson from "enzyme-to-json";
-import "../../setupTest"
+import "../../setupTest";
 
 describe("Home component", () => {
   let shallow;
@@ -52,6 +52,14 @@ describe("Home component", () => {
     let wrapper = shallow(<Home user={user} />);
 
     expect(wrapper.find(TabsHome).type()).toEqual(TabsHome);
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it("should render a WelcomePage component when user firstAccess is true", () => {
+    user.firstAccess = true;
+    let wrapper = shallow(<Home user={user} />);
+
+    expect(wrapper.name()).toEqual("Connect(WithStyles(WelcomePage))");
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
