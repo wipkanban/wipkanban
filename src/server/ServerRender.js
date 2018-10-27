@@ -12,7 +12,11 @@ import {
   createGenerateClassName
 } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({});
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  }
+});
 
 export default function render(req, res) {
   const store = configureStore(true);
