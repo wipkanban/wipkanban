@@ -12,8 +12,8 @@ type Props = {
   user: Object
 };
 
-function Home({ user: { firstAccess } }: Props) {
-  if (firstAccess) {
+function Home({ user }: Props) {
+  if (user.firstAccess) {
     return <WelcomePage />;
   }
 
@@ -23,7 +23,7 @@ function Home({ user: { firstAccess } }: Props) {
         <div />
         <MenuRight>
           <Search />
-          <UserAccountSettings />
+          <UserAccountSettings user={user} />
         </MenuRight>
       </Navbar>
       <GridContainer>
