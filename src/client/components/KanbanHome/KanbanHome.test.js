@@ -5,12 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import BoardList from "../Board/BoardListContainer";
 import TeamList from "../Team/TeamList";
 import toJson from "enzyme-to-json";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../../setupTest"
 
 describe("KanbanHome component", () => {
   let shallow;

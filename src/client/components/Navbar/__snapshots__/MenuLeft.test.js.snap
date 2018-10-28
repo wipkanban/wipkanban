@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuLeft Component should render a Button containing two icons 1`] = `
+<div
+  className="MenuLeft-navLeft-1"
+>
+  <WithStyles(Button)
+    color="inherit"
+    size="small"
+    style={
+      Object {
+        "paddingTop": 15,
+        "position": "relative",
+      }
+    }
+  >
+    <pure(DeveloperBoardIcon) />
+    <small
+      style={
+        Object {
+          "fontSize": 8,
+          "left": 12,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      Guarida/Tecnologia da informação
+    </small>
+    Minhas atividades
+    <pure(ArrowDropDownIcon) />
+  </WithStyles(Button)>
+</div>
+`;
+
+exports[`MenuLeft Component should render a div 1`] = `
+<div
+  className="MenuLeft-navLeft-1"
+>
+  <WithStyles(Button)
+    color="inherit"
+    size="small"
+    style={
+      Object {
+        "paddingTop": 15,
+        "position": "relative",
+      }
+    }
+  >
+    <pure(DeveloperBoardIcon) />
+    <small
+      style={
+        Object {
+          "fontSize": 8,
+          "left": 12,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      Guarida/Tecnologia da informação
+    </small>
+    Minhas atividades
+    <pure(ArrowDropDownIcon) />
+  </WithStyles(Button)>
+</div>
+`;

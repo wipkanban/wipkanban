@@ -6,7 +6,7 @@ import Navbar from "../Navbar/index";
 import Column from "../Board/Column";
 import MenuLeft from "../Navbar/MenuLeft";
 import MenuRight from "../Navbar/MenuRight";
-import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
+import UserAccountSettings from "../Navbar/Buttons/UserAccountSettingsContainer";
 import AddCardButton from "../Navbar/Buttons/AddCardButton";
 import DashboardIconButton from "../Navbar/Buttons/DashboardIconButton";
 import TransferWithinAStationIconButton from "../Navbar/Buttons/TransferWithinAStationIconButton";

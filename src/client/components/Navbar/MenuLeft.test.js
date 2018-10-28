@@ -4,12 +4,8 @@ import { createShallow } from "@material-ui/core/test-utils";
 import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
 import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import toJson from "enzyme-to-json";
+import "../../setupTest"
 
 describe("MenuLeft Component", () => {
   let shallow;
@@ -21,6 +17,7 @@ describe("MenuLeft Component", () => {
   it("should render a div", () => {
     let wrapper = shallow(<MenuLeft />);
     expect(wrapper.type()).toEqual("div");
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should render a Button containing two icons", () => {
@@ -28,5 +25,6 @@ describe("MenuLeft Component", () => {
     expect(wrapper.find(Button).type()).toEqual(Button);
     expect(wrapper.find(DeveloperBoardIcon).type()).toEqual(DeveloperBoardIcon);
     expect(wrapper.find(ArrowDropDownIcon).type()).toEqual(ArrowDropDownIcon);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

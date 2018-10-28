@@ -1,5 +1,5 @@
 import { login, logout } from "../../actions/Login";
-import { updateAccountUser } from "../../actions/User";
+import { updateAccountUser, createAccount } from "../../actions/User";
 import configureStore from "../../configureStore";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
@@ -20,6 +20,30 @@ describe("User API", () => {
   afterEach(() => {
     mock.restore();
     mock.reset();
+  });
+
+  it("Shoud to create user account", () => {
+    let response = {
+      success: true,
+      message: "User account created with successfull!"
+    };
+
+    let expectedState = {
+      success: true,
+      message: "User account created with successfull!",
+      showPreloader: false,
+      user: {}
+    };
+
+    mock.onPost(`/api/v1/user`).reply(200, response);
+
+    store
+      .dispatch(createAccount("email@examaple.com", "mypassword"))
+      .then(() => {
+        let currentState = store.getState().userReducer;
+
+        expect(currentState).toEqual(expectedState);
+      });
   });
 
   it("Shoud to authenticate a user and set token localstorage", () => {

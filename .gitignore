@@ -10,6 +10,7 @@
 # production
 /build
 public/dist
+public/uploads
 public/assets/css/main.css
 
 npm-debug.log*

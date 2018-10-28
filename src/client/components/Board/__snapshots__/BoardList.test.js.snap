@@ -6,7 +6,7 @@ exports[`BoardList Component should render 1 Typogragh and 2 Grid 1`] = `
     <WithStyles(Typography)
       color="secondary"
       gutterBottom={true}
-      variant="title"
+      variant="h6"
     >
       <pure(DeveloperBoardIcon) />
        My boards
@@ -159,7 +159,7 @@ exports[`BoardList Component should render a div 1`] = `
     <WithStyles(Typography)
       color="secondary"
       gutterBottom={true}
-      variant="title"
+      variant="h6"
     >
       <pure(DeveloperBoardIcon) />
        My boards

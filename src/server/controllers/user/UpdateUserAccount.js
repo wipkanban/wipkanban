@@ -1,7 +1,9 @@
+import { OK, INTERNAL_SERVER_ERROR } from "../../utils/HttpStatusCode";
+
 export default User => {
   function handleError(res, err) {
     return res
-      .status(500)
+      .status(INTERNAL_SERVER_ERROR)
       .json({ success: false, error: err })
       .end();
   }
@@ -28,7 +30,7 @@ export default User => {
         if (err) handleError(res, err);
 
         res
-          .status(200)
+          .status(OK)
           .json({
             success: true
           })

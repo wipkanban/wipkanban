@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WelcomePageContainer /> Component should to render correctly 1`] = `
+<WithStyles(WelcomePage)
+  onLogout={[Function]}
+  onUpdateAccountUser={[Function]}
+  user={
+    Object {
+      "firstAccess": true,
+    }
+  }
+/>
+`;

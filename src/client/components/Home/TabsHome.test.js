@@ -5,12 +5,8 @@ import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import KanbanHome from "../KanbanHome";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../../setupTest"
+import toJson from "enzyme-to-json";
 
 describe("TabsHome component", () => {
   let shallow;
@@ -23,16 +19,19 @@ describe("TabsHome component", () => {
     let wrapper = shallow(<TabsHome />);
     expect(wrapper.childAt(0).type()).toEqual(Paper);
     expect(wrapper.childAt(1).type()).toEqual("div");
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should render 1 Tabs and 2 tabs Component", () => {
     let wrapper = shallow(<TabsHome />);
     expect(wrapper.find(Tabs).type()).toEqual(Tabs);
     expect(wrapper.find(Tab).length).toEqual(2);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should render KanbanHome component", () => {
     let wrapper = shallow(<TabsHome />);
     expect(wrapper.find(KanbanHome).type()).toEqual(KanbanHome);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabsHome component should render 1 Tabs and 2 tabs Component 1`] = `
+<div
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <WithStyles(Paper)>
+    <WithStyles(Tabs)
+      indicatorColor="secondary"
+      onChange={[Function]}
+      textColor="primary"
+      value={0}
+    >
+      <WithStyles(Tab)
+        label="Kanban boards"
+      />
+      <WithStyles(Tab)
+        label="OKRs"
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(Paper)>
+  <div>
+    <TabContainer>
+      <KanbanHome />
+    </TabContainer>
+  </div>
+</div>
+`;
+
+exports[`TabsHome component should render 1 div and 1 Paper Component 1`] = `
+<div
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <WithStyles(Paper)>
+    <WithStyles(Tabs)
+      indicatorColor="secondary"
+      onChange={[Function]}
+      textColor="primary"
+      value={0}
+    >
+      <WithStyles(Tab)
+        label="Kanban boards"
+      />
+      <WithStyles(Tab)
+        label="OKRs"
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(Paper)>
+  <div>
+    <TabContainer>
+      <KanbanHome />
+    </TabContainer>
+  </div>
+</div>
+`;
+
+exports[`TabsHome component should render KanbanHome component 1`] = `
+<div
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <WithStyles(Paper)>
+    <WithStyles(Tabs)
+      indicatorColor="secondary"
+      onChange={[Function]}
+      textColor="primary"
+      value={0}
+    >
+      <WithStyles(Tab)
+        label="Kanban boards"
+      />
+      <WithStyles(Tab)
+        label="OKRs"
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(Paper)>
+  <div>
+    <TabContainer>
+      <KanbanHome />
+    </TabContainer>
+  </div>
+</div>
+`;

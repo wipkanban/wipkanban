@@ -1,6 +1,7 @@
 import React from "react";
 import GridContainer from "./GridContainer";
 import { createShallow } from "@material-ui/core/test-utils";
+import toJson from "enzyme-to-json";
 
 // setup file
 import { configure } from "enzyme";
@@ -22,5 +23,6 @@ describe("TeamList Component", () => {
       </GridContainer>
     );
     expect(wrapper.find("div").text()).toEqual("Hello");
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

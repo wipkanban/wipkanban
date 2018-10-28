@@ -17,10 +17,6 @@ exports[`<Routes /> Component should render an component correctly 1`] = `
   />
   <Route
     component={[Function]}
-    path="/Home"
-  />
-  <Route
-    component={[Function]}
     path="/login"
   />
   <Route

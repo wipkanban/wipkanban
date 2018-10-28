@@ -4,12 +4,7 @@ import CardMaterialUi from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { createShallow } from "@material-ui/core/test-utils";
 import toJson from "enzyme-to-json";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../../setupTest"
 
 describe("<Card /> Component", () => {
   let shallow;

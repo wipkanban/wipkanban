@@ -6,10 +6,10 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
     className="MediaControlCard-cardHeader-4"
   >
     <WithStyles(Typography)
-      variant="title"
+      variant="h6"
     />
     <WithStyles(Typography)
-      variant="subheading"
+      variant="subtitle1"
     >
       createdb by 
        at 
@@ -24,13 +24,13 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
       <WithStyles(Typography)
         align="center"
         color="primary"
-        variant="body2"
+        variant="body1"
       >
         Lead Time
       </WithStyles(Typography)>
       <WithStyles(Typography)
         align="center"
-        variant="display1"
+        variant="h4"
       />
       <WithStyles(Typography)
         align="center"
@@ -45,17 +45,17 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
       <WithStyles(Typography)
         align="center"
         color="primary"
-        variant="body2"
+        variant="body1"
       >
         Cycle Time
       </WithStyles(Typography)>
       <WithStyles(Typography)
         align="center"
-        variant="display1"
+        variant="h4"
       />
       <WithStyles(Typography)
         align="center"
-        variant="body1"
+        variant="body2"
       >
         by week
       </WithStyles(Typography)>
@@ -66,17 +66,17 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
       <WithStyles(Typography)
         align="center"
         color="primary"
-        variant="body2"
+        variant="body1"
       >
         Throghput
       </WithStyles(Typography)>
       <WithStyles(Typography)
         align="center"
-        variant="display1"
+        variant="h4"
       />
       <WithStyles(Typography)
         align="center"
-        variant="body1"
+        variant="body2"
       >
         by week
       </WithStyles(Typography)>
