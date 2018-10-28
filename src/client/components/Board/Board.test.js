@@ -5,12 +5,7 @@ import { createShallow } from "@material-ui/core/test-utils";
 import toJson from "enzyme-to-json";
 import Grid from "@material-ui/core/Grid";
 import Navbar from "../Navbar/index";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../../setupTest"
 
 describe("<Board /> Component", () => {
   let shallow;

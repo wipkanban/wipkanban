@@ -5,12 +5,7 @@ import toJson from "enzyme-to-json";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../../setupTest"
 
 describe("<ColumnHeader /> Component", () => {
   let shallow;

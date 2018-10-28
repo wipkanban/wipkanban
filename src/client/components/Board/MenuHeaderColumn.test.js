@@ -5,12 +5,7 @@ import toJson from "enzyme-to-json";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../../setupTest"
 
 describe("<MenuHeaderColumn /> Component", () => {
   let shallow;

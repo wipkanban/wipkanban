@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt-nodejs";
 import path from "path";
+import {UNAUTHORIZED, OK} from "../../utils/HttpStatusCode";
 
 export default (User, setCsrf) => {
   return (req, res, next) => {
@@ -18,7 +19,7 @@ export default (User, setCsrf) => {
         if (user) {
           if (!bcrypt.compareSync(password, user.password)) {
             return res
-              .status(200)
+              .status(UNAUTHORIZED)
               .json({ success: false, message: "Password invalid" });
           }
 
@@ -40,7 +41,7 @@ export default (User, setCsrf) => {
           });
 
           setCsrf(req, res, () =>
-            res.cookie("token", token, { httpOnly: true }).json({
+            res.status(OK).cookie("token", token, { httpOnly: true }).json({
               token,
               user: payload,
               success: true,
@@ -50,7 +51,7 @@ export default (User, setCsrf) => {
         } else {
           //user not exists
           return res
-            .status(200)
+            .status(UNAUTHORIZED)
             .json({ success: false, message: "User not found" });
         }
       }

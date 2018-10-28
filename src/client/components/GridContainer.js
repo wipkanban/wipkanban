@@ -1,9 +1,9 @@
 // @flow
 import * as React from "react";
-import Grid from '@material-ui/core/Grid';
-import {withStyles} from '@material-ui/core/styles';
+import Grid from "@material-ui/core/Grid";
+import { withStyles } from "@material-ui/core/styles";
 
-const styles : Object = {
+const styles: Object = {
   root: {
     flexGrow: 1
   },
@@ -17,12 +17,12 @@ type Props = {
   children: React.Node
 };
 
-const GridContainer = ({classes,children}:Props) => {
+const GridContainer = ({ classes, children }: Props) => {
   return (
     <Grid container spacing={0} className={classes.gridContainer}>
       {children}
     </Grid>
-  )
+  );
 };
 
 export default withStyles(styles)(GridContainer);

@@ -10,7 +10,7 @@ const TeamList = () => {
   return (
     <div>
       <div>
-        <Typography color="secondary" variant="title" gutterBottom>
+        <Typography color="secondary" variant="h6" gutterBottom>
           <GroupIcon/>{' '}
           My teams
         </Typography>

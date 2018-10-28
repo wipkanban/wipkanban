@@ -7,7 +7,11 @@ import { type Store } from "redux";
 
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({});
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  }
+});
 
 const store: Store = configureStore();
 let stateLocalStorage: string = window.localStorage.getItem("state");

@@ -1,12 +1,9 @@
 import React from "react";
 import MenuRight from "./MenuRight";
 import { createShallow } from "@material-ui/core/test-utils";
+import toJson from "enzyme-to-json";
 
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../../setupTest"
 
 describe("MenuRight Component", () => {
   let shallow;
@@ -18,6 +15,7 @@ describe("MenuRight Component", () => {
   it("should render a Tooltip", () => {
     let wrapper = shallow(<MenuRight />);
     expect(wrapper.type()).toEqual("div");
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should render its children", () => {
@@ -27,5 +25,6 @@ describe("MenuRight Component", () => {
       </MenuRight>
     );
     expect(wrapper.childAt(0).text()).toEqual("Hello");
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

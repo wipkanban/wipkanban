@@ -17,6 +17,7 @@ export default function userReducer(state = initialState, action) {
       };
 
     case actionsType.CREATE_ACCOUNT_SUCCESS:
+    case actionsType.CREATE_ACCOUNT_ERROR:
       return {
         ...state,
         showPreloader: false,
@@ -32,7 +33,7 @@ export default function userReducer(state = initialState, action) {
     case actionsType.LOGIN_ERROR:
       var { message, success, user } = action;
 
-      return { ...state,showPreloader: false, message, success, user };
+      return { ...state, showPreloader: false, message, success, user };
 
     case actionsType.LOGOUT_SUCCESS:
       return { ...initialState };
@@ -51,7 +52,8 @@ export default function userReducer(state = initialState, action) {
           lastname: action.user.lastname,
           email: action.user.email,
           phone: action.user.phone,
-          firstAccess: action.user.firstAccess
+          firstAccess: action.user.firstAccess,
+          image: action.user.image
         }
       };
 

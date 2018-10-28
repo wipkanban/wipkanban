@@ -5,12 +5,8 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import { Redirect } from "react-router-dom";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import "../../setupTest"
+import toJson from "enzyme-to-json";
 
 var localStorageMock = (function() {
   var store = {};
@@ -48,13 +44,17 @@ describe("Login User", () => {
 
   it("should render 2 inputs and a Button", () => {
     let wrapper = shallow(<FormLogin {...testValues} />);
+
     expect(wrapper.find(TextField).length).toEqual(2);
     expect(wrapper.find(Button).length).toEqual(1);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should render 2 inputs and a Button", () => {
     let wrapper = shallow(<FormLogin {...testValues} />);
+
     expect(wrapper.find(IconButton).length).toEqual(3);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should call function onLogin on click button Login", () => {
@@ -62,6 +62,7 @@ describe("Login User", () => {
 
     wrapper.find(Button).simulate("click");
     expect(testValues.onLogin.mock.calls.length).toEqual(1);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should return a redirect component, bacause jwt is defined", () => {
@@ -69,5 +70,6 @@ describe("Login User", () => {
     let wrapper = shallow(<FormLogin {...testValues} />);
 
     expect(wrapper.type()).toEqual(Redirect);
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

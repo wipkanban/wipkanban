@@ -6,7 +6,7 @@ exports[`<TeamList /> Component should render an component correctly 1`] = `
     <WithStyles(Typography)
       color="secondary"
       gutterBottom={true}
-      variant="title"
+      variant="h6"
     >
       <pure(GroupIcon) />
        

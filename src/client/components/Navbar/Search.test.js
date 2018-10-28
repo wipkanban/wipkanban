@@ -2,12 +2,8 @@ import React from "react";
 import Search from "./Search";
 import { createShallow } from "@material-ui/core/test-utils";
 import Tooltip from "@material-ui/core/Tooltip";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import toJson from "enzyme-to-json";
+import "../../setupTest"
 
 describe("Search Component", () => {
   let shallow;
@@ -24,5 +20,6 @@ describe("Search Component", () => {
   it("should have a prop title", () => {
     let wrapper = shallow(<Search />);
     expect(wrapper.props().title).toEqual("Search cards");
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

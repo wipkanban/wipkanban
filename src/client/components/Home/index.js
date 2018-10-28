@@ -1,15 +1,26 @@
 // @flow
-import * as React from "react";
+import React from "react";
 import Navbar from "../Navbar";
 import Search from "../Navbar/Search";
-import UserAccountSettings from "../Navbar/Buttons/UserAccountSettings";
+import UserAccountSettings from "../Navbar/Buttons/UserAccountSettingsContainer";
 import TabsHome from "./TabsHome";
 import GridContainer from "../GridContainer";
 import MenuRight from "../Navbar/MenuRight";
+import WelcomePage from "./WelcomePageContainer";
+import Preloader from "../PreloaderContainer";
 
-function Home() {
+type Props = {
+  user: Object
+};
+
+function Home({ user }: Props) {
+  if (user.firstAccess) {
+    return <WelcomePage />;
+  }
+
   return (
     <div>
+      <Preloader />
       <Navbar>
         <div />
         <MenuRight>

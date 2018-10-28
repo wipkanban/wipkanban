@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WelcomePage /> component should render component correctly 1`] = `
+<Fragment>
+  <WithStyles(CssBaseline) />
+  <WithStyles(GridContainer)>
+    <main
+      className="WelcomePage-layout-1"
+    >
+      <WithStyles(Paper)
+        className="WelcomePage-paper-3"
+      >
+        <WithStyles(Typography)
+          align="center"
+          className="WelcomePage-h1-2"
+          color="textPrimary"
+          component="h1"
+          gutterBottom={true}
+          variant="h2"
+        >
+          Welcome to WipLean
+        </WithStyles(Typography)>
+        <WithStyles(Typography)
+          align="center"
+          variant="subtitle1"
+        >
+          Before you start using WipLean, please complete your data below.
+        </WithStyles(Typography)>
+        <WithStyles(Grid)
+          container={true}
+          spacing={24}
+        >
+          <WithStyles(Grid)
+            item={true}
+            lg={6}
+          >
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="fname"
+                fullWidth={true}
+                label="First name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="lname"
+                fullWidth={true}
+                label="Last name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="billing address-level2"
+                defaultValue="example@test.com"
+                fullWidth={true}
+                label="Email"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+          </WithStyles(Grid)>
+          <WithStyles(Grid)
+            item={true}
+            lg={6}
+          >
+            <div
+              className="WelcomePage-photo-6"
+              id="divGreyPhoto"
+            >
+              <img
+                id="imagePreview"
+                width="100%"
+              />
+            </div>
+            <input
+              accept="image/*"
+              id="contained-button-file"
+              onChange={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="file"
+            />
+            <center>
+              <label
+                htmlFor="contained-button-file"
+              >
+                <WithStyles(Button)
+                  component="span"
+                  variant="contained"
+                >
+                  Choose image
+                </WithStyles(Button)>
+              </label>
+            </center>
+          </WithStyles(Grid)>
+          <WithStyles(Grid)
+            className="WelcomePage-buttons-4"
+            item={true}
+          >
+            <WithStyles(Button)
+              onClick={[MockFunction]}
+            >
+              Logout
+            </WithStyles(Button)>
+            <WithStyles(Button)
+              className="WelcomePage-button-5"
+              color="primary"
+              onClick={[Function]}
+              variant="contained"
+            >
+              Update and next
+            </WithStyles(Button)>
+          </WithStyles(Grid)>
+        </WithStyles(Grid)>
+      </WithStyles(Paper)>
+    </main>
+  </WithStyles(GridContainer)>
+</Fragment>
+`;
+
+exports[`<WelcomePage /> component should to call function logout when clicked at Button 1`] = `
+<Fragment>
+  <WithStyles(CssBaseline) />
+  <WithStyles(GridContainer)>
+    <main
+      className="WelcomePage-layout-1"
+    >
+      <WithStyles(Paper)
+        className="WelcomePage-paper-3"
+      >
+        <WithStyles(Typography)
+          align="center"
+          className="WelcomePage-h1-2"
+          color="textPrimary"
+          component="h1"
+          gutterBottom={true}
+          variant="h2"
+        >
+          Welcome to WipLean
+        </WithStyles(Typography)>
+        <WithStyles(Typography)
+          align="center"
+          variant="subtitle1"
+        >
+          Before you start using WipLean, please complete your data below.
+        </WithStyles(Typography)>
+        <WithStyles(Grid)
+          container={true}
+          spacing={24}
+        >
+          <WithStyles(Grid)
+            item={true}
+            lg={6}
+          >
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="fname"
+                fullWidth={true}
+                label="First name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="lname"
+                fullWidth={true}
+                label="Last name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+            <WithStyles(Grid)
+              item={true}
+            >
+              <TextField
+                autoComplete="billing address-level2"
+                defaultValue="example@test.com"
+                fullWidth={true}
+                label="Email"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                variant="standard"
+              />
+            </WithStyles(Grid)>
+          </WithStyles(Grid)>
+          <WithStyles(Grid)
+            item={true}
+            lg={6}
+          >
+            <div
+              className="WelcomePage-photo-6"
+              id="divGreyPhoto"
+            >
+              <img
+                id="imagePreview"
+                width="100%"
+              />
+            </div>
+            <input
+              accept="image/*"
+              id="contained-button-file"
+              onChange={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="file"
+            />
+            <center>
+              <label
+                htmlFor="contained-button-file"
+              >
+                <WithStyles(Button)
+                  component="span"
+                  variant="contained"
+                >
+                  Choose image
+                </WithStyles(Button)>
+              </label>
+            </center>
+          </WithStyles(Grid)>
+          <WithStyles(Grid)
+            className="WelcomePage-buttons-4"
+            item={true}
+          >
+            <WithStyles(Button)
+              onClick={
+                [MockFunction] {
+                  "calls": Array [
+                    Array [],
+                  ],
+                  "results": Array [
+                    Object {
+                      "isThrow": false,
+                      "value": undefined,
+                    },
+                  ],
+                }
+              }
+            >
+              Logout
+            </WithStyles(Button)>
+            <WithStyles(Button)
+              className="WelcomePage-button-5"
+              color="primary"
+              onClick={[Function]}
+              variant="contained"
+            >
+              Update and next
+            </WithStyles(Button)>
+          </WithStyles(Grid)>
+        </WithStyles(Grid)>
+      </WithStyles(Paper)>
+    </main>
+  </WithStyles(GridContainer)>
+</Fragment>
+`;

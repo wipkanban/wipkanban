@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TeamList Component should render its children 1`] = `
+<WithStyles(Grid)
+  className="GridContainer-gridContainer-2"
+  container={true}
+  spacing={0}
+>
+  <div>
+    Hello
+  </div>
+</WithStyles(Grid)>
+`;
