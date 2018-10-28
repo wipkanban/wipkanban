@@ -90,7 +90,6 @@ const Login = ({
       <Grid item xs={12} className={classes.demo}>
         <Grid
           container
-          spacing={0}
           className={classes.demo}
           direction="row"
           justify="flex-start"
@@ -137,7 +136,7 @@ const Login = ({
                 paddingBottom: 10
               }}
             >
-              <div style={{ width: "80%", margin: "0 auto" }}>
+              <div style={{ margin: "0 auto" }}>
                 <Typography
                   variant="h4"
                   color="primary"
