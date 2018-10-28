@@ -36,19 +36,19 @@ describe("<WelcomePage /> component", () => {
     expect(wrapper.find(Typography).length).toEqual(2);
     expect(wrapper.find(Grid).length).toEqual(7);
     expect(wrapper.find(TextField).length).toEqual(3);
-    expect(wrapper.find(Button).length).toEqual(2);
+    expect(wrapper.find(Button).length).toEqual(3);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should to call function logout when clicked at Button", () => {
     wrapper
       .find(Button)
-      .at(0)
+      .at(1)
       .simulate("click");
 
       wrapper
       .find(Button)
-      .at(1)
+      .at(2)
       .simulate("click");
 
     expect(onLogout.mock.calls.length).toEqual(1);

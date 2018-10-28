@@ -13,7 +13,6 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
       container={true}
       direction="row"
       justify="flex-start"
-      spacing={0}
     >
       <WithStyles(Grid)
         item={true}
@@ -91,7 +90,6 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
             style={
               Object {
                 "margin": "0 auto",
-                "width": "80%",
               }
             }
           >
@@ -247,7 +245,6 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
       container={true}
       direction="row"
       justify="flex-start"
-      spacing={0}
     >
       <WithStyles(Grid)
         item={true}
@@ -325,7 +322,6 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
             style={
               Object {
                 "margin": "0 auto",
-                "width": "80%",
               }
             }
           >
@@ -481,7 +477,6 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
       container={true}
       direction="row"
       justify="flex-start"
-      spacing={0}
     >
       <WithStyles(Grid)
         item={true}
@@ -559,7 +554,6 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
             style={
               Object {
                 "margin": "0 auto",
-                "width": "80%",
               }
             }
           >

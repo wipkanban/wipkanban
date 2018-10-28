@@ -80,18 +80,37 @@ exports[`<WelcomePage /> component should render component correctly 1`] = `
             lg={6}
           >
             <div
+              className="WelcomePage-photo-6"
+              id="divGreyPhoto"
+            >
+              <img
+                id="imagePreview"
+                width="100%"
+              />
+            </div>
+            <input
+              accept="image/*"
+              id="contained-button-file"
+              onChange={[Function]}
               style={
                 Object {
-                  "backgroundColor": "red",
-                  "height": 250,
-                  "width": "100%",
+                  "display": "none",
                 }
               }
-            />
-            <input
-              onChange={[Function]}
               type="file"
             />
+            <center>
+              <label
+                htmlFor="contained-button-file"
+              >
+                <WithStyles(Button)
+                  component="span"
+                  variant="contained"
+                >
+                  Choose image
+                </WithStyles(Button)>
+              </label>
+            </center>
           </WithStyles(Grid)>
           <WithStyles(Grid)
             className="WelcomePage-buttons-4"
@@ -198,18 +217,37 @@ exports[`<WelcomePage /> component should to call function logout when clicked a
             lg={6}
           >
             <div
+              className="WelcomePage-photo-6"
+              id="divGreyPhoto"
+            >
+              <img
+                id="imagePreview"
+                width="100%"
+              />
+            </div>
+            <input
+              accept="image/*"
+              id="contained-button-file"
+              onChange={[Function]}
               style={
                 Object {
-                  "backgroundColor": "red",
-                  "height": 250,
-                  "width": "100%",
+                  "display": "none",
                 }
               }
-            />
-            <input
-              onChange={[Function]}
               type="file"
             />
+            <center>
+              <label
+                htmlFor="contained-button-file"
+              >
+                <WithStyles(Button)
+                  component="span"
+                  variant="contained"
+                >
+                  Choose image
+                </WithStyles(Button)>
+              </label>
+            </center>
           </WithStyles(Grid)>
           <WithStyles(Grid)
             className="WelcomePage-buttons-4"

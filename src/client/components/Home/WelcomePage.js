@@ -8,6 +8,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
 import GridContainer from "../GridContainer";
 import Button from "@material-ui/core/Button";
+import grey from "@material-ui/core/colors/grey";
 
 const styles: Object = theme => ({
   layout: {
@@ -38,6 +39,12 @@ const styles: Object = theme => ({
   },
   button: {
     marginLeft: theme.spacing.unit
+  },
+  photo: {
+    backgroundColor: grey[300],
+    width: 150,
+    height: 200,
+    margin: [`${theme.spacing.unit * 2}px`, "auto"].join(" ")
   }
 });
 
@@ -109,17 +116,36 @@ const WelcomePage = ({
                 </Grid>
               </Grid>
               <Grid item lg={6}>
-                <div
-                  style={{
-                    backgroundColor: "red",
-                    width: "100%",
-                    height: 250
-                  }}
-                />
+                <div className={classes.photo} id="divGreyPhoto">
+                  <img id="imagePreview" width="100%" />
+                </div>
                 <input
                   type="file"
-                  onChange={({ target }) => (user.image = target.files[0])}
+                  id="contained-button-file"
+                  onChange={({ target }) => {
+                    user.image = target.files[0];
+
+                    let reader = new FileReader();
+
+                    reader.onload = function(e) {
+                      // get loaded data and render thumbnail.
+                      document.getElementById("imagePreview").src =
+                        e.target.result;
+                    };
+
+                    // read the image file as a data URL.
+                    reader.readAsDataURL(target.files[0]);
+                  }}
+                  accept="image/*"
+                  style={{ display: "none" }}
                 />
+                <center>
+                  <label htmlFor="contained-button-file">
+                    <Button variant="contained" component="span">
+                      Choose image
+                    </Button>
+                  </label>
+                </center>
               </Grid>
               <Grid item className={classes.buttons}>
                 <Button onClick={onLogout}>Logout</Button>
