@@ -7,6 +7,7 @@ import TabsHome from "./TabsHome";
 import GridContainer from "../GridContainer";
 import MenuRight from "../Navbar/MenuRight";
 import WelcomePage from "./WelcomePageContainer";
+import Preloader from "../PreloaderContainer";
 
 type Props = {
   user: Object
@@ -19,6 +20,7 @@ function Home({ user }: Props) {
 
   return (
     <div>
+      <Preloader />
       <Navbar>
         <div />
         <MenuRight>

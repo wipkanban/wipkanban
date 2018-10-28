@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Preloader /> Component should return empty content when showPrealoder is not defined 1`] = `""`;
+
+exports[`<Preloader /> Component should to render <CircularProgress /> when showPreloader is true 1`] = `
+<div
+  className="Preloader-wrapper-2"
+>
+  <div
+    className="Preloader-background-1"
+  />
+  <WithStyles(CircularProgress)
+    color="secondary"
+    size={50}
+  />
+</div>
+`;
