@@ -82,20 +82,16 @@ type State = {
 };
 
 class Signup extends React.Component<Props, State> {
-  _onCreateAccount: Function;
+  state: State = {
+    email: null,
+    password: "",
+    confirmPassword: "",
+    confirmPasswordError: false,
+    requiredFields: false
+  };
 
-  state: State;
-
-  constructor(props) {
+  constructor(props){
     super(props);
-
-    this.state = {
-      email: null,
-      password: "",
-      confirmPassword: "",
-      confirmPasswordError: false,
-      requiredFields: false
-    };
 
     this._onCreateAccount = this._onCreateAccount.bind(this);
   }
