@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UniversalProvider /> Component should to render a Provider component 1`] = `
+<Provider>
+  <RouterFactory
+    server={false}
+  />
+</Provider>
+`;
