@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login User should call function onLogin on click button Login 1`] = `
+exports[`Login User does not should call function onLogin when click button Login with empty fields 1`] = `
 <WithStyles(Grid)
   className="Login-root-1"
   container={true}
@@ -122,8 +122,9 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
                   }
                 }
                 className="Login-text-4"
-                inputRef={[Function]}
+                error={true}
                 label="Type your email"
+                onChange={[Function]}
                 required={false}
                 select={false}
                 variant="standard"
@@ -139,8 +140,243 @@ exports[`Login User should call function onLogin on click button Login 1`] = `
                   }
                 }
                 className="Login-text-4"
-                inputRef={[Function]}
+                error={true}
                 label="Password"
+                onChange={[Function]}
+                required={false}
+                select={false}
+                type="password"
+                variant="standard"
+              />
+              <div
+                style={
+                  Object {
+                    "textAlign": "right",
+                  }
+                }
+              >
+                <br />
+                <div
+                  className="Login-wrapper-7"
+                >
+                  <WithStyles(Button)
+                    className=""
+                    color="primary"
+                    onClick={[Function]}
+                    size="large"
+                    variant="contained"
+                  >
+                    Sign In
+                    <pure(CheckIcon) />
+                  </WithStyles(Button)>
+                  <br />
+                </div>
+                <br />
+                <WithStyles(Typography)
+                  align="right"
+                  gutterBottom={true}
+                  variant="body1"
+                >
+                  Do not have an account yet ?
+                   
+                  <Link
+                    className="Login-link-5"
+                    replace={false}
+                    to="/create-account"
+                  >
+                    <b>
+                      Sign up!
+                    </b>
+                  </Link>
+                </WithStyles(Typography)>
+              </div>
+            </div>
+            <br />
+            <div>
+              <WithStyles(Typography)
+                gutterBottom={true}
+                variant="body1"
+              >
+                Sign in with:
+              </WithStyles(Typography)>
+              <br />
+              <WithStyles(IconButton)>
+                <i
+                  className="fa fa-facebook-square fa-2x"
+                  style={
+                    Object {
+                      "color": "#4267b2",
+                    }
+                  }
+                />
+              </WithStyles(IconButton)>
+              <WithStyles(IconButton)>
+                <i
+                  className="fa fa-google-plus fa-2x"
+                  style={
+                    Object {
+                      "color": "#db4437",
+                    }
+                  }
+                />
+              </WithStyles(IconButton)>
+              <WithStyles(IconButton)>
+                <i
+                  className="fa fa-github-square fa-2x"
+                />
+              </WithStyles(IconButton)>
+            </div>
+          </div>
+        </WithStyles(Paper)>
+      </WithStyles(Grid)>
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+</WithStyles(Grid)>
+`;
+
+exports[`Login User should call function onLogin when click button Login with fields filled 1`] = `
+<WithStyles(Grid)
+  className="Login-root-1"
+  container={true}
+>
+  <WithStyles(Grid)
+    item={true}
+    xs={12}
+  >
+    <WithStyles(Grid)
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(Grid)
+        item={true}
+        lg={8}
+        md={7}
+        sm={12}
+        xl={8}
+        xs={12}
+      >
+        <WithStyles(Paper)
+          className="Login-paper-2 Login-backgroundGreen-3"
+          elevation={0}
+          style={
+            Object {
+              "paddingBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <div>
+            <br />
+            <WithStyles(Typography)
+              gutterBottom={true}
+              style={
+                Object {
+                  "color": "white",
+                }
+              }
+              variant="h4"
+            >
+              Welcome to the best open source plataform for lean management
+            </WithStyles(Typography)>
+            <WithStyles(Typography)
+              gutterBottom={true}
+              style={
+                Object {
+                  "color": "white",
+                }
+              }
+              variant="h5"
+            >
+              Align strategy and execution with 
+              <b>
+                OKRs
+              </b>
+               and
+               
+              <b>
+                Kanban
+              </b>
+               for you, your team and your company.
+            </WithStyles(Typography)>
+          </div>
+        </WithStyles(Paper)>
+      </WithStyles(Grid)>
+      <WithStyles(Grid)
+        item={true}
+        lg={4}
+        md={5}
+        sm={12}
+        xl={4}
+        xs={12}
+      >
+        <WithStyles(Paper)
+          className="Login-paper-2"
+          elevation={0}
+          style={
+            Object {
+              "paddingBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "margin": "0 auto",
+              }
+            }
+          >
+            <WithStyles(Typography)
+              align="center"
+              color="primary"
+              gutterBottom={true}
+              variant="h4"
+            >
+              <b>
+                WIPLean
+              </b>
+            </WithStyles(Typography)>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <TextField
+                InputProps={
+                  Object {
+                    "endAdornment": <WithStyles(InputAdornment)
+                      position="end"
+                    >
+                      <pure(EmailIcon) />
+                    </WithStyles(InputAdornment)>,
+                  }
+                }
+                className="Login-text-4"
+                error={false}
+                label="Type your email"
+                onChange={[Function]}
+                required={false}
+                select={false}
+                variant="standard"
+              />
+              <TextField
+                InputProps={
+                  Object {
+                    "endAdornment": <WithStyles(InputAdornment)
+                      position="end"
+                    >
+                      <pure(LockIcon) />
+                    </WithStyles(InputAdornment)>,
+                  }
+                }
+                className="Login-text-4"
+                error={false}
+                label="Password"
+                onChange={[Function]}
                 required={false}
                 select={false}
                 type="password"
@@ -354,8 +590,9 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                   }
                 }
                 className="Login-text-4"
-                inputRef={[Function]}
+                error={false}
                 label="Type your email"
+                onChange={[Function]}
                 required={false}
                 select={false}
                 variant="standard"
@@ -371,8 +608,9 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                   }
                 }
                 className="Login-text-4"
-                inputRef={[Function]}
+                error={false}
                 label="Password"
+                onChange={[Function]}
                 required={false}
                 select={false}
                 type="password"
@@ -586,8 +824,9 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                   }
                 }
                 className="Login-text-4"
-                inputRef={[Function]}
+                error={false}
                 label="Type your email"
+                onChange={[Function]}
                 required={false}
                 select={false}
                 variant="standard"
@@ -603,8 +842,9 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                   }
                 }
                 className="Login-text-4"
-                inputRef={[Function]}
+                error={false}
                 label="Password"
+                onChange={[Function]}
                 required={false}
                 select={false}
                 type="password"

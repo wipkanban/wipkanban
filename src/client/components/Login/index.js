@@ -87,10 +87,7 @@ class Login extends React.Component<Props, State> {
   _onLogin() {
     let { onLogin } = this.props;
 
-    if (
-      this.state.email.value.length == 0 ||
-      this.state.password.value.length == 0
-    ) {
+    if (this.state.email.length == 0 || this.state.password.length == 0) {
       this.setState({ requiredFields: true });
 
       return;
@@ -183,7 +180,7 @@ class Login extends React.Component<Props, State> {
                     <TextField
                       disabled={showPreloader}
                       error={this.state.requiredFields}
-                      inputRef={el => this.setState({ email: el })}
+                      onChange={el => this.setState({ email: el.target.value })}
                       className={classes.text}
                       label="Type your email"
                       InputProps={{
@@ -197,7 +194,9 @@ class Login extends React.Component<Props, State> {
                     <TextField
                       disabled={showPreloader}
                       error={this.state.requiredFields}
-                      inputRef={el => this.setState({ password: el })}
+                      onChange={el =>
+                        this.setState({ password: el.target.value })
+                      }
                       type="password"
                       className={classes.text}
                       label="Password"
