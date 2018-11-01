@@ -5,7 +5,7 @@ import FormLogin from "./index";
 const mapDispatchToProps = dispatch => {
   return {
     onLogin(email, password) {
-      dispatch(login(email.value, password.value));
+      dispatch(login(email, password));
     }
   };
 };
