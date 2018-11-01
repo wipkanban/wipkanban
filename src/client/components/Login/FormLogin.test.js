@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import { Redirect } from "react-router-dom";
-import "../../setupTest"
+import "../../setupTest";
 import toJson from "enzyme-to-json";
 
 var localStorageMock = (function() {
@@ -57,11 +57,35 @@ describe("Login User", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should call function onLogin on click button Login", () => {
+  it("does not should call function onLogin when click button Login with empty fields", () => {
     let wrapper = shallow(<FormLogin {...testValues} />);
 
     wrapper.find(Button).simulate("click");
+    expect(testValues.onLogin.mock.calls.length).toEqual(0);
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it("should call function onLogin when click button Login with fields filled", () => {
+    let wrapper = shallow(<FormLogin {...testValues} />);
+    let expectedState = {
+      email: "email@example.com",
+      password: "mypassword",
+      requiredFields: false
+    };
+
+    //password field
+    wrapper
+      .find(TextField)
+      .at(0)
+      .simulate("change", { target: { value: expectedState.email } });
+    //confirm password field
+    wrapper
+      .find(TextField)
+      .at(1)
+      .simulate("change", { target: { value: expectedState.password } });
+    wrapper.find(Button).simulate("click");
     expect(testValues.onLogin.mock.calls.length).toEqual(1);
+    expect(wrapper.state()).toEqual(expectedState);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
