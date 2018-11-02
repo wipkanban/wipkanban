@@ -88,6 +88,12 @@ class Login extends React.Component<Props, State> {
 
   _inputEmail: HTMLInputElement;
 
+  constructor(props) {
+    super(props);
+
+    this._onClickEnter = this._onClickEnter.bind(this);
+  }
+
   componentDidMount() {
     this._inputEmail.focus();
   }
@@ -108,6 +114,12 @@ class Login extends React.Component<Props, State> {
     }
 
     onLogin(this.state.email, this.state.password);
+  }
+
+  _onClickEnter(event) {
+    if (event.key == "Enter") {
+      this._onLogin();
+    }
   }
 
   render() {
@@ -201,6 +213,7 @@ class Login extends React.Component<Props, State> {
                           : ""
                       }
                       onChange={el => this.setState({ email: el.target.value })}
+                      onKeyUp={this._onClickEnter}
                       className={classes.text}
                       label="Type your email"
                       InputProps={{
@@ -222,6 +235,7 @@ class Login extends React.Component<Props, State> {
                       onChange={el =>
                         this.setState({ password: el.target.value })
                       }
+                      onKeyUp={this._onClickEnter}
                       type="password"
                       className={classes.text}
                       label="Password"
