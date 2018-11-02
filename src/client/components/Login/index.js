@@ -84,6 +84,12 @@ class Login extends React.Component<Props, State> {
     requiredFields: false
   };
 
+  _inputEmail: HTMLInputElement;
+
+  componentDidMount() {
+    this._inputEmail.focus();
+  }
+
   _onLogin() {
     let { onLogin } = this.props;
 
@@ -178,6 +184,7 @@ class Login extends React.Component<Props, State> {
                     }}
                   >
                     <TextField
+                      inputRef={input => (this._inputEmail = input)}
                       disabled={showPreloader}
                       error={this.state.requiredFields}
                       onChange={el => this.setState({ email: el.target.value })}
