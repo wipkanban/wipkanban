@@ -74,14 +74,16 @@ type Props = {
 type State = {
   email: string,
   password: string,
-  requiredFields: boolean
+  emailFieldEmpty: boolean,
+  passwordFieldEmpty: boolean
 };
 
 class Login extends React.Component<Props, State> {
   state: State = {
     email: "",
     password: "",
-    requiredFields: false
+    emailFieldEmpty: false,
+    passwordFieldEmpty: false
   };
 
   _inputEmail: HTMLInputElement;
@@ -93,8 +95,14 @@ class Login extends React.Component<Props, State> {
   _onLogin() {
     let { onLogin } = this.props;
 
-    if (this.state.email.length == 0 || this.state.password.length == 0) {
-      this.setState({ requiredFields: true });
+    this.setState({ passwordFieldEmpty: false, emailFieldEmpty: false });
+
+    if (!this.state.email.length) {
+      this.setState({ emailFieldEmpty: true });
+
+      return;
+    } else if (!this.state.password.length) {
+      this.setState({ passwordFieldEmpty: true });
 
       return;
     }
@@ -186,7 +194,12 @@ class Login extends React.Component<Props, State> {
                     <TextField
                       inputRef={input => (this._inputEmail = input)}
                       disabled={showPreloader}
-                      error={this.state.requiredFields}
+                      error={this.state.emailFieldEmpty}
+                      helperText={
+                        this.state.emailFieldEmpty
+                          ? "The email field is empty"
+                          : ""
+                      }
                       onChange={el => this.setState({ email: el.target.value })}
                       className={classes.text}
                       label="Type your email"
@@ -200,7 +213,12 @@ class Login extends React.Component<Props, State> {
                     />
                     <TextField
                       disabled={showPreloader}
-                      error={this.state.requiredFields}
+                      error={this.state.passwordFieldEmpty}
+                      helperText={
+                        this.state.passwordFieldEmpty
+                          ? "The password field is empty"
+                          : ""
+                      }
                       onChange={el =>
                         this.setState({ password: el.target.value })
                       }
