@@ -15,7 +15,7 @@
     "express": "4.16.4",
     "immutability-helper": "2.8.1",
     "jsonwebtoken": "8.3.0",
-    "mongoose": "5.3.8",
+    "mongoose": "5.3.9",
     "multer": "1.4.1",
     "prop-types": "15.6.2",
     "react": "16.6.0",
@@ -81,7 +81,7 @@
     "enzyme-to-json": "3.3.4",
     "eslint": "5.8.0",
     "eslint-plugin-flow-vars": "0.5.0",
-    "eslint-plugin-flowtype": "3.1.4",
+    "eslint-plugin-flowtype": "3.2.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
@@ -98,7 +98,7 @@
     "prettier": "1.14.3",
     "redux-devtools-extension": "2.13.5",
     "redux-test-utils": "^0.3.0",
-    "webpack": "4.23.1",
+    "webpack": "4.24.0",
     "webpack-bundle-analyzer": "3.0.3",
     "webpack-cli": "3.1.2"
   }
