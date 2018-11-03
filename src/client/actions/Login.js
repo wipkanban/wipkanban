@@ -1,15 +1,19 @@
 // @flow
 import actionsType from "./actionsType";
-import BoardApi from "../api/UserApi";
+import UserApi from "../api/UserApi";
 import { type Dispatch } from "redux";
 
 export function login(email: string, password: string): Function {
   return (dispatch: Dispatch) => {
     dispatch({ type: actionsType.LOADING_LOGIN });
 
-    return BoardApi.login(email, password)
+    return UserApi.login(email, password)
       .then(({ data }) => {
         let { success, message, token, user } = data;
+
+        if (!success) {
+          throw data;
+        }
 
         if (success) {
           localStorage.setItem("token", JSON.stringify(token));
@@ -18,15 +22,15 @@ export function login(email: string, password: string): Function {
 
         dispatch(loginSuccess(success, message, user));
       })
-      .catch(error => {
-        dispatch(loginError(false, error, {}));
+      .catch(({ success, message }) => {
+        dispatch(loginError(success, message, {}));
       });
   };
 }
 
 export function logout(): Function {
   return (dispatch: Dispatch) => {
-    return BoardApi.logout().then(() => {
+    return UserApi.logout().then(() => {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       localStorage.removeItem("state");

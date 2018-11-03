@@ -8,8 +8,8 @@ class UserApi {
       .then(response => {
         return response;
       })
-      .catch(error => {
-        return error;
+      .catch(({ response }) => {
+        return response;
       });
   }
 

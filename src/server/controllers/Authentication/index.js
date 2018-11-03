@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt-nodejs";
 import path from "path";
-import {UNAUTHORIZED, OK} from "../../utils/HttpStatusCode";
+import { UNAUTHORIZED, OK } from "../../utils/HttpStatusCode";
 
 export default (User, setCsrf) => {
   return (req, res, next) => {
@@ -20,7 +20,8 @@ export default (User, setCsrf) => {
           if (!bcrypt.compareSync(password, user.password)) {
             return res
               .status(UNAUTHORIZED)
-              .json({ success: false, message: "Password invalid" });
+              .json({ success: false, message: "Password invalid" })
+              .end();
           }
 
           //authentication is valid
@@ -41,18 +42,23 @@ export default (User, setCsrf) => {
           });
 
           setCsrf(req, res, () =>
-            res.status(OK).cookie("token", token, { httpOnly: true }).json({
-              token,
-              user: payload,
-              success: true,
-              message: "Login succesfull! Redirecting..."
-            })
+            res
+              .status(OK)
+              .cookie("token", token, { httpOnly: true })
+              .json({
+                token,
+                user: payload,
+                success: true,
+                message: "Login succesfull! Redirecting..."
+              })
+              .end()
           );
         } else {
           //user not exists
           return res
             .status(UNAUTHORIZED)
-            .json({ success: false, message: "User not found" });
+            .json({ success: false, message: "User not found" })
+            .end();
         }
       }
     );

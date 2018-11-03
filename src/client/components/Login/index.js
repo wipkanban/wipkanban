@@ -60,6 +60,9 @@ const styles = theme => ({
     "&:hover": {
       backgroundColor: green[700]
     }
+  },
+  textError: {
+    color: theme.palette.error.main
   }
 });
 
@@ -125,7 +128,7 @@ class Login extends React.Component<Props, State> {
   render() {
     let {
       classes,
-      state: { showPreloader, success }
+      state: { showPreloader, success, message }
     } = this.props;
 
     const buttonClassname = classNames({
@@ -247,6 +250,14 @@ class Login extends React.Component<Props, State> {
                         )
                       }}
                     />
+                    <Typography
+                      className={classes.textError}
+                      variant="subtitle2"
+                      gutterBottom
+                      align="center"
+                    >
+                      {message}
+                    </Typography>
                     <div
                       style={{
                         textAlign: "right"
