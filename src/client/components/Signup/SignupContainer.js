@@ -10,16 +10,19 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = ({
+  userReducer: { success, message, showPreloader }
+}) => {
   return {
-    success: state.userReducer.success,
-    message: state.userReducer.message,
-    showPreloader: state.userReducer.showPreloader
+    success,
+    message,
+    showPreloader
   };
 };
 
-const SignupContainer = connect(mapStateToProps, mapDispatchToProps)(
-  Signup
-);
+const SignupContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Signup);
 
 export default SignupContainer;
