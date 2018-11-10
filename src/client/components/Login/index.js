@@ -60,6 +60,9 @@ const styles = theme => ({
     "&:hover": {
       backgroundColor: green[700]
     }
+  },
+  textError: {
+    color: theme.palette.error.main
   }
 });
 
@@ -74,21 +77,43 @@ type Props = {
 type State = {
   email: string,
   password: string,
-  requiredFields: boolean
+  emailFieldEmpty: boolean,
+  passwordFieldEmpty: boolean
 };
 
 class Login extends React.Component<Props, State> {
   state: State = {
     email: "",
     password: "",
-    requiredFields: false
+    emailFieldEmpty: false,
+    passwordFieldEmpty: false
   };
+
+  _inputEmail: HTMLInputElement;
+
+  constructor(props) {
+    super(props);
+
+    this._onClickEnter = this._onClickEnter.bind(this);
+  }
+
+  componentDidMount() {
+    if (this._inputEmail !== undefined) {
+      this._inputEmail.focus();
+    }
+  }
 
   _onLogin() {
     let { onLogin } = this.props;
 
-    if (this.state.email.length == 0 || this.state.password.length == 0) {
-      this.setState({ requiredFields: true });
+    this.setState({ passwordFieldEmpty: false, emailFieldEmpty: false });
+
+    if (!this.state.email.length) {
+      this.setState({ emailFieldEmpty: true });
+
+      return;
+    } else if (!this.state.password.length) {
+      this.setState({ passwordFieldEmpty: true });
 
       return;
     }
@@ -96,10 +121,16 @@ class Login extends React.Component<Props, State> {
     onLogin(this.state.email, this.state.password);
   }
 
+  _onClickEnter(event) {
+    if (event.key == "Enter") {
+      this._onLogin();
+    }
+  }
+
   render() {
     let {
       classes,
-      state: { showPreloader, success }
+      state: { showPreloader, success, message }
     } = this.props;
 
     const buttonClassname = classNames({
@@ -178,9 +209,16 @@ class Login extends React.Component<Props, State> {
                     }}
                   >
                     <TextField
+                      inputRef={input => (this._inputEmail = input)}
                       disabled={showPreloader}
-                      error={this.state.requiredFields}
+                      error={this.state.emailFieldEmpty}
+                      helperText={
+                        this.state.emailFieldEmpty
+                          ? "The email field is empty"
+                          : ""
+                      }
                       onChange={el => this.setState({ email: el.target.value })}
+                      onKeyUp={this._onClickEnter}
                       className={classes.text}
                       label="Type your email"
                       InputProps={{
@@ -193,10 +231,16 @@ class Login extends React.Component<Props, State> {
                     />
                     <TextField
                       disabled={showPreloader}
-                      error={this.state.requiredFields}
+                      error={this.state.passwordFieldEmpty}
+                      helperText={
+                        this.state.passwordFieldEmpty
+                          ? "The password field is empty"
+                          : ""
+                      }
                       onChange={el =>
                         this.setState({ password: el.target.value })
                       }
+                      onKeyUp={this._onClickEnter}
                       type="password"
                       className={classes.text}
                       label="Password"
@@ -208,6 +252,14 @@ class Login extends React.Component<Props, State> {
                         )
                       }}
                     />
+                    <Typography
+                      className={classes.textError}
+                      variant="subtitle2"
+                      gutterBottom
+                      align="center"
+                    >
+                      {message}
+                    </Typography>
                     <div
                       style={{
                         textAlign: "right"
