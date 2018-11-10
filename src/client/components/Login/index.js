@@ -98,7 +98,9 @@ class Login extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this._inputEmail.focus();
+    if (this._inputEmail !== undefined) {
+      this._inputEmail.focus();
+    }
   }
 
   _onLogin() {

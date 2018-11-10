@@ -70,7 +70,8 @@ describe("Login User", () => {
     let expectedState = {
       email: "email@example.com",
       password: "mypassword",
-      requiredFields: false
+      emailFieldEmpty: false,
+      passwordFieldEmpty: false
     };
 
     //password field

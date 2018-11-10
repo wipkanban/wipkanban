@@ -123,8 +123,11 @@ exports[`Login User does not should call function onLogin when click button Logi
                 }
                 className="Login-text-4"
                 error={true}
+                helperText="The email field is empty"
+                inputRef={[Function]}
                 label="Type your email"
                 onChange={[Function]}
+                onKeyUp={[Function]}
                 required={false}
                 select={false}
                 variant="standard"
@@ -140,13 +143,21 @@ exports[`Login User does not should call function onLogin when click button Logi
                   }
                 }
                 className="Login-text-4"
-                error={true}
+                error={false}
+                helperText=""
                 label="Password"
                 onChange={[Function]}
+                onKeyUp={[Function]}
                 required={false}
                 select={false}
                 type="password"
                 variant="standard"
+              />
+              <WithStyles(Typography)
+                align="center"
+                className="Login-textError-10"
+                gutterBottom={true}
+                variant="subtitle2"
               />
               <div
                 style={
@@ -357,8 +368,11 @@ exports[`Login User should call function onLogin when click button Login with fi
                 }
                 className="Login-text-4"
                 error={false}
+                helperText=""
+                inputRef={[Function]}
                 label="Type your email"
                 onChange={[Function]}
+                onKeyUp={[Function]}
                 required={false}
                 select={false}
                 variant="standard"
@@ -375,12 +389,20 @@ exports[`Login User should call function onLogin when click button Login with fi
                 }
                 className="Login-text-4"
                 error={false}
+                helperText=""
                 label="Password"
                 onChange={[Function]}
+                onKeyUp={[Function]}
                 required={false}
                 select={false}
                 type="password"
                 variant="standard"
+              />
+              <WithStyles(Typography)
+                align="center"
+                className="Login-textError-10"
+                gutterBottom={true}
+                variant="subtitle2"
               />
               <div
                 style={
@@ -591,8 +613,11 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                 }
                 className="Login-text-4"
                 error={false}
+                helperText=""
+                inputRef={[Function]}
                 label="Type your email"
                 onChange={[Function]}
+                onKeyUp={[Function]}
                 required={false}
                 select={false}
                 variant="standard"
@@ -609,12 +634,20 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                 }
                 className="Login-text-4"
                 error={false}
+                helperText=""
                 label="Password"
                 onChange={[Function]}
+                onKeyUp={[Function]}
                 required={false}
                 select={false}
                 type="password"
                 variant="standard"
+              />
+              <WithStyles(Typography)
+                align="center"
+                className="Login-textError-10"
+                gutterBottom={true}
+                variant="subtitle2"
               />
               <div
                 style={
@@ -825,8 +858,11 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                 }
                 className="Login-text-4"
                 error={false}
+                helperText=""
+                inputRef={[Function]}
                 label="Type your email"
                 onChange={[Function]}
+                onKeyUp={[Function]}
                 required={false}
                 select={false}
                 variant="standard"
@@ -843,12 +879,20 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                 }
                 className="Login-text-4"
                 error={false}
+                helperText=""
                 label="Password"
                 onChange={[Function]}
+                onKeyUp={[Function]}
                 required={false}
                 select={false}
                 type="password"
                 variant="standard"
+              />
+              <WithStyles(Typography)
+                align="center"
+                className="Login-textError-10"
+                gutterBottom={true}
+                variant="subtitle2"
               />
               <div
                 style={
