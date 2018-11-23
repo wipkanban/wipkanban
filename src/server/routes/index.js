@@ -16,11 +16,6 @@ let corsOptions = {
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-const CreateAccount = CreateAccountFactory(User);
-const DeleteAccount = DeleteAccountFactory(User);
-const UpdateUserAccount = UpdateUserAccountFactory(User);
-const Login = LoginFactory(User, setCsrf);
-
 passport.use(LocalStrategy(User));
 
 const router = Express.Router();
@@ -54,7 +49,7 @@ const router = Express.Router();
  *     }
  *
  */
-router.post("/user", cors(corsOptions), CreateAccount);
+router.post("/user", cors(corsOptions), CreateAccountFactory(User));
 
 /**
  * @api {delete} /api/v1/user Delete account user
@@ -77,7 +72,7 @@ router.post("/user", cors(corsOptions), CreateAccount);
  * @apiSuccess {String} message  Message success.
  *
  */
-router.delete("/user", requireAuth, DeleteAccount);
+router.delete("/user", requireAuth, DeleteAccountFactory(User));
 
 /**
  * @api {put} /api/v1/user/[iduser] Update the account user
@@ -105,7 +100,7 @@ router.put(
   "/user/:userid",
   requireAuth,
   upload.single("image"),
-  UpdateUserAccount
+  UpdateUserAccountFactory(User)
 );
 
 /**
@@ -140,7 +135,7 @@ router.put(
  *     }
  *
  */
-router.post("/login", cors(corsOptions), Login);
+router.post("/login", cors(corsOptions), LoginFactory(User, setCsrf));
 
 /**
  * @api {post} /api/v1/logout Logout
