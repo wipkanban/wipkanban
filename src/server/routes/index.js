@@ -8,6 +8,8 @@ import LoginFactory from "../controllers/Authentication";
 import { requireAuth } from "../middlewares/requireAuth";
 import upload from "../middlewares/upload";
 import cors from "cors";
+import passport from "passport";
+import LocalStrategy from "../config/AuthenticateStrategies/LocalStrategy";
 
 let corsOptions = {
   origin: process.env.URL_APPLICATION,
@@ -18,6 +20,8 @@ const CreateAccount = CreateAccountFactory(User);
 const DeleteAccount = DeleteAccountFactory(User);
 const UpdateUserAccount = UpdateUserAccountFactory(User);
 const Login = LoginFactory(User, setCsrf);
+
+passport.use(LocalStrategy(User));
 
 const router = Express.Router();
 /**
