@@ -1,11 +1,10 @@
 import jwt from "jsonwebtoken";
 import passport from "passport";
 import { UNAUTHORIZED, OK } from "../../utils/HttpStatusCode";
-import LocalStrategy from "../../config/AuthenticateStrategies/LocalStrategy";
+import setCsrf from "../../middlewares/csrf";
 
 export default (User, setCsrf) => {
   return (req, res) => {
-    passport.use(LocalStrategy);
     passport.authenticate("local", { session: false }, (err, user) => {
       if (err || !user) {
         return res
@@ -38,3 +37,22 @@ export default (User, setCsrf) => {
     })(req, res);
   };
 };
+
+export function oauthFacebook(req, res) {
+  const token = jwt.sign(req.user, process.env.SECRET, {
+    expiresIn: "24h"
+  });
+
+  return setCsrf(req, res, () =>
+    res
+      .status(200)
+      .cookie("token", token, { httpOnly: true })
+      .json({
+        token,
+        user: req.user,
+        success: true,
+        message: "Login succesfull! Redirecting..."
+      })
+      .end()
+  );
+}
