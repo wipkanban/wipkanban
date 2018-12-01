@@ -1,13 +1,13 @@
 // @flow
 import actionsType from "./actionsType";
-import BoardApi from "../api/UserApi";
+import UserApi from "../api/UserApi";
 import { type Dispatch } from "redux";
 
 export function createAccount(email: string, password: string): Function {
   return (dispatch: Dispatch) => {
     dispatch({ type: actionsType.CREATE_ACCOUNT_SEND });
 
-    return BoardApi.createAccount(email, password)
+    return UserApi.createAccount(email, password)
       .then(({ data }) => {
         dispatch(accountCreated(data));
       })
@@ -27,10 +27,10 @@ export function accountCreatedError(error: Object): Object {
 
 export function updateAccountUser(user: Object): Function {
   return (dispatch: Dispatch) => {
-    return BoardApi.updateAccountUser(user).then(() => {
+    return UserApi.updateAccountUser(user).then(({ data: { imageUser } }) => {
       dispatch({
         type: actionsType.UPDATE_ACCOUNT_USER,
-        user
+        user: { ...user, image: imageUser }
       });
     });
   };
