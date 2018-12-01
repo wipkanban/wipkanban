@@ -2,6 +2,7 @@
 
 exports[`<LoginContainer /> Component should to render correctly 1`] = `
 <WithStyles(Login)
+  oauthFacebook={[Function]}
   onLogin={[Function]}
   state={
     Object {

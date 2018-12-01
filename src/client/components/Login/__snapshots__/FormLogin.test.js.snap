@@ -211,6 +211,17 @@ exports[`Login User does not should call function onLogin when click button Logi
                 Sign in with:
               </WithStyles(Typography)>
               <br />
+              <t
+                appId="2239688746355855"
+                autoLoad={false}
+                callback={[Function]}
+                cssClass="btn btn-outline-primary"
+                fields="name,email,picture"
+                size="metro"
+                tag="button"
+                textButton="Facebook"
+                typeButton="button"
+              />
               <WithStyles(IconButton)>
                 <i
                   className="fa fa-facebook-square fa-2x"
@@ -456,6 +467,17 @@ exports[`Login User should call function onLogin when click button Login with fi
                 Sign in with:
               </WithStyles(Typography)>
               <br />
+              <t
+                appId="2239688746355855"
+                autoLoad={false}
+                callback={[Function]}
+                cssClass="btn btn-outline-primary"
+                fields="name,email,picture"
+                size="metro"
+                tag="button"
+                textButton="Facebook"
+                typeButton="button"
+              />
               <WithStyles(IconButton)>
                 <i
                   className="fa fa-facebook-square fa-2x"
@@ -701,6 +723,17 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                 Sign in with:
               </WithStyles(Typography)>
               <br />
+              <t
+                appId="2239688746355855"
+                autoLoad={false}
+                callback={[Function]}
+                cssClass="btn btn-outline-primary"
+                fields="name,email,picture"
+                size="metro"
+                tag="button"
+                textButton="Facebook"
+                typeButton="button"
+              />
               <WithStyles(IconButton)>
                 <i
                   className="fa fa-facebook-square fa-2x"
@@ -946,6 +979,17 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
                 Sign in with:
               </WithStyles(Typography)>
               <br />
+              <t
+                appId="2239688746355855"
+                autoLoad={false}
+                callback={[Function]}
+                cssClass="btn btn-outline-primary"
+                fields="name,email,picture"
+                size="metro"
+                tag="button"
+                textButton="Facebook"
+                typeButton="button"
+              />
               <WithStyles(IconButton)>
                 <i
                   className="fa fa-facebook-square fa-2x"

@@ -2,6 +2,23 @@
 import actionsType from "./actionsType";
 import UserApi from "../api/UserApi";
 import { type Dispatch } from "redux";
+import axios from "axios";
+
+function processLogin(dispatch, data) {
+  let { success, message, token, user } = data;
+
+  if (!success) {
+    throw data;
+  }
+
+  if (success) {
+    localStorage.setItem("token", JSON.stringify(token));
+    localStorage.setItem("user", JSON.stringify(user));
+  }
+
+  dispatch(loginSuccess(success, message, user));
+  axios.defaults.headers.common["Authorization"] = data.token;
+}
 
 export function login(email: string, password: string): Function {
   return (dispatch: Dispatch) => {
@@ -9,18 +26,21 @@ export function login(email: string, password: string): Function {
 
     return UserApi.login(email, password)
       .then(({ data }) => {
-        let { success, message, token, user } = data;
+        processLogin(dispatch, data);
+      })
+      .catch(({ success, message }) => {
+        dispatch(loginError(success, message, {}));
+      });
+  };
+}
 
-        if (!success) {
-          throw data;
-        }
+export function oauthFacebook(data: String): Function {
+  return (dispatch: Dispatch) => {
+    dispatch({ type: actionsType.LOADING_LOGIN });
 
-        if (success) {
-          localStorage.setItem("token", JSON.stringify(token));
-          localStorage.setItem("user", JSON.stringify(user));
-        }
-
-        dispatch(loginSuccess(success, message, user));
+    return UserApi.facebookLogin(data)
+      .then(({ data }) => {
+        processLogin(dispatch, data);
       })
       .catch(({ success, message }) => {
         dispatch(loginError(success, message, {}));

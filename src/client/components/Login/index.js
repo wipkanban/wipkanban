@@ -15,6 +15,7 @@ import { Redirect, Link } from "react-router-dom";
 import classNames from "classnames";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import green from "@material-ui/core/colors/green";
+import FacebookLogin from "react-facebook-login";
 
 const styles = theme => ({
   root: {
@@ -71,7 +72,8 @@ type Props = {
   state: Object,
   onLogin: Function,
   success: boolean,
-  showPreloader: boolean
+  showPreloader: boolean,
+  oauthFacebook: Function
 };
 
 type State = {
@@ -95,6 +97,7 @@ class Login extends React.Component<Props, State> {
     super(props);
 
     this._onClickEnter = this._onClickEnter.bind(this);
+    this.responseFacebook = this.responseFacebook.bind(this);
   }
 
   componentDidMount() {
@@ -125,6 +128,10 @@ class Login extends React.Component<Props, State> {
     if (event.key == "Enter") {
       this._onLogin();
     }
+  }
+
+  responseFacebook(res) {
+    this.props.oauthFacebook(res.accessToken);
   }
 
   render() {
@@ -301,6 +308,14 @@ class Login extends React.Component<Props, State> {
                       Sign in with:
                     </Typography>
                     <br />
+                    <FacebookLogin
+                      appId="2239688746355855"
+                      textButton="Facebook"
+                      fields="name,email,picture"
+                      callback={this.responseFacebook}
+                      cssClass="btn btn-outline-primary"
+                      autoLoad={false}
+                    />
                     <IconButton className={classes.button}>
                       <i
                         className="fa fa-facebook-square fa-2x"
