@@ -9,10 +9,11 @@ export default User =>
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const user = await User.findOne({ email: profile.emails[0].value });
+        let user = await User.findOne({ email: profile.emails[0].value });
 
         if (!user) {
-          done(null, false, "USer does not exists");
+          user = new User({ email: profile.emails[0].value, password: 12345 });
+          user.save();
         }
 
         //authentication is valid
