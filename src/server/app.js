@@ -1,4 +1,4 @@
-import "./configEnv";
+import "./config/configEnv";
 import Express from "express";
 import render from "./ServerRender";
 import router from "./routes";
@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 import decode from "./middlewares/decode";
 import cookieParser from "cookie-parser";
-import "./dbConnection";
+import "./config/dbConnection";
 
 const app = Express();
 

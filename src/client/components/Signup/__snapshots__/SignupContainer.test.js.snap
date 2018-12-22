@@ -1,10 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SignupContainer /> Component should to render correctly 1`] = `
-<WithStyles(Signup)
-  message=""
-  onCreateAccount={[Function]}
-  showPreloader={false}
-  success={false}
-/>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

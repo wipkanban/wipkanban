@@ -4,20 +4,21 @@ import CreateAccountFactory from "../controllers/user/CreateAccount";
 import DeleteAccountFactory from "../controllers/user/DeleteAccount";
 import UpdateUserAccountFactory from "../controllers/user/UpdateUserAccount";
 import setCsrf from "../middlewares/csrf";
-import LoginFactory from "../controllers/Authentication";
+import LoginFactory,{oauthFacebook} from "../controllers/Authentication";
 import { requireAuth } from "../middlewares/requireAuth";
 import upload from "../middlewares/upload";
 import cors from "cors";
+import passport from "passport";
+import LocalStrategy from "../config/AuthenticateStrategies/LocalStrategy";
+import FacebookStrategy from "../config/AuthenticateStrategies/FacebookStrategy";
 
 let corsOptions = {
   origin: process.env.URL_APPLICATION,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-const CreateAccount = CreateAccountFactory(User);
-const DeleteAccount = DeleteAccountFactory(User);
-const UpdateUserAccount = UpdateUserAccountFactory(User);
-const Login = LoginFactory(User, setCsrf);
+passport.use(LocalStrategy(User));
+passport.use("facebookToken", FacebookStrategy(User));
 
 const router = Express.Router();
 /**
@@ -50,7 +51,14 @@ const router = Express.Router();
  *     }
  *
  */
-router.post("/user", cors(corsOptions), CreateAccount);
+router.post("/user", cors(corsOptions), CreateAccountFactory(User));
+
+router
+  .route("/oauth/facebook")
+  .post(
+    passport.authenticate("facebookToken", { session: false }),
+    oauthFacebook
+  );
 
 /**
  * @api {delete} /api/v1/user Delete account user
@@ -73,7 +81,7 @@ router.post("/user", cors(corsOptions), CreateAccount);
  * @apiSuccess {String} message  Message success.
  *
  */
-router.delete("/user", requireAuth, DeleteAccount);
+router.delete("/user", requireAuth, DeleteAccountFactory(User));
 
 /**
  * @api {put} /api/v1/user/[iduser] Update the account user
@@ -101,7 +109,7 @@ router.put(
   "/user/:userid",
   requireAuth,
   upload.single("image"),
-  UpdateUserAccount
+  UpdateUserAccountFactory(User)
 );
 
 /**
@@ -136,7 +144,7 @@ router.put(
  *     }
  *
  */
-router.post("/login", cors(corsOptions), Login);
+router.post("/login", cors(corsOptions), LoginFactory(User, setCsrf));
 
 /**
  * @api {post} /api/v1/logout Logout

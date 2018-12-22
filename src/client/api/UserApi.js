@@ -13,6 +13,19 @@ class UserApi {
       });
   }
 
+  static facebookLogin(data: String): AxiosStatic {
+    return axios
+      .post("/api/v1/oauth/facebook", {
+        access_token: data
+      })
+      .then(response => {
+        return response;
+      })
+      .catch(({ response }) => {
+        return response;
+      });
+  }
+
   static logout(): AxiosStatic {
     return axios
       .post("/api/v1/logout")

@@ -3,10 +3,10 @@ import FormLogin from "./index";
 import { createShallow } from "@material-ui/core/test-utils";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import IconButton from "@material-ui/core/IconButton";
 import { Redirect } from "react-router-dom";
 import "../../setupTest";
 import toJson from "enzyme-to-json";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 var localStorageMock = (function() {
   var store = {};
@@ -50,10 +50,10 @@ describe("Login User", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should render 2 inputs and a Button", () => {
+  it("should render a Facebook login button", () => {
     let wrapper = shallow(<FormLogin {...testValues} />);
 
-    expect(wrapper.find(IconButton).length).toEqual(3);
+    expect(wrapper.find(FacebookLogin).length).toEqual(1);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 

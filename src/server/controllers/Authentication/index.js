@@ -1,66 +1,58 @@
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt-nodejs";
-import path from "path";
+import passport from "passport";
 import { UNAUTHORIZED, OK } from "../../utils/HttpStatusCode";
+import setCsrf from "../../middlewares/csrf";
 
 export default (User, setCsrf) => {
-  return (req, res, next) => {
-    const { email, password } = req.body;
-
-    //find user by email
-    User.findOne(
-      {
-        email: email
-      },
-      (err, user) => {
-        if (err) {
-          return next(err);
-        }
-        if (user) {
-          if (!bcrypt.compareSync(password, user.password)) {
-            return res
-              .status(UNAUTHORIZED)
-              .json({ success: false, message: "Password invalid" })
-              .end();
-          }
-
-          //authentication is valid
-          let payload = {
-            _id: user._id,
-            name: user.name,
-            lastname: user.lastname,
-            email: user.email,
-            phone: user.phone,
-            image:
-              typeof user.image == "object"
-                ? path.join(process.env.UPLOAD_PATH, user.image.newFilename)
-                : "/images/user.png",
-            firstAccess: user.firstAccess
-          };
-          const token = jwt.sign(payload, process.env.SECRET, {
-            expiresIn: "24h"
-          });
-
-          setCsrf(req, res, () =>
-            res
-              .status(OK)
-              .cookie("token", token, { httpOnly: true })
-              .json({
-                token,
-                user: payload,
-                success: true,
-                message: "Login succesfull! Redirecting..."
-              })
-              .end()
-          );
-        } else {
-          //user not exists
-          return res
-            .status(UNAUTHORIZED)
-            .json({ success: false, message: "User not found" })
-            .end();
-        }
+  return (req, res) => {
+    passport.authenticate("local", { session: false }, (err, user) => {
+      if (err || !user) {
+        return res
+          .status(UNAUTHORIZED)
+          .json({ success: false, message: "Password invalid" })
+          .end();
       }
-    );
+      req.login(user, { session: false }, err => {
+        if (err) {
+          res.send(err);
+        }
+
+        const token = jwt.sign(user, process.env.SECRET, {
+          expiresIn: "24h"
+        });
+
+        return setCsrf(req, res, () =>
+          res
+            .status(OK)
+            .cookie("token", token, { httpOnly: true })
+            .json({
+              token,
+              user: user,
+              success: true,
+              message: "Login succesfull! Redirecting..."
+            })
+            .end()
+        );
+      });
+    })(req, res);
   };
 };
+
+export function oauthFacebook(req, res) {
+  const token = jwt.sign(req.user, process.env.SECRET, {
+    expiresIn: "24h"
+  });
+
+  return setCsrf(req, res, () =>
+    res
+      .status(200)
+      .cookie("token", token, { httpOnly: true })
+      .json({
+        token,
+        user: req.user,
+        success: true,
+        message: "Login succesfull! Redirecting..."
+      })
+      .end()
+  );
+}

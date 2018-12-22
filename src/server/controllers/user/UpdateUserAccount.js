@@ -1,4 +1,5 @@
 import { OK, INTERNAL_SERVER_ERROR } from "../../utils/HttpStatusCode";
+import path from "path";
 
 export default User => {
   function handleError(res, err) {
@@ -29,10 +30,17 @@ export default User => {
       user.save(function(err) {
         if (err) handleError(res, err);
 
+        let newImage;
+
+        if (user.image.newFilename) {
+          newImage = path.join(process.env.UPLOAD_PATH, user.image.newFilename);
+        }
+
         res
           .status(OK)
           .json({
-            success: true
+            success: true,
+            imageUser: newImage
           })
           .end();
       });

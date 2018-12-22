@@ -210,32 +210,26 @@ exports[`Login User does not should call function onLogin when click button Logi
               >
                 Sign in with:
               </WithStyles(Typography)>
-              <br />
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-facebook-square fa-2x"
-                  style={
-                    Object {
-                      "color": "#4267b2",
-                    }
-                  }
-                />
-              </WithStyles(IconButton)>
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-google-plus fa-2x"
-                  style={
-                    Object {
-                      "color": "#db4437",
-                    }
-                  }
-                />
-              </WithStyles(IconButton)>
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-github-square fa-2x"
-                />
-              </WithStyles(IconButton)>
+              <t
+                appId="2239688746355855"
+                authType=""
+                autoLoad={false}
+                callback={[Function]}
+                cookie={false}
+                disableMobileRedirect={false}
+                fields="name,email,picture"
+                isMobile={false}
+                language="en_US"
+                onFailure={null}
+                redirectUri="http://localhost/"
+                render={[Function]}
+                responseType="code"
+                returnScopes={false}
+                scope="public_profile,email"
+                state="facebookdirect"
+                version="2.3"
+                xfbml={false}
+              />
             </div>
           </div>
         </WithStyles(Paper)>
@@ -455,32 +449,26 @@ exports[`Login User should call function onLogin when click button Login with fi
               >
                 Sign in with:
               </WithStyles(Typography)>
-              <br />
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-facebook-square fa-2x"
-                  style={
-                    Object {
-                      "color": "#4267b2",
-                    }
-                  }
-                />
-              </WithStyles(IconButton)>
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-google-plus fa-2x"
-                  style={
-                    Object {
-                      "color": "#db4437",
-                    }
-                  }
-                />
-              </WithStyles(IconButton)>
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-github-square fa-2x"
-                />
-              </WithStyles(IconButton)>
+              <t
+                appId="2239688746355855"
+                authType=""
+                autoLoad={false}
+                callback={[Function]}
+                cookie={false}
+                disableMobileRedirect={false}
+                fields="name,email,picture"
+                isMobile={false}
+                language="en_US"
+                onFailure={null}
+                redirectUri="http://localhost/"
+                render={[Function]}
+                responseType="code"
+                returnScopes={false}
+                scope="public_profile,email"
+                state="facebookdirect"
+                version="2.3"
+                xfbml={false}
+              />
             </div>
           </div>
         </WithStyles(Paper)>
@@ -700,32 +688,26 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
               >
                 Sign in with:
               </WithStyles(Typography)>
-              <br />
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-facebook-square fa-2x"
-                  style={
-                    Object {
-                      "color": "#4267b2",
-                    }
-                  }
-                />
-              </WithStyles(IconButton)>
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-google-plus fa-2x"
-                  style={
-                    Object {
-                      "color": "#db4437",
-                    }
-                  }
-                />
-              </WithStyles(IconButton)>
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-github-square fa-2x"
-                />
-              </WithStyles(IconButton)>
+              <t
+                appId="2239688746355855"
+                authType=""
+                autoLoad={false}
+                callback={[Function]}
+                cookie={false}
+                disableMobileRedirect={false}
+                fields="name,email,picture"
+                isMobile={false}
+                language="en_US"
+                onFailure={null}
+                redirectUri="http://localhost/"
+                render={[Function]}
+                responseType="code"
+                returnScopes={false}
+                scope="public_profile,email"
+                state="facebookdirect"
+                version="2.3"
+                xfbml={false}
+              />
             </div>
           </div>
         </WithStyles(Paper)>
@@ -735,7 +717,7 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
 </WithStyles(Grid)>
 `;
 
-exports[`Login User should render 2 inputs and a Button 2`] = `
+exports[`Login User should render a Facebook login button 1`] = `
 <WithStyles(Grid)
   className="Login-root-1"
   container={true}
@@ -945,32 +927,26 @@ exports[`Login User should render 2 inputs and a Button 2`] = `
               >
                 Sign in with:
               </WithStyles(Typography)>
-              <br />
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-facebook-square fa-2x"
-                  style={
-                    Object {
-                      "color": "#4267b2",
-                    }
-                  }
-                />
-              </WithStyles(IconButton)>
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-google-plus fa-2x"
-                  style={
-                    Object {
-                      "color": "#db4437",
-                    }
-                  }
-                />
-              </WithStyles(IconButton)>
-              <WithStyles(IconButton)>
-                <i
-                  className="fa fa-github-square fa-2x"
-                />
-              </WithStyles(IconButton)>
+              <t
+                appId="2239688746355855"
+                authType=""
+                autoLoad={false}
+                callback={[Function]}
+                cookie={false}
+                disableMobileRedirect={false}
+                fields="name,email,picture"
+                isMobile={false}
+                language="en_US"
+                onFailure={null}
+                redirectUri="http://localhost/"
+                render={[Function]}
+                responseType="code"
+                returnScopes={false}
+                scope="public_profile,email"
+                state="facebookdirect"
+                version="2.3"
+                xfbml={false}
+              />
             </div>
           </div>
         </WithStyles(Paper)>
