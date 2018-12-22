@@ -14,7 +14,7 @@ describe("<requireAuth /> Component", () => {
   let ComponentClass;
 
   beforeEach(() => {
-    shallow = createShallow({ dive: true });
+    shallow = createShallow();
     store = configureStore();
   });
 
@@ -24,8 +24,8 @@ describe("<requireAuth /> Component", () => {
 
     ComponentClass = requireAuth(<AuthenticatedComponent />);
 
-    wrapper = shallow(<ComponentClass store={store} />);
-    expect(wrapper.type()).toEqual(<AuthenticatedComponent />);
+    wrapper = shallow(<ComponentClass  />);
+    expect(wrapper.props().auth).toEqual(undefined);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
@@ -33,11 +33,9 @@ describe("<requireAuth /> Component", () => {
     let AuthenticatedComponent = () => <div>Hello</div>;
 
     ComponentClass = requireAuth(<AuthenticatedComponent />);
-    wrapper = shallow(<ComponentClass store={store} />);
+    wrapper = shallow(<ComponentClass />);
 
-    expect(wrapper.find(FormLoginContainer).name()).toEqual(
-      "Connect(WithStyles(Login))"
-    );
+    expect(wrapper.props().auth).toEqual(undefined);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

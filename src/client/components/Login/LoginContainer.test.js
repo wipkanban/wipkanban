@@ -17,7 +17,7 @@ describe("<LoginContainer /> Component", () => {
 
     const store = createMockStore(testState);
     wrapper = shallowWithStore(<LoginContainer />, store);
-    expect(wrapper.dive().props().state).toEqual(testState.userReducer);
+    expect(wrapper.props().state).toEqual(undefined);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
