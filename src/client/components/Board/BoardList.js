@@ -5,8 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
 import MiniBoard from "./MiniBoard";
 import Tooltip from "@material-ui/core/Tooltip";
-import AddIcon from "@material-ui/icons/AddCircle";
-import IconButton from "@material-ui/core/IconButton";
+import AddBoard from "./AddBoardContainer";
 
 type Props = {
   boards: Array<Object>
@@ -14,7 +13,9 @@ type Props = {
 
 const BoardList = ({ boards }: Props) => {
   let boardsRendered = boards.map(board => (
-    <MiniBoard key={board._id} {...board} />
+    <Grid key={board._id} item lg={6}>
+      <MiniBoard key={board._id} {...board} />
+    </Grid>
   ));
 
   return (
@@ -23,16 +24,12 @@ const BoardList = ({ boards }: Props) => {
         <Typography color="secondary" variant="h6" gutterBottom>
           <DeveloperBoardIcon /> My boards
           <Tooltip title="Add team">
-            <IconButton color="default" aria-label="Add board">
-              <AddIcon />
-            </IconButton>
+            <AddBoard />
           </Tooltip>
         </Typography>
       </div>
-      <Grid container justify="flex-start" wrap="wrap" spacing={0}>
-        <Grid item lg={6}>
-          {boardsRendered}
-        </Grid>
+      <Grid container justify="flex-start" wrap="wrap" spacing={8}>
+        {boardsRendered}
       </Grid>
     </div>
   );
