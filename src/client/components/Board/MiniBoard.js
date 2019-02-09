@@ -2,7 +2,6 @@
 import * as React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import { Link } from "react-router-dom";
@@ -42,56 +41,13 @@ function MediaControlCard(props: Props) {
     classes,
     _id,
     name,
-    createdBy,
-    createdAt,
-    leadTime,
-    cycleTime,
-    throuput
   } = props;
 
   return (
     <Card>
       <div className={classes.cardHeader}>
         <Typography variant="h6">{name}</Typography>
-        <Typography variant="subtitle1">
-          createdb by {createdBy} at {createdAt}
-        </Typography>
       </div>
-      <CardContent className={classes.content}>
-        <div className={classes.child}>
-          <Typography variant="body1" color="primary" align="center">
-            Lead Time
-          </Typography>
-          <Typography variant="h4" align="center">
-            {leadTime}
-          </Typography>
-          <Typography variant="body1" align="center">
-            by week
-          </Typography>
-        </div>
-        <div className={classes.child}>
-          <Typography variant="body1" color="primary" align="center">
-            Cycle Time
-          </Typography>
-          <Typography variant="h4" align="center">
-            {cycleTime}
-          </Typography>
-          <Typography variant="body2" align="center">
-            by week
-          </Typography>
-        </div>
-        <div className={classes.child}>
-          <Typography variant="body1" color="primary" align="center">
-            Throghput
-          </Typography>
-          <Typography variant="h4" align="center">
-            {throuput}
-          </Typography>
-          <Typography variant="body2" align="center">
-            by week
-          </Typography>
-        </div>
-      </CardContent>
       <CardActions
         style={{
           display: "block",

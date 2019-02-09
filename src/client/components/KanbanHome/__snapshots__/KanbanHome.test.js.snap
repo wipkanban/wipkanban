@@ -11,7 +11,7 @@ exports[`KanbanHome component should render 1 containing 1 TeamList and BoardLis
     item={true}
     lg={6}
   >
-    <Connect(BoardList) />
+    <Connect(BoardListContainer) />
   </WithStyles(Grid)>
   <WithStyles(Grid)
     item={true}

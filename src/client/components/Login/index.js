@@ -6,7 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import TextField from "@material-ui/core/TextField";
-import LockIcon from "@material-ui/icons/Lock";
+import LockIcon from "@material-ui/icons/Https";
 import EmailIcon from "@material-ui/icons/Email";
 import Check from "@material-ui/icons/Check";
 import Button from "@material-ui/core/Button";

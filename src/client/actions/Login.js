@@ -16,8 +16,8 @@ function processLogin(dispatch, data) {
     localStorage.setItem("user", JSON.stringify(user));
   }
 
+  axios.defaults.headers.common["Authorization"] = JSON.stringify(token);
   dispatch(loginSuccess(success, message, user));
-  axios.defaults.headers.common["Authorization"] = data.token;
 }
 
 export function login(email: string, password: string): Function {

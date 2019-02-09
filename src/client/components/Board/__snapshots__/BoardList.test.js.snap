@@ -13,23 +13,19 @@ exports[`BoardList Component should render 1 Typogragh and 2 Grid 1`] = `
       <WithStyles(Tooltip)
         title="Add team"
       >
-        <WithStyles(IconButton)
-          aria-label="Add board"
-          color="default"
-        >
-          <pure(AddCircleIcon) />
-        </WithStyles(IconButton)>
+        <Connect(FormDialog) />
       </WithStyles(Tooltip)>
     </WithStyles(Typography)>
   </div>
   <WithStyles(Grid)
     container={true}
     justify="flex-start"
-    spacing={0}
+    spacing={8}
     wrap="wrap"
   >
     <WithStyles(Grid)
       item={true}
+      key="12121212"
       lg={6}
     >
       <WithStyles(MediaControlCard)
@@ -166,23 +162,19 @@ exports[`BoardList Component should render a div 1`] = `
       <WithStyles(Tooltip)
         title="Add team"
       >
-        <WithStyles(IconButton)
-          aria-label="Add board"
-          color="default"
-        >
-          <pure(AddCircleIcon) />
-        </WithStyles(IconButton)>
+        <Connect(FormDialog) />
       </WithStyles(Tooltip)>
     </WithStyles(Typography)>
   </div>
   <WithStyles(Grid)
     container={true}
     justify="flex-start"
-    spacing={0}
+    spacing={8}
     wrap="wrap"
   >
     <WithStyles(Grid)
       item={true}
+      key="12121212"
       lg={6}
     >
       <WithStyles(MediaControlCard)

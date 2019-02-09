@@ -5,8 +5,8 @@ export default function decode(req, res, next) {
     typeof req.body["token"] !== "undefined"
       ? req.body["token"]
       : typeof req.cookies["token"] !== "undefined"
-        ? req.cookies["token"]
-        : undefined;
+      ? req.cookies["token"]
+      : undefined;
 
   if (token) {
     jwt.verify(token, process.env.SECRET, (err, decoded) => {
