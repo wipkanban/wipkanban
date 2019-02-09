@@ -1,10 +1,12 @@
 import Express from "express";
 import User from "../models/user";
+import Board from "../models/Board";
 import CreateAccountFactory from "../controllers/user/CreateAccount";
+import BoardFactory, { addBoard } from "../controllers/Board";
 import DeleteAccountFactory from "../controllers/user/DeleteAccount";
 import UpdateUserAccountFactory from "../controllers/user/UpdateUserAccount";
 import setCsrf from "../middlewares/csrf";
-import LoginFactory,{oauthFacebook} from "../controllers/Authentication";
+import LoginFactory, { oauthFacebook } from "../controllers/Authentication";
 import { requireAuth } from "../middlewares/requireAuth";
 import upload from "../middlewares/upload";
 import cors from "cors";
@@ -185,5 +187,9 @@ router.post("/logout", (req, res) => {
     })
     .end();
 });
+
+router.get("/boards/:iduser", requireAuth, cors(corsOptions), BoardFactory(Board));
+
+router.post("/board", requireAuth, cors(corsOptions), addBoard(Board));
 
 export default router;
