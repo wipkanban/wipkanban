@@ -2,14 +2,13 @@ import React from "react";
 import AccountCreated from "./AccountCreated";
 import { createShallow } from "@material-ui/core/test-utils";
 import { Link } from "react-router-dom";
-import toJson from "enzyme-to-json";
-import "../../setupTest";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import { ShallowWrapper } from "enzyme";
 
 describe("<AccountCreated /> Component", () => {
-  let shallow;
-  let wrapper;
+  let shallow: any;
+  let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
@@ -19,7 +18,7 @@ describe("<AccountCreated /> Component", () => {
   it("should render correctly ", () => {
     expect(wrapper.find(Grid).length).toEqual(5);
     expect(wrapper.find(Typography).length).toEqual(5);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should have a Link to /login", () => {
