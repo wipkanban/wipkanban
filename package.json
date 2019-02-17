@@ -78,6 +78,7 @@
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.2",
     "@types/react-jss": "^8.6.2",
+    "@types/redux-test-utils": "^0.2.0",
     "@types/uuid": "^3.4.4",
     "apidoc": "0.17.7",
     "axios-mock-adapter": "1.16.0",
