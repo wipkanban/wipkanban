@@ -1,18 +1,18 @@
 import * as React from "react";
 import UserAccountSettings from "./UserAccountSettings";
 import { createShallow } from "@material-ui/core/test-utils";
-import toJson from "enzyme-to-json";
-import "../../../setupTest";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import IconButton from "@material-ui/core/IconButton";
+import { ShallowWrapper } from "enzyme";
 
 describe("<UserAccountSettings /> Component", () => {
-  let shallow;
-  let wrapper;
-  let user;
-  let fn;
+  let shallow: any;
+  let wrapper:ShallowWrapper;
+  let user: Object;
+  let fn: any;
+
   beforeEach(() => {
     shallow = createShallow({ dive: true });
     user = { name: "name", lastname: "lastname" };
@@ -23,7 +23,7 @@ describe("<UserAccountSettings /> Component", () => {
   it("should render correctly", () => {
     expect(wrapper.find(Menu).type()).toEqual(Menu);
     expect(wrapper.find(MenuItem).length).toEqual(2);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should state is not null when clicked on IconBUtton button", () => {
@@ -33,7 +33,7 @@ describe("<UserAccountSettings /> Component", () => {
 
     expect(wrapper.state()).toEqual({anchorEl: true});
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should state to be null when clicked on MenuItem", () => {
@@ -41,7 +41,7 @@ describe("<UserAccountSettings /> Component", () => {
 
     expect(wrapper.state()).toBeNull;
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should call function when clicked on logout button", () => {
@@ -51,6 +51,6 @@ describe("<UserAccountSettings /> Component", () => {
       .simulate("click");
     expect(fn.mock.calls.length).toEqual(1);
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
