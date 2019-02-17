@@ -14,7 +14,7 @@ describe("<RouterFactory /> Component", () => {
   });
 
   it("should render a StaticRouter component when server param is defined", () => {
-    wrapper = shallow(<RouterFactory server={true} location={{}} />);
+    wrapper = shallow(<RouterFactory server={true} location={""} />);
     expect(wrapper.type()).toEqual(StaticRouter);
     expect(wrapper).toMatchSnapshot();
   });
