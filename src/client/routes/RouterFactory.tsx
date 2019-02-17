@@ -5,8 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
 
 interface IRouterFactoryProps {
-  server: boolean;
-  location: string;
+  server?: boolean;
+  location?: string;
 }
 
 const RouterFactory = ({ server, location }: IRouterFactoryProps) => {
