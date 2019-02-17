@@ -7,7 +7,7 @@ import "jest-localstorage-mock";
 
 describe("User API", () => {
   let store = configureStore();
-  let mock;
+  let mock: MockAdapter;
 
   store.subscribe(() => {
     localStorage.setItem("state", JSON.stringify(store.getState()));
@@ -70,10 +70,10 @@ describe("User API", () => {
       }
     ];
 
-    store.dispatch(login(response.user.email, 12345)).then(() => {
+    store.dispatch(login(response.user.email, "12345")).then(() => {
       expect([store.getState().userReducer]).toEqual(expectedState);
-      expect(response.token).toEqual(JSON.parse(localStorage.getItem("token")));
-      expect(response.user).toEqual(JSON.parse(localStorage.getItem("user")));
+      expect(response.token).toEqual(JSON.parse(localStorage.getItem("token") as string));
+      expect(response.user).toEqual(JSON.parse(localStorage.getItem("user") as string));
     });
   });
 
