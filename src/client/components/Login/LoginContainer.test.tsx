@@ -1,12 +1,11 @@
 import React from "react";
-import toJson from "enzyme-to-json";
-import "../../setupTest";
 import LoginContainer from "./LoginContainer";
 import shallowWithStore from "../../utils/shallowWithStore";
 import { createMockStore } from "redux-test-utils";
+import { ShallowWrapper } from "enzyme";
 
 describe("<LoginContainer /> Component", () => {
-  let wrapper;
+  let wrapper:ShallowWrapper;
 
   it("should to render correctly", () => {
     const testState = {
@@ -17,7 +16,7 @@ describe("<LoginContainer /> Component", () => {
 
     const store = createMockStore(testState);
     wrapper = shallowWithStore(<LoginContainer />, store);
-    expect(wrapper.props().state).toEqual(undefined);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect((wrapper.props() as any).state).toEqual(undefined);
+    expect(wrapper).toMatchSnapshot();
   });
 });
