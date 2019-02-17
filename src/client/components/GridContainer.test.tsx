@@ -1,28 +1,22 @@
 import React from "react";
 import GridContainer from "./GridContainer";
 import { createShallow } from "@material-ui/core/test-utils";
-import toJson from "enzyme-to-json";
-
-// setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-configure({ adapter: new Adapter() });
+import { ShallowWrapper } from "enzyme";
 
 describe("TeamList Component", () => {
-  let shallow;
+  let shallow: any;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
   });
 
   it("should render its children", () => {
-    let wrapper = shallow(
+    let wrapper: ShallowWrapper = shallow(
       <GridContainer>
         <div>Hello</div>
       </GridContainer>
     );
     expect(wrapper.find("div").text()).toEqual("Hello");
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
