@@ -19,7 +19,7 @@ exports[`<Board /> Component should render correctly with Navbar and a Grid 1`] 
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(Grid)
-    className="Board-gridContainer-2"
+    className="BoardMain-gridContainer-2"
     container={true}
     justify="flex-start"
     spacing={0}
@@ -158,7 +158,7 @@ exports[`<Board /> Component should render correctly with Navbar and a Grid, eve
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(Grid)
-    className="Board-gridContainer-2"
+    className="BoardMain-gridContainer-2"
     container={true}
     justify="flex-start"
     spacing={0}

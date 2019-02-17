@@ -2,14 +2,13 @@ import React from "react";
 import Board from "./Board";
 import columns from "./fakeData";
 import { createShallow } from "@material-ui/core/test-utils";
-import toJson from "enzyme-to-json";
 import Grid from "@material-ui/core/Grid";
 import Navbar from "../Navbar/index";
-import "../../setupTest"
+import { ShallowWrapper } from "enzyme";
 
 describe("<Board /> Component", () => {
-  let shallow;
-  let wrapper;
+  let shallow: any;
+  let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
@@ -22,7 +21,7 @@ describe("<Board /> Component", () => {
     expect(wrapper.find(Navbar).type()).toEqual(Navbar);
     expect(wrapper.find(Grid).type()).toEqual(Grid);
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should render correctly with Navbar and a Grid, even withou columns", () => {
@@ -32,6 +31,6 @@ describe("<Board /> Component", () => {
     expect(wrapper.find(Navbar).type()).toEqual(Navbar);
     expect(wrapper.find(Grid).type()).toEqual(Grid);
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
