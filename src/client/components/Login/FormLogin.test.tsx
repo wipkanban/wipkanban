@@ -4,23 +4,22 @@ import { createShallow } from "@material-ui/core/test-utils";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { Redirect } from "react-router-dom";
-import "../../setupTest";
-import toJson from "enzyme-to-json";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import FacebookLogin from "react-facebook-login";
+import { ShallowWrapper } from "enzyme";
 
-var localStorageMock = (function() {
-  var store = {};
+var localStorageMock: Object = (function() {
+  let store: any = {};
   return {
-    getItem: function(key) {
+    getItem: function(key: string) {
       return store[key];
     },
-    setItem: function(key, value) {
+    setItem: function(key: string, value: any) {
       store[key] = value.toString();
     },
     clear: function() {
       store = {};
     },
-    removeItem: function(key) {
+    removeItem: function(key: string) {
       delete store[key];
     }
   };
@@ -28,7 +27,7 @@ var localStorageMock = (function() {
 Object.defineProperty(window, "localStorage", { value: localStorageMock });
 
 describe("Login User", () => {
-  const testValues = {
+  const testValues: any = {
     state: {
       success: false,
       message: ""
@@ -36,7 +35,7 @@ describe("Login User", () => {
     onLogin: jest.fn()
   };
 
-  let shallow;
+  let shallow: any;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
@@ -47,26 +46,26 @@ describe("Login User", () => {
 
     expect(wrapper.find(TextField).length).toEqual(2);
     expect(wrapper.find(Button).length).toEqual(1);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should render a Facebook login button", () => {
     let wrapper = shallow(<FormLogin {...testValues} />);
 
     expect(wrapper.find(FacebookLogin).length).toEqual(1);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("does not should call function onLogin when click button Login with empty fields", () => {
-    let wrapper = shallow(<FormLogin {...testValues} />);
+    let wrapper:ShallowWrapper = shallow(<FormLogin {...testValues} />);
 
     wrapper.find(Button).simulate("click");
     expect(testValues.onLogin.mock.calls.length).toEqual(0);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should call function onLogin when click button Login with fields filled", () => {
-    let wrapper = shallow(<FormLogin {...testValues} />);
+    let wrapper:ShallowWrapper = shallow(<FormLogin {...testValues} />);
     let expectedState = {
       email: "email@example.com",
       password: "mypassword",
@@ -87,14 +86,14 @@ describe("Login User", () => {
     wrapper.find(Button).simulate("click");
     expect(testValues.onLogin.mock.calls.length).toEqual(1);
     expect(wrapper.state()).toEqual(expectedState);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should return a redirect component, bacause jwt is defined", () => {
     localStorage.setItem("token", "ass987298qsh8sa");
-    let wrapper = shallow(<FormLogin {...testValues} />);
+    let wrapper:ShallowWrapper = shallow(<FormLogin {...testValues} />);
 
     expect(wrapper.type()).toEqual(Redirect);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

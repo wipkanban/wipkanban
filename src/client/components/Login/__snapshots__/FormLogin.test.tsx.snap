@@ -114,11 +114,11 @@ exports[`Login User does not should call function onLogin when click button Logi
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Login-text-4"
@@ -135,11 +135,11 @@ exports[`Login User does not should call function onLogin when click button Logi
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Login-text-4"
@@ -212,23 +212,14 @@ exports[`Login User does not should call function onLogin when click button Logi
               </WithStyles(Typography)>
               <t
                 appId="2239688746355855"
-                authType=""
                 autoLoad={false}
                 callback={[Function]}
-                cookie={false}
-                disableMobileRedirect={false}
+                cssClass="kep-login-facebook"
                 fields="name,email,picture"
-                isMobile={false}
-                language="en_US"
-                onFailure={null}
-                redirectUri="http://localhost/"
-                render={[Function]}
-                responseType="code"
-                returnScopes={false}
-                scope="public_profile,email"
-                state="facebookdirect"
-                version="2.3"
-                xfbml={false}
+                size="metro"
+                tag="button"
+                textButton="Login with Facebook"
+                typeButton="button"
               />
             </div>
           </div>
@@ -353,11 +344,11 @@ exports[`Login User should call function onLogin when click button Login with fi
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Login-text-4"
@@ -374,11 +365,11 @@ exports[`Login User should call function onLogin when click button Login with fi
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Login-text-4"
@@ -451,23 +442,14 @@ exports[`Login User should call function onLogin when click button Login with fi
               </WithStyles(Typography)>
               <t
                 appId="2239688746355855"
-                authType=""
                 autoLoad={false}
                 callback={[Function]}
-                cookie={false}
-                disableMobileRedirect={false}
+                cssClass="kep-login-facebook"
                 fields="name,email,picture"
-                isMobile={false}
-                language="en_US"
-                onFailure={null}
-                redirectUri="http://localhost/"
-                render={[Function]}
-                responseType="code"
-                returnScopes={false}
-                scope="public_profile,email"
-                state="facebookdirect"
-                version="2.3"
-                xfbml={false}
+                size="metro"
+                tag="button"
+                textButton="Login with Facebook"
+                typeButton="button"
               />
             </div>
           </div>
@@ -592,11 +574,11 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Login-text-4"
@@ -613,11 +595,11 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Login-text-4"
@@ -690,23 +672,14 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
               </WithStyles(Typography)>
               <t
                 appId="2239688746355855"
-                authType=""
                 autoLoad={false}
                 callback={[Function]}
-                cookie={false}
-                disableMobileRedirect={false}
+                cssClass="kep-login-facebook"
                 fields="name,email,picture"
-                isMobile={false}
-                language="en_US"
-                onFailure={null}
-                redirectUri="http://localhost/"
-                render={[Function]}
-                responseType="code"
-                returnScopes={false}
-                scope="public_profile,email"
-                state="facebookdirect"
-                version="2.3"
-                xfbml={false}
+                size="metro"
+                tag="button"
+                textButton="Login with Facebook"
+                typeButton="button"
               />
             </div>
           </div>
@@ -831,11 +804,11 @@ exports[`Login User should render a Facebook login button 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Login-text-4"
@@ -852,11 +825,11 @@ exports[`Login User should render a Facebook login button 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Login-text-4"
@@ -929,23 +902,14 @@ exports[`Login User should render a Facebook login button 1`] = `
               </WithStyles(Typography)>
               <t
                 appId="2239688746355855"
-                authType=""
                 autoLoad={false}
                 callback={[Function]}
-                cookie={false}
-                disableMobileRedirect={false}
+                cssClass="kep-login-facebook"
                 fields="name,email,picture"
-                isMobile={false}
-                language="en_US"
-                onFailure={null}
-                redirectUri="http://localhost/"
-                render={[Function]}
-                responseType="code"
-                returnScopes={false}
-                scope="public_profile,email"
-                state="facebookdirect"
-                version="2.3"
-                xfbml={false}
+                size="metro"
+                tag="button"
+                textButton="Login with Facebook"
+                typeButton="button"
               />
             </div>
           </div>
