@@ -3,22 +3,21 @@ import { createShallow } from "@material-ui/core/test-utils";
 import WelcomePage from "./WelcomePage";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import "../../setupTest";
-import toJson from "enzyme-to-json";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import { ShallowWrapper } from "enzyme";
 
 describe("<WelcomePage /> component", () => {
-  let shallow;
-  let user = {
+  let shallow: any;
+  let user: Object = {
     firstName: "firstName",
     lastName: "firstName",
     email: "example@test.com",
-    firstAccess:true
+    firstAccess: true
   };
   let onLogout = jest.fn();
   let onUpdateAccountUser = jest.fn();
-  let wrapper;
+  let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
@@ -37,7 +36,7 @@ describe("<WelcomePage /> component", () => {
     expect(wrapper.find(Grid).length).toEqual(7);
     expect(wrapper.find(TextField).length).toEqual(3);
     expect(wrapper.find(Button).length).toEqual(3);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should to call function logout when clicked at Button", () => {
@@ -46,7 +45,7 @@ describe("<WelcomePage /> component", () => {
       .at(1)
       .simulate("click");
 
-      wrapper
+    wrapper
       .find(Button)
       .at(2)
       .simulate("click");
@@ -54,6 +53,6 @@ describe("<WelcomePage /> component", () => {
     expect(onLogout.mock.calls.length).toEqual(1);
     expect(onUpdateAccountUser.mock.calls.length).toEqual(1);
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
