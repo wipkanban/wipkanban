@@ -1,15 +1,14 @@
 import React from "react";
 import MenuHeaderColumn from "./MenuHeaderColumn";
 import { createShallow } from "@material-ui/core/test-utils";
-import toJson from "enzyme-to-json";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import "../../setupTest"
+import { ShallowWrapper } from "enzyme";
 
 describe("<MenuHeaderColumn /> Component", () => {
-  let shallow;
-  let wrapper;
+  let shallow: any;
+  let wrapper:ShallowWrapper;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
@@ -17,7 +16,7 @@ describe("<MenuHeaderColumn /> Component", () => {
   });
 
   it("should render correctly", () => {
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should render 1 div with Item Button and Menu component", () => {

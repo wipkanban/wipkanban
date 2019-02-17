@@ -5,7 +5,7 @@ exports[`<MenuHeaderColumn /> Component should render correctly 1`] = `
   <WithStyles(IconButton)
     aria-haspopup="true"
     aria-label="More"
-    aria-owns={null}
+    aria-owns=""
     onClick={[Function]}
     style={
       Object {
