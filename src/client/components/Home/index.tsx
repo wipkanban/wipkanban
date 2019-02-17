@@ -1,7 +1,7 @@
 import * as React from "react";
 import Navbar from "../Navbar";
 import Search from "../Navbar/Search";
-//import UserAccountSettings from "../Navbar/Buttons/UserAccountSettingsContainer";
+import UserAccountSettings from "../Navbar/Buttons/UserAccountSettingsContainer";
 import TabsHome from "./TabsHome";
 import GridContainer from "../GridContainer";
 import MenuRight from "../Navbar/MenuRight";
@@ -24,7 +24,7 @@ export default function Home({ user }: IHomeProps) {
         <div />
         <MenuRight>
           <Search />
-
+          <UserAccountSettings />
         </MenuRight>
       </Navbar>
       <GridContainer>

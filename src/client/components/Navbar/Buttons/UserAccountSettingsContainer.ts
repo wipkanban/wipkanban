@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 ``
 const mapStateToProps = ({ userReducer: { user } }: any) => ({ user });
 
-const UserAccountSettingsContainer = connect(
+const UserAccountSettingsContainer: any = connect(
   mapStateToProps,
   mapDispatchToProps
 )(UserAccountSettings);

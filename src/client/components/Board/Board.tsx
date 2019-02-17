@@ -5,7 +5,7 @@ import Navbar from "../Navbar/index";
 import Column from "./Column";
 import MenuLeft from "../Navbar/MenuLeft";
 import MenuRight from "../Navbar/MenuRight";
-//import UserAccountSettings from "../Navbar/Buttons/UserAccountSettingsContainer";
+import UserAccountSettings from "../Navbar/Buttons/UserAccountSettingsContainer";
 import AddCardButton from "../Navbar/Buttons/AddCardButton";
 import DashboardIconButton from "../Navbar/Buttons/DashboardIconButton";
 import TransferWithinAStationIconButton from "../Navbar/Buttons/TransferWithinAStationIconButton";
@@ -51,7 +51,7 @@ function BoardMain(props: IBoardProps) {
           <SettingsIconButton />
           <ZoomOutMapIconButton />
           <Search />
-
+          <UserAccountSettings />
         </MenuRight>
       </Navbar>
       <Grid
