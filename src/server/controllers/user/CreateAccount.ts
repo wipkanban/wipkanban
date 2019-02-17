@@ -12,7 +12,7 @@ import { Request, Response, NextFunction } from "express";
 export default (User: Model<ModelUser.IUser>) => {
   return (req: Request, res: Response, next: NextFunction) => {
     let { email, password } = req.body;
-    console.log(req, "PASSWORD")
+
     // verify if user already exists
     User.findOne(
       {
