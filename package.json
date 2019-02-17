@@ -48,23 +48,15 @@
     "uuid": "3.3.2"
   },
   "scripts": {
-    "start": "npm-run-all -p watch-css start-js",
-    "server": "npm-run-all -p lint:watch webpack babel-node-js",
-    "webpack": "webpack --watch",
-    "flow": "flow check",
-    "build": "npm run build-css && react-scripts build",
+    "server": "npm-run-all -p webpack dev",
     "test": "jest --ci --verbose --forceExit --detectOpenHandles --coverage --env=jsdom",
     "test:dev": "jest --ci --verbose --env=jsdom --watch",
     "test:coverage": "cat ./coverage/lcov.info | coveralls",
-    "babel-node-js": "nodemon --exec babel-node src/server/server.js",
-    "lint": "esw webpack.config.* src --color",
-    "lint:watch": "npm run lint -- --watch",
     "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json -m server",
     "prettier": "prettier --write src/**/*.js",
-    "compile": "babel src --out-dir .compiled --source-maps --watch",
     "apidoc": "apidoc -i ./src/server -o apidoc/",
-    "check": "npm-check",
-    "dev": "nodemon --watch src/ --exec ts-node src/server/server.ts"
+    "dev": "nodemon --watch src/ --exec ts-node src/server/server.ts",
+    "webpack":"webpack --watch"
   },
   "devDependencies": {
     "@types/bcrypt-nodejs": "^0.0.30",
