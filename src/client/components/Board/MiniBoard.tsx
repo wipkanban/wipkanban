@@ -24,15 +24,10 @@ const styles: StyleRulesCallback = () => ({
   }
 });
 
-interface IMediaControlCardProps {
+type IMediaControlCardProps = {
   classes: any;
   _id: number;
   name: string;
-  createdBy: string;
-  createdAt: string;
-  leadTime: number;
-  cycleTime: number;
-  throuput: number;
 }
 
 function MediaControlCard(props: IMediaControlCardProps) {

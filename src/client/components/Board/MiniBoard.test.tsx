@@ -1,26 +1,23 @@
 import React from "react";
 import MiniBoard from "./MiniBoard";
 import { createShallow } from "@material-ui/core/test-utils";
-import toJson from "enzyme-to-json";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import "../../setupTest"
+import { ShallowWrapper } from "enzyme";
 
 describe("<MiniBoard /> Component", () => {
-  let shallow;
-  let wrapper;
+  let shallow:any;
+  let wrapper:ShallowWrapper;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
-    wrapper = shallow(<MiniBoard />);
+    wrapper = shallow(<MiniBoard _id={1} name="testsName" />);
   });
 
   it("should render correctly", () => {
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should render a Card and CardContent component", () => {
     expect(wrapper.type()).toEqual(Card);
-    expect(wrapper.find(CardContent).type()).toEqual(CardContent);
   });
 });
