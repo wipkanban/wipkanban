@@ -4,11 +4,9 @@ import { createShallow } from "@material-ui/core/test-utils";
 import Grid from "@material-ui/core/Grid";
 import BoardList from "../Board/BoardListContainer";
 import TeamList from "../Team/TeamList";
-import toJson from "enzyme-to-json";
-import "../../setupTest"
 
 describe("KanbanHome component", () => {
-  let shallow;
+  let shallow: any;
 
   beforeEach(() => {
     shallow = createShallow();
@@ -19,6 +17,6 @@ describe("KanbanHome component", () => {
     expect(wrapper.type()).toEqual(Grid);
     expect(wrapper.find(BoardList).type()).toEqual(BoardList);
     expect(wrapper.find(TeamList).type()).toEqual(TeamList);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
