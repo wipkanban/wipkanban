@@ -1,13 +1,12 @@
 import React from "react";
 import Column from "./Column";
 import { createShallow } from "@material-ui/core/test-utils";
-import toJson from "enzyme-to-json";
 import columns from "./fakeData";
-import "../../setupTest"
+import { ShallowWrapper } from "enzyme";
 
 describe("<Column /> Component", () => {
-  let shallow;
-  let wrapper;
+  let shallow: any;
+  let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     shallow = createShallow({ dive: true });
@@ -17,7 +16,7 @@ describe("<Column /> Component", () => {
     wrapper = shallow(<Column {...columns[0]} />);
 
     expect(wrapper.name()).toEqual("Column");
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
 });
