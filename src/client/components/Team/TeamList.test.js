@@ -30,5 +30,6 @@ describe("<TeamList /> Component", () => {
 
   it("should render 3 Typogragh and 1 Tooltip", () => {
     expect(wrapper.find(Typography).length).toEqual(2);
-    expect(wrapper.find(Tooltip).length).toEqual(1);  });
+    expect(wrapper.find(Tooltip).length).toEqual(1);
+  });
 });
