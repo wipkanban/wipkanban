@@ -121,11 +121,11 @@ exports[`<Signup /> User should call function when click on button and fields ar
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -139,11 +139,11 @@ exports[`<Signup /> User should call function when click on button and fields ar
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -158,11 +158,11 @@ exports[`<Signup /> User should call function when click on button and fields ar
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -348,11 +348,11 @@ exports[`<Signup /> User should not call function when click on button and field
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -366,11 +366,11 @@ exports[`<Signup /> User should not call function when click on button and field
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -385,11 +385,11 @@ exports[`<Signup /> User should not call function when click on button and field
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -575,11 +575,11 @@ exports[`<Signup /> User should not call function when fields password and confi
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -593,11 +593,11 @@ exports[`<Signup /> User should not call function when fields password and confi
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -612,11 +612,11 @@ exports[`<Signup /> User should not call function when fields password and confi
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -802,11 +802,11 @@ exports[`<Signup /> User should render a component correctly 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -820,11 +820,11 @@ exports[`<Signup /> User should render a component correctly 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -839,11 +839,11 @@ exports[`<Signup /> User should render a component correctly 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -1036,11 +1036,11 @@ exports[`<Signup /> User should to change state when type in TextField 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
                       <pure(EmailIcon) />
-                    </WithStyles(InputAdornment)>,
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -1054,11 +1054,11 @@ exports[`<Signup /> User should to change state when type in TextField 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"
@@ -1073,11 +1073,11 @@ exports[`<Signup /> User should to change state when type in TextField 1`] = `
               <TextField
                 InputProps={
                   Object {
-                    "endAdornment": <WithStyles(InputAdornment)
+                    "endAdornment": <WithStyles(WithFormControlContext(InputAdornment))
                       position="end"
                     >
-                      <pure(LockIcon) />
-                    </WithStyles(InputAdornment)>,
+                      <pure(HttpsIcon) />
+                    </WithStyles(WithFormControlContext(InputAdornment))>,
                   }
                 }
                 className="Signup-text-4"

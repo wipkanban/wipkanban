@@ -4,14 +4,13 @@ import { createShallow } from "@material-ui/core/test-utils";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Redirect } from "react-router-dom";
-import toJson from "enzyme-to-json";
-import "../../setupTest"
+import { ShallowWrapper } from "enzyme";
 
 describe("<Signup /> User", () => {
-  let shallow;
-  let wrapper;
+  let shallow: any;
+  let wrapper: ShallowWrapper;
 
-  const testValues = {
+  const testValues: any = {
     onCreateAccount: jest.fn()
   };
 
@@ -21,7 +20,7 @@ describe("<Signup /> User", () => {
   });
 
   it("should render a component correctly", () => {
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should render 3 TextField", () => {
@@ -35,11 +34,11 @@ describe("<Signup /> User", () => {
   it("should not call function when click on button and fields are empty", () => {
     wrapper.find(Button).simulate("click");
     expect(testValues.onCreateAccount.mock.calls.length).toEqual(0);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should not call function when fields password and confirmPassword are different", () => {
-    let expectedState = {
+    let expectedState: any = {
       confirmPassword: "mypassword2",
       email: "email@example.com",
       password: "mypassword",
@@ -47,7 +46,7 @@ describe("<Signup /> User", () => {
       requiredFields: false
     };
 
-    let email = wrapper.find(TextField).at(0);
+    let email: any = wrapper.find(TextField).at(0);
     email.simulate("change", { target: { value: "email@example.com" } });
 
     //password field
@@ -69,7 +68,7 @@ describe("<Signup /> User", () => {
         .at(2)
         .props()
     ).toHaveProperty("error", true);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should call function when click on button and fields are filled", () => {
@@ -91,11 +90,11 @@ describe("<Signup /> User", () => {
 
     wrapper.find(Button).simulate("click");
     expect(testValues.onCreateAccount.mock.calls.length).toEqual(1);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should to change state when type in TextField", () => {
-    let expectedState = {
+    let expectedState: any = {
       confirmPassword: "",
       email: "email@example.com",
       password: "mypassword",
@@ -115,14 +114,14 @@ describe("<Signup /> User", () => {
       .simulate("change", { target: { value: "mypassword" } });
     expect(wrapper.state()).toEqual(expectedState);
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should return a redirect component, bacause success prop is defined", () => {
     testValues.success = true;
     wrapper = shallow(<Signup {...testValues} />);
     expect(wrapper.type()).toEqual(Redirect);
-    expect(wrapper.props().to).toEqual("/account-created");
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect((wrapper.props() as any).to).toEqual("/account-created");
+    expect(wrapper).toMatchSnapshot();
   });
 });
