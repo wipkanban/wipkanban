@@ -60,8 +60,7 @@ We will is monitoring for pull requests. We will review your pull request and ei
 4. If you've fixed a bug or added code that should be tested, add tests!
 5. Ensure the test suite passes (`yarn test`).
 6. Format your code with [prettier](https://github.com/prettier/prettier) (`yarn run prettier`).
-7. Make sure your code lints (`yarn run lint`).
-8. If you haven't already, agrree the CLA.
+7. If you haven't already, agrree the CLA.
 
 ### Contributor License Agreement (CLA)
 
@@ -80,11 +79,10 @@ In order to accept your pull request, we need you to submit a CLA. You only need
 After cloning Wipkanban, run `yarn install` to fetch its dependencies.
 Then, you can run several commands:
 
-* `yarn lint` checks the code style.
 * `yarn test` runs the complete test suite backend api and frontend.
-* `yarn run prettier` to format your code.
-* `yarn run analyze` to generate [webpack bundle analyze](https://github.com/webpack-contrib/webpack-bundle-analyzer).
-* `yarn run apidoc` to generate api documentation. To access go to `apidoc/index.html`.
+* `yarn prettier` to format your code.
+* `yarn analyze` to generate [webpack bundle analyze](https://github.com/webpack-contrib/webpack-bundle-analyzer).
+* `yarn apidoc` to generate api documentation. To access go to `apidoc/index.html`.
 * `yarn outdated` to verify if your dependences are updated.
 * `yarn build` creates a `build` folder with all the code to production.
 
@@ -95,10 +93,7 @@ We still require that your pull request contains unit tests for any new function
 ### Style Guide
 
 We use an automatic code formatter called [Prettier](https://prettier.io/).
-Run `yarn run prettier` after making any changes to the code.
-
-Then, our linter will catch most issues that may exist in your code.
-You can check the status of your code styling by simply running `yarn run lint`.
+Run `yarn prettier` after making any changes to the code.
 
 However, there are still some styles that the linter cannot pick up. If you are unsure about something, looking at [Airbnb's Style Guide](https://github.com/airbnb/javascript) will guide you in the right direction.
 

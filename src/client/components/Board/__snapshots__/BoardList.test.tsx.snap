@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BoardList Component should render 1 Typogragh and 2 Grid 1`] = `
+<div>
+  <div>
+    <WithStyles(Typography)
+      color="secondary"
+      gutterBottom={true}
+      variant="h6"
+    >
+      <pure(DeveloperBoardIcon) />
+       My boards
+      <WithStyles(Tooltip)
+        title="Add team"
+      >
+        <Connect(FormDialog) />
+      </WithStyles(Tooltip)>
+    </WithStyles(Typography)>
+  </div>
+  <WithStyles(Grid)
+    container={true}
+    justify="flex-start"
+    spacing={8}
+    wrap="wrap"
+  >
+    <WithStyles(Grid)
+      item={true}
+      key="12121212"
+      lg={6}
+    >
+      <WithStyles(MediaControlCard)
+        _id={12121212}
+        columns={
+          Array [
+            Object {
+              "cards": Array [
+                Object {
+                  "id": 31,
+                  "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                },
+              ],
+              "hColumns": Array [],
+              "id": 4,
+              "title": "A fazer",
+              "vColumns": Array [],
+            },
+            Object {
+              "cards": Array [],
+              "hColumns": Array [
+                Object {
+                  "cards": Array [],
+                  "hColumns": Array [],
+                  "id": 2,
+                  "title": "Chamados",
+                  "vColumns": Array [
+                    Object {
+                      "cards": Array [],
+                      "hColumns": Array [],
+                      "id": 4,
+                      "title": "Parado",
+                      "vColumns": Array [],
+                    },
+                    Object {
+                      "cards": Array [
+                        Object {
+                          "id": 35,
+                          "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                        },
+                      ],
+                      "hColumns": Array [],
+                      "id": 5,
+                      "title": "Executando",
+                      "vColumns": Array [],
+                    },
+                  ],
+                },
+                Object {
+                  "cards": Array [],
+                  "hColumns": Array [],
+                  "id": 3,
+                  "title": "Projetos",
+                  "vColumns": Array [
+                    Object {
+                      "cards": Array [
+                        Object {
+                          "id": 36,
+                          "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                        },
+                      ],
+                      "hColumns": Array [],
+                      "id": 41,
+                      "title": "Parado",
+                      "vColumns": Array [],
+                    },
+                    Object {
+                      "cards": Array [],
+                      "hColumns": Array [],
+                      "id": 51,
+                      "title": "Executando",
+                      "vColumns": Array [],
+                    },
+                  ],
+                },
+              ],
+              "id": 1,
+              "title": "Executando",
+              "vColumns": Array [],
+            },
+            Object {
+              "cards": Array [
+                Object {
+                  "id": 32,
+                  "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                },
+              ],
+              "hColumns": Array [],
+              "id": 9,
+              "title": "Em teste",
+              "vColumns": Array [],
+            },
+            Object {
+              "cards": Array [
+                Object {
+                  "id": 33,
+                  "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                },
+                Object {
+                  "id": 34,
+                  "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                },
+              ],
+              "hColumns": Array [],
+              "id": 10,
+              "title": "Concluído",
+              "vColumns": Array [],
+            },
+          ]
+        }
+        createdAt="today 12:00pm"
+        createdBy="Robisson Oliveira"
+        cycleTime="10"
+        key="12121212"
+        leadTime="10"
+        name="Minhas atividades"
+        throuput="10"
+      />
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+</div>
+`;
+
+exports[`BoardList Component should render a div 1`] = `
+<div>
+  <div>
+    <WithStyles(Typography)
+      color="secondary"
+      gutterBottom={true}
+      variant="h6"
+    >
+      <pure(DeveloperBoardIcon) />
+       My boards
+      <WithStyles(Tooltip)
+        title="Add team"
+      >
+        <Connect(FormDialog) />
+      </WithStyles(Tooltip)>
+    </WithStyles(Typography)>
+  </div>
+  <WithStyles(Grid)
+    container={true}
+    justify="flex-start"
+    spacing={8}
+    wrap="wrap"
+  >
+    <WithStyles(Grid)
+      item={true}
+      key="12121212"
+      lg={6}
+    >
+      <WithStyles(MediaControlCard)
+        _id={12121212}
+        columns={
+          Array [
+            Object {
+              "cards": Array [
+                Object {
+                  "id": 31,
+                  "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                },
+              ],
+              "hColumns": Array [],
+              "id": 4,
+              "title": "A fazer",
+              "vColumns": Array [],
+            },
+            Object {
+              "cards": Array [],
+              "hColumns": Array [
+                Object {
+                  "cards": Array [],
+                  "hColumns": Array [],
+                  "id": 2,
+                  "title": "Chamados",
+                  "vColumns": Array [
+                    Object {
+                      "cards": Array [],
+                      "hColumns": Array [],
+                      "id": 4,
+                      "title": "Parado",
+                      "vColumns": Array [],
+                    },
+                    Object {
+                      "cards": Array [
+                        Object {
+                          "id": 35,
+                          "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                        },
+                      ],
+                      "hColumns": Array [],
+                      "id": 5,
+                      "title": "Executando",
+                      "vColumns": Array [],
+                    },
+                  ],
+                },
+                Object {
+                  "cards": Array [],
+                  "hColumns": Array [],
+                  "id": 3,
+                  "title": "Projetos",
+                  "vColumns": Array [
+                    Object {
+                      "cards": Array [
+                        Object {
+                          "id": 36,
+                          "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                        },
+                      ],
+                      "hColumns": Array [],
+                      "id": 41,
+                      "title": "Parado",
+                      "vColumns": Array [],
+                    },
+                    Object {
+                      "cards": Array [],
+                      "hColumns": Array [],
+                      "id": 51,
+                      "title": "Executando",
+                      "vColumns": Array [],
+                    },
+                  ],
+                },
+              ],
+              "id": 1,
+              "title": "Executando",
+              "vColumns": Array [],
+            },
+            Object {
+              "cards": Array [
+                Object {
+                  "id": 32,
+                  "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                },
+              ],
+              "hColumns": Array [],
+              "id": 9,
+              "title": "Em teste",
+              "vColumns": Array [],
+            },
+            Object {
+              "cards": Array [
+                Object {
+                  "id": 33,
+                  "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                },
+                Object {
+                  "id": 34,
+                  "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                },
+              ],
+              "hColumns": Array [],
+              "id": 10,
+              "title": "Concluído",
+              "vColumns": Array [],
+            },
+          ]
+        }
+        createdAt="today 12:00pm"
+        createdBy="Robisson Oliveira"
+        cycleTime="10"
+        key="12121212"
+        leadTime="10"
+        name="Minhas atividades"
+        throuput="10"
+      />
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+</div>
+`;

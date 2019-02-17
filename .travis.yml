@@ -8,8 +8,7 @@ before_script:
   - sleep 15
   - yarn
 script:
-  - yarn run prettier
-  - yarn run lint
+  - yarn prettier
   - yarn test
 after_success:
-  - 'yarn run test:coverage'
+  - 'yarn test:coverage'

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ColumnHeader /> Component should render correctly 1`] = `
+<div
+  className="ColumnHeader-root-1"
+>
+  <WithStyles(List)
+    className="ColumnHeader-list-2"
+  >
+    <WithStyles(ListItem)
+      className="ColumnHeader-listItem-3"
+    >
+      <WithStyles(ListItemIcon)
+        className="ColumnHeader-listItemIconLeft-5"
+      >
+        <pure(RemoveIcon) />
+      </WithStyles(ListItemIcon)>
+      <WithStyles(ListItemText)
+        className="ColumnHeader-listItemText-4"
+        primary={
+          <WithStyles(Typography)
+            component="p"
+            style={
+              Object {
+                "color": "#FFFFFF",
+              }
+            }
+          >
+             
+            title
+             
+          </WithStyles(Typography)>
+        }
+      />
+      <WithStyles(ListItemSecondaryAction)>
+        <WithStyles(MenuHeaderColumn) />
+      </WithStyles(ListItemSecondaryAction)>
+    </WithStyles(ListItem)>
+  </WithStyles(List)>
+</div>
+`;

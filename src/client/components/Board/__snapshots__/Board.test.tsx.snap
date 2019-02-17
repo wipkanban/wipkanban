@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Board /> Component should render correctly with Navbar and a Grid 1`] = `
+<div>
+  <WithStyles(Navbar)>
+    <WithStyles(MenuLeft) />
+    <WithStyles(MenuRight)>
+      <AddCardButton />
+      <DashboardIconButton />
+      <TransferWithinAStationIconButton />
+      <CalendarIconButton />
+      <FilterListIconButton />
+      <GroupAddIconButton />
+      <HistoryIconButton />
+      <SettingsIconButton />
+      <ZoomOutMapIconButton />
+      <Search />
+      <Connect(WithStyles(UserAccountSettings)) />
+    </WithStyles(MenuRight)>
+  </WithStyles(Navbar)>
+  <WithStyles(Grid)
+    className="BoardMain-gridContainer-2"
+    container={true}
+    justify="flex-start"
+    spacing={0}
+    wrap="nowrap"
+  >
+    <ColumnFactory
+      cards={
+        Array [
+          Object {
+            "id": 31,
+            "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+          },
+        ]
+      }
+      hColumns={Array []}
+      key="4"
+      title="A fazer"
+      vColumns={Array []}
+    />
+    <ColumnFactory
+      cards={Array []}
+      hColumns={
+        Array [
+          Object {
+            "cards": Array [],
+            "hColumns": Array [],
+            "id": 2,
+            "title": "Chamados",
+            "vColumns": Array [
+              Object {
+                "cards": Array [],
+                "hColumns": Array [],
+                "id": 4,
+                "title": "Parado",
+                "vColumns": Array [],
+              },
+              Object {
+                "cards": Array [
+                  Object {
+                    "id": 35,
+                    "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                  },
+                ],
+                "hColumns": Array [],
+                "id": 5,
+                "title": "Executando",
+                "vColumns": Array [],
+              },
+            ],
+          },
+          Object {
+            "cards": Array [],
+            "hColumns": Array [],
+            "id": 3,
+            "title": "Projetos",
+            "vColumns": Array [
+              Object {
+                "cards": Array [
+                  Object {
+                    "id": 36,
+                    "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+                  },
+                ],
+                "hColumns": Array [],
+                "id": 41,
+                "title": "Parado",
+                "vColumns": Array [],
+              },
+              Object {
+                "cards": Array [],
+                "hColumns": Array [],
+                "id": 51,
+                "title": "Executando",
+                "vColumns": Array [],
+              },
+            ],
+          },
+        ]
+      }
+      key="1"
+      title="Executando"
+      vColumns={Array []}
+    />
+    <ColumnFactory
+      cards={
+        Array [
+          Object {
+            "id": 32,
+            "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+          },
+        ]
+      }
+      hColumns={Array []}
+      key="9"
+      title="Em teste"
+      vColumns={Array []}
+    />
+    <ColumnFactory
+      cards={
+        Array [
+          Object {
+            "id": 33,
+            "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+          },
+          Object {
+            "id": 34,
+            "title": "Criar layouts da tela principal do quadro. Este é um exemplo de tarefa ou card do quadro kanban",
+          },
+        ]
+      }
+      hColumns={Array []}
+      key="10"
+      title="Concluído"
+      vColumns={Array []}
+    />
+  </WithStyles(Grid)>
+</div>
+`;
+
+exports[`<Board /> Component should render correctly with Navbar and a Grid, even withou columns 1`] = `
+<div>
+  <WithStyles(Navbar)>
+    <WithStyles(MenuLeft) />
+    <WithStyles(MenuRight)>
+      <AddCardButton />
+      <DashboardIconButton />
+      <TransferWithinAStationIconButton />
+      <CalendarIconButton />
+      <FilterListIconButton />
+      <GroupAddIconButton />
+      <HistoryIconButton />
+      <SettingsIconButton />
+      <ZoomOutMapIconButton />
+      <Search />
+      <Connect(WithStyles(UserAccountSettings)) />
+    </WithStyles(MenuRight)>
+  </WithStyles(Navbar)>
+  <WithStyles(Grid)
+    className="BoardMain-gridContainer-2"
+    container={true}
+    justify="flex-start"
+    spacing={0}
+    wrap="nowrap"
+  />
+</div>
+`;
