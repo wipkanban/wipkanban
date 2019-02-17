@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": ["dom", "esnext"],
+    "module": "commonjs",
+    "outDir": "./public/dist",
+    "strict": true,
+    "target": "es5",
+    "jsx": "react",
+    // opcionais, mas recomendados
+    // quase um "ESLint" básico
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "pretty": true
+  },
+  "include": ["src/client/**/*"],
+  "exclude": ["./node_modeules"]
+}

@@ -1,20 +1,26 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-    mode:"development",
-    entry: './src/client/index.js',
-    devtool: 'source-map',
-    output: {
-        path: path.join(__dirname, './public/dist'),
-        filename: 'bundle.js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js?$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-            }
-        ]
-    }
-}
+  mode: "development",
+  entry: {
+    app: ["./src/client/index.tsx"],
+    vendor: ["react", "react-dom"]
+  },
+  output: {
+    path: path.resolve(__dirname, "public", "dist"),
+    filename: "[name].bundle.js"
+  },
+  devtool: "source-map",
+  resolve: {
+    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"]
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        loader: "ts-loader"
+      },
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+    ]
+  }
+};

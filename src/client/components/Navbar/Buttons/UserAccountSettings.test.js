@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import UserAccountSettings from "./UserAccountSettings";
 import { createShallow } from "@material-ui/core/test-utils";
 import toJson from "enzyme-to-json";
