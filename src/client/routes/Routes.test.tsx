@@ -2,12 +2,11 @@ import React from "react";
 import Routes from "./Routes";
 import { createShallow } from "@material-ui/core/test-utils";
 import { Switch } from "react-router-dom";
-import toJson from "enzyme-to-json";
-import "../setupTest";
+import { ShallowWrapper } from "enzyme";
 
 describe("<Routes /> Component", () => {
-  let shallow;
-  let wrapper;
+  let shallow: any;
+  let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     shallow = createShallow();
@@ -15,7 +14,7 @@ describe("<Routes /> Component", () => {
   });
 
   it("should render an component correctly", () => {
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should render a Switch component", () => {
