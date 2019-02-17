@@ -27,6 +27,7 @@ exports[`<ColumnHeader /> Component should render correctly 1`] = `
             }
           >
              
+            title
              
           </WithStyles(Typography)>
         }
