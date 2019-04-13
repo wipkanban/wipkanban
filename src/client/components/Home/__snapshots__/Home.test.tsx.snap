@@ -47,5 +47,3 @@ exports[`<Home /> component should render a TabHome component 1`] = `
   </WithStyles(GridContainer)>
 </div>
 `;
-
-exports[`<Home /> component should render a WelcomePage component when user firstAccess is true 1`] = `<Connect(WithStyles(WelcomePage)) />`;
