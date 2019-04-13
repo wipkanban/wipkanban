@@ -57,7 +57,7 @@ describe("<Home /> component", () => {
     user.firstAccess = true;
     let wrapper = shallow(<Home user={user} />);
 
-    expect(wrapper.name()).toEqual("Connect(WithStyles(WelcomePage))");
+    expect(wrapper.type().Naked).toEqual("[Function WelcomePage]");
     expect(wrapper).toMatchSnapshot();
   });
 });

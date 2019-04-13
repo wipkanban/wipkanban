@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import SignupContainer from "./SignupContainer";
 import shallowWithStore from "../../utils/shallowWithStore";
 import { createMockStore } from "redux-test-utils";

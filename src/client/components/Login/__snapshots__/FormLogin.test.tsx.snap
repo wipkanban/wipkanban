@@ -192,7 +192,6 @@ exports[`Login User does not should call function onLogin when click button Logi
                    
                   <Link
                     className="Login-link-5"
-                    replace={false}
                     to="/create-account"
                   >
                     <b>
@@ -422,7 +421,6 @@ exports[`Login User should call function onLogin when click button Login with fi
                    
                   <Link
                     className="Login-link-5"
-                    replace={false}
                     to="/create-account"
                   >
                     <b>
@@ -652,7 +650,6 @@ exports[`Login User should render 2 inputs and a Button 1`] = `
                    
                   <Link
                     className="Login-link-5"
-                    replace={false}
                     to="/create-account"
                   >
                     <b>
@@ -882,7 +879,6 @@ exports[`Login User should render a Facebook login button 1`] = `
                    
                   <Link
                     className="Login-link-5"
-                    replace={false}
                     to="/create-account"
                   >
                     <b>
@@ -922,7 +918,6 @@ exports[`Login User should render a Facebook login button 1`] = `
 
 exports[`Login User should return a redirect component, bacause jwt is defined 1`] = `
 <Redirect
-  push={false}
   to="/"
 />
 `;
