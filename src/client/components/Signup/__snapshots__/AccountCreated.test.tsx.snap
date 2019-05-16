@@ -115,7 +115,6 @@ exports[`<AccountCreated /> Component should render correctly  1`] = `
             >
               <Link
                 className="AccountCreated-link-5"
-                replace={false}
                 to="/login"
               >
                 Login

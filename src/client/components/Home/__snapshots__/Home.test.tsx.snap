@@ -2,12 +2,12 @@
 
 exports[`<Home /> component should render 1 div containing Navbar 1`] = `
 <div>
-  <Connect(WithStyles(Preloader)) />
+  <ConnectFunction />
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <Connect(WithStyles(UserAccountSettings)) />
+      <ConnectFunction />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -18,12 +18,12 @@ exports[`<Home /> component should render 1 div containing Navbar 1`] = `
 
 exports[`<Home /> component should render a RightMenu with two icons component 1`] = `
 <div>
-  <Connect(WithStyles(Preloader)) />
+  <ConnectFunction />
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <Connect(WithStyles(UserAccountSettings)) />
+      <ConnectFunction />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -34,12 +34,12 @@ exports[`<Home /> component should render a RightMenu with two icons component 1
 
 exports[`<Home /> component should render a TabHome component 1`] = `
 <div>
-  <Connect(WithStyles(Preloader)) />
+  <ConnectFunction />
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <Connect(WithStyles(UserAccountSettings)) />
+      <ConnectFunction />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -47,5 +47,3 @@ exports[`<Home /> component should render a TabHome component 1`] = `
   </WithStyles(GridContainer)>
 </div>
 `;
-
-exports[`<Home /> component should render a WelcomePage component when user firstAccess is true 1`] = `<Connect(WithStyles(WelcomePage)) />`;

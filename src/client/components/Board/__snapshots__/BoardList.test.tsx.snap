@@ -13,7 +13,7 @@ exports[`BoardList Component should render 1 Typogragh and 2 Grid 1`] = `
       <WithStyles(Tooltip)
         title="Add team"
       >
-        <Connect(FormDialog) />
+        <ConnectFunction />
       </WithStyles(Tooltip)>
     </WithStyles(Typography)>
   </div>
@@ -162,7 +162,7 @@ exports[`BoardList Component should render a div 1`] = `
       <WithStyles(Tooltip)
         title="Add team"
       >
-        <Connect(FormDialog) />
+        <ConnectFunction />
       </WithStyles(Tooltip)>
     </WithStyles(Typography)>
   </div>

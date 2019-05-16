@@ -209,7 +209,6 @@ exports[`<Signup /> User should call function when click on button and fields ar
                    
                   <Link
                     className="Signup-link-5"
-                    replace={false}
                     to="/login"
                   >
                     <b>
@@ -436,7 +435,6 @@ exports[`<Signup /> User should not call function when click on button and field
                    
                   <Link
                     className="Signup-link-5"
-                    replace={false}
                     to="/login"
                   >
                     <b>
@@ -663,7 +661,6 @@ exports[`<Signup /> User should not call function when fields password and confi
                    
                   <Link
                     className="Signup-link-5"
-                    replace={false}
                     to="/login"
                   >
                     <b>
@@ -890,7 +887,6 @@ exports[`<Signup /> User should render a component correctly 1`] = `
                    
                   <Link
                     className="Signup-link-5"
-                    replace={false}
                     to="/login"
                   >
                     <b>
@@ -910,7 +906,6 @@ exports[`<Signup /> User should render a component correctly 1`] = `
 
 exports[`<Signup /> User should return a redirect component, bacause success prop is defined 1`] = `
 <Redirect
-  push={false}
   to="/account-created"
 />
 `;
@@ -1124,7 +1119,6 @@ exports[`<Signup /> User should to change state when type in TextField 1`] = `
                    
                   <Link
                     className="Signup-link-5"
-                    replace={false}
                     to="/login"
                   >
                     <b>

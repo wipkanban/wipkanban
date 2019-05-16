@@ -21,7 +21,6 @@ exports[`<MiniBoard /> Component should render correctly 1`] = `
   >
     <Link
       color="primary"
-      replace={false}
       to="/board/1"
     >
       Go to Board

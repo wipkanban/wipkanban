@@ -52,12 +52,4 @@ describe("<Home /> component", () => {
     expect(wrapper.find(TabsHome).type()).toEqual(TabsHome);
     expect(wrapper).toMatchSnapshot();
   });
-
-  it("should render a WelcomePage component when user firstAccess is true", () => {
-    user.firstAccess = true;
-    let wrapper = shallow(<Home user={user} />);
-
-    expect(wrapper.name()).toEqual("Connect(WithStyles(WelcomePage))");
-    expect(wrapper).toMatchSnapshot();
-  });
 });

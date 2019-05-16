@@ -8,7 +8,6 @@ exports[`<RouterFactory /> Component should render a BrowserRouter component whe
 
 exports[`<RouterFactory /> Component should render a StaticRouter component when server param is defined 1`] = `
 <StaticRouter
-  basename=""
   context={Object {}}
   location=""
 >

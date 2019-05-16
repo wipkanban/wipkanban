@@ -5,6 +5,7 @@ import UniversalProvider from "./UniversalProvider";
 import { Store } from "redux";
 
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { CssBaseline } from "@material-ui/core";
 
 const theme = createMuiTheme({
   typography: {
@@ -41,6 +42,7 @@ export default class Root extends React.Component<Props> {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
+        <CssBaseline />
         <UniversalProvider store={store} />
       </MuiThemeProvider>
     );

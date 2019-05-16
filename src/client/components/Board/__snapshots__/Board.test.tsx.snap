@@ -15,7 +15,7 @@ exports[`<Board /> Component should render correctly with Navbar and a Grid 1`] 
       <SettingsIconButton />
       <ZoomOutMapIconButton />
       <Search />
-      <Connect(WithStyles(UserAccountSettings)) />
+      <ConnectFunction />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(Grid)
@@ -154,7 +154,7 @@ exports[`<Board /> Component should render correctly with Navbar and a Grid, eve
       <SettingsIconButton />
       <ZoomOutMapIconButton />
       <Search />
-      <Connect(WithStyles(UserAccountSettings)) />
+      <ConnectFunction />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(Grid)
