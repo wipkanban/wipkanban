@@ -46,7 +46,7 @@
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
     "uuid": "3.3.2",
-    "yarn": "^1.16.0"
+    "yarn": "^1.17.3"
   },
   "scripts": {
     "server": "npm-run-all -p webpack dev",
