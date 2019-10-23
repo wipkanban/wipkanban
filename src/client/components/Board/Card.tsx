@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -12,7 +12,7 @@ import MessageIcon from "@material-ui/icons/Message";
 import CheckBox from "@material-ui/icons/CheckBox";
 import Attachment from "@material-ui/icons/Attachment";
 
-const styles: StyleRulesCallback = () => ({
+const styles: any = () => ({
   card: {
     margin: 5,
     cursor: "pointer",

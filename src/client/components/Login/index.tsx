@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback, Theme } from "@material-ui/core/styles";
+import { withStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
@@ -9,19 +9,18 @@ import LockIcon from "@material-ui/icons/Https";
 import EmailIcon from "@material-ui/icons/Email";
 import Check from "@material-ui/icons/Check";
 import Button from "@material-ui/core/Button";
-//import IconButton from "@material-ui/core/IconButton";
 import { Redirect, Link } from "react-router-dom";
-import classNames from "classnames";
+import { makeStyles } from '@material-ui/styles';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import green from "@material-ui/core/colors/green";
 import FacebookLogin from "react-facebook-login";
 
-const styles: StyleRulesCallback = (theme: Theme) => ({
+const styles: any = (theme: Theme) => ({
   root: {
     flexGrow: 1
   },
   paper: {
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing(1) * 2,
     height: "100vh",
     display: "flex",
     alignItems: "center"
@@ -44,7 +43,7 @@ const styles: StyleRulesCallback = (theme: Theme) => ({
     borderColor: "white"
   },
   wrapper: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
     position: "relative"
   },
   buttonProgress: {
@@ -140,7 +139,7 @@ class Login extends React.Component<ILoginProps, ILoginPropsState> {
       state: { showPreloader, success, message }
     } = this.props;
 
-    const buttonClassname = classNames({
+    const buttonClassname = makeStyles({
       [classes.buttonSuccess]: success
     });
 
@@ -279,7 +278,7 @@ class Login extends React.Component<ILoginProps, ILoginPropsState> {
                           size="large"
                           variant="contained"
                           color="primary"
-                          className={buttonClassname}
+                          className={buttonClassname as any}
                           disabled={showPreloader}
                         >
                           Sign In

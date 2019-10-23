@@ -17,7 +17,7 @@ export default (User: Model<IUser>): StrategyInstance =>
         let user = await User.findOne({ email: profile.emails[0].value });
 
         if (!user) {
-          user = new User({ email: profile.emails[0].value, password: 12345 });
+          user = new User({ email: profile.emails[0].value, password: '12345' });
           user.save();
         }
 

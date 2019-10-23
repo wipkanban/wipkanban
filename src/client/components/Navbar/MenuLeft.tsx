@@ -2,9 +2,9 @@ import * as React from "react";
 import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
 import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 
-const styles: StyleRulesCallback = () => ({
+const styles: any = () => ({
   navLeft: {
     marginLeft: 20
   }

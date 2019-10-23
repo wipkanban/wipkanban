@@ -1,7 +1,7 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 
-const styles: StyleRulesCallback = () => {
+const styles: any = () => {
   return {
     navRight: {
       position: "absolute",

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Navbar from "../Navbar/index";
 import Column from "./Column";
@@ -22,7 +22,7 @@ interface IBoardProps {
   columns: any;
 }
 
-const styles: StyleRulesCallback = () => ({
+const styles: any = () => ({
   root: {
     flexGrow: 1
   },

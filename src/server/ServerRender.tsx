@@ -4,20 +4,14 @@ import template from "./template";
 import configureStore from "../client/configureStore";
 import UniversalProvider from "../client/UniversalProvider";
 import { loginSuccess } from "../client/actions/Login";
-import { SheetsRegistry } from "react-jss";
-import JssProvider from "react-jss/lib/JssProvider";
+import { ServerStyleSheets } from '@material-ui/styles';
 import {
   MuiThemeProvider,
-  createMuiTheme,
-  createGenerateClassName
+  createMuiTheme
 } from "@material-ui/core/styles";
 import {Response} from "express"
 
-const theme = createMuiTheme({
-  typography: {
-    useNextVariants: true
-  }
-});
+const theme = createMuiTheme();
 
 export default function render(req: any, res:Response) {
   const store = configureStore(true);
@@ -25,21 +19,18 @@ export default function render(req: any, res:Response) {
   if (req.currentUser !== undefined && Object.keys(req.currentUser).length) {
     store.dispatch(loginSuccess(true, null, req.currentUser));
   }
-  const sheetsRegistry = new SheetsRegistry();
 
-  const generateClassName = createGenerateClassName();
+  const sheets = new ServerStyleSheets();
 
   const html = renderToString(
-    <JssProvider
-      registry={sheetsRegistry}
-      generateClassName={generateClassName}
-    >
-      <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
+    sheets.collect(
+      <MuiThemeProvider theme={theme}>
         <UniversalProvider location={req.url} server={true} store={store} />
       </MuiThemeProvider>
-    </JssProvider>
+    )
   );
-  const css = sheetsRegistry.toString();
+
+  const css = sheets.toString();
 
   const status = 200;
   return res.status(status).end(template(html, store.getState(), css));

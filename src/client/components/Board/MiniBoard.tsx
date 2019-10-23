@@ -1,11 +1,11 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import { Link } from "react-router-dom";
 
-const styles: StyleRulesCallback = () => ({
+const styles: any = () => ({
   card: {
     display: "flex"
   },
