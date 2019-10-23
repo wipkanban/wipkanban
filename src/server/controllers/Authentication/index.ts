@@ -43,7 +43,7 @@ export default (User: Model<IUser>, setCsrf: Function) => {
 };
 
 export function oauthFacebook(req: Request, res: Response) {
-  const token = jwt.sign(req.user, process.env.SECRET as string, {
+  const token = jwt.sign(req.user as Object, process.env.SECRET as string, {
     expiresIn: "24h"
   });
 

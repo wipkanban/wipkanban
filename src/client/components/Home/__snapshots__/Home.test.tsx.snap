@@ -2,12 +2,12 @@
 
 exports[`<Home /> component should render 1 div containing Navbar 1`] = `
 <div>
-  <ConnectFunction />
+  <Connect(WithStyles(Preloader)) />
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <ConnectFunction />
+      <Connect(WithStyles(UserAccountSettings)) />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -18,12 +18,12 @@ exports[`<Home /> component should render 1 div containing Navbar 1`] = `
 
 exports[`<Home /> component should render a RightMenu with two icons component 1`] = `
 <div>
-  <ConnectFunction />
+  <Connect(WithStyles(Preloader)) />
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <ConnectFunction />
+      <Connect(WithStyles(UserAccountSettings)) />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>
@@ -34,12 +34,12 @@ exports[`<Home /> component should render a RightMenu with two icons component 1
 
 exports[`<Home /> component should render a TabHome component 1`] = `
 <div>
-  <ConnectFunction />
+  <Connect(WithStyles(Preloader)) />
   <WithStyles(Navbar)>
     <div />
     <WithStyles(MenuRight)>
       <Search />
-      <ConnectFunction />
+      <Connect(WithStyles(UserAccountSettings)) />
     </WithStyles(MenuRight)>
   </WithStyles(Navbar)>
   <WithStyles(GridContainer)>

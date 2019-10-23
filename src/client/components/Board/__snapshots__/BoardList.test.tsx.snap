@@ -3,27 +3,27 @@
 exports[`BoardList Component should render 1 Typogragh and 2 Grid 1`] = `
 <div>
   <div>
-    <WithStyles(Typography)
+    <WithStyles(ForwardRef(Typography))
       color="secondary"
       gutterBottom={true}
       variant="h6"
     >
-      <pure(DeveloperBoardIcon) />
+      <DeveloperBoardIcon />
        My boards
-      <WithStyles(Tooltip)
+      <WithStyles(ForwardRef(Tooltip))
         title="Add team"
       >
-        <ConnectFunction />
-      </WithStyles(Tooltip)>
-    </WithStyles(Typography)>
+        <Connect(FormDialog) />
+      </WithStyles(ForwardRef(Tooltip))>
+    </WithStyles(ForwardRef(Typography))>
   </div>
-  <WithStyles(Grid)
+  <WithStyles(ForwardRef(Grid))
     container={true}
     justify="flex-start"
     spacing={8}
     wrap="wrap"
   >
-    <WithStyles(Grid)
+    <WithStyles(ForwardRef(Grid))
       item={true}
       key="12121212"
       lg={6}
@@ -144,35 +144,35 @@ exports[`BoardList Component should render 1 Typogragh and 2 Grid 1`] = `
         name="Minhas atividades"
         throuput="10"
       />
-    </WithStyles(Grid)>
-  </WithStyles(Grid)>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
 </div>
 `;
 
 exports[`BoardList Component should render a div 1`] = `
 <div>
   <div>
-    <WithStyles(Typography)
+    <WithStyles(ForwardRef(Typography))
       color="secondary"
       gutterBottom={true}
       variant="h6"
     >
-      <pure(DeveloperBoardIcon) />
+      <DeveloperBoardIcon />
        My boards
-      <WithStyles(Tooltip)
+      <WithStyles(ForwardRef(Tooltip))
         title="Add team"
       >
-        <ConnectFunction />
-      </WithStyles(Tooltip)>
-    </WithStyles(Typography)>
+        <Connect(FormDialog) />
+      </WithStyles(ForwardRef(Tooltip))>
+    </WithStyles(ForwardRef(Typography))>
   </div>
-  <WithStyles(Grid)
+  <WithStyles(ForwardRef(Grid))
     container={true}
     justify="flex-start"
     spacing={8}
     wrap="wrap"
   >
-    <WithStyles(Grid)
+    <WithStyles(ForwardRef(Grid))
       item={true}
       key="12121212"
       lg={6}
@@ -293,7 +293,7 @@ exports[`BoardList Component should render a div 1`] = `
         name="Minhas atividades"
         throuput="10"
       />
-    </WithStyles(Grid)>
-  </WithStyles(Grid)>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
 </div>
 `;

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search Component should have a prop title 1`] = `
-<WithStyles(Tooltip)
+<WithStyles(ForwardRef(Tooltip))
   title="Search cards"
 >
-  <WithStyles(IconButton)
+  <WithStyles(ForwardRef(IconButton))
     aria-label="Search cards"
     color="inherit"
   >
-    <pure(SearchIcon) />
-  </WithStyles(IconButton)>
-</WithStyles(Tooltip)>
+    <SearchIcon />
+  </WithStyles(ForwardRef(IconButton))>
+</WithStyles(ForwardRef(Tooltip))>
 `;
