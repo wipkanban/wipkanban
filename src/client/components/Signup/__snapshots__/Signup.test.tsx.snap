@@ -54,12 +54,12 @@ exports[`<Signup /> User should call function when click on button and fields ar
               }
               variant="headline"
             >
-              Align strategy and execution with 
+              Align strategy and execution with
               <b>
                 OKRs
               </b>
                and
-               
+
               <b>
                 Kanban
               </b>
@@ -206,7 +206,7 @@ exports[`<Signup /> User should call function when click on button and fields ar
                   gutterBottom={true}
                 >
                   Already have an account ?
-                   
+
                   <Link
                     className="Signup-link-5"
                     to="/login"
@@ -280,12 +280,12 @@ exports[`<Signup /> User should not call function when click on button and field
               }
               variant="headline"
             >
-              Align strategy and execution with 
+              Align strategy and execution with
               <b>
                 OKRs
               </b>
                and
-               
+
               <b>
                 Kanban
               </b>
@@ -432,7 +432,7 @@ exports[`<Signup /> User should not call function when click on button and field
                   gutterBottom={true}
                 >
                   Already have an account ?
-                   
+
                   <Link
                     className="Signup-link-5"
                     to="/login"
@@ -506,12 +506,12 @@ exports[`<Signup /> User should not call function when fields password and confi
               }
               variant="headline"
             >
-              Align strategy and execution with 
+              Align strategy and execution with
               <b>
                 OKRs
               </b>
                and
-               
+
               <b>
                 Kanban
               </b>
@@ -658,7 +658,7 @@ exports[`<Signup /> User should not call function when fields password and confi
                   gutterBottom={true}
                 >
                   Already have an account ?
-                   
+
                   <Link
                     className="Signup-link-5"
                     to="/login"
@@ -740,12 +740,12 @@ exports[`<Signup /> User should to change state when type in TextField 1`] = `
               }
               variant="headline"
             >
-              Align strategy and execution with 
+              Align strategy and execution with
               <b>
                 OKRs
               </b>
                and
-               
+
               <b>
                 Kanban
               </b>
@@ -892,7 +892,7 @@ exports[`<Signup /> User should to change state when type in TextField 1`] = `
                   gutterBottom={true}
                 >
                   Already have an account ?
-                   
+
                   <Link
                     className="Signup-link-5"
                     to="/login"
