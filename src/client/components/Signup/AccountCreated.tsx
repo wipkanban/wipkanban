@@ -1,8 +1,7 @@
 import React from "react";
 import {
   withStyles,
-  Theme,
-  StyleRulesCallback
+  Theme
 } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -10,12 +9,12 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import green from "@material-ui/core/colors/green";
 
-const styles: StyleRulesCallback = (theme: Theme) => ({
+const styles: any = (theme: Theme) => ({
   root: {
     flexGrow: 1
   },
   paper: {
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing(1) * 2,
     height: "100vh",
     display: "flex",
     alignItems: "center"

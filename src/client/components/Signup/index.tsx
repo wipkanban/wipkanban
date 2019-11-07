@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { withStyles, StyleRulesCallback, Theme } from "@material-ui/core/styles";
+import { withStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
@@ -12,15 +12,14 @@ import Check from "@material-ui/icons/Check";
 import Button from "@material-ui/core/Button";
 import { Link, Redirect } from "react-router-dom";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import classNames from "classnames";
 import green from "@material-ui/core/colors/green";
 
-const styles: StyleRulesCallback = (theme: Theme) => ({
+const styles: any = (theme: Theme) => ({
   root: {
     flexGrow: 1
   },
   paper: {
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing(1) * 2,
     height: "100vh",
     display: "flex",
     alignItems: "center"
@@ -46,7 +45,7 @@ const styles: StyleRulesCallback = (theme: Theme) => ({
     color: theme.palette.error.main
   },
   wrapper: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
     position: "relative"
   },
   buttonProgress: {
@@ -117,9 +116,6 @@ class Signup extends React.Component<IStateSignupProps, IStateSignup> {
 
   render() {
     let { success, classes, message, showPreloader } = this.props;
-    const buttonClassname = classNames({
-      [classes.buttonSuccess]: success
-    });
 
     if (success) {
       return <Redirect to="/account-created" />;
@@ -149,7 +145,7 @@ class Signup extends React.Component<IStateSignupProps, IStateSignup> {
                     style={{
                       color: "white"
                     }}
-                    variant="display1"
+                    variant="h4"
                     gutterBottom
                   >
                     Welcome to the best open source plataform for lean
@@ -159,7 +155,7 @@ class Signup extends React.Component<IStateSignupProps, IStateSignup> {
                     style={{
                       color: "white"
                     }}
-                    variant="headline"
+                    variant="h5"
                     gutterBottom
                   >
                     Align strategy and execution with <b>OKRs</b> and{" "}
@@ -179,7 +175,7 @@ class Signup extends React.Component<IStateSignupProps, IStateSignup> {
               >
                 <div style={{ width: "80%", margin: "0 auto" }}>
                   <Typography
-                    variant="display1"
+                    variant="h4"
                     color="primary"
                     gutterBottom
                     align="center"
@@ -275,9 +271,8 @@ class Signup extends React.Component<IStateSignupProps, IStateSignup> {
                         <Button
                           onClick={this._onCreateAccount}
                           size="large"
-                          variant="raised"
+                          variant="contained"
                           color="primary"
-                          className={buttonClassname}
                           disabled={showPreloader}
                         >
                           Sign Up

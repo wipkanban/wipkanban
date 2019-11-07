@@ -2,7 +2,6 @@ import * as React from "react";
 import Typography from "@material-ui/core/Typography";
 import {
   withStyles,
-  StyleRulesCallback,
   Theme
 } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -13,12 +12,12 @@ import GridContainer from "../GridContainer";
 import Button from "@material-ui/core/Button";
 import grey from "@material-ui/core/colors/grey";
 
-const styles: StyleRulesCallback = (theme: Theme) => ({
+const styles: any = (theme: Theme) => ({
   layout: {
     width: "auto",
-    marginLeft: theme.spacing.unit * 2,
-    marginRight: theme.spacing.unit * 2,
-    [theme.breakpoints.up(800 + theme.spacing.unit * 2 * 2)]: {
+    marginLeft: theme.spacing(1) * 2,
+    marginRight: theme.spacing(1) * 2,
+    [theme.breakpoints.up(800 + theme.spacing(1) * 2 * 2)]: {
       width: "50%",
       marginLeft: "auto",
       marginRight: "auto"
@@ -28,11 +27,11 @@ const styles: StyleRulesCallback = (theme: Theme) => ({
     width: "100%"
   },
   paper: {
-    marginBottom: theme.spacing.unit * 3,
-    padding: theme.spacing.unit * 2,
-    [theme.breakpoints.up(600 + theme.spacing.unit * 3 * 2)]: {
-      marginBottom: theme.spacing.unit * 6,
-      padding: theme.spacing.unit * 3
+    marginBottom: theme.spacing(1) * 3,
+    padding: theme.spacing(1) * 2,
+    [theme.breakpoints.up(600 + theme.spacing(1) * 3 * 2)]: {
+      marginBottom: theme.spacing(1) * 6,
+      padding: theme.spacing(1) * 3
     }
   },
   buttons: {
@@ -41,13 +40,13 @@ const styles: StyleRulesCallback = (theme: Theme) => ({
     justifyContent: "flex-end"
   },
   button: {
-    marginLeft: theme.spacing.unit
+    marginLeft: theme.spacing(1)
   },
   photo: {
     backgroundColor: grey[300],
     width: 150,
     height: 200,
-    margin: [`${theme.spacing.unit * 2}px`, "auto"].join(" ")
+    margin: [`${theme.spacing(1) * 2}px`, "auto"].join(" ")
   }
 });
 
@@ -85,7 +84,7 @@ const WelcomePage: React.StatelessComponent<any> = ({
             <Typography variant="subtitle1" align="center">
               Before you start using WipLean, please complete your data below.
             </Typography>
-            <Grid container spacing={24}>
+            <Grid container spacing={10}>
               <Grid item lg={6}>
                 <Grid item>
                   <TextField

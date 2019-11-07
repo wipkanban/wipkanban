@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import Avatar from "@material-ui/core/Avatar";
 import Menu from "@material-ui/core/Menu";
@@ -10,7 +10,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 const ITEM_HEIGHT = 48;
 
-const styles: StyleRulesCallback = () => {
+const styles: any = () => {
   return {
     menuItem: {
       paddingTop: 2,

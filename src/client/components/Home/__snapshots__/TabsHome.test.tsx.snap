@@ -8,21 +8,21 @@ exports[`TabsHome component should render 1 Tabs and 2 tabs Component 1`] = `
     }
   }
 >
-  <WithStyles(Paper)>
-    <WithStyles(Tabs)
+  <WithStyles(ForwardRef(Paper))>
+    <WithStyles(ForwardRef(Tabs))
       indicatorColor="secondary"
       onChange={[Function]}
       textColor="primary"
       value={0}
     >
-      <WithStyles(Tab)
+      <WithStyles(ForwardRef(Tab))
         label="Kanban boards"
       />
-      <WithStyles(Tab)
+      <WithStyles(ForwardRef(Tab))
         label="OKRs"
       />
-    </WithStyles(Tabs)>
-  </WithStyles(Paper)>
+    </WithStyles(ForwardRef(Tabs))>
+  </WithStyles(ForwardRef(Paper))>
   <div>
     <TabContainer>
       <KanbanHome />
@@ -39,21 +39,21 @@ exports[`TabsHome component should render 1 div and 1 Paper Component 1`] = `
     }
   }
 >
-  <WithStyles(Paper)>
-    <WithStyles(Tabs)
+  <WithStyles(ForwardRef(Paper))>
+    <WithStyles(ForwardRef(Tabs))
       indicatorColor="secondary"
       onChange={[Function]}
       textColor="primary"
       value={0}
     >
-      <WithStyles(Tab)
+      <WithStyles(ForwardRef(Tab))
         label="Kanban boards"
       />
-      <WithStyles(Tab)
+      <WithStyles(ForwardRef(Tab))
         label="OKRs"
       />
-    </WithStyles(Tabs)>
-  </WithStyles(Paper)>
+    </WithStyles(ForwardRef(Tabs))>
+  </WithStyles(ForwardRef(Paper))>
   <div>
     <TabContainer>
       <KanbanHome />
@@ -70,21 +70,21 @@ exports[`TabsHome component should render KanbanHome component 1`] = `
     }
   }
 >
-  <WithStyles(Paper)>
-    <WithStyles(Tabs)
+  <WithStyles(ForwardRef(Paper))>
+    <WithStyles(ForwardRef(Tabs))
       indicatorColor="secondary"
       onChange={[Function]}
       textColor="primary"
       value={0}
     >
-      <WithStyles(Tab)
+      <WithStyles(ForwardRef(Tab))
         label="Kanban boards"
       />
-      <WithStyles(Tab)
+      <WithStyles(ForwardRef(Tab))
         label="OKRs"
       />
-    </WithStyles(Tabs)>
-  </WithStyles(Paper)>
+    </WithStyles(ForwardRef(Tabs))>
+  </WithStyles(ForwardRef(Paper))>
   <div>
     <TabContainer>
       <KanbanHome />

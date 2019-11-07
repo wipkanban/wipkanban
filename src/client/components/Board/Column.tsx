@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
@@ -108,7 +108,7 @@ function ColumnFactory(props: Props) {
     vWidth = 270;
   }
 
-  const styles: StyleRulesCallback = () => ({
+  const styles: any = () => ({
     parentColumn: {
       height: hColumns.length ? 450 : "100%"
     },

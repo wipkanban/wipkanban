@@ -1,8 +1,8 @@
 import * as React from "react";
 import Grid from "@material-ui/core/Grid";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 
-const styles: StyleRulesCallback = () => {
+const styles: any = () => {
   return {
     root: {
       flexGrow: 1

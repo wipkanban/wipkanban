@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 interface IPreloaderProps {
@@ -7,7 +7,7 @@ interface IPreloaderProps {
   showPreloader: Boolean;
 }
 
-const styles: StyleRulesCallback = () => ({
+const styles: any = () => ({
   background: {
     position: "absolute",
     width: "100%",

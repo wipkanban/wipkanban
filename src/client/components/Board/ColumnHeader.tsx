@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withStyles, StyleRulesCallback } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Typography from "@material-ui/core/Typography";
@@ -10,7 +10,7 @@ import brown from "@material-ui/core/colors/brown";
 import MenuHeaderColumn from "./MenuHeaderColumn";
 import RemoveIcon from "@material-ui/icons/Remove";
 
-const styles: StyleRulesCallback = () => ({
+const styles: any = () => ({
   root: {
     width: "100%",
     height: 25,
