@@ -13,7 +13,7 @@ export default function setCsrf(
   next();
 }
 
-export function checkCsrf(req: Request, res: Response, next: NextFunction) {
+export function checkCsrf(req: any, res: Response, next: NextFunction) {
   const token: string = req.get("token") as string;
 
   if (!tokens.verify(csrfSecret, token)) {

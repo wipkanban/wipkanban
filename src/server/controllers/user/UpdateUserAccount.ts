@@ -3,7 +3,7 @@ import path from "path";
 
 import { IUser } from "../../models/user";
 import { Model } from "mongoose";
-import { Request, Response } from "express";
+import { Response } from "express";
 
 export default (User: Model<IUser>) => {
   function handleError(res: Response, err: Error) {
@@ -13,7 +13,7 @@ export default (User: Model<IUser>) => {
       .end();
   }
 
-  return (req: Request, res: Response) => {
+  return (req: any, res: Response) => {
     let { name, lastname, phone, email, firstAccess } = JSON.parse(
       req.body.user
     );

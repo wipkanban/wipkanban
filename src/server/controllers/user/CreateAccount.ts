@@ -7,10 +7,10 @@ import {
 import * as ModelUser from "../../models/user";
 
 import { Model } from "mongoose";
-import { Request, Response, NextFunction } from "express";
+import { Response, NextFunction } from "express";
 
 export default (User: Model<ModelUser.IUser>) => {
-  return (req: Request, res: Response, next: NextFunction) => {
+  return (req: any, res: Response, next: NextFunction) => {
     let { email, password } = req.body;
 
     // verify if user already exists
