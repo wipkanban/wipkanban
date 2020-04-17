@@ -8,7 +8,7 @@ export interface IUserAuthInfoRequest extends Request {
 }
 
 export default (Board: Model<IBoard>) => {
-  return (req: Request, res: Response, next: NextFunction) => {
+  return (req: Request | any, res: Response, next: NextFunction) => {
     let { iduser } = req.params;
 
     Board.find({ userId: iduser }, (err, boards) => {

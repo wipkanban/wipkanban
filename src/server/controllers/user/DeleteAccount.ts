@@ -5,7 +5,7 @@ import { Model } from "mongoose";
 import { Request, Response } from "express";
 
 export default (User: Model<IUser>) => {
-  return (req: Request, res: Response) => {
+  return (req: Request | any, res: Response) => {
     let { email } = req.body;
 
     User.remove({ email: email }, function(err: string) {

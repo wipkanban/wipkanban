@@ -17,5 +17,5 @@
     "pretty": true
   },
   "include": ["src/client/**/*"],
-  "exclude": ["./node_modeules"]
+  "exclude": ["./node_modules"]
 }

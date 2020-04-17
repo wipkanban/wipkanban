@@ -5,10 +5,10 @@ import setCsrf from "../../middlewares/csrf";
 
 import { IUser } from "../../models/user";
 import { Model } from "mongoose";
-import { Request, Response } from "express";
+import { Response } from "express";
 
 export default (User: Model<IUser>, setCsrf: Function) => {
-  return (req: Request, res: Response) => {
+  return (req: any, res: Response) => {
     passport.authenticate("local", { session: false }, (err, user) => {
       if (err || !user) {
         return res
@@ -16,7 +16,7 @@ export default (User: Model<IUser>, setCsrf: Function) => {
           .json({ success: false, message: "Password invalid" })
           .end();
       }
-      req.login(user, { session: false }, err => {
+      req.login(user, { session: false }, (err:any) => {
         if (err) {
           res.send(err);
         }
@@ -42,7 +42,7 @@ export default (User: Model<IUser>, setCsrf: Function) => {
   };
 };
 
-export function oauthFacebook(req: Request, res: Response) {
+export function oauthFacebook(req: any, res: Response) {
   const token = jwt.sign(req.user as Object, process.env.SECRET as string, {
     expiresIn: "24h"
   });
