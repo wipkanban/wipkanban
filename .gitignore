@@ -1,29 +1,34 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# dependencies
+# compiled output
+/dist
 /node_modules
 
-# testing
-/coverage
-.nyc_output
-
-# production
-/build
-public/dist
-public/uploads
-public/assets/css/main.css
-
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
 
-#webpack bundle analyzer
-stats.json
+# OS
+.DS_Store
 
-#env variables
-.env
+# Tests
+/coverage
+/.nyc_output
 
-#apidoc
-apidoc
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-.vscode
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
