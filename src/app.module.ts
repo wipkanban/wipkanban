@@ -21,6 +21,7 @@ import { GraphQLModule } from '@nestjs/graphql';
     }),
     GraphQLModule.forRoot({
       autoSchemaFile: 'src/schema/schema.gql',
+      context: ({ req }) => ({ req }),
     }),
     UsersModule,
     AuthModule,
