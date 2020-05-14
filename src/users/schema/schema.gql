@@ -1,0 +1,22 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Image {
+  originalname: String!
+  newFilename: String!
+}
+
+type User {
+  id: String!
+  name: String!
+  lastname: String!
+  email: String!
+  firstAccess: Boolean!
+  password: String!
+  image: Image!
+}
+
+type Query {
+  users: [User!]!
+}
