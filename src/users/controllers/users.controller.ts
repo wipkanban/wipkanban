@@ -3,13 +3,13 @@ import { UserService } from '../services/user.service';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @UseGuards(JwtAuthGuard)
-@Controller('users')
+@Controller('/users')
 export class UsersController {
   constructor(private userService: UserService) {}
 
 
-  @Get('/mongo')
-  public posts() {
+  @Get()
+  public getUsers() {
     return this.userService.findAll();
   }
 }

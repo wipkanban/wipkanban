@@ -3,7 +3,8 @@ import { Injectable } from '@nestjs/common';
 export type User = any;
 
 @Injectable()
-export class AuthuserService {
+export class 
+AuthuserService {
   private readonly users: User[];
 
   constructor() {
