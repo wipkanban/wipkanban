@@ -10,11 +10,11 @@ import { CurrentUser } from 'src/auth/decorators/current-user.decorator';
 export class UserResolver {
   constructor(private userService: UserService) {}
 
-  @Query(returns => [User])
   @UseGuards(GqlAuthGuard)
-  public async users(@CurrentUser() user: any = null) {
+  @Query(returns => [User])
+  public async users() {
     const users: Array<User> = await this.userService.findAll();
-    console.error(user);
+    
     return users;
   }
 }

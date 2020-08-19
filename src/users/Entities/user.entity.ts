@@ -1,8 +1,8 @@
-import {Entity, ObjectID, ObjectIdColumn, Column} from "typeorm";
-import { Field, ObjectType, Int } from '@nestjs/graphql';
+import { Entity, ObjectID, ObjectIdColumn, Column } from "typeorm";
+import { Field, ObjectType } from '@nestjs/graphql';
 import { Image } from "./image.entity";
 
-@Entity({name: 'users'})
+@Entity({ name: 'users' })
 @ObjectType()
 export class User {
 
@@ -10,29 +10,27 @@ export class User {
     @Field(type => String)
     id: ObjectID;
 
-    @Field()
-    @Column()
-    name: string;
+    @Field({nullable: true})
+    @Column({ nullable: true })
+    name: String;
+
+    @Field({nullable: true})
+    @Column({ nullable: true })
+    lastname: String;
 
     @Field()
     @Column()
-    lastname: string;
-    
-    @Field()
-    @Column()
-    email: string;
-    
+    email: String;
+
     @Field()
     @Column()
     firstAccess: boolean;
 
     @Field()
     @Column()
-    password: string;
-    
+    password: String;
+
     @Field()
     @Column()
     image: Image;
-
-
 }

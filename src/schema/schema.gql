@@ -9,8 +9,8 @@ type Image {
 
 type User {
   id: String!
-  name: String!
-  lastname: String!
+  name: String
+  lastname: String
   email: String!
   firstAccess: Boolean!
   password: String!

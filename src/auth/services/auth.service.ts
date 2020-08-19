@@ -1,6 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from 'src/users/services/user.service';
+import { UserDto } from '../dto/user.dto';
 
 @Injectable()
 export class AuthService {
@@ -24,5 +25,16 @@ export class AuthService {
     return {
       access_token: this.jwtService.sign(payload),
     };
+  }
+
+  public registerUser(userDto: UserDto) {
+
+    const { password, confirmPassword } = userDto;
+
+    if (password !== confirmPassword) {
+      throw new HttpException("The password and confirmPassword field are not equals", HttpStatus.NOT_ACCEPTABLE);
+    }
+
+    return this.usersService.save(userDto.email, userDto.password);
   }
 }
