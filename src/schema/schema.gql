@@ -17,6 +17,14 @@ type User {
   image: Image!
 }
 
+type OauthTOken {
+  accessToken: String!
+}
+
 type Query {
   users: [User!]!
+}
+
+type Mutation {
+  login(password: String!, username: String!): OauthTOken!
 }

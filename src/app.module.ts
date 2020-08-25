@@ -6,14 +6,16 @@ import { BoardsModule } from './boards/boards.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/Entities/user.entity';
 import { GraphQLModule } from '@nestjs/graphql';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      type: 'mongodb',
-      host: 'localhost',
-      port: 27017,
-      database: 'wipkanban',
+      type: process.env.DRIVER_DB as any,
+      host: process.env.HOST_DB,
+      port: process.env.PORT_DB as any,
+      database: process.env.DATABASE,
       entities: [User],
       logging: true,
     }),
@@ -29,4 +31,4 @@ import { GraphQLModule } from '@nestjs/graphql';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
