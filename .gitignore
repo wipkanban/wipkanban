@@ -37,3 +37,5 @@ public/dist
 public/images/*
 
 documentation
+
+.env
