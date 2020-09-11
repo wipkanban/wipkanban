@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/Entities/user.entity';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ConfigModule } from '@nestjs/config';
+import { Board } from './boards/Entities/board.entitie';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { ConfigModule } from '@nestjs/config';
       host: process.env.HOST_DB,
       port: process.env.PORT_DB as any,
       database: process.env.DATABASE,
-      entities: [User],
+      entities: [User, Board],
       logging: true,
     }),
     GraphQLModule.forRoot({
